@@ -1,0 +1,3817 @@
+WARNING: the argument --multi-file is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --suffix-extension is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --mutp is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.--allow-coverage-fail true
+--anti-append-returngoto true
+--anti-delete-cfgblock true
+--anti-delete-empty true
+--anti-delete-exit true
+--anti-delete-setbeforeif true
+--anti-delete-setinsideloop true
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 11
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Sun Jan 31 11:00:24 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat: /etc/redhat-release: No such file or directory
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp17ccf0.c /tmp/tmp529e0e.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: lib/savedir.c: parsing
+cilRep: lib/savedir.c: parsed (0.0703859 MB)
+cilRep: computing liveness
+Bug: BF(Liveness): stmtStartData is not initialized for -1: fail: 
+#line 154 "savedir.c"
+free((void *)name_space);
+#line 155
+name_space = (char *)((void *)0);
+Liveness failed on function:
+ char *savedir(char const   *dir , off_t name_size ,
+               struct exclude *included_patterns ,
+               struct exclude *excluded_patterns ,
+               struct exclude *excluded_directory_patterns ) 
+{ DIR *dirp ;
+  struct dirent *dp ;
+  char *name_space ;
+  char *namep ;
+  void *tmp ;
+  size_t namlen ;
+  size_t tmp___0 ;
+  size_t size_needed ;
+  _Bool tmp___1 ;
+  _Bool tmp___2 ;
+  int tmp___3 ;
+  _Bool tmp___4 ;
+  int tmp___5 ;
+  char *new_name_space ;
+  void *tmp___6 ;
+  int tmp___7 ;
+
+  {
+   544: /* CIL Label */ 
+#line 84
+  dirp = opendir(dir);
+   545: /* CIL Label */ 
+#line 85
+  if ((unsigned long )dirp == (unsigned long )((void *)0)) {
+#line 86
+    return ((char *)((void *)0));
+  } else {
+
+  }
+   546: /* CIL Label */ 
+#line 90
+  if (name_size <= 0L) {
+#line 91
+    name_size = 1L;
+  } else {
+
+  }
+   547: /* CIL Label */ 
+#line 93
+  tmp = malloc((unsigned long )name_size);
+   548: /* CIL Label */ 
+#line 93
+  name_space = (char *)tmp;
+   549: /* CIL Label */ 
+#line 94
+  if ((unsigned long )name_space == (unsigned long )((void *)0)) {
+#line 96
+    closedir(dirp);
+#line 97
+    return ((char *)((void *)0));
+  } else {
+
+  }
+   550: /* CIL Label */ 
+#line 99
+  namep = name_space;
+   551: /* CIL Label */ 
+#line 101
+  while (1) {
+#line 101
+    dp = readdir(dirp);
+#line 101
+    if (! ((unsigned long )dp != (unsigned long )((void *)0))) {
+#line 101
+      break;
+    } else {
+
+    }
+#line 104
+    if ((int )dp->d_name[0] != 46) {
+      goto _L___1;
+    } else {
+#line 104
+      if ((int )dp->d_name[1] != 0) {
+#line 104
+        if ((int )dp->d_name[1] != 46) {
+          goto _L___1;
+        } else {
+#line 104
+          if ((int )dp->d_name[2] != 0) {
+            _L___1: 
+#line 108
+            tmp___0 = strlen((char const   *)(dp->d_name));
+#line 108
+            namlen = tmp___0;
+#line 109
+            size_needed = ((unsigned long )(namep - name_space) + namlen) + 2UL;
+#line 111
+            if (included_patterns) {
+              goto _L;
+            } else {
+#line 111
+              if (excluded_patterns) {
+                _L: 
+#line 111
+                tmp___3 = isdir1(dir, (char const   *)(dp->d_name));
+#line 111
+                if (! tmp___3) {
+#line 114
+                  if (included_patterns) {
+#line 114
+                    tmp___1 = excluded_file_name((struct exclude  const  *)included_patterns,
+                                                 (char const   *)(dp->d_name));
+#line 114
+                    if (! tmp___1) {
+#line 116
+                      continue;
+                    } else {
+
+                    }
+                  } else {
+
+                  }
+#line 117
+                  if (excluded_patterns) {
+#line 117
+                    tmp___2 = excluded_file_name((struct exclude  const  *)excluded_patterns,
+                                                 (char const   *)(dp->d_name));
+#line 117
+                    if (tmp___2) {
+#line 119
+                      continue;
+                    } else {
+
+                    }
+                  } else {
+
+                  }
+                } else {
+
+                }
+              } else {
+
+              }
+            }
+#line 122
+            if (excluded_directory_patterns) {
+#line 122
+              tmp___5 = isdir1(dir, (char const   *)(dp->d_name));
+#line 122
+              if (tmp___5) {
+#line 125
+                if (excluded_directory_patterns) {
+#line 125
+                  tmp___4 = excluded_file_name((struct exclude  const  *)excluded_directory_patterns,
+                                               (char const   *)(dp->d_name));
+#line 125
+                  if (tmp___4) {
+#line 127
+                    continue;
+                  } else {
+
+                  }
+                } else {
+
+                }
+              } else {
+
+              }
+            } else {
+
+            }
+#line 130
+            if (size_needed > (unsigned long )name_size) {
+#line 134
+              while (size_needed > (unsigned long )name_size) {
+#line 135
+                name_size += 1024L;
+              }
+#line 137
+              tmp___6 = realloc((void *)name_space, (unsigned long )name_size);
+#line 137
+              new_name_space = (char *)tmp___6;
+#line 138
+              if ((unsigned long )new_name_space == (unsigned long )((void *)0)) {
+#line 140
+                closedir(dirp);
+                goto fail;
+              } else {
+
+              }
+#line 143
+              namep = new_name_space + (namep - name_space);
+#line 144
+              name_space = new_name_space;
+            } else {
+
+            }
+#line 146
+            strcpy((char */* __restrict  */)namep,
+                   (char const   */* __restrict  */)(dp->d_name));
+#line 147
+            namep += namlen + 1UL;
+          } else {
+
+          }
+        }
+      } else {
+
+      }
+    }
+  }
+   552: /* CIL Label */ 
+#line 150
+  *namep = (char )'\000';
+   553: /* CIL Label */ 
+#line 151
+  tmp___7 = closedir(dirp);
+   554: /* CIL Label */ 
+#line 151
+  if (tmp___7) {
+    fail: 
+#line 154
+    free((void *)name_space);
+#line 155
+    name_space = (char *)((void *)0);
+  } else {
+
+  }
+   555: /* CIL Label */ 
+#line 157
+  if (path) {
+#line 159
+    free((void *)path);
+#line 160
+    path = (char *)((void *)0);
+#line 161
+    pathlen = 0UL;
+  } else {
+
+  }
+   556: /* CIL Label */ 
+#line 163
+  return (name_space);
+}
+}
+
+cilRep: liveness failure for savedir: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 556
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/string3.h:75
+	cannot instrument for coverage (would be recursive)
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+Segmentation fault
+--- out	2016-01-31 11:00:26.329394267 +0800
++++ exp	2016-01-31 11:00:26.329394267 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+coverage positive:
+	test: 1
+id:1
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=backref.sh
+PASS:1
+	test: 2
+id:6
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=dfaexec-multibyte
+PASS:6
+	test: 3
+id:7
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=empty.sh
+PASS:7
+	test: 4
+id:8
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=ere.sh
+PASS:8
+	test: 5
+id:9
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=fedora
+PASS:9
+	test: 6
+id:10
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=file.sh
+PASS:10
+	test: 7
+id:13
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=help-version
+PASS:13
+	test: 8
+id:14
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=khadafy.sh
+PASS:14
+	test: 9
+id:15
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=max-count-vs-context
+PASS:15
+	test: 10
+id:16
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=options.sh
+PASS:16
+	test: 11
+id:17
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=pcre.sh
+PASS:17
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 556
+cilRep: stmts in weighted_path = 26
+cilRep: total weight = 26
+cilRep: stmts in weighted_path with weight >= 1.0 = 26
+cilRep: lib/savedir.c (code bank/base file; atoms [1,556])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454209229.175777)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 451
+cilRep: fix-space quotient by string: 26 -> 23
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: __builtin_object_size
+progeq: WARNING: cannot resolve call: __read_chk
+progeq: WARNING: cannot resolve call: __read_chk_warn
+progeq: WARNING: cannot resolve call: __read_alias
+progeq: WARNING: cannot resolve call: __pread_chk
+progeq: WARNING: cannot resolve call: __pread_chk_warn
+progeq: WARNING: cannot resolve call: __pread_alias
+progeq: WARNING: cannot resolve call: __pread64_chk
+progeq: WARNING: cannot resolve call: __pread64_chk_warn
+progeq: WARNING: cannot resolve call: __pread64_alias
+progeq: WARNING: cannot resolve call: __readlink_chk
+progeq: WARNING: cannot resolve call: __readlink_chk_warn
+progeq: WARNING: cannot resolve call: __readlink_alias
+progeq: WARNING: cannot resolve call: __readlinkat_chk
+progeq: WARNING: cannot resolve call: __readlinkat_chk_warn
+progeq: WARNING: cannot resolve call: __readlinkat_alias
+progeq: WARNING: cannot resolve call: __getcwd_chk
+progeq: WARNING: cannot resolve call: __getcwd_chk_warn
+progeq: WARNING: cannot resolve call: __getcwd_alias
+progeq: WARNING: cannot resolve call: __getwd_chk
+progeq: WARNING: cannot resolve call: __getwd_warn
+progeq: WARNING: cannot resolve call: __confstr_chk
+progeq: WARNING: cannot resolve call: __confstr_chk_warn
+progeq: WARNING: cannot resolve call: __confstr_alias
+progeq: WARNING: cannot resolve call: __getgroups_chk
+progeq: WARNING: cannot resolve call: __getgroups_chk_warn
+progeq: WARNING: cannot resolve call: __getgroups_alias
+progeq: WARNING: cannot resolve call: __ttyname_r_chk
+progeq: WARNING: cannot resolve call: __ttyname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ttyname_r_alias
+progeq: WARNING: cannot resolve call: __getlogin_r_chk
+progeq: WARNING: cannot resolve call: __getlogin_r_chk_warn
+progeq: WARNING: cannot resolve call: __getlogin_r_alias
+progeq: WARNING: cannot resolve call: __gethostname_chk
+progeq: WARNING: cannot resolve call: __gethostname_chk_warn
+progeq: WARNING: cannot resolve call: __gethostname_alias
+progeq: WARNING: cannot resolve call: __getdomainname_chk
+progeq: WARNING: cannot resolve call: __getdomainname_chk_warn
+progeq: WARNING: cannot resolve call: __getdomainname_alias
+progeq: WARNING: cannot resolve call: *__compar
+progeq: WARNING: cannot resolve call: __realpath_chk
+progeq: WARNING: cannot resolve call: __realpath_alias
+progeq: WARNING: cannot resolve call: __ptsname_r_chk
+progeq: WARNING: cannot resolve call: __ptsname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ptsname_r_alias
+progeq: WARNING: cannot resolve call: __wctomb_chk
+progeq: WARNING: cannot resolve call: __wctomb_alias
+progeq: WARNING: cannot resolve call: __mbstowcs_chk
+progeq: WARNING: cannot resolve call: __mbstowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbstowcs_alias
+progeq: WARNING: cannot resolve call: __wcstombs_chk
+progeq: WARNING: cannot resolve call: __wcstombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcstombs_alias
+progeq: WARNING: cannot resolve call: __builtin_strchr
+progeq: WARNING: cannot resolve call: __builtin___memcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memmove_chk
+progeq: WARNING: cannot resolve call: __builtin___mempcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memset_chk
+progeq: WARNING: cannot resolve call: __builtin___strcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___stpcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___strncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_alias
+progeq: WARNING: cannot resolve call: __builtin___strcat_chk
+progeq: WARNING: cannot resolve call: __builtin___strncat_chk
+progeq: WARNING: cannot resolve call: xrealloc
+progeq: WARNING: cannot resolve call: isdir
+progeq: WARNING: cannot resolve call: opendir
+progeq: WARNING: cannot resolve call: closedir
+progeq: WARNING: cannot resolve call: readdir
+progeq: WARNING: cannot resolve call: excluded_file_name
+progeq: WARNING: cannot resolve call: realloc
+progeq: WARNING: cannot resolve call: free
+search: fix space reduced (time_taken = 0.347726)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 26 deletes
+SET_BEFORE
+CARDINAL?before:6:after2
+REMOVED?false
+SET_BEFORE
+CARDINAL?before:6:after2
+REMOVED?false
+SET_BEFORE
+CARDINAL?before:6:after2
+REMOVED?false
+SET_BEFORE
+CARDINAL?before:6:after2
+REMOVED?false
+SET_BEFORE
+CARDINAL?before:6:after2
+REMOVED?false
+SET_BEFORE
+CARDINAL?before:6:after2
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:23:after6
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:23:after6
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:23:after6
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:23:after6
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:23:after6
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:23:after6
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:17:after4
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:17:after4
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:17:after4
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:17:after4
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:17:after4
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:17:after4
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:17:after4
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:17:after4
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:17:after4
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:17:after4
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:17:after4
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:17:after4
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:17:after4
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:17:after4
+REMOVED?false
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 104 appends
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 249 appends
+search: ww_adaptive: 353 possible edits
+search: ready to start (time_taken = 2.32164)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.00494814)
+	variant     1/  353 = d(547)          (12 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/src/grep: x: Inappropriate ioctl for device
+--- out	2016-01-31 11:00:32.997394442 +0800
++++ exp	2016-01-31 11:00:32.997394442 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16743)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00538707)
+	variant     2/  353 = d(523)          (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:34.157394473 +0800
++++ exp	2016-01-31 11:00:34.157394473 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.1471)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00462723)
+	variant     3/  353 = d(522)          (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:35.353394504 +0800
++++ exp	2016-01-31 11:00:35.353394504 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19585)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00516319)
+	variant     4/  353 = d(476)          (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:36.593394537 +0800
++++ exp	2016-01-31 11:00:36.593394537 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.22181)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.004915)
+	variant     5/  353 = d(464)          (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:37.785394568 +0800
++++ exp	2016-01-31 11:00:37.785394568 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18021)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00460792)
+	variant     6/  353 = d(463)          (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:38.993394600 +0800
++++ exp	2016-01-31 11:00:38.993394600 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19738)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00510907)
+	variant     7/  353 = a(551,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:40.205394632 +0800
++++ exp	2016-01-31 11:00:40.205394632 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.20687)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00439)
+	variant     8/  353 = a(551,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:41.397394664 +0800
++++ exp	2016-01-31 11:00:41.393394663 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17195)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00528908)
+	variant     9/  353 = a(551,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:42.521394693 +0800
++++ exp	2016-01-31 11:00:42.521394693 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.11609)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00439215)
+	variant    10/  353 = a(551,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:43.749394725 +0800
++++ exp	2016-01-31 11:00:43.749394725 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.218)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00449395)
+	variant    11/  353 = a(551,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:44.997394758 +0800
++++ exp	2016-01-31 11:00:44.997394758 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.24055)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00813389)
+	variant    12/  353 = a(551,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:46.193394790 +0800
++++ exp	2016-01-31 11:00:46.193394790 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.1799)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00674486)
+	variant    13/  353 = a(551,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:47.325394820 +0800
++++ exp	2016-01-31 11:00:47.325394820 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.12133)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00505304)
+	variant    14/  353 = a(551,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:48.637394854 +0800
++++ exp	2016-01-31 11:00:48.637394854 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.298)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00487399)
+	variant    15/  353 = a(551,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:49.817394885 +0800
++++ exp	2016-01-31 11:00:49.817394885 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16695)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00454807)
+	variant    16/  353 = a(551,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:51.041394917 +0800
++++ exp	2016-01-31 11:00:51.041394917 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.21708)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00441217)
+	variant    17/  353 = a(551,476)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:52.209394948 +0800
++++ exp	2016-01-31 11:00:52.209394948 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15576)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00855994)
+	variant    18/  353 = a(550,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:53.433394980 +0800
++++ exp	2016-01-31 11:00:53.433394980 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.21174)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00599289)
+	variant    19/  353 = a(550,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:54.649395012 +0800
++++ exp	2016-01-31 11:00:54.649395012 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19698)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00476789)
+	variant    20/  353 = a(550,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:55.933395046 +0800
++++ exp	2016-01-31 11:00:55.933395046 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.28074)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00618911)
+	variant    21/  353 = a(550,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:57.209395080 +0800
++++ exp	2016-01-31 11:00:57.209395080 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.25608)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00652289)
+	variant    22/  353 = a(550,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:58.449395112 +0800
++++ exp	2016-01-31 11:00:58.449395112 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.21858)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00400281)
+	variant    23/  353 = a(550,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:00:59.681395145 +0800
++++ exp	2016-01-31 11:00:59.681395145 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.22172)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00377917)
+	variant    24/  353 = a(550,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:00.849395176 +0800
++++ exp	2016-01-31 11:01:00.849395176 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15655)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00524783)
+	variant    25/  353 = a(550,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:02.013395206 +0800
++++ exp	2016-01-31 11:01:02.013395206 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15593)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00354004)
+	variant    26/  353 = a(550,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:03.197395237 +0800
++++ exp	2016-01-31 11:01:03.197395237 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16974)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00433707)
+	variant    27/  353 = a(550,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:04.361395268 +0800
++++ exp	2016-01-31 11:01:04.361395268 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15409)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00461698)
+	variant    28/  353 = a(549,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:05.533395299 +0800
++++ exp	2016-01-31 11:01:05.533395299 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16154)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00446987)
+	variant    29/  353 = a(549,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:06.701395330 +0800
++++ exp	2016-01-31 11:01:06.701395330 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15921)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00371289)
+	variant    30/  353 = a(549,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:07.873395361 +0800
++++ exp	2016-01-31 11:01:07.869395360 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16125)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00524402)
+	variant    31/  353 = a(549,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:09.077395392 +0800
++++ exp	2016-01-31 11:01:09.077395392 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19005)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00573421)
+	variant    32/  353 = a(549,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:10.217395422 +0800
++++ exp	2016-01-31 11:01:10.217395422 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.13033)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00424004)
+	variant    33/  353 = a(549,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:11.433395454 +0800
++++ exp	2016-01-31 11:01:11.433395454 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.20944)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00468016)
+	variant    34/  353 = a(549,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:12.601395485 +0800
++++ exp	2016-01-31 11:01:12.597395485 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15209)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00651884)
+	variant    35/  353 = a(548,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:13.849395518 +0800
++++ exp	2016-01-31 11:01:13.849395518 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.23721)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00615597)
+	variant    36/  353 = a(548,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:15.033395549 +0800
++++ exp	2016-01-31 11:01:15.029395549 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16884)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.009444)
+	variant    37/  353 = a(548,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:16.353395584 +0800
++++ exp	2016-01-31 11:01:16.353395584 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.30569)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00662208)
+	variant    38/  353 = a(548,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:17.549395615 +0800
++++ exp	2016-01-31 11:01:17.549395615 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18638)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00476885)
+	variant    39/  353 = a(548,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:18.705395646 +0800
++++ exp	2016-01-31 11:01:18.705395646 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14676)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00529289)
+	variant    40/  353 = a(548,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:19.917395678 +0800
++++ exp	2016-01-31 11:01:19.917395678 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19531)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00648594)
+	variant    41/  353 = a(548,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:21.133395710 +0800
++++ exp	2016-01-31 11:01:21.133395710 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.20533)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00391603)
+	variant    42/  353 = a(548,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:22.361395742 +0800
++++ exp	2016-01-31 11:01:22.361395742 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.21573)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00372601)
+	variant    43/  353 = a(548,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:23.565395774 +0800
++++ exp	2016-01-31 11:01:23.561395774 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19045)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00599599)
+	variant    44/  353 = a(548,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:24.745395805 +0800
++++ exp	2016-01-31 11:01:24.741395805 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16943)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00479794)
+	variant    45/  353 = a(547,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:25.933395836 +0800
++++ exp	2016-01-31 11:01:25.933395836 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18129)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00479388)
+	variant    46/  353 = a(547,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:27.177395869 +0800
++++ exp	2016-01-31 11:01:27.177395869 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.22707)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00515389)
+	variant    47/  353 = a(547,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:28.429395902 +0800
++++ exp	2016-01-31 11:01:28.429395902 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.24185)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00407887)
+	variant    48/  353 = a(547,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:29.621395933 +0800
++++ exp	2016-01-31 11:01:29.617395933 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17737)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00450706)
+	variant    49/  353 = a(547,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:30.793395964 +0800
++++ exp	2016-01-31 11:01:30.793395964 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16378)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00767303)
+	variant    50/  353 = a(547,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:31.969395995 +0800
++++ exp	2016-01-31 11:01:31.969395995 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15989)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0050869)
+	variant    51/  353 = a(547,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:33.209396028 +0800
++++ exp	2016-01-31 11:01:33.209396028 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.22915)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00590992)
+	variant    52/  353 = a(547,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:34.517396062 +0800
++++ exp	2016-01-31 11:01:34.513396062 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.28921)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00404096)
+	variant    53/  353 = a(546,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:35.677396092 +0800
++++ exp	2016-01-31 11:01:35.677396092 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15279)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00342488)
+	variant    54/  353 = a(546,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:36.817396122 +0800
++++ exp	2016-01-31 11:01:36.817396122 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.1273)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00634885)
+	variant    55/  353 = a(546,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:37.997396154 +0800
++++ exp	2016-01-31 11:01:37.997396154 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16893)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00340581)
+	variant    56/  353 = a(546,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:39.201396185 +0800
++++ exp	2016-01-31 11:01:39.197396185 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.1906)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0053122)
+	variant    57/  353 = a(546,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:40.385396216 +0800
++++ exp	2016-01-31 11:01:40.385396216 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17608)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00420308)
+	variant    58/  353 = a(546,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:41.557396247 +0800
++++ exp	2016-01-31 11:01:41.557396247 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16161)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00396895)
+	variant    59/  353 = a(546,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:42.741396278 +0800
++++ exp	2016-01-31 11:01:42.741396278 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16997)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00489807)
+	variant    60/  353 = a(545,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:43.945396310 +0800
++++ exp	2016-01-31 11:01:43.945396310 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19752)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00297689)
+	variant    61/  353 = a(545,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:45.101396341 +0800
++++ exp	2016-01-31 11:01:45.101396341 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.1475)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0057559)
+	variant    62/  353 = a(545,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:46.301396372 +0800
++++ exp	2016-01-31 11:01:46.301396372 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18735)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00504208)
+	variant    63/  353 = a(545,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:47.597396406 +0800
++++ exp	2016-01-31 11:01:47.597396406 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.28045)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00659108)
+	variant    64/  353 = a(545,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:48.777396437 +0800
++++ exp	2016-01-31 11:01:48.777396437 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16739)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00384307)
+	variant    65/  353 = a(545,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:49.901396467 +0800
++++ exp	2016-01-31 11:01:49.901396467 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.11533)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00311995)
+	variant    66/  353 = a(544,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:51.089396498 +0800
++++ exp	2016-01-31 11:01:51.085396498 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18063)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0062201)
+	variant    67/  353 = a(544,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:52.249396529 +0800
++++ exp	2016-01-31 11:01:52.249396529 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14222)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00353098)
+	variant    68/  353 = a(544,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:53.405396559 +0800
++++ exp	2016-01-31 11:01:53.405396559 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14744)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00349092)
+	variant    69/  353 = a(544,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:54.549396589 +0800
++++ exp	2016-01-31 11:01:54.549396589 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.13637)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00518394)
+	variant    70/  353 = a(536,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:55.677396619 +0800
++++ exp	2016-01-31 11:01:55.677396619 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.11851)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00307417)
+	variant    71/  353 = a(536,549)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:56.885396651 +0800
++++ exp	2016-01-31 11:01:56.885396651 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19748)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.003232)
+	variant    72/  353 = a(536,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:58.069396682 +0800
++++ exp	2016-01-31 11:01:58.069396682 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.1785)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00506496)
+	variant    73/  353 = a(536,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:01:59.277396714 +0800
++++ exp	2016-01-31 11:01:59.277396714 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19169)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00250411)
+	variant    74/  353 = a(536,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:00.469396745 +0800
++++ exp	2016-01-31 11:02:00.469396745 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18013)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00394011)
+	variant    75/  353 = a(536,545)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:01.661396776 +0800
++++ exp	2016-01-31 11:02:01.661396776 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.1811)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00285196)
+	variant    76/  353 = a(536,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:02.797396806 +0800
++++ exp	2016-01-31 11:02:02.797396806 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.12907)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00479603)
+	variant    77/  353 = a(536,535)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:04.017396839 +0800
++++ exp	2016-01-31 11:02:04.017396839 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.21168)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00570607)
+	variant    78/  353 = a(536,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:05.241396871 +0800
++++ exp	2016-01-31 11:02:05.241396871 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.2114)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00264883)
+	variant    79/  353 = a(536,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:06.445396902 +0800
++++ exp	2016-01-31 11:02:06.445396902 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19258)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00392008)
+	variant    80/  353 = a(536,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:07.565396932 +0800
++++ exp	2016-01-31 11:02:07.565396932 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.11178)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00411797)
+	variant    81/  353 = a(536,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:08.737396963 +0800
++++ exp	2016-01-31 11:02:08.737396963 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16472)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00249004)
+	variant    82/  353 = a(536,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:09.989396996 +0800
++++ exp	2016-01-31 11:02:09.985396996 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.23919)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00304008)
+	variant    83/  353 = a(536,476)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:11.229397028 +0800
++++ exp	2016-01-31 11:02:11.229397028 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.23604)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00377083)
+	variant    84/  353 = a(535,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:12.441397060 +0800
++++ exp	2016-01-31 11:02:12.441397060 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.20041)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00277019)
+	variant    85/  353 = a(535,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:13.613397091 +0800
++++ exp	2016-01-31 11:02:13.613397091 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16368)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00295901)
+	variant    86/  353 = a(535,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:14.793397122 +0800
++++ exp	2016-01-31 11:02:14.793397122 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16783)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00358987)
+	variant    87/  353 = a(535,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:16.021397155 +0800
++++ exp	2016-01-31 11:02:16.021397155 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.22004)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00244403)
+	variant    88/  353 = a(535,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:17.433397192 +0800
++++ exp	2016-01-31 11:02:17.433397192 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.40604)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00232506)
+	variant    89/  353 = a(535,535)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:18.645397224 +0800
++++ exp	2016-01-31 11:02:18.645397224 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.1969)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00349498)
+	variant    90/  353 = a(535,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:19.817397254 +0800
++++ exp	2016-01-31 11:02:19.817397254 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16445)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0047071)
+	variant    91/  353 = a(535,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:20.985397285 +0800
++++ exp	2016-01-31 11:02:20.985397285 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15601)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00223303)
+	variant    92/  353 = a(535,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:22.261397319 +0800
++++ exp	2016-01-31 11:02:22.257397319 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.26244)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00275803)
+	variant    93/  353 = a(535,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:23.417397349 +0800
++++ exp	2016-01-31 11:02:23.417397349 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15136)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00328803)
+	variant    94/  353 = a(535,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:24.601397380 +0800
++++ exp	2016-01-31 11:02:24.597397380 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17284)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00246596)
+	variant    95/  353 = a(534,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:25.797397412 +0800
++++ exp	2016-01-31 11:02:25.797397412 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.1871)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00307298)
+	variant    96/  353 = a(534,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:26.981397443 +0800
++++ exp	2016-01-31 11:02:26.981397443 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17616)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00289106)
+	variant    97/  353 = a(534,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:28.185397475 +0800
++++ exp	2016-01-31 11:02:28.185397475 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19696)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00397491)
+	variant    98/  353 = a(534,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:29.373397506 +0800
++++ exp	2016-01-31 11:02:29.373397506 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17597)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00317502)
+	variant    99/  353 = a(534,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:30.633397539 +0800
++++ exp	2016-01-31 11:02:30.633397539 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.24803)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00297189)
+	variant   100/  353 = a(534,535)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:31.909397573 +0800
++++ exp	2016-01-31 11:02:31.909397573 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.26573)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00341105)
+	variant   101/  353 = a(534,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:33.101397604 +0800
++++ exp	2016-01-31 11:02:33.101397604 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18182)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00236082)
+	variant   102/  353 = a(534,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:34.269397635 +0800
++++ exp	2016-01-31 11:02:34.265397635 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15746)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00288701)
+	variant   103/  353 = a(534,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:35.441397666 +0800
++++ exp	2016-01-31 11:02:35.441397666 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16533)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0032351)
+	variant   104/  353 = a(534,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:36.689397699 +0800
++++ exp	2016-01-31 11:02:36.689397699 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.23846)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00452781)
+	variant   105/  353 = a(534,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:37.857397729 +0800
++++ exp	2016-01-31 11:02:37.853397729 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15538)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00256801)
+	variant   106/  353 = a(524,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:39.013397760 +0800
++++ exp	2016-01-31 11:02:39.013397760 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15075)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00238204)
+	variant   107/  353 = a(524,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:40.201397791 +0800
++++ exp	2016-01-31 11:02:40.201397791 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17694)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00314617)
+	variant   108/  353 = a(524,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:41.377397822 +0800
++++ exp	2016-01-31 11:02:41.377397822 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17169)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00309896)
+	variant   109/  353 = a(524,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:42.553397853 +0800
++++ exp	2016-01-31 11:02:42.553397853 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16248)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00291014)
+	variant   110/  353 = a(524,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:43.745397884 +0800
++++ exp	2016-01-31 11:02:43.745397884 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18981)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00239992)
+	variant   111/  353 = a(524,535)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:44.949397916 +0800
++++ exp	2016-01-31 11:02:44.949397916 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19658)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00232792)
+	variant   112/  353 = a(524,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:46.237397950 +0800
++++ exp	2016-01-31 11:02:46.237397950 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.26967)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0041759)
+	variant   113/  353 = a(524,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:47.373397980 +0800
++++ exp	2016-01-31 11:02:47.373397980 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.12308)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00276399)
+	variant   114/  353 = a(524,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:48.589398012 +0800
++++ exp	2016-01-31 11:02:48.589398012 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.20641)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00238919)
+	variant   115/  353 = a(524,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:49.769398043 +0800
++++ exp	2016-01-31 11:02:49.769398043 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17041)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00232792)
+	variant   116/  353 = a(524,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:51.017398076 +0800
++++ exp	2016-01-31 11:02:51.017398076 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.25271)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00411797)
+	variant   117/  353 = a(524,476)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:52.305398110 +0800
++++ exp	2016-01-31 11:02:52.305398110 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.26254)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00258017)
+	variant   118/  353 = a(523,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:53.469398140 +0800
++++ exp	2016-01-31 11:02:53.469398140 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15218)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00431395)
+	variant   119/  353 = a(523,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:54.641398171 +0800
++++ exp	2016-01-31 11:02:54.641398171 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16359)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00246096)
+	variant   120/  353 = a(523,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:55.833398203 +0800
++++ exp	2016-01-31 11:02:55.833398203 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18013)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00247812)
+	variant   121/  353 = a(523,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:57.033398234 +0800
++++ exp	2016-01-31 11:02:57.033398234 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19291)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00193501)
+	variant   122/  353 = a(523,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:58.233398266 +0800
++++ exp	2016-01-31 11:02:58.233398266 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19348)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00299001)
+	variant   123/  353 = a(523,535)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:02:59.389398296 +0800
++++ exp	2016-01-31 11:02:59.389398296 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14386)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00279498)
+	variant   124/  353 = a(523,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:03:00.641398329 +0800
++++ exp	2016-01-31 11:03:00.641398329 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.2459)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00328994)
+	variant   125/  353 = a(523,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:03:01.797398360 +0800
++++ exp	2016-01-31 11:03:01.797398360 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14249)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00192213)
+	variant   126/  353 = a(523,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:03:02.977398391 +0800
++++ exp	2016-01-31 11:03:02.977398391 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17359)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00225592)
+	variant   127/  353 = a(523,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:03:04.161398422 +0800
++++ exp	2016-01-31 11:03:04.161398422 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.1839)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00223398)
+	variant   128/  353 = a(523,481)      (12 tests, cond 0)
+		n1 false (test_time = 31.1129)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00487089)
+	variant   129/  353 = a(522,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:03:36.457399272 +0800
++++ exp	2016-01-31 11:03:36.457399272 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.1555)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00337195)
+	variant   130/  353 = a(522,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:03:37.629399303 +0800
++++ exp	2016-01-31 11:03:37.629399303 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16576)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00297213)
+	variant   131/  353 = a(522,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:03:38.777399333 +0800
++++ exp	2016-01-31 11:03:38.777399333 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14001)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00335789)
+	variant   132/  353 = a(522,535)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:03:39.973399364 +0800
++++ exp	2016-01-31 11:03:39.973399364 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18518)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00250697)
+	variant   133/  353 = a(522,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:03:41.173399396 +0800
++++ exp	2016-01-31 11:03:41.173399396 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18802)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00175786)
+	variant   134/  353 = a(522,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:03:42.353399427 +0800
++++ exp	2016-01-31 11:03:42.353399427 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17322)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00249386)
+	variant   135/  353 = a(522,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:03:43.493399457 +0800
++++ exp	2016-01-31 11:03:43.489399457 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.13152)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00168395)
+	variant   136/  353 = a(522,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:03:44.621399487 +0800
++++ exp	2016-01-31 11:03:44.621399487 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.11696)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00293303)
+	variant   137/  353 = a(522,481)      (12 tests, cond 0)
+		n1 false (test_time = 31.0883)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00346994)
+	variant   138/  353 = a(483,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:16.913400337 +0800
++++ exp	2016-01-31 11:04:16.913400337 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18052)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00399899)
+	variant   139/  353 = a(483,549)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:18.093400368 +0800
++++ exp	2016-01-31 11:04:18.093400368 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16969)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00214005)
+	variant   140/  353 = a(483,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:19.273400399 +0800
++++ exp	2016-01-31 11:04:19.269400399 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16433)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00166821)
+	variant   141/  353 = a(483,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:20.493400431 +0800
++++ exp	2016-01-31 11:04:20.493400431 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.21371)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00164509)
+	variant   142/  353 = a(483,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:21.737400464 +0800
++++ exp	2016-01-31 11:04:21.737400464 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.23887)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00162506)
+	variant   143/  353 = a(483,545)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:22.893400494 +0800
++++ exp	2016-01-31 11:04:22.889400494 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14479)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00164199)
+	variant   144/  353 = a(483,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:24.033400524 +0800
++++ exp	2016-01-31 11:04:24.033400524 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.13507)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00175786)
+	variant   145/  353 = a(483,535)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:25.177400554 +0800
++++ exp	2016-01-31 11:04:25.177400554 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.13587)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00201988)
+	variant   146/  353 = a(483,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:26.377400586 +0800
++++ exp	2016-01-31 11:04:26.377400586 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19295)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00363994)
+	variant   147/  353 = a(483,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:27.609400618 +0800
++++ exp	2016-01-31 11:04:27.609400618 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.21983)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0042789)
+	variant   148/  353 = a(483,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:28.905400653 +0800
++++ exp	2016-01-31 11:04:28.905400653 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.28792)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00305009)
+	variant   149/  353 = a(483,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:30.073400683 +0800
++++ exp	2016-01-31 11:04:30.069400683 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15274)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00249791)
+	variant   150/  353 = a(483,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:31.229400714 +0800
++++ exp	2016-01-31 11:04:31.229400714 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14846)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00308204)
+	variant   151/  353 = a(483,476)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:32.405400745 +0800
++++ exp	2016-01-31 11:04:32.405400745 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16833)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.002918)
+	variant   152/  353 = a(481,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:33.645400777 +0800
++++ exp	2016-01-31 11:04:33.645400777 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.23557)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00236106)
+	variant   153/  353 = a(481,549)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:34.913400811 +0800
++++ exp	2016-01-31 11:04:34.913400811 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.25292)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00165105)
+	variant   154/  353 = a(481,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:36.061400841 +0800
++++ exp	2016-01-31 11:04:36.061400841 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14027)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00196195)
+	variant   155/  353 = a(481,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:37.217400871 +0800
++++ exp	2016-01-31 11:04:37.217400871 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14886)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00142479)
+	variant   156/  353 = a(481,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:38.345400901 +0800
++++ exp	2016-01-31 11:04:38.345400901 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.12074)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.001652)
+	variant   157/  353 = a(481,545)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:39.565400933 +0800
++++ exp	2016-01-31 11:04:39.565400933 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.21901)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00141096)
+	variant   158/  353 = a(481,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:40.821400966 +0800
++++ exp	2016-01-31 11:04:40.821400966 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.23923)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00146484)
+	variant   159/  353 = a(481,535)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:42.001400997 +0800
++++ exp	2016-01-31 11:04:42.001400997 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17464)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00172186)
+	variant   160/  353 = a(481,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:43.137401027 +0800
++++ exp	2016-01-31 11:04:43.137401027 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.12621)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00137401)
+	variant   161/  353 = a(481,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:44.389401060 +0800
++++ exp	2016-01-31 11:04:44.389401060 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.24442)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00138116)
+	variant   162/  353 = a(481,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:45.613401092 +0800
++++ exp	2016-01-31 11:04:45.609401092 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.21648)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00177979)
+	variant   163/  353 = a(481,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:46.841401125 +0800
++++ exp	2016-01-31 11:04:46.837401125 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.21632)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00163293)
+	variant   164/  353 = a(481,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:48.089401158 +0800
++++ exp	2016-01-31 11:04:48.089401158 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.24373)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.001683)
+	variant   165/  353 = a(481,476)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:49.237401188 +0800
++++ exp	2016-01-31 11:04:49.237401188 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.1366)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00125313)
+	variant   166/  353 = a(480,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:50.397401218 +0800
++++ exp	2016-01-31 11:04:50.397401218 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15165)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00159907)
+	variant   167/  353 = a(480,549)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:51.565401249 +0800
++++ exp	2016-01-31 11:04:51.561401249 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15974)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00132799)
+	variant   168/  353 = a(480,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:52.777401281 +0800
++++ exp	2016-01-31 11:04:52.777401281 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.20423)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00122309)
+	variant   169/  353 = a(480,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:53.997401313 +0800
++++ exp	2016-01-31 11:04:53.993401313 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.21313)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00148797)
+	variant   170/  353 = a(480,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:55.197401345 +0800
++++ exp	2016-01-31 11:04:55.197401345 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19488)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00128603)
+	variant   171/  353 = a(480,545)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:56.373401376 +0800
++++ exp	2016-01-31 11:04:56.373401376 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17139)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00139284)
+	variant   172/  353 = a(480,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:57.577401407 +0800
++++ exp	2016-01-31 11:04:57.577401407 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19969)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00144601)
+	variant   173/  353 = a(480,535)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:04:58.777401439 +0800
++++ exp	2016-01-31 11:04:58.777401439 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18523)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0014801)
+	variant   174/  353 = a(480,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:00.001401471 +0800
++++ exp	2016-01-31 11:05:00.001401471 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.21478)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.001369)
+	variant   175/  353 = a(480,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:01.241401504 +0800
++++ exp	2016-01-31 11:05:01.241401504 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.23479)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00137305)
+	variant   176/  353 = a(480,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:02.421401535 +0800
++++ exp	2016-01-31 11:05:02.421401535 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16775)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00140214)
+	variant   177/  353 = a(480,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:03.581401565 +0800
++++ exp	2016-01-31 11:05:03.581401565 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15285)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00124979)
+	variant   178/  353 = a(480,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:04.753401596 +0800
++++ exp	2016-01-31 11:05:04.749401596 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16482)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.001508)
+	variant   179/  353 = a(480,476)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:05.965401628 +0800
++++ exp	2016-01-31 11:05:05.965401628 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19942)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00111413)
+	variant   180/  353 = a(479,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:07.137401659 +0800
++++ exp	2016-01-31 11:05:07.133401659 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16318)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00122404)
+	variant   181/  353 = a(479,549)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:08.305401690 +0800
++++ exp	2016-01-31 11:05:08.305401690 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16085)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00209188)
+	variant   182/  353 = a(479,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:09.445401720 +0800
++++ exp	2016-01-31 11:05:09.445401720 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.13189)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00187898)
+	variant   183/  353 = a(479,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:10.629401751 +0800
++++ exp	2016-01-31 11:05:10.625401751 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17512)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00315809)
+	variant   184/  353 = a(479,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:11.853401783 +0800
++++ exp	2016-01-31 11:05:11.853401783 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.21955)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00365496)
+	variant   185/  353 = a(479,545)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:13.105401816 +0800
++++ exp	2016-01-31 11:05:13.105401816 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.24012)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000962973)
+	variant   186/  353 = a(479,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:14.261401847 +0800
++++ exp	2016-01-31 11:05:14.261401847 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14683)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00127912)
+	variant   187/  353 = a(479,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:15.421401877 +0800
++++ exp	2016-01-31 11:05:15.421401877 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15062)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00110817)
+	variant   188/  353 = a(479,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:16.557401907 +0800
++++ exp	2016-01-31 11:05:16.557401907 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.12678)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00120497)
+	variant   189/  353 = a(479,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:17.705401937 +0800
++++ exp	2016-01-31 11:05:17.705401937 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14341)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00120997)
+	variant   190/  353 = a(479,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:19.045401973 +0800
++++ exp	2016-01-31 11:05:19.041401972 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.32989)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00111103)
+	variant   191/  353 = a(479,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:20.277402005 +0800
++++ exp	2016-01-31 11:05:20.277402005 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.23504)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00096488)
+	variant   192/  353 = a(479,476)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:21.481402037 +0800
++++ exp	2016-01-31 11:05:21.481402037 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18586)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00112915)
+	variant   193/  353 = a(476,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:22.657402068 +0800
++++ exp	2016-01-31 11:05:22.657402068 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17062)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00142288)
+	variant   194/  353 = a(476,549)      (12 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/src/grep: x: Inappropriate ioctl for device
+--- out	2016-01-31 11:05:23.841402099 +0800
++++ exp	2016-01-31 11:05:23.841402099 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17536)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00315118)
+	variant   195/  353 = a(476,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:25.037402130 +0800
++++ exp	2016-01-31 11:05:25.037402130 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18288)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00120378)
+	variant   196/  353 = a(476,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:26.181402160 +0800
++++ exp	2016-01-31 11:05:26.181402160 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.13835)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000908136)
+	variant   197/  353 = a(476,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:27.325402190 +0800
++++ exp	2016-01-31 11:05:27.325402190 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.13557)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000916958)
+	variant   198/  353 = a(476,545)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:28.517402222 +0800
++++ exp	2016-01-31 11:05:28.517402222 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.1831)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000793219)
+	variant   199/  353 = a(476,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:29.669402252 +0800
++++ exp	2016-01-31 11:05:29.669402252 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14827)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.001513)
+	variant   200/  353 = a(476,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:30.849402283 +0800
++++ exp	2016-01-31 11:05:30.849402283 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17058)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000941038)
+	variant   201/  353 = a(476,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:32.077402316 +0800
++++ exp	2016-01-31 11:05:32.073402315 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.22094)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00198889)
+	variant   202/  353 = a(476,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:33.229402346 +0800
++++ exp	2016-01-31 11:05:33.229402346 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14198)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00198603)
+	variant   203/  353 = a(476,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:34.377402376 +0800
++++ exp	2016-01-31 11:05:34.377402376 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.13982)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000710964)
+	variant   204/  353 = a(476,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:35.557402407 +0800
++++ exp	2016-01-31 11:05:35.557402407 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.172)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00108504)
+	variant   205/  353 = a(476,476)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:36.781402439 +0800
++++ exp	2016-01-31 11:05:36.781402439 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.21659)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000838041)
+	variant   206/  353 = a(474,550)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:37.985402471 +0800
++++ exp	2016-01-31 11:05:37.985402471 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.20042)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000823021)
+	variant   207/  353 = a(474,549)      (12 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/src/grep: x: Inappropriate ioctl for device
+--- out	2016-01-31 11:05:39.157402502 +0800
++++ exp	2016-01-31 11:05:39.157402502 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.16619)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00132513)
+	variant   208/  353 = a(474,548)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:40.369402534 +0800
++++ exp	2016-01-31 11:05:40.369402534 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.20664)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0014801)
+	variant   209/  353 = a(474,547)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:41.653402568 +0800
++++ exp	2016-01-31 11:05:41.653402568 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.27444)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00078702)
+	variant   210/  353 = a(474,546)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:42.917402601 +0800
++++ exp	2016-01-31 11:05:42.917402601 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.25004)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000674009)
+	variant   211/  353 = a(474,545)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:44.081402632 +0800
++++ exp	2016-01-31 11:05:44.081402632 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.15653)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000885963)
+	variant   212/  353 = a(474,544)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:45.229402662 +0800
++++ exp	2016-01-31 11:05:45.229402662 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.14304)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000717163)
+	variant   213/  353 = a(474,534)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:46.365402692 +0800
++++ exp	2016-01-31 11:05:46.365402692 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.131)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00233412)
+	variant   214/  353 = a(474,523)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:47.605402724 +0800
++++ exp	2016-01-31 11:05:47.605402724 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.22965)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000623226)
+	variant   215/  353 = a(474,522)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:48.805402756 +0800
++++ exp	2016-01-31 11:05:48.805402756 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19051)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000712156)
+	variant   216/  353 = a(474,483)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:49.985402787 +0800
++++ exp	2016-01-31 11:05:49.985402787 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.17494)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000574112)
+	variant   217/  353 = a(474,481)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:51.185402819 +0800
++++ exp	2016-01-31 11:05:51.185402819 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19142)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000680923)
+	variant   218/  353 = a(474,476)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:52.381402850 +0800
++++ exp	2016-01-31 11:05:52.381402850 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.18731)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000645876)
+	variant   219/  353 = a(466,483)      (12 tests, cond 0)
+		n1	/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/000218/lib/savedir.c  a(466,483)  fails to compile
+ false (test_time = 0.356318)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000672102)
+	variant   220/  353 = a(466,481)      (12 tests, cond 0)
+		n1	/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/000219/lib/savedir.c  a(466,481)  fails to compile
+ false (test_time = 0.352875)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00058198)
+	variant   221/  353 = a(466,476)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:54.305402901 +0800
++++ exp	2016-01-31 11:05:54.305402901 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19264)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000576019)
+	variant   222/  353 = a(466,466)      (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 11:05:55.505402932 +0800
++++ exp	2016-01-31 11:05:55.505402932 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.19796)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00106096)
+	variant   223/  353 = a(466,465)      (12 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+PASS:0
+ true (test_time = 1.15854)
+		p1id:1
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=backref.sh
+PASS:1
+ true (test_time = 0.211747)
+		p2id:6
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=dfaexec-multibyte
+PASS:6
+ true (test_time = 0.230105)
+		p3id:7
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=empty.sh
+PASS:7
+ true (test_time = 0.183484)
+		p4id:8
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=ere.sh
+PASS:8
+ true (test_time = 0.501617)
+		p5id:9
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=fedora
+PASS:9
+ true (test_time = 0.233824)
+		p6id:10
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=file.sh
+PASS:10
+ true (test_time = 0.204338)
+		p7id:13
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=help-version
+PASS:13
+ true (test_time = 0.443463)
+		p8id:14
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=khadafy.sh
+PASS:14
+ true (test_time = 0.179324)
+		p9id:15
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=max-count-vs-context
+PASS:15
+ true (test_time = 0.197557)
+		p10id:16
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=options.sh
+PASS:16
+ true (test_time = 0.17592)
+		p11id:17
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=pcre.sh
+PASS:17
+ true (test_time = 0.168072)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: a(466,465)
+Repair Name: a(466,465) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454209559.430275
+
+Variant Test Case Queries: 234
+"Test Suite Evaluations": 19.5
+
+Compile Failures: 2
+Wall-Clock Seconds Elapsed: 334.614
+  Activity Name                     Count Seconds = Percent of Total Time
+  progeq partition                     23   0.242 = 0.0734616%
+  find_best_edit                      223   0.695 = 0.210643%
+  append_sources                       26   0.971 = 0.294216%
+  delete_sources                       26   1.349 = 0.408837%
+  test                                244  82.704 = 25.0559%
+  compile                             224 244.117 = 73.957%
+  TOTAL                                   330.080 = 98.6422% (avg CPU usage)

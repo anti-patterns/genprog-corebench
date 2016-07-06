@@ -1,0 +1,835 @@
+WARNING: the argument --multi-file is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --suffix-extension is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --mutp is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 11
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Sun Jan 31 04:26:59 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat: /etc/redhat-release: No such file or directory
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp275705.c /tmp/tmpcebe34.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: lib/savedir.c: parsing
+cilRep: lib/savedir.c: parsed (0.0704069 MB)
+cilRep: computing liveness
+Bug: BF(Liveness): stmtStartData is not initialized for -1: fail: 
+#line 154 "savedir.c"
+free((void *)name_space);
+#line 155
+name_space = (char *)((void *)0);
+Liveness failed on function:
+ char *savedir(char const   *dir , off_t name_size ,
+               struct exclude *included_patterns ,
+               struct exclude *excluded_patterns ,
+               struct exclude *excluded_directory_patterns ) 
+{ DIR *dirp ;
+  struct dirent *dp ;
+  char *name_space ;
+  char *namep ;
+  void *tmp ;
+  size_t namlen ;
+  size_t tmp___0 ;
+  size_t size_needed ;
+  _Bool tmp___1 ;
+  _Bool tmp___2 ;
+  int tmp___3 ;
+  _Bool tmp___4 ;
+  int tmp___5 ;
+  char *new_name_space ;
+  void *tmp___6 ;
+  int tmp___7 ;
+
+  {
+   545: /* CIL Label */ 
+#line 84
+  dirp = opendir(dir);
+   546: /* CIL Label */ 
+#line 85
+  if ((unsigned long )dirp == (unsigned long )((void *)0)) {
+#line 86
+    return ((char *)((void *)0));
+  } else {
+
+  }
+   547: /* CIL Label */ 
+#line 90
+  if (name_size <= 0L) {
+#line 91
+    name_size = 1L;
+  } else {
+
+  }
+   548: /* CIL Label */ 
+#line 93
+  tmp = malloc((unsigned long )name_size);
+   549: /* CIL Label */ 
+#line 93
+  name_space = (char *)tmp;
+   550: /* CIL Label */ 
+#line 94
+  if ((unsigned long )name_space == (unsigned long )((void *)0)) {
+#line 96
+    closedir(dirp);
+#line 97
+    return ((char *)((void *)0));
+  } else {
+
+  }
+   551: /* CIL Label */ 
+#line 99
+  namep = name_space;
+   552: /* CIL Label */ 
+#line 101
+  while (1) {
+#line 101
+    dp = readdir(dirp);
+#line 101
+    if (! ((unsigned long )dp != (unsigned long )((void *)0))) {
+#line 101
+      break;
+    } else {
+
+    }
+#line 104
+    if ((int )dp->d_name[0] != 46) {
+      goto _L___1;
+    } else {
+#line 104
+      if ((int )dp->d_name[1] != 0) {
+#line 104
+        if ((int )dp->d_name[1] != 46) {
+          goto _L___1;
+        } else {
+#line 104
+          if ((int )dp->d_name[2] != 0) {
+            _L___1: 
+#line 108
+            tmp___0 = strlen((char const   *)(dp->d_name));
+#line 108
+            namlen = tmp___0;
+#line 109
+            size_needed = ((unsigned long )(namep - name_space) + namlen) + 2UL;
+#line 111
+            if (included_patterns) {
+              goto _L;
+            } else {
+#line 111
+              if (excluded_patterns) {
+                _L: 
+#line 111
+                tmp___3 = isdir1(dir, (char const   *)(dp->d_name));
+#line 111
+                if (! tmp___3) {
+#line 114
+                  if (included_patterns) {
+#line 114
+                    tmp___1 = excluded_file_name((struct exclude  const  *)included_patterns,
+                                                 (char const   *)(dp->d_name));
+#line 114
+                    if (! tmp___1) {
+#line 116
+                      continue;
+                    } else {
+
+                    }
+                  } else {
+
+                  }
+#line 117
+                  if (excluded_patterns) {
+#line 117
+                    tmp___2 = excluded_file_name((struct exclude  const  *)excluded_patterns,
+                                                 (char const   *)(dp->d_name));
+#line 117
+                    if (tmp___2) {
+#line 119
+                      continue;
+                    } else {
+
+                    }
+                  } else {
+
+                  }
+                } else {
+
+                }
+              } else {
+
+              }
+            }
+#line 122
+            if (excluded_directory_patterns) {
+#line 122
+              tmp___5 = isdir1(dir, (char const   *)(dp->d_name));
+#line 122
+              if (tmp___5) {
+#line 125
+                if (excluded_directory_patterns) {
+#line 125
+                  tmp___4 = excluded_file_name((struct exclude  const  *)excluded_directory_patterns,
+                                               (char const   *)(dp->d_name));
+#line 125
+                  if (tmp___4) {
+#line 127
+                    continue;
+                  } else {
+
+                  }
+                } else {
+
+                }
+              } else {
+
+              }
+            } else {
+
+            }
+#line 130
+            if (size_needed > (unsigned long )name_size) {
+#line 134
+              while (size_needed > (unsigned long )name_size) {
+#line 135
+                name_size += 1024L;
+              }
+#line 137
+              tmp___6 = realloc((void *)name_space, (unsigned long )name_size);
+#line 137
+              new_name_space = (char *)tmp___6;
+#line 138
+              if ((unsigned long )new_name_space == (unsigned long )((void *)0)) {
+#line 140
+                closedir(dirp);
+                goto fail;
+              } else {
+
+              }
+#line 143
+              namep = new_name_space + (namep - name_space);
+#line 144
+              name_space = new_name_space;
+            } else {
+
+            }
+#line 146
+            strcpy((char */* __restrict  */)namep,
+                   (char const   */* __restrict  */)(dp->d_name));
+#line 147
+            namep += namlen + 1UL;
+          } else {
+
+          }
+        }
+      } else {
+
+      }
+    }
+  }
+   553: /* CIL Label */ 
+#line 150
+  *namep = (char )'\000';
+   554: /* CIL Label */ 
+#line 151
+  tmp___7 = closedir(dirp);
+   555: /* CIL Label */ 
+#line 151
+  if (tmp___7) {
+    fail: 
+#line 154
+    free((void *)name_space);
+#line 155
+    name_space = (char *)((void *)0);
+  } else {
+
+  }
+   556: /* CIL Label */ 
+#line 157
+  if (path) {
+#line 159
+    free((void *)path);
+#line 160
+    path = (char *)((void *)0);
+#line 161
+    pathlen = 0UL;
+  } else {
+
+  }
+   557: /* CIL Label */ 
+#line 163
+  return (name_space);
+}
+}
+
+cilRep: liveness failure for savedir: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 557
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/string3.h:75
+	cannot instrument for coverage (would be recursive)
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+Segmentation fault
+--- out	2016-01-31 04:27:00.764772863 +0800
++++ exp	2016-01-31 04:27:00.764772863 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+coverage positive:
+	test: 1
+id:1
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=backref.sh
+PASS:1
+	test: 2
+id:6
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=dfaexec-multibyte
+PASS:6
+	test: 3
+id:7
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=empty.sh
+PASS:7
+	test: 4
+id:8
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=ere.sh
+PASS:8
+	test: 5
+id:9
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=fedora
+PASS:9
+	test: 6
+id:10
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=file.sh
+PASS:10
+	test: 7
+id:13
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=help-version
+PASS:13
+	test: 8
+id:14
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=khadafy.sh
+PASS:14
+	test: 9
+id:15
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=max-count-vs-context
+PASS:15
+	test: 10
+id:16
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=options.sh
+PASS:16
+	test: 11
+id:17
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=pcre.sh
+PASS:17
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 557
+cilRep: stmts in weighted_path = 27
+cilRep: total weight = 27
+cilRep: stmts in weighted_path with weight >= 1.0 = 27
+cilRep: lib/savedir.c (code bank/base file; atoms [1,557])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454185622.970460)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 451
+cilRep: fix-space quotient by string: 27 -> 24
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: __builtin_object_size
+progeq: WARNING: cannot resolve call: __read_chk
+progeq: WARNING: cannot resolve call: __read_chk_warn
+progeq: WARNING: cannot resolve call: __read_alias
+progeq: WARNING: cannot resolve call: __pread_chk
+progeq: WARNING: cannot resolve call: __pread_chk_warn
+progeq: WARNING: cannot resolve call: __pread_alias
+progeq: WARNING: cannot resolve call: __pread64_chk
+progeq: WARNING: cannot resolve call: __pread64_chk_warn
+progeq: WARNING: cannot resolve call: __pread64_alias
+progeq: WARNING: cannot resolve call: __readlink_chk
+progeq: WARNING: cannot resolve call: __readlink_chk_warn
+progeq: WARNING: cannot resolve call: __readlink_alias
+progeq: WARNING: cannot resolve call: __readlinkat_chk
+progeq: WARNING: cannot resolve call: __readlinkat_chk_warn
+progeq: WARNING: cannot resolve call: __readlinkat_alias
+progeq: WARNING: cannot resolve call: __getcwd_chk
+progeq: WARNING: cannot resolve call: __getcwd_chk_warn
+progeq: WARNING: cannot resolve call: __getcwd_alias
+progeq: WARNING: cannot resolve call: __getwd_chk
+progeq: WARNING: cannot resolve call: __getwd_warn
+progeq: WARNING: cannot resolve call: __confstr_chk
+progeq: WARNING: cannot resolve call: __confstr_chk_warn
+progeq: WARNING: cannot resolve call: __confstr_alias
+progeq: WARNING: cannot resolve call: __getgroups_chk
+progeq: WARNING: cannot resolve call: __getgroups_chk_warn
+progeq: WARNING: cannot resolve call: __getgroups_alias
+progeq: WARNING: cannot resolve call: __ttyname_r_chk
+progeq: WARNING: cannot resolve call: __ttyname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ttyname_r_alias
+progeq: WARNING: cannot resolve call: __getlogin_r_chk
+progeq: WARNING: cannot resolve call: __getlogin_r_chk_warn
+progeq: WARNING: cannot resolve call: __getlogin_r_alias
+progeq: WARNING: cannot resolve call: __gethostname_chk
+progeq: WARNING: cannot resolve call: __gethostname_chk_warn
+progeq: WARNING: cannot resolve call: __gethostname_alias
+progeq: WARNING: cannot resolve call: __getdomainname_chk
+progeq: WARNING: cannot resolve call: __getdomainname_chk_warn
+progeq: WARNING: cannot resolve call: __getdomainname_alias
+progeq: WARNING: cannot resolve call: *__compar
+progeq: WARNING: cannot resolve call: __realpath_chk
+progeq: WARNING: cannot resolve call: __realpath_alias
+progeq: WARNING: cannot resolve call: __ptsname_r_chk
+progeq: WARNING: cannot resolve call: __ptsname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ptsname_r_alias
+progeq: WARNING: cannot resolve call: __wctomb_chk
+progeq: WARNING: cannot resolve call: __wctomb_alias
+progeq: WARNING: cannot resolve call: __mbstowcs_chk
+progeq: WARNING: cannot resolve call: __mbstowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbstowcs_alias
+progeq: WARNING: cannot resolve call: __wcstombs_chk
+progeq: WARNING: cannot resolve call: __wcstombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcstombs_alias
+progeq: WARNING: cannot resolve call: __builtin_strchr
+progeq: WARNING: cannot resolve call: __builtin___memcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memmove_chk
+progeq: WARNING: cannot resolve call: __builtin___mempcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memset_chk
+progeq: WARNING: cannot resolve call: __builtin___strcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___stpcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___strncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_alias
+progeq: WARNING: cannot resolve call: __builtin___strcat_chk
+progeq: WARNING: cannot resolve call: __builtin___strncat_chk
+progeq: WARNING: cannot resolve call: xrealloc
+progeq: WARNING: cannot resolve call: isdir
+progeq: WARNING: cannot resolve call: opendir
+progeq: WARNING: cannot resolve call: closedir
+progeq: WARNING: cannot resolve call: readdir
+progeq: WARNING: cannot resolve call: excluded_file_name
+progeq: WARNING: cannot resolve call: realloc
+progeq: WARNING: cannot resolve call: free
+search: fix space reduced (time_taken = 0.251673)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 27 deletes
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:24:after24
+REMOVED?true
+CARDINAL?before:24:after24
+REMOVED?true
+CARDINAL?before:24:after24
+REMOVED?true
+CARDINAL?before:24:after24
+REMOVED?true
+CARDINAL?before:24:after24
+REMOVED?true
+CARDINAL?before:24:after24
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 431 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 275 appends
+search: ww_adaptive: 706 possible edits
+search: ready to start (time_taken = 0.925989)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.00846195)
+	variant     1/  706 = d(552)          (12 tests, cond 0)
+		n1--- out	2016-01-31 04:27:05.120772978 +0800
++++ exp	2016-01-31 04:27:05.120772978 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 0.984543)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00935602)
+	variant     2/  706 = d(551)          (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 04:27:06.100773004 +0800
++++ exp	2016-01-31 04:27:06.100773004 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 0.964384)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00864506)
+	variant     3/  706 = d(550)          (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 04:27:07.044773029 +0800
++++ exp	2016-01-31 04:27:07.044773029 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 0.929804)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0126021)
+	variant     4/  706 = d(549)          (12 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/src/grep: x: Inappropriate ioctl for device
+--- out	2016-01-31 04:27:08.068773056 +0800
++++ exp	2016-01-31 04:27:08.068773056 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.00609)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00994897)
+	variant     5/  706 = d(548)          (12 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/src/grep: x: Inappropriate ioctl for device
+--- out	2016-01-31 04:27:09.060773082 +0800
++++ exp	2016-01-31 04:27:09.060773082 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 0.975737)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00901294)
+	variant     6/  706 = d(547)          (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 04:27:09.992773106 +0800
++++ exp	2016-01-31 04:27:09.992773106 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 0.919753)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00666213)
+	variant     7/  706 = d(546)          (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 04:27:10.952773132 +0800
++++ exp	2016-01-31 04:27:10.952773132 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 0.95359)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00843096)
+	variant     8/  706 = d(545)          (12 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/src/grep: x: Inappropriate ioctl for device
+--- out	2016-01-31 04:27:11.996773159 +0800
++++ exp	2016-01-31 04:27:11.996773159 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.02444)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00860095)
+	variant     9/  706 = d(537)          (12 tests, cond 0)
+		n1--- out	2016-01-31 04:27:12.956773184 +0800
++++ exp	2016-01-31 04:27:12.956773184 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 0.950288)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00732994)
+	variant    10/  706 = d(536)          (12 tests, cond 0)
+		n1Segmentation fault
+--- out	2016-01-31 04:27:13.984773211 +0800
++++ exp	2016-01-31 04:27:13.984773211 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 1.01362)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00718212)
+	variant    11/  706 = d(535)          (12 tests, cond 0)
+		n1--- out	2016-01-31 04:27:14.996773238 +0800
++++ exp	2016-01-31 04:27:14.992773238 +0800
+@@ -0,0 +1,2 @@
++x/1.e:xaSFasdkl
++x/2.e:xaSFasdkl
+/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+FAILED:0
+ false (test_time = 0.997707)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00808001)
+	variant    12/  706 = d(525)          (12 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+id:0
+PASS:0
+ true (test_time = 1.15698)
+		p1id:1
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=backref.sh
+PASS:1
+ true (test_time = 0.173745)
+		p2id:6
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=dfaexec-multibyte
+PASS:6
+ true (test_time = 0.180045)
+		p3id:7
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=empty.sh
+PASS:7
+ true (test_time = 0.169383)
+		p4id:8
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=ere.sh
+PASS:8
+ true (test_time = 0.429119)
+		p5id:9
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=fedora
+PASS:9
+ true (test_time = 0.194075)
+		p6id:10
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=file.sh
+PASS:10
+ true (test_time = 0.148439)
+		p7id:13
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=help-version
+PASS:13
+ true (test_time = 0.335035)
+		p8id:14
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=khadafy.sh
+PASS:14
+ true (test_time = 0.13813)
+		p9id:15
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=max-count-vs-context
+PASS:15
+ true (test_time = 0.160601)
+		p10id:16
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=options.sh
+PASS:16
+ true (test_time = 0.142393)
+		p11id:17
+in directory:/home/ubuntu/corebench/grep/grep-case-401d8194-54d55bba/tests
+calling:make check-TESTS TESTS=pcre.sh
+PASS:17
+ true (test_time = 0.140076)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: d(525)
+Repair Name: d(525) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454185638.397072
+
+Variant Test Case Queries: 23
+"Test Suite Evaluations": 1.91667
+
+Compile Failures: 0
+Wall-Clock Seconds Elapsed: 18.9056
+  Activity Name                     Count Seconds = Percent of Total Time
+  find_best_edit                       12   0.104 = 0.566413%
+  progeq partition                     24   0.173 = 0.94062%
+  delete_sources                       27   0.258 = 1.40226%
+  append_sources                       27   0.666 = 3.62012%
+  test                                 35   5.151 = 27.9993%
+  compile                              13  12.045 = 65.4712%
+  TOTAL                                    18.398 = 97.2795% (avg CPU usage)
