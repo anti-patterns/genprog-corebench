@@ -1,0 +1,4329 @@
+--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete true
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 78
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Mon Feb  1 15:13:17 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmpbb12b5.c /tmp/tmp60d2b2.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: find/parser.c: parsing
+cilRep: find/parser.c: parsed (0.267643 MB)
+cilRep: computing liveness
+cilRep: liveness failure for safe_atoi: Errormsg.Error
+cilRep: liveness failure for insert_fprintf: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 2390
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/stdio2.h:94
+	cannot instrument for coverage (would be recursive)
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/string3.h:75
+	cannot instrument for coverage (would be recursive)
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+coverage positive:
+	test: 1
+	test: 2
+	test: 3
+	test: 4
+	test: 5
+	test: 6
+	test: 7
+	test: 8
+	test: 9
+	test: 10
+	test: 11
+	test: 12
+	test: 13
+	test: 14
+	test: 15
+	test: 16
+	test: 17
+	test: 18
+	test: 19
+	test: 20
+	test: 21
+	test: 22
+	test: 23
+	test: 24
+	test: 25
+	test: 26
+	test: 27
+	test: 28
+	test: 29
+	test: 30
+	test: 31
+	test: 32
+	test: 33
+	test: 34
+	test: 35
+	test: 36
+	test: 37
+	test: 38
+	test: 39
+	test: 40
+	test: 41
+	test: 42
+	test: 43
+	test: 44
+	test: 45
+	test: 46
+	test: 47
+	test: 48
+	test: 49
+	test: 50
+	test: 51
+	test: 52
+	test: 53
+	test: 54
+	test: 55
+	test: 56
+	test: 57
+	test: 58
+	test: 59
+	test: 60
+	test: 61
+	test: 62
+	test: 63
+	test: 64
+	test: 65
+	test: 66
+	test: 67
+	test: 68
+	test: 69
+	test: 70
+	test: 71
+	test: 72
+	test: 73
+	test: 74
+	test: 75
+	test: 76
+	test: 77
+	test: 78
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 2390
+cilRep: stmts in weighted_path = 126
+cilRep: total weight = 126
+cilRep: stmts in weighted_path with weight >= 1.0 = 126
+cilRep: find/parser.c (code bank/base file; atoms [1,2390])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454310818.237488)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 695
+cilRep: fix-space quotient by string: 126 -> 102
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: __xstat
+progeq: WARNING: cannot resolve call: __lxstat
+progeq: WARNING: cannot resolve call: __fxstat
+progeq: WARNING: cannot resolve call: __fxstatat
+progeq: WARNING: cannot resolve call: __xmknod
+progeq: WARNING: cannot resolve call: __xmknodat
+progeq: WARNING: cannot resolve call: __xstat64
+progeq: WARNING: cannot resolve call: __lxstat64
+progeq: WARNING: cannot resolve call: __fxstat64
+progeq: WARNING: cannot resolve call: __fxstatat64
+progeq: WARNING: cannot resolve call: __builtin_expect
+progeq: WARNING: cannot resolve call: __uflow
+progeq: WARNING: cannot resolve call: __overflow
+progeq: WARNING: cannot resolve call: __getdelim
+progeq: WARNING: cannot resolve call: __builtin_object_size
+progeq: WARNING: cannot resolve call: __builtin___sprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___snprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsnprintf_chk
+progeq: WARNING: cannot resolve call: __fprintf_chk
+progeq: WARNING: cannot resolve call: __printf_chk
+progeq: WARNING: cannot resolve call: __vfprintf_chk
+progeq: WARNING: cannot resolve call: __dprintf_chk
+progeq: WARNING: cannot resolve call: __vdprintf_chk
+progeq: WARNING: cannot resolve call: __asprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_printf_chk
+progeq: WARNING: cannot resolve call: __vasprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_vprintf_chk
+progeq: WARNING: cannot resolve call: __fgets_chk
+progeq: WARNING: cannot resolve call: __fgets_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_alias
+progeq: WARNING: cannot resolve call: __fread_chk
+progeq: WARNING: cannot resolve call: __fread_chk_warn
+progeq: WARNING: cannot resolve call: __fread_alias
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_unlocked_alias
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fread_unlocked_alias
+progeq: WARNING: cannot resolve call: __builtin_strchr
+progeq: WARNING: cannot resolve call: __builtin___memcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memmove_chk
+progeq: WARNING: cannot resolve call: __builtin___mempcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memset_chk
+progeq: WARNING: cannot resolve call: __builtin___strcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___stpcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___strncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_alias
+progeq: WARNING: cannot resolve call: __builtin___strcat_chk
+progeq: WARNING: cannot resolve call: __builtin___strncat_chk
+progeq: WARNING: cannot resolve call: *__compar
+progeq: WARNING: cannot resolve call: __realpath_chk
+progeq: WARNING: cannot resolve call: __realpath_alias
+progeq: WARNING: cannot resolve call: __ptsname_r_chk
+progeq: WARNING: cannot resolve call: __ptsname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ptsname_r_alias
+progeq: WARNING: cannot resolve call: __wctomb_chk
+progeq: WARNING: cannot resolve call: __wctomb_alias
+progeq: WARNING: cannot resolve call: __mbstowcs_chk
+progeq: WARNING: cannot resolve call: __mbstowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbstowcs_alias
+progeq: WARNING: cannot resolve call: __wcstombs_chk
+progeq: WARNING: cannot resolve call: __wcstombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcstombs_alias
+progeq: WARNING: cannot resolve call: __read_chk
+progeq: WARNING: cannot resolve call: __read_chk_warn
+progeq: WARNING: cannot resolve call: __read_alias
+progeq: WARNING: cannot resolve call: __pread_chk
+progeq: WARNING: cannot resolve call: __pread_chk_warn
+progeq: WARNING: cannot resolve call: __pread_alias
+progeq: WARNING: cannot resolve call: __pread64_chk
+progeq: WARNING: cannot resolve call: __pread64_chk_warn
+progeq: WARNING: cannot resolve call: __pread64_alias
+progeq: WARNING: cannot resolve call: __readlink_chk
+progeq: WARNING: cannot resolve call: __readlink_chk_warn
+progeq: WARNING: cannot resolve call: __readlink_alias
+progeq: WARNING: cannot resolve call: __readlinkat_chk
+progeq: WARNING: cannot resolve call: __readlinkat_chk_warn
+progeq: WARNING: cannot resolve call: __readlinkat_alias
+progeq: WARNING: cannot resolve call: __getcwd_chk
+progeq: WARNING: cannot resolve call: __getcwd_chk_warn
+progeq: WARNING: cannot resolve call: __getcwd_alias
+progeq: WARNING: cannot resolve call: __getwd_chk
+progeq: WARNING: cannot resolve call: __getwd_warn
+progeq: WARNING: cannot resolve call: __confstr_chk
+progeq: WARNING: cannot resolve call: __confstr_chk_warn
+progeq: WARNING: cannot resolve call: __confstr_alias
+progeq: WARNING: cannot resolve call: __getgroups_chk
+progeq: WARNING: cannot resolve call: __getgroups_chk_warn
+progeq: WARNING: cannot resolve call: __getgroups_alias
+progeq: WARNING: cannot resolve call: __ttyname_r_chk
+progeq: WARNING: cannot resolve call: __ttyname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ttyname_r_alias
+progeq: WARNING: cannot resolve call: __getlogin_r_chk
+progeq: WARNING: cannot resolve call: __getlogin_r_chk_warn
+progeq: WARNING: cannot resolve call: __getlogin_r_alias
+progeq: WARNING: cannot resolve call: __gethostname_chk
+progeq: WARNING: cannot resolve call: __gethostname_chk_warn
+progeq: WARNING: cannot resolve call: __gethostname_alias
+progeq: WARNING: cannot resolve call: __getdomainname_chk
+progeq: WARNING: cannot resolve call: __getdomainname_chk_warn
+progeq: WARNING: cannot resolve call: __getdomainname_alias
+progeq: WARNING: cannot resolve call: __strtol_internal
+progeq: WARNING: cannot resolve call: __strtoul_internal
+progeq: WARNING: cannot resolve call: __wcstol_internal
+progeq: WARNING: cannot resolve call: __wcstoul_internal
+progeq: WARNING: cannot resolve call: __ctype_tolower_loc
+progeq: WARNING: cannot resolve call: __ctype_toupper_loc
+progeq: WARNING: cannot resolve call: __builtin_va_arg_pack_len
+progeq: WARNING: cannot resolve call: __open_too_many_args
+progeq: WARNING: cannot resolve call: __open_2
+progeq: WARNING: cannot resolve call: __open_alias
+progeq: WARNING: cannot resolve call: __open64_too_many_args
+progeq: WARNING: cannot resolve call: __open64_2
+progeq: WARNING: cannot resolve call: __open64_alias
+progeq: WARNING: cannot resolve call: __openat_too_many_args
+progeq: WARNING: cannot resolve call: __openat_2
+progeq: WARNING: cannot resolve call: __openat_alias
+progeq: WARNING: cannot resolve call: __openat64_too_many_args
+progeq: WARNING: cannot resolve call: __openat64_2
+progeq: WARNING: cannot resolve call: __openat64_alias
+progeq: WARNING: cannot resolve call: dcgettext
+progeq: WARNING: cannot resolve call: error
+progeq: WARNING: cannot resolve call: __builtin_strlen
+progeq: WARNING: cannot resolve call: __builtin_strcmp
+progeq: WARNING: cannot resolve call: *(options.xstat)
+progeq: WARNING: cannot resolve call: fatal_file_error
+progeq: WARNING: cannot resolve call: get_new_pred
+progeq: WARNING: cannot resolve call: set_stat_placeholders
+progeq: WARNING: cannot resolve call: insert_primary
+progeq: WARNING: cannot resolve call: get_start_dirfd
+progeq: WARNING: cannot resolve call: insert_primary_withpred
+progeq: WARNING: cannot resolve call: next_element
+progeq: WARNING: cannot resolve call: safely_quote_err_filename
+progeq: WARNING: cannot resolve call: mbsstr
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: bc_init_controlinfo
+progeq: WARNING: cannot resolve call: bc_use_sensible_arg_max
+progeq: WARNING: cannot resolve call: bc_init_state
+progeq: WARNING: cannot resolve call: bc_push_arg
+progeq: WARNING: cannot resolve call: xmalloc
+progeq: WARNING: cannot resolve call: clone_quoting_options
+progeq: WARNING: cannot resolve call: fopen_safer
+progeq: WARNING: cannot resolve call: fileno
+progeq: WARNING: cannot resolve call: isatty
+progeq: WARNING: cannot resolve call: filesystem_type
+progeq: WARNING: cannot resolve call: xstrtoumax
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: quotearg_n_style
+progeq: WARNING: cannot resolve call: getgrnam
+progeq: WARNING: cannot resolve call: endgrent
+progeq: WARNING: cannot resolve call: __builtin_strspn
+progeq: WARNING: cannot resolve call: usage
+progeq: WARNING: cannot resolve call: __builtin_strpbrk
+progeq: WARNING: cannot resolve call: fnmatch
+progeq: WARNING: cannot resolve call: rpl_re_set_syntax
+progeq: WARNING: cannot resolve call: rpl_re_compile_pattern
+progeq: WARNING: cannot resolve call: xstrtod
+progeq: WARNING: cannot resolve call: get_new_pred_chk_op
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: get_date
+progeq: WARNING: cannot resolve call: get_regex_type
+progeq: WARNING: cannot resolve call: close
+progeq: WARNING: cannot resolve call: getpwnam
+progeq: WARNING: cannot resolve call: endpwent
+progeq: WARNING: cannot resolve call: is_fts_enabled
+search: fix space reduced (time_taken = 6.47586)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 126 deletes
+CARDINAL?before:2:after0
+REMOVED?false
+CARDINAL?before:2:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:5:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:5:after0
+REMOVED?false
+CARDINAL?before:5:after0
+REMOVED?false
+CARDINAL?before:5:after0
+REMOVED?false
+CARDINAL?before:5:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:5:after0
+REMOVED?false
+CARDINAL?before:5:after0
+REMOVED?false
+CARDINAL?before:5:after0
+REMOVED?false
+CARDINAL?before:5:after0
+REMOVED?false
+CARDINAL?before:5:after0
+REMOVED?false
+CARDINAL?before:5:after0
+REMOVED?false
+CARDINAL?before:5:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:7:after0
+REMOVED?false
+CARDINAL?before:7:after0
+REMOVED?false
+CARDINAL?before:7:after0
+REMOVED?false
+CARDINAL?before:7:after0
+REMOVED?false
+CARDINAL?before:7:after0
+REMOVED?false
+CARDINAL?before:7:after0
+REMOVED?false
+CARDINAL?before:7:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:1:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+CARDINAL?before:1:after0
+REMOVED?false
+CARDINAL?before:102:after0
+REMOVED?false
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 0 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 909 appends
+search: ww_adaptive: 909 possible edits
+search: ready to start (time_taken = 4.14233)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.0437222)
+	variant     1/  909 = a(2389,2389)    (79 tests, cond 0)
+		n1 false (test_time = 2.0841)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0434849)
+	variant     2/  909 = a(2389,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.97703)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.057523)
+	variant     3/  909 = a(2389,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.46397)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0431938)
+	variant     4/  909 = a(2389,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.20844)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0430861)
+	variant     5/  909 = a(2389,778)     (79 tests, cond 0)
+		n1 false (test_time = 3.08009)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0459309)
+	variant     6/  909 = a(2387,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.50437)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.069838)
+	variant     7/  909 = a(2387,2387)    (79 tests, cond 0)
+		n1 false (test_time = 2.63759)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0544128)
+	variant     8/  909 = a(2387,2384)    (79 tests, cond 0)
+		n1 false (test_time = 2.89099)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.078424)
+	variant     9/  909 = a(2387,2383)    (79 tests, cond 0)
+		n1 false (test_time = 2.46867)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0418539)
+	variant    10/  909 = a(2387,2379)    (79 tests, cond 0)
+		n1 false (test_time = 2.44902)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0530281)
+	variant    11/  909 = a(2387,2377)    (79 tests, cond 0)
+		n1 false (test_time = 3.24063)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0472891)
+	variant    12/  909 = a(2387,2376)    (79 tests, cond 0)
+		n1 false (test_time = 2.39506)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0730059)
+	variant    13/  909 = a(2387,2375)    (79 tests, cond 0)
+		n1 false (test_time = 2.72275)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.047194)
+	variant    14/  909 = a(2387,2368)    (79 tests, cond 0)
+		n1 false (test_time = 3.29802)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0491979)
+	variant    15/  909 = a(2387,2350)    (79 tests, cond 0)
+		n1 false (test_time = 2.30298)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0435369)
+	variant    16/  909 = a(2387,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.36779)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.069814)
+	variant    17/  909 = a(2387,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.55921)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0404949)
+	variant    18/  909 = a(2387,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.55398)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0443919)
+	variant    19/  909 = a(2386,2387)    (79 tests, cond 0)
+		n1 false (test_time = 2.31814)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046181)
+	variant    20/  909 = a(2386,2384)    (79 tests, cond 0)
+		n1 false (test_time = 2.79715)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0735619)
+	variant    21/  909 = a(2386,2383)    (79 tests, cond 0)
+		n1 false (test_time = 2.77679)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0566928)
+	variant    22/  909 = a(2386,2379)    (79 tests, cond 0)
+		n1 false (test_time = 2.35623)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0794718)
+	variant    23/  909 = a(2386,2377)    (79 tests, cond 0)
+		n1 false (test_time = 2.48984)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0661421)
+	variant    24/  909 = a(2386,2376)    (79 tests, cond 0)
+		n1 false (test_time = 2.31735)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0416329)
+	variant    25/  909 = a(2386,2375)    (79 tests, cond 0)
+		n1 false (test_time = 2.29672)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0654259)
+	variant    26/  909 = a(2386,2368)    (79 tests, cond 0)
+		n1 false (test_time = 2.54326)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0463879)
+	variant    27/  909 = a(2386,2350)    (79 tests, cond 0)
+		n1 false (test_time = 2.6718)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0428221)
+	variant    28/  909 = a(2385,2387)    (79 tests, cond 0)
+		n1 false (test_time = 2.36864)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0869281)
+	variant    29/  909 = a(2385,2384)    (79 tests, cond 0)
+		n1 false (test_time = 2.45578)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044497)
+	variant    30/  909 = a(2385,2383)    (79 tests, cond 0)
+		n1 false (test_time = 2.52922)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0756111)
+	variant    31/  909 = a(2385,2379)    (79 tests, cond 0)
+		n1 false (test_time = 2.58738)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0377288)
+	variant    32/  909 = a(2385,2377)    (79 tests, cond 0)
+		n1 false (test_time = 2.23577)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044209)
+	variant    33/  909 = a(2385,2376)    (79 tests, cond 0)
+		n1 false (test_time = 2.02023)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.066999)
+	variant    34/  909 = a(2385,2375)    (79 tests, cond 0)
+		n1 false (test_time = 2.79026)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.041867)
+	variant    35/  909 = a(2385,2368)    (79 tests, cond 0)
+		n1 false (test_time = 2.24732)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0572369)
+	variant    36/  909 = a(2385,2350)    (79 tests, cond 0)
+		n1 false (test_time = 2.13062)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.066823)
+	variant    37/  909 = a(2384,2387)    (79 tests, cond 0)
+		n1 false (test_time = 2.04717)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0446482)
+	variant    38/  909 = a(2384,2384)    (79 tests, cond 0)
+		n1 false (test_time = 2.74367)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.041172)
+	variant    39/  909 = a(2384,2383)    (79 tests, cond 0)
+		n1 false (test_time = 2.24139)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0693109)
+	variant    40/  909 = a(2384,2379)    (79 tests, cond 0)
+		n1 false (test_time = 2.33092)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0640399)
+	variant    41/  909 = a(2384,2377)    (79 tests, cond 0)
+		n1 false (test_time = 2.20297)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042062)
+	variant    42/  909 = a(2384,2376)    (79 tests, cond 0)
+		n1 false (test_time = 2.11554)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0385292)
+	variant    43/  909 = a(2384,2375)    (79 tests, cond 0)
+		n1 false (test_time = 2.16488)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0774348)
+	variant    44/  909 = a(2384,2368)    (79 tests, cond 0)
+		n1 false (test_time = 2.23477)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0480471)
+	variant    45/  909 = a(2384,2350)    (79 tests, cond 0)
+		n1 false (test_time = 2.15687)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0406311)
+	variant    46/  909 = a(2383,2387)    (79 tests, cond 0)
+		n1 false (test_time = 2.45858)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0424922)
+	variant    47/  909 = a(2383,2384)    (79 tests, cond 0)
+		n1 false (test_time = 2.02813)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040494)
+	variant    48/  909 = a(2383,2383)    (79 tests, cond 0)
+		n1 false (test_time = 2.25194)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0597291)
+	variant    49/  909 = a(2383,2379)    (79 tests, cond 0)
+		n1 false (test_time = 2.14864)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042119)
+	variant    50/  909 = a(2383,2377)    (79 tests, cond 0)
+		n1 false (test_time = 2.70498)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0430691)
+	variant    51/  909 = a(2383,2376)    (79 tests, cond 0)
+		n1 false (test_time = 2.55358)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0417001)
+	variant    52/  909 = a(2383,2375)    (79 tests, cond 0)
+		n1 false (test_time = 2.26379)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0707531)
+	variant    53/  909 = a(2383,2368)    (79 tests, cond 0)
+		n1 false (test_time = 2.28441)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0400848)
+	variant    54/  909 = a(2383,2350)    (79 tests, cond 0)
+		n1 false (test_time = 2.44232)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0689261)
+	variant    55/  909 = a(2379,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.23022)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0412741)
+	variant    56/  909 = a(2379,2387)    (79 tests, cond 0)
+		n1 false (test_time = 2.44494)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0383539)
+	variant    57/  909 = a(2379,2384)    (79 tests, cond 0)
+		n1 false (test_time = 2.17615)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0415359)
+	variant    58/  909 = a(2379,2383)    (79 tests, cond 0)
+		n1 false (test_time = 2.37982)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044714)
+	variant    59/  909 = a(2379,2379)    (79 tests, cond 0)
+		n1 false (test_time = 2.37816)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0459561)
+	variant    60/  909 = a(2379,2377)    (79 tests, cond 0)
+		n1 false (test_time = 2.25381)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0378978)
+	variant    61/  909 = a(2379,2376)    (79 tests, cond 0)
+		n1 false (test_time = 2.22633)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040879)
+	variant    62/  909 = a(2379,2375)    (79 tests, cond 0)
+		n1 false (test_time = 2.14252)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0439591)
+	variant    63/  909 = a(2379,2368)    (79 tests, cond 0)
+		n1 false (test_time = 2.28223)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0370951)
+	variant    64/  909 = a(2379,2350)    (79 tests, cond 0)
+		n1 false (test_time = 2.42614)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040463)
+	variant    65/  909 = a(2379,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.30051)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.048403)
+	variant    66/  909 = a(2379,815)     (79 tests, cond 0)
+		n1 false (test_time = 1.99151)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0428581)
+	variant    67/  909 = a(2379,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.27127)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0399551)
+	variant    68/  909 = a(2378,2387)    (79 tests, cond 0)
+		n1 false (test_time = 2.05799)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043546)
+	variant    69/  909 = a(2378,2384)    (79 tests, cond 0)
+		n1 false (test_time = 2.16561)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.065315)
+	variant    70/  909 = a(2378,2383)    (79 tests, cond 0)
+		n1 false (test_time = 2.32061)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0436091)
+	variant    71/  909 = a(2378,2379)    (79 tests, cond 0)
+		n1 false (test_time = 2.45154)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0406742)
+	variant    72/  909 = a(2378,2377)    (79 tests, cond 0)
+		n1 false (test_time = 2.03885)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0378771)
+	variant    73/  909 = a(2378,2376)    (79 tests, cond 0)
+		n1 false (test_time = 2.43145)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0376589)
+	variant    74/  909 = a(2378,2375)    (79 tests, cond 0)
+		n1 false (test_time = 2.38671)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0628169)
+	variant    75/  909 = a(2378,2368)    (79 tests, cond 0)
+		n1 false (test_time = 1.99791)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0448279)
+	variant    76/  909 = a(2378,2350)    (79 tests, cond 0)
+		n1 false (test_time = 2.50496)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0397179)
+	variant    77/  909 = a(2377,2388)    (79 tests, cond 0)
+		n1 false (test_time = 1.91134)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0388601)
+	variant    78/  909 = a(2377,2387)    (79 tests, cond 0)
+		n1 false (test_time = 2.06495)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038933)
+	variant    79/  909 = a(2377,2384)    (79 tests, cond 0)
+		n1 false (test_time = 2.07368)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0427551)
+	variant    80/  909 = a(2377,2383)    (79 tests, cond 0)
+		n1 false (test_time = 2.03169)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0655291)
+	variant    81/  909 = a(2377,2379)    (79 tests, cond 0)
+		n1 false (test_time = 2.12474)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0478311)
+	variant    82/  909 = a(2377,2377)    (79 tests, cond 0)
+		n1 false (test_time = 2.08126)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0577509)
+	variant    83/  909 = a(2377,2376)    (79 tests, cond 0)
+		n1 false (test_time = 2.12204)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0396991)
+	variant    84/  909 = a(2377,2375)    (79 tests, cond 0)
+		n1 false (test_time = 2.14125)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03966)
+	variant    85/  909 = a(2377,2368)    (79 tests, cond 0)
+		n1 false (test_time = 2.32891)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0398352)
+	variant    86/  909 = a(2377,2350)    (79 tests, cond 0)
+		n1 false (test_time = 2.1174)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0700181)
+	variant    87/  909 = a(2377,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.37619)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046505)
+	variant    88/  909 = a(2377,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.28483)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.048187)
+	variant    89/  909 = a(2377,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.11562)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0408251)
+	variant    90/  909 = a(2376,2387)    (79 tests, cond 0)
+		n1 false (test_time = 2.29715)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0735259)
+	variant    91/  909 = a(2376,2384)    (79 tests, cond 0)
+		n1 false (test_time = 2.20077)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0405879)
+	variant    92/  909 = a(2376,2383)    (79 tests, cond 0)
+		n1 false (test_time = 2.13064)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03478)
+	variant    93/  909 = a(2376,2379)    (79 tests, cond 0)
+		n1 false (test_time = 2.0376)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0619271)
+	variant    94/  909 = a(2376,2377)    (79 tests, cond 0)
+		n1 false (test_time = 2.38516)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0381591)
+	variant    95/  909 = a(2376,2376)    (79 tests, cond 0)
+		n1 false (test_time = 1.97946)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0550611)
+	variant    96/  909 = a(2376,2375)    (79 tests, cond 0)
+		n1 false (test_time = 2.06918)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0388319)
+	variant    97/  909 = a(2376,2368)    (79 tests, cond 0)
+		n1 false (test_time = 2.13712)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043026)
+	variant    98/  909 = a(2376,2350)    (79 tests, cond 0)
+		n1 false (test_time = 2.16889)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.050194)
+	variant    99/  909 = a(2375,2387)    (79 tests, cond 0)
+		n1 false (test_time = 2.1075)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03792)
+	variant   100/  909 = a(2375,2384)    (79 tests, cond 0)
+		n1 false (test_time = 2.08305)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0656061)
+	variant   101/  909 = a(2375,2383)    (79 tests, cond 0)
+		n1 false (test_time = 2.20881)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0466678)
+	variant   102/  909 = a(2375,2379)    (79 tests, cond 0)
+		n1 false (test_time = 2.62003)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038682)
+	variant   103/  909 = a(2375,2377)    (79 tests, cond 0)
+		n1 false (test_time = 2.05877)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0396771)
+	variant   104/  909 = a(2375,2376)    (79 tests, cond 0)
+		n1 false (test_time = 2.10681)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040616)
+	variant   105/  909 = a(2375,2375)    (79 tests, cond 0)
+		n1 false (test_time = 2.10333)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0485129)
+	variant   106/  909 = a(2375,2368)    (79 tests, cond 0)
+		n1 false (test_time = 2.08182)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038965)
+	variant   107/  909 = a(2375,2350)    (79 tests, cond 0)
+		n1 false (test_time = 2.07525)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0406811)
+	variant   108/  909 = a(2369,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.21773)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0340371)
+	variant   109/  909 = a(2369,2387)    (79 tests, cond 0)
+		n1 false (test_time = 2.1492)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0381999)
+	variant   110/  909 = a(2369,2384)    (79 tests, cond 0)
+		n1 false (test_time = 2.02784)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039742)
+	variant   111/  909 = a(2369,2383)    (79 tests, cond 0)
+		n1 false (test_time = 2.27017)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0496418)
+	variant   112/  909 = a(2369,2379)    (79 tests, cond 0)
+		n1 false (test_time = 2.01141)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.045687)
+	variant   113/  909 = a(2369,2377)    (79 tests, cond 0)
+		n1 false (test_time = 2.73004)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0426009)
+	variant   114/  909 = a(2369,2376)    (79 tests, cond 0)
+		n1 false (test_time = 2.19199)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039403)
+	variant   115/  909 = a(2369,2375)    (79 tests, cond 0)
+		n1 false (test_time = 2.31765)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038188)
+	variant   116/  909 = a(2369,2368)    (79 tests, cond 0)
+		n1 false (test_time = 2.12053)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.036552)
+	variant   117/  909 = a(2369,2350)    (79 tests, cond 0)
+		n1 false (test_time = 2.22635)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0367172)
+	variant   118/  909 = a(2369,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.07409)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037348)
+	variant   119/  909 = a(2369,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.01292)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0402679)
+	variant   120/  909 = a(2369,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.22579)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0643139)
+	variant   121/  909 = a(2368,2387)    (79 tests, cond 0)
+		n1 false (test_time = 2.28399)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0419459)
+	variant   122/  909 = a(2368,2384)    (79 tests, cond 0)
+		n1 false (test_time = 2.1246)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0345008)
+	variant   123/  909 = a(2368,2383)    (79 tests, cond 0)
+		n1 false (test_time = 2.17058)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037003)
+	variant   124/  909 = a(2368,2379)    (79 tests, cond 0)
+		n1 false (test_time = 2.1064)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044589)
+	variant   125/  909 = a(2368,2377)    (79 tests, cond 0)
+		n1 false (test_time = 2.06268)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0373151)
+	variant   126/  909 = a(2368,2376)    (79 tests, cond 0)
+		n1 false (test_time = 2.22461)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039027)
+	variant   127/  909 = a(2368,2375)    (79 tests, cond 0)
+		n1 false (test_time = 2.27319)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0450399)
+	variant   128/  909 = a(2368,2368)    (79 tests, cond 0)
+		n1 false (test_time = 2.20333)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0459569)
+	variant   129/  909 = a(2368,2350)    (79 tests, cond 0)
+		n1 false (test_time = 2.23081)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056509)
+	variant   130/  909 = a(2351,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.08484)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.051115)
+	variant   131/  909 = a(2351,2387)    (79 tests, cond 0)
+		n1 false (test_time = 2.43041)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0428188)
+	variant   132/  909 = a(2351,2384)    (79 tests, cond 0)
+		n1 false (test_time = 2.5697)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0451932)
+	variant   133/  909 = a(2351,2383)    (79 tests, cond 0)
+		n1 false (test_time = 2.22675)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0651979)
+	variant   134/  909 = a(2351,2379)    (79 tests, cond 0)
+		n1 false (test_time = 2.40732)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0546381)
+	variant   135/  909 = a(2351,2377)    (79 tests, cond 0)
+		n1 false (test_time = 2.31384)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0416169)
+	variant   136/  909 = a(2351,2376)    (79 tests, cond 0)
+		n1 false (test_time = 2.51333)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0403719)
+	variant   137/  909 = a(2351,2375)    (79 tests, cond 0)
+		n1 false (test_time = 2.40439)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0390239)
+	variant   138/  909 = a(2351,2368)    (79 tests, cond 0)
+		n1 false (test_time = 2.53413)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0541251)
+	variant   139/  909 = a(2351,2350)    (79 tests, cond 0)
+		n1 false (test_time = 2.37485)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0436461)
+	variant   140/  909 = a(2351,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.03517)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0449491)
+	variant   141/  909 = a(2351,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.17311)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0388122)
+	variant   142/  909 = a(2351,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.47226)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0381961)
+	variant   143/  909 = a(2350,2387)    (79 tests, cond 0)
+		n1 false (test_time = 2.22899)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035058)
+	variant   144/  909 = a(2350,2384)    (79 tests, cond 0)
+		n1 false (test_time = 2.49921)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0370202)
+	variant   145/  909 = a(2350,2383)    (79 tests, cond 0)
+		n1 false (test_time = 2.32995)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038156)
+	variant   146/  909 = a(2350,2379)    (79 tests, cond 0)
+		n1 false (test_time = 2.25013)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040642)
+	variant   147/  909 = a(2350,2377)    (79 tests, cond 0)
+		n1 false (test_time = 2.09988)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035723)
+	variant   148/  909 = a(2350,2376)    (79 tests, cond 0)
+		n1 false (test_time = 2.49829)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0350628)
+	variant   149/  909 = a(2350,2375)    (79 tests, cond 0)
+		n1 false (test_time = 2.1755)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0316691)
+	variant   150/  909 = a(2350,2368)    (79 tests, cond 0)
+		n1 false (test_time = 2.41937)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0349181)
+	variant   151/  909 = a(2350,2350)    (79 tests, cond 0)
+		n1 false (test_time = 2.24939)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0354929)
+	variant   152/  909 = a(2287,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.19293)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.036844)
+	variant   153/  909 = a(2287,2285)    (79 tests, cond 0)
+		n1 false (test_time = 2.30825)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0356629)
+	variant   154/  909 = a(2287,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.5237)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042285)
+	variant   155/  909 = a(2287,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.43363)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0627999)
+	variant   156/  909 = a(2287,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.64379)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0325251)
+	variant   157/  909 = a(2285,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.4134)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039978)
+	variant   158/  909 = a(2285,2285)    (79 tests, cond 0)
+		n1 false (test_time = 2.2429)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0347939)
+	variant   159/  909 = a(2285,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.195)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0341699)
+	variant   160/  909 = a(2285,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.31206)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0443211)
+	variant   161/  909 = a(2285,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.37081)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0347199)
+	variant   162/  909 = a(2280,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.33917)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0636048)
+	variant   163/  909 = a(2280,2280)    (79 tests, cond 0)
+		n1 false (test_time = 2.78803)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0428231)
+	variant   164/  909 = a(2280,2279)    (79 tests, cond 0)
+		n1 false (test_time = 2.39911)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0469029)
+	variant   165/  909 = a(2280,2278)    (79 tests, cond 0)
+		n1 false (test_time = 2.49011)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.063344)
+	variant   166/  909 = a(2280,2276)    (79 tests, cond 0)
+		n1 false (test_time = 2.59972)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.036123)
+	variant   167/  909 = a(2280,2275)    (79 tests, cond 0)
+		n1 false (test_time = 2.48196)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0361769)
+	variant   168/  909 = a(2280,2274)    (79 tests, cond 0)
+		n1 false (test_time = 2.44074)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0362751)
+	variant   169/  909 = a(2280,2273)    (79 tests, cond 0)
+		n1 false (test_time = 2.14425)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0470941)
+	variant   170/  909 = a(2280,2271)    (79 tests, cond 0)
+		n1 false (test_time = 2.60565)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038029)
+	variant   171/  909 = a(2280,2270)    (79 tests, cond 0)
+		n1 false (test_time = 2.44689)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.045114)
+	variant   172/  909 = a(2280,2234)    (79 tests, cond 0)
+		n1 false (test_time = 2.26698)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033396)
+	variant   173/  909 = a(2280,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.36676)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0356929)
+	variant   174/  909 = a(2280,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.13956)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0480618)
+	variant   175/  909 = a(2280,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.08566)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054086)
+	variant   176/  909 = a(2279,2280)    (79 tests, cond 0)
+		n1 false (test_time = 2.34579)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0355239)
+	variant   177/  909 = a(2279,2279)    (79 tests, cond 0)
+		n1 false (test_time = 2.46733)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.034132)
+	variant   178/  909 = a(2279,2278)    (79 tests, cond 0)
+		n1 false (test_time = 2.1853)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0371881)
+	variant   179/  909 = a(2279,2276)    (79 tests, cond 0)
+		n1 false (test_time = 2.31194)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054774)
+	variant   180/  909 = a(2279,2275)    (79 tests, cond 0)
+		n1 false (test_time = 2.51309)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.053762)
+	variant   181/  909 = a(2279,2274)    (79 tests, cond 0)
+		n1 false (test_time = 2.25625)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0468051)
+	variant   182/  909 = a(2279,2273)    (79 tests, cond 0)
+		n1 false (test_time = 2.66365)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0598371)
+	variant   183/  909 = a(2279,2271)    (79 tests, cond 0)
+		n1 false (test_time = 2.15753)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0347049)
+	variant   184/  909 = a(2279,2270)    (79 tests, cond 0)
+		n1 false (test_time = 2.79652)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.059293)
+	variant   185/  909 = a(2279,2234)    (79 tests, cond 0)
+		n1 false (test_time = 2.06436)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0549681)
+	variant   186/  909 = a(2278,2280)    (79 tests, cond 0)
+		n1 false (test_time = 2.38548)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0325489)
+	variant   187/  909 = a(2278,2278)    (79 tests, cond 0)
+		n1 false (test_time = 2.68692)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0666831)
+	variant   188/  909 = a(2278,2275)    (79 tests, cond 0)
+		n1 false (test_time = 3.26982)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0402679)
+	variant   189/  909 = a(2278,2274)    (79 tests, cond 0)
+		n1 false (test_time = 2.2774)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0326331)
+	variant   190/  909 = a(2278,2273)    (79 tests, cond 0)
+		n1 false (test_time = 2.35701)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0423272)
+	variant   191/  909 = a(2278,2270)    (79 tests, cond 0)
+		n1 false (test_time = 2.15269)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.031554)
+	variant   192/  909 = a(2278,2234)    (79 tests, cond 0)
+		n1 false (test_time = 2.35561)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0520899)
+	variant   193/  909 = a(2277,2280)    (79 tests, cond 0)
+		n1 false (test_time = 2.33321)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0436158)
+	variant   194/  909 = a(2277,2279)    (79 tests, cond 0)
+		n1 false (test_time = 2.44468)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0651941)
+	variant   195/  909 = a(2277,2276)    (79 tests, cond 0)
+		n1 false (test_time = 2.21911)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0405042)
+	variant   196/  909 = a(2277,2275)    (79 tests, cond 0)
+		n1 false (test_time = 2.18921)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0510509)
+	variant   197/  909 = a(2277,2274)    (79 tests, cond 0)
+		n1 false (test_time = 2.36006)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0475819)
+	variant   198/  909 = a(2277,2273)    (79 tests, cond 0)
+		n1 false (test_time = 2.46813)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042223)
+	variant   199/  909 = a(2277,2271)    (79 tests, cond 0)
+		n1 false (test_time = 2.61206)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0440841)
+	variant   200/  909 = a(2277,2270)    (79 tests, cond 0)
+		n1 false (test_time = 2.44993)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0389199)
+	variant   201/  909 = a(2277,2234)    (79 tests, cond 0)
+		n1 false (test_time = 2.848)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.036253)
+	variant   202/  909 = a(2276,2280)    (79 tests, cond 0)
+		n1 false (test_time = 2.35037)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044208)
+	variant   203/  909 = a(2276,2279)    (79 tests, cond 0)
+		n1 false (test_time = 2.36793)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0459011)
+	variant   204/  909 = a(2276,2278)    (79 tests, cond 0)
+		n1 false (test_time = 2.16176)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037807)
+	variant   205/  909 = a(2276,2276)    (79 tests, cond 0)
+		n1 false (test_time = 2.3322)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0380509)
+	variant   206/  909 = a(2276,2275)    (79 tests, cond 0)
+		n1 false (test_time = 2.48158)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042412)
+	variant   207/  909 = a(2276,2274)    (79 tests, cond 0)
+		n1 false (test_time = 2.23075)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0358801)
+	variant   208/  909 = a(2276,2273)    (79 tests, cond 0)
+		n1 false (test_time = 3.34538)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0367081)
+	variant   209/  909 = a(2276,2271)    (79 tests, cond 0)
+		n1 false (test_time = 3.49065)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0396459)
+	variant   210/  909 = a(2276,2270)    (79 tests, cond 0)
+		n1 false (test_time = 3.40017)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037966)
+	variant   211/  909 = a(2276,2234)    (79 tests, cond 0)
+		n1 false (test_time = 3.88664)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.064724)
+	variant   212/  909 = a(2275,2280)    (79 tests, cond 0)
+		n1 false (test_time = 2.92166)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0359049)
+	variant   213/  909 = a(2275,2278)    (79 tests, cond 0)
+		n1 false (test_time = 3.94431)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0353799)
+	variant   214/  909 = a(2275,2275)    (79 tests, cond 0)
+		n1 false (test_time = 3.17388)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0356719)
+	variant   215/  909 = a(2275,2274)    (79 tests, cond 0)
+		n1 false (test_time = 3.17867)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0444181)
+	variant   216/  909 = a(2275,2273)    (79 tests, cond 0)
+		n1 false (test_time = 3.02067)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0358109)
+	variant   217/  909 = a(2275,2270)    (79 tests, cond 0)
+		n1 false (test_time = 3.26382)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.050014)
+	variant   218/  909 = a(2275,2234)    (79 tests, cond 0)
+		n1 false (test_time = 3.09188)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0314891)
+	variant   219/  909 = a(2274,2280)    (79 tests, cond 0)
+		n1 false (test_time = 3.2117)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0329192)
+	variant   220/  909 = a(2274,2279)    (79 tests, cond 0)
+		n1 false (test_time = 3.47648)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0346968)
+	variant   221/  909 = a(2274,2278)    (79 tests, cond 0)
+		n1 false (test_time = 3.33239)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0339031)
+	variant   222/  909 = a(2274,2276)    (79 tests, cond 0)
+		n1 false (test_time = 2.48623)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0547421)
+	variant   223/  909 = a(2274,2275)    (79 tests, cond 0)
+		n1 false (test_time = 2.29724)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037039)
+	variant   224/  909 = a(2274,2274)    (79 tests, cond 0)
+		n1 false (test_time = 2.56505)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0371811)
+	variant   225/  909 = a(2274,2273)    (79 tests, cond 0)
+		n1 false (test_time = 2.685)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0614059)
+	variant   226/  909 = a(2274,2272)    (79 tests, cond 0)
+		n1 false (test_time = 2.73595)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.055871)
+	variant   227/  909 = a(2274,2271)    (79 tests, cond 0)
+		n1 false (test_time = 2.30476)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0555239)
+	variant   228/  909 = a(2274,2270)    (79 tests, cond 0)
+		n1 false (test_time = 2.50461)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0425761)
+	variant   229/  909 = a(2274,2269)    (79 tests, cond 0)
+		n1 false (test_time = 1.97716)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0302842)
+	variant   230/  909 = a(2274,2234)    (79 tests, cond 0)
+		n1 false (test_time = 2.06828)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0328801)
+	variant   231/  909 = a(2273,2280)    (79 tests, cond 0)
+		n1 false (test_time = 1.99882)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033709)
+	variant   232/  909 = a(2273,2279)    (79 tests, cond 0)
+		n1 false (test_time = 2.21951)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0387161)
+	variant   233/  909 = a(2273,2278)    (79 tests, cond 0)
+		n1 false (test_time = 2.18671)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0662811)
+	variant   234/  909 = a(2273,2276)    (79 tests, cond 0)
+		n1 false (test_time = 2.06746)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0415161)
+	variant   235/  909 = a(2273,2275)    (79 tests, cond 0)
+		n1 false (test_time = 2.13004)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.032666)
+	variant   236/  909 = a(2273,2274)    (79 tests, cond 0)
+		n1 false (test_time = 2.08386)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0317249)
+	variant   237/  909 = a(2273,2273)    (79 tests, cond 0)
+		n1 false (test_time = 2.35568)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0316539)
+	variant   238/  909 = a(2273,2272)    (79 tests, cond 0)
+		n1 false (test_time = 3.1491)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0569339)
+	variant   239/  909 = a(2273,2271)    (79 tests, cond 0)
+		n1 false (test_time = 3.62694)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0679741)
+	variant   240/  909 = a(2273,2270)    (79 tests, cond 0)
+		n1 false (test_time = 3.69494)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0347631)
+	variant   241/  909 = a(2273,2269)    (79 tests, cond 0)
+		n1 false (test_time = 2.95052)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0321829)
+	variant   242/  909 = a(2273,2234)    (79 tests, cond 0)
+		n1 false (test_time = 3.28225)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.036263)
+	variant   243/  909 = a(2272,2280)    (79 tests, cond 0)
+		n1 false (test_time = 3.24316)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0351851)
+	variant   244/  909 = a(2272,2279)    (79 tests, cond 0)
+		n1 false (test_time = 3.51356)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0643518)
+	variant   245/  909 = a(2272,2278)    (79 tests, cond 0)
+		n1 false (test_time = 3.24404)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0385559)
+	variant   246/  909 = a(2272,2276)    (79 tests, cond 0)
+		n1 false (test_time = 3.26551)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0336871)
+	variant   247/  909 = a(2272,2275)    (79 tests, cond 0)
+		n1 false (test_time = 2.74317)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0429108)
+	variant   248/  909 = a(2272,2274)    (79 tests, cond 0)
+		n1 false (test_time = 2.18024)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0394769)
+	variant   249/  909 = a(2272,2273)    (79 tests, cond 0)
+		n1 false (test_time = 2.70742)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0354302)
+	variant   250/  909 = a(2272,2272)    (79 tests, cond 0)
+		n1 false (test_time = 4.05756)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0323431)
+	variant   251/  909 = a(2272,2271)    (79 tests, cond 0)
+		n1 false (test_time = 2.99141)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.064316)
+	variant   252/  909 = a(2272,2270)    (79 tests, cond 0)
+		n1 false (test_time = 2.31506)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0387211)
+	variant   253/  909 = a(2272,2269)    (79 tests, cond 0)
+		n1 false (test_time = 2.25698)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0392971)
+	variant   254/  909 = a(2272,2234)    (79 tests, cond 0)
+		n1 false (test_time = 2.95488)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0416489)
+	variant   255/  909 = a(2271,2280)    (79 tests, cond 0)
+		n1 false (test_time = 2.26528)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.051043)
+	variant   256/  909 = a(2271,2278)    (79 tests, cond 0)
+		n1 false (test_time = 3.27014)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033319)
+	variant   257/  909 = a(2271,2275)    (79 tests, cond 0)
+		n1 false (test_time = 2.59108)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0605309)
+	variant   258/  909 = a(2271,2274)    (79 tests, cond 0)
+		n1 false (test_time = 3.01981)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0553761)
+	variant   259/  909 = a(2271,2273)    (79 tests, cond 0)
+		n1 false (test_time = 2.26322)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0459979)
+	variant   260/  909 = a(2271,2270)    (79 tests, cond 0)
+		n1 false (test_time = 2.4935)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0354428)
+	variant   261/  909 = a(2271,2234)    (79 tests, cond 0)
+		n1 false (test_time = 2.99314)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0423331)
+	variant   262/  909 = a(2270,2280)    (79 tests, cond 0)
+		n1 false (test_time = 2.6556)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0632868)
+	variant   263/  909 = a(2270,2278)    (79 tests, cond 0)
+		n1 false (test_time = 3.02352)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.05618)
+	variant   264/  909 = a(2270,2275)    (79 tests, cond 0)
+		n1 false (test_time = 2.2561)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0374608)
+	variant   265/  909 = a(2270,2274)    (79 tests, cond 0)
+		n1 false (test_time = 3.26353)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039623)
+	variant   266/  909 = a(2270,2273)    (79 tests, cond 0)
+		n1 false (test_time = 2.68515)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054323)
+	variant   267/  909 = a(2270,2270)    (79 tests, cond 0)
+		n1 false (test_time = 3.1776)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042943)
+	variant   268/  909 = a(2270,2234)    (79 tests, cond 0)
+		n1 false (test_time = 2.55376)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033633)
+	variant   269/  909 = a(2269,2280)    (79 tests, cond 0)
+		n1 false (test_time = 2.76095)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037292)
+	variant   270/  909 = a(2269,2279)    (79 tests, cond 0)
+		n1 false (test_time = 2.44322)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0585489)
+	variant   271/  909 = a(2269,2278)    (79 tests, cond 0)
+		n1 false (test_time = 2.3415)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0346751)
+	variant   272/  909 = a(2269,2276)    (79 tests, cond 0)
+		n1 false (test_time = 2.01243)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.031522)
+	variant   273/  909 = a(2269,2275)    (79 tests, cond 0)
+		n1 false (test_time = 2.86864)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0396771)
+	variant   274/  909 = a(2269,2274)    (79 tests, cond 0)
+		n1 false (test_time = 2.8984)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035136)
+	variant   275/  909 = a(2269,2273)    (79 tests, cond 0)
+		n1 false (test_time = 3.57172)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.031605)
+	variant   276/  909 = a(2269,2271)    (79 tests, cond 0)
+		n1 false (test_time = 2.64137)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056453)
+	variant   277/  909 = a(2269,2270)    (79 tests, cond 0)
+		n1 false (test_time = 3.4523)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0414591)
+	variant   278/  909 = a(2269,2234)    (79 tests, cond 0)
+		n1 false (test_time = 2.80981)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0413449)
+	variant   279/  909 = a(2268,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.12039)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.049742)
+	variant   280/  909 = a(2268,2280)    (79 tests, cond 0)
+		n1 false (test_time = 3.36112)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.031404)
+	variant   281/  909 = a(2268,2279)    (79 tests, cond 0)
+		n1 false (test_time = 2.27433)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0593522)
+	variant   282/  909 = a(2268,2278)    (79 tests, cond 0)
+		n1 false (test_time = 2.96666)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044812)
+	variant   283/  909 = a(2268,2276)    (79 tests, cond 0)
+		n1 false (test_time = 2.57536)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0548568)
+	variant   284/  909 = a(2268,2275)    (79 tests, cond 0)
+		n1 false (test_time = 2.99686)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.028312)
+	variant   285/  909 = a(2268,2274)    (79 tests, cond 0)
+		n1 false (test_time = 2.74707)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0313909)
+	variant   286/  909 = a(2268,2273)    (79 tests, cond 0)
+		n1 false (test_time = 2.18755)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0722911)
+	variant   287/  909 = a(2268,2271)    (79 tests, cond 0)
+		n1 false (test_time = 3.28321)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0383041)
+	variant   288/  909 = a(2268,2270)    (79 tests, cond 0)
+		n1 false (test_time = 2.74992)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0406079)
+	variant   289/  909 = a(2268,2234)    (79 tests, cond 0)
+		n1 false (test_time = 2.60471)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035342)
+	variant   290/  909 = a(2268,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.7981)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.032423)
+	variant   291/  909 = a(2268,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.321)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0655818)
+	variant   292/  909 = a(2268,778)     (79 tests, cond 0)
+		n1 false (test_time = 3.67575)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039535)
+	variant   293/  909 = a(2237,2388)    (79 tests, cond 0)
+		n1 false (test_time = 3.34611)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0438552)
+	variant   294/  909 = a(2237,2280)    (79 tests, cond 0)
+		n1 false (test_time = 3.65541)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0606868)
+	variant   295/  909 = a(2237,2279)    (79 tests, cond 0)
+		n1 false (test_time = 3.06812)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040416)
+	variant   296/  909 = a(2237,2278)    (79 tests, cond 0)
+		n1 false (test_time = 3.36567)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039957)
+	variant   297/  909 = a(2237,2276)    (79 tests, cond 0)
+		n1 false (test_time = 3.34334)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0413291)
+	variant   298/  909 = a(2237,2275)    (79 tests, cond 0)
+		n1 false (test_time = 3.27926)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0376148)
+	variant   299/  909 = a(2237,2274)    (79 tests, cond 0)
+		n1 false (test_time = 3.59774)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.032836)
+	variant   300/  909 = a(2237,2273)    (79 tests, cond 0)
+		n1 false (test_time = 3.14718)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0503159)
+	variant   301/  909 = a(2237,2271)    (79 tests, cond 0)
+		n1 false (test_time = 2.89077)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0519888)
+	variant   302/  909 = a(2237,2270)    (79 tests, cond 0)
+		n1 false (test_time = 3.47565)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056993)
+	variant   303/  909 = a(2237,2234)    (79 tests, cond 0)
+		n1 false (test_time = 2.22432)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037159)
+	variant   304/  909 = a(2237,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.7557)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0559299)
+	variant   305/  909 = a(2237,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.24966)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039613)
+	variant   306/  909 = a(2237,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.49634)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0371211)
+	variant   307/  909 = a(2234,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.48444)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0353441)
+	variant   308/  909 = a(2234,2280)    (79 tests, cond 0)
+		n1 false (test_time = 3.23319)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0511661)
+	variant   309/  909 = a(2234,2279)    (79 tests, cond 0)
+		n1 false (test_time = 3.03717)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0361049)
+	variant   310/  909 = a(2234,2278)    (79 tests, cond 0)
+		n1 false (test_time = 3.28508)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0508101)
+	variant   311/  909 = a(2234,2276)    (79 tests, cond 0)
+		n1 false (test_time = 2.36092)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0389678)
+	variant   312/  909 = a(2234,2275)    (79 tests, cond 0)
+		n1 false (test_time = 2.95988)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0408771)
+	variant   313/  909 = a(2234,2274)    (79 tests, cond 0)
+		n1 false (test_time = 2.31209)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0387061)
+	variant   314/  909 = a(2234,2273)    (79 tests, cond 0)
+		n1 false (test_time = 3.10806)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0436728)
+	variant   315/  909 = a(2234,2271)    (79 tests, cond 0)
+		n1 false (test_time = 2.81877)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0409191)
+	variant   316/  909 = a(2234,2270)    (79 tests, cond 0)
+		n1 false (test_time = 2.99495)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0338581)
+	variant   317/  909 = a(2234,2234)    (79 tests, cond 0)
+		n1 false (test_time = 2.37985)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.032578)
+	variant   318/  909 = a(2234,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.62299)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0502272)
+	variant   319/  909 = a(2234,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.4433)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0334489)
+	variant   320/  909 = a(2234,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.38651)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0497711)
+	variant   321/  909 = a(2233,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.62227)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043164)
+	variant   322/  909 = a(2233,2280)    (79 tests, cond 0)
+		n1 false (test_time = 3.30066)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046818)
+	variant   323/  909 = a(2233,2279)    (79 tests, cond 0)
+		n1 false (test_time = 2.4926)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0331659)
+	variant   324/  909 = a(2233,2278)    (79 tests, cond 0)
+		n1 false (test_time = 3.52315)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0509019)
+	variant   325/  909 = a(2233,2276)    (79 tests, cond 0)
+		n1 false (test_time = 3.26032)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0481551)
+	variant   326/  909 = a(2233,2275)    (79 tests, cond 0)
+		n1 false (test_time = 2.68217)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.028892)
+	variant   327/  909 = a(2233,2274)    (79 tests, cond 0)
+		n1 false (test_time = 3.5216)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0350511)
+	variant   328/  909 = a(2233,2273)    (79 tests, cond 0)
+		n1 false (test_time = 2.8545)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0495191)
+	variant   329/  909 = a(2233,2271)    (79 tests, cond 0)
+		n1 false (test_time = 3.21678)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0379579)
+	variant   330/  909 = a(2233,2270)    (79 tests, cond 0)
+		n1 false (test_time = 3.12288)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.031672)
+	variant   331/  909 = a(2233,2234)    (79 tests, cond 0)
+		n1 false (test_time = 3.0747)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037457)
+	variant   332/  909 = a(2233,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.92468)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.062912)
+	variant   333/  909 = a(2233,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.67498)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.031131)
+	variant   334/  909 = a(2233,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.12557)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033489)
+	variant   335/  909 = a(2226,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.17022)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0313051)
+	variant   336/  909 = a(2226,2280)    (79 tests, cond 0)
+		n1 false (test_time = 2.12157)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.049412)
+	variant   337/  909 = a(2226,2279)    (79 tests, cond 0)
+		n1 false (test_time = 2.72632)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035023)
+	variant   338/  909 = a(2226,2278)    (79 tests, cond 0)
+		n1 false (test_time = 3.36332)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0338769)
+	variant   339/  909 = a(2226,2276)    (79 tests, cond 0)
+		n1 false (test_time = 2.25009)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0374911)
+	variant   340/  909 = a(2226,2275)    (79 tests, cond 0)
+		n1 false (test_time = 2.4347)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0356481)
+	variant   341/  909 = a(2226,2274)    (79 tests, cond 0)
+		n1 false (test_time = 2.67533)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0584409)
+	variant   342/  909 = a(2226,2273)    (79 tests, cond 0)
+		n1 false (test_time = 2.65039)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.050072)
+	variant   343/  909 = a(2226,2271)    (79 tests, cond 0)
+		n1 false (test_time = 2.4472)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.030504)
+	variant   344/  909 = a(2226,2270)    (79 tests, cond 0)
+		n1 false (test_time = 2.84159)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029995)
+	variant   345/  909 = a(2226,2234)    (79 tests, cond 0)
+		n1 false (test_time = 2.75601)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038702)
+	variant   346/  909 = a(2226,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.6749)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0305169)
+	variant   347/  909 = a(2226,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.61726)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029546)
+	variant   348/  909 = a(2226,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.4576)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0465941)
+	variant   349/  909 = a(2224,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.26097)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0359712)
+	variant   350/  909 = a(2224,2223)    (79 tests, cond 0)
+		n1 false (test_time = 2.39854)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035013)
+	variant   351/  909 = a(2224,2221)    (79 tests, cond 0)
+		n1 false (test_time = 2.24537)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0342619)
+	variant   352/  909 = a(2224,2220)    (79 tests, cond 0)
+		n1 false (test_time = 1.96858)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0467272)
+	variant   353/  909 = a(2224,2217)    (79 tests, cond 0)
+		n1 false (test_time = 2.64977)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038501)
+	variant   354/  909 = a(2224,2215)    (79 tests, cond 0)
+		n1 false (test_time = 2.41907)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0390341)
+	variant   355/  909 = a(2224,2214)    (79 tests, cond 0)
+		n1 false (test_time = 2.47585)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0591671)
+	variant   356/  909 = a(2224,2213)    (79 tests, cond 0)
+		n1 false (test_time = 3.49907)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054167)
+	variant   357/  909 = a(2224,2212)    (79 tests, cond 0)
+		n1 false (test_time = 2.9405)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0341241)
+	variant   358/  909 = a(2224,1426)    (79 tests, cond 0)
+		n1 false (test_time = 3.1071)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0422661)
+	variant   359/  909 = a(2224,815)     (79 tests, cond 0)
+		n1 false (test_time = 3.74893)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0491841)
+	variant   360/  909 = a(2224,778)     (79 tests, cond 0)
+		n1 false (test_time = 3.53763)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0345881)
+	variant   361/  909 = a(2223,2223)    (79 tests, cond 0)
+		n1 false (test_time = 3.31059)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0591931)
+	variant   362/  909 = a(2223,2221)    (79 tests, cond 0)
+		n1 false (test_time = 3.01116)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0347941)
+	variant   363/  909 = a(2223,2220)    (79 tests, cond 0)
+		n1 false (test_time = 2.89006)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046901)
+	variant   364/  909 = a(2223,2217)    (79 tests, cond 0)
+		n1 false (test_time = 2.01298)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.031141)
+	variant   365/  909 = a(2223,2215)    (79 tests, cond 0)
+		n1 false (test_time = 2.26987)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0298722)
+	variant   366/  909 = a(2223,2214)    (79 tests, cond 0)
+		n1 false (test_time = 2.05403)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029083)
+	variant   367/  909 = a(2223,2213)    (79 tests, cond 0)
+		n1 false (test_time = 1.96222)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0300992)
+	variant   368/  909 = a(2223,2212)    (79 tests, cond 0)
+		n1 false (test_time = 2.21115)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0308008)
+	variant   369/  909 = a(2221,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.14696)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033498)
+	variant   370/  909 = a(2221,2223)    (79 tests, cond 0)
+		n1 false (test_time = 2.06345)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.053829)
+	variant   371/  909 = a(2221,2221)    (79 tests, cond 0)
+		n1 false (test_time = 2.10779)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054961)
+	variant   372/  909 = a(2221,2220)    (79 tests, cond 0)
+		n1 false (test_time = 2.08047)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0317569)
+	variant   373/  909 = a(2221,2217)    (79 tests, cond 0)
+		n1 false (test_time = 2.16511)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0320179)
+	variant   374/  909 = a(2221,2215)    (79 tests, cond 0)
+		n1 false (test_time = 2.09172)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.045861)
+	variant   375/  909 = a(2221,2214)    (79 tests, cond 0)
+		n1 false (test_time = 2.0515)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0307341)
+	variant   376/  909 = a(2221,2213)    (79 tests, cond 0)
+		n1 false (test_time = 2.68117)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.051831)
+	variant   377/  909 = a(2221,2212)    (79 tests, cond 0)
+		n1 false (test_time = 3.8868)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0460401)
+	variant   378/  909 = a(2221,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.80291)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0475812)
+	variant   379/  909 = a(2221,815)     (79 tests, cond 0)
+		n1 false (test_time = 4.36861)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.025126)
+	variant   380/  909 = a(2221,778)     (79 tests, cond 0)
+		n1 false (test_time = 3.33145)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0584371)
+	variant   381/  909 = a(2220,2388)    (79 tests, cond 0)
+		n1 false (test_time = 3.08151)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0259881)
+	variant   382/  909 = a(2220,2223)    (79 tests, cond 0)
+		n1 false (test_time = 2.97654)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0334241)
+	variant   383/  909 = a(2220,2221)    (79 tests, cond 0)
+		n1 false (test_time = 2.64902)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0245981)
+	variant   384/  909 = a(2220,2220)    (79 tests, cond 0)
+		n1 false (test_time = 2.7856)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0267091)
+	variant   385/  909 = a(2220,2217)    (79 tests, cond 0)
+		n1 false (test_time = 2.89932)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023875)
+	variant   386/  909 = a(2220,2215)    (79 tests, cond 0)
+		n1 false (test_time = 2.20351)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0241721)
+	variant   387/  909 = a(2220,2214)    (79 tests, cond 0)
+		n1 false (test_time = 2.74148)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0275021)
+	variant   388/  909 = a(2220,2213)    (79 tests, cond 0)
+		n1 false (test_time = 2.30104)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0253839)
+	variant   389/  909 = a(2220,2212)    (79 tests, cond 0)
+		n1 false (test_time = 2.18534)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0244191)
+	variant   390/  909 = a(2220,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.30785)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.032789)
+	variant   391/  909 = a(2220,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.28765)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0260789)
+	variant   392/  909 = a(2220,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.68149)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0427589)
+	variant   393/  909 = a(2218,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.39591)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023536)
+	variant   394/  909 = a(2218,2223)    (79 tests, cond 0)
+		n1 false (test_time = 2.52004)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035866)
+	variant   395/  909 = a(2218,2221)    (79 tests, cond 0)
+		n1 false (test_time = 2.31398)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0239019)
+	variant   396/  909 = a(2218,2220)    (79 tests, cond 0)
+		n1 false (test_time = 2.61884)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033057)
+	variant   397/  909 = a(2218,2217)    (79 tests, cond 0)
+		n1 false (test_time = 2.77881)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0247259)
+	variant   398/  909 = a(2218,2215)    (79 tests, cond 0)
+		n1 false (test_time = 2.06961)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0337141)
+	variant   399/  909 = a(2218,2214)    (79 tests, cond 0)
+		n1 false (test_time = 2.06525)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0310209)
+	variant   400/  909 = a(2218,2213)    (79 tests, cond 0)
+		n1 false (test_time = 2.11319)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0322301)
+	variant   401/  909 = a(2218,2212)    (79 tests, cond 0)
+		n1 false (test_time = 2.51268)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0250058)
+	variant   402/  909 = a(2218,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.35757)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0247049)
+	variant   403/  909 = a(2218,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.21139)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0242808)
+	variant   404/  909 = a(2218,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.18189)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219731)
+	variant   405/  909 = a(2217,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.31502)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020695)
+	variant   406/  909 = a(2217,2223)    (79 tests, cond 0)
+		n1 false (test_time = 2.46765)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0250869)
+	variant   407/  909 = a(2217,2221)    (79 tests, cond 0)
+		n1 false (test_time = 2.20309)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023751)
+	variant   408/  909 = a(2217,2220)    (79 tests, cond 0)
+		n1 false (test_time = 2.41862)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0387859)
+	variant   409/  909 = a(2217,2217)    (79 tests, cond 0)
+		n1 false (test_time = 2.20192)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0424941)
+	variant   410/  909 = a(2217,2215)    (79 tests, cond 0)
+		n1 false (test_time = 2.7147)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.045537)
+	variant   411/  909 = a(2217,2214)    (79 tests, cond 0)
+		n1 false (test_time = 2.40389)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0253041)
+	variant   412/  909 = a(2217,2213)    (79 tests, cond 0)
+		n1 false (test_time = 2.11238)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0234461)
+	variant   413/  909 = a(2217,2212)    (79 tests, cond 0)
+		n1 false (test_time = 2.3147)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.025327)
+	variant   414/  909 = a(2217,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.11252)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0222101)
+	variant   415/  909 = a(2217,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.27247)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0238481)
+	variant   416/  909 = a(2217,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.31824)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0217741)
+	variant   417/  909 = a(2216,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.78524)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0230949)
+	variant   418/  909 = a(2216,2223)    (79 tests, cond 0)
+		n1 false (test_time = 2.14878)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0226901)
+	variant   419/  909 = a(2216,2221)    (79 tests, cond 0)
+		n1 false (test_time = 2.11312)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0420179)
+	variant   420/  909 = a(2216,2220)    (79 tests, cond 0)
+		n1 false (test_time = 2.553)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0288899)
+	variant   421/  909 = a(2216,2217)    (79 tests, cond 0)
+		n1 false (test_time = 2.74327)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0247579)
+	variant   422/  909 = a(2216,2215)    (79 tests, cond 0)
+		n1 false (test_time = 2.51845)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.041434)
+	variant   423/  909 = a(2216,2214)    (79 tests, cond 0)
+		n1 false (test_time = 2.40974)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022228)
+	variant   424/  909 = a(2216,2213)    (79 tests, cond 0)
+		n1 false (test_time = 2.1788)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0242381)
+	variant   425/  909 = a(2216,2212)    (79 tests, cond 0)
+		n1 false (test_time = 2.00503)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.024224)
+	variant   426/  909 = a(2216,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.31322)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0230899)
+	variant   427/  909 = a(2216,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.49534)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0281372)
+	variant   428/  909 = a(2216,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.16686)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0406859)
+	variant   429/  909 = a(2215,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.40755)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0261359)
+	variant   430/  909 = a(2215,2223)    (79 tests, cond 0)
+		n1 false (test_time = 2.40703)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.027801)
+	variant   431/  909 = a(2215,2221)    (79 tests, cond 0)
+		n1 false (test_time = 2.298)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0232689)
+	variant   432/  909 = a(2215,2220)    (79 tests, cond 0)
+		n1 false (test_time = 2.34675)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022985)
+	variant   433/  909 = a(2215,2217)    (79 tests, cond 0)
+		n1 false (test_time = 2.05996)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0220859)
+	variant   434/  909 = a(2215,2215)    (79 tests, cond 0)
+		n1 false (test_time = 2.55704)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0399308)
+	variant   435/  909 = a(2215,2214)    (79 tests, cond 0)
+		n1 false (test_time = 2.1282)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.024709)
+	variant   436/  909 = a(2215,2213)    (79 tests, cond 0)
+		n1 false (test_time = 2.1701)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023253)
+	variant   437/  909 = a(2215,2212)    (79 tests, cond 0)
+		n1 false (test_time = 2.08167)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0423021)
+	variant   438/  909 = a(2215,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.0833)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0217729)
+	variant   439/  909 = a(2215,815)     (79 tests, cond 0)
+		n1 false (test_time = 3.22393)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0276611)
+	variant   440/  909 = a(2215,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.34328)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022934)
+	variant   441/  909 = a(2214,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.37314)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02683)
+	variant   442/  909 = a(2214,2223)    (79 tests, cond 0)
+		n1 false (test_time = 2.3851)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022182)
+	variant   443/  909 = a(2214,2221)    (79 tests, cond 0)
+		n1 false (test_time = 2.36634)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0262201)
+	variant   444/  909 = a(2214,2220)    (79 tests, cond 0)
+		n1 false (test_time = 2.29741)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0217931)
+	variant   445/  909 = a(2214,2217)    (79 tests, cond 0)
+		n1 false (test_time = 2.7784)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0236108)
+	variant   446/  909 = a(2214,2215)    (79 tests, cond 0)
+		n1 false (test_time = 2.44992)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0275979)
+	variant   447/  909 = a(2214,2214)    (79 tests, cond 0)
+		n1 false (test_time = 2.24809)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.028456)
+	variant   448/  909 = a(2214,2213)    (79 tests, cond 0)
+		n1 false (test_time = 2.63556)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0378449)
+	variant   449/  909 = a(2214,2212)    (79 tests, cond 0)
+		n1 false (test_time = 2.50407)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0568731)
+	variant   450/  909 = a(2214,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.79234)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0273879)
+	variant   451/  909 = a(2214,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.22385)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0235171)
+	variant   452/  909 = a(2214,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.41591)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023216)
+	variant   453/  909 = a(2213,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.56998)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0290282)
+	variant   454/  909 = a(2213,2223)    (79 tests, cond 0)
+		n1 false (test_time = 2.47496)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026571)
+	variant   455/  909 = a(2213,2221)    (79 tests, cond 0)
+		n1 false (test_time = 1.92411)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0265379)
+	variant   456/  909 = a(2213,2220)    (79 tests, cond 0)
+		n1 false (test_time = 2.17837)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046617)
+	variant   457/  909 = a(2213,2217)    (79 tests, cond 0)
+		n1 false (test_time = 2.39791)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.027874)
+	variant   458/  909 = a(2213,2215)    (79 tests, cond 0)
+		n1 false (test_time = 2.46324)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0270391)
+	variant   459/  909 = a(2213,2214)    (79 tests, cond 0)
+		n1 false (test_time = 2.48774)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0318289)
+	variant   460/  909 = a(2213,2213)    (79 tests, cond 0)
+		n1 false (test_time = 2.60148)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0229819)
+	variant   461/  909 = a(2213,2212)    (79 tests, cond 0)
+		n1 false (test_time = 2.05869)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0388479)
+	variant   462/  909 = a(2213,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.05985)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0282269)
+	variant   463/  909 = a(2213,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.71197)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021245)
+	variant   464/  909 = a(2213,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.02048)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021852)
+	variant   465/  909 = a(2212,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.41147)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0313811)
+	variant   466/  909 = a(2212,2223)    (79 tests, cond 0)
+		n1 false (test_time = 2.52841)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029448)
+	variant   467/  909 = a(2212,2221)    (79 tests, cond 0)
+		n1 false (test_time = 2.41637)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0294881)
+	variant   468/  909 = a(2212,2220)    (79 tests, cond 0)
+		n1 false (test_time = 2.17907)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0285952)
+	variant   469/  909 = a(2212,2217)    (79 tests, cond 0)
+		n1 false (test_time = 2.39424)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0312541)
+	variant   470/  909 = a(2212,2215)    (79 tests, cond 0)
+		n1 false (test_time = 2.19017)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0247941)
+	variant   471/  909 = a(2212,2214)    (79 tests, cond 0)
+		n1 false (test_time = 2.66884)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0383279)
+	variant   472/  909 = a(2212,2213)    (79 tests, cond 0)
+		n1 false (test_time = 2.31016)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0271239)
+	variant   473/  909 = a(2212,2212)    (79 tests, cond 0)
+		n1 false (test_time = 1.97746)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0376399)
+	variant   474/  909 = a(2212,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.34573)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0240459)
+	variant   475/  909 = a(2212,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.21055)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.024543)
+	variant   476/  909 = a(2212,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.57887)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.025151)
+	variant   477/  909 = a(2211,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.52128)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0236928)
+	variant   478/  909 = a(2211,2223)    (79 tests, cond 0)
+		n1 false (test_time = 2.28725)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026217)
+	variant   479/  909 = a(2211,2221)    (79 tests, cond 0)
+		n1 false (test_time = 2.40649)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0369689)
+	variant   480/  909 = a(2211,2220)    (79 tests, cond 0)
+		n1 false (test_time = 2.7002)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0362089)
+	variant   481/  909 = a(2211,2217)    (79 tests, cond 0)
+		n1 false (test_time = 2.23954)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042475)
+	variant   482/  909 = a(2211,2215)    (79 tests, cond 0)
+		n1 false (test_time = 2.26952)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0292239)
+	variant   483/  909 = a(2211,2214)    (79 tests, cond 0)
+		n1 false (test_time = 2.15045)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.028976)
+	variant   484/  909 = a(2211,2213)    (79 tests, cond 0)
+		n1 false (test_time = 2.46154)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026103)
+	variant   485/  909 = a(2211,2212)    (79 tests, cond 0)
+		n1 false (test_time = 2.71027)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0246692)
+	variant   486/  909 = a(2211,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.27553)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0233312)
+	variant   487/  909 = a(2211,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.35008)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023289)
+	variant   488/  909 = a(2211,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.48261)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026854)
+	variant   489/  909 = a(1856,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.25322)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0269949)
+	variant   490/  909 = a(1856,1856)    (79 tests, cond 0)
+		n1 false (test_time = 2.49017)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0294731)
+	variant   491/  909 = a(1856,1855)    (79 tests, cond 0)
+		n1 false (test_time = 2.40213)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0323188)
+	variant   492/  909 = a(1856,1854)    (79 tests, cond 0)
+		n1 false (test_time = 2.48065)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0353901)
+	variant   493/  909 = a(1856,1853)    (79 tests, cond 0)
+		n1 false (test_time = 2.36764)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044131)
+	variant   494/  909 = a(1856,1852)    (79 tests, cond 0)
+		n1 false (test_time = 2.08987)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0484149)
+	variant   495/  909 = a(1856,1851)    (79 tests, cond 0)
+		n1 false (test_time = 2.26439)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0222659)
+	variant   496/  909 = a(1856,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.36955)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0195091)
+	variant   497/  909 = a(1856,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.66828)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0225549)
+	variant   498/  909 = a(1856,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.20201)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0195491)
+	variant   499/  909 = a(1855,1856)    (79 tests, cond 0)
+		n1 false (test_time = 2.52382)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022958)
+	variant   500/  909 = a(1855,1855)    (79 tests, cond 0)
+		n1 false (test_time = 2.3778)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020443)
+	variant   501/  909 = a(1855,1854)    (79 tests, cond 0)
+		n1 false (test_time = 2.02998)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020195)
+	variant   502/  909 = a(1855,1853)    (79 tests, cond 0)
+		n1 false (test_time = 2.30046)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0204561)
+	variant   503/  909 = a(1855,1852)    (79 tests, cond 0)
+		n1 false (test_time = 2.35385)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.034837)
+	variant   504/  909 = a(1855,1851)    (79 tests, cond 0)
+		n1 false (test_time = 2.52245)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0331628)
+	variant   505/  909 = a(1854,1856)    (79 tests, cond 0)
+		n1 false (test_time = 2.27555)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0320849)
+	variant   506/  909 = a(1854,1854)    (79 tests, cond 0)
+		n1 false (test_time = 2.51535)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0176821)
+	variant   507/  909 = a(1854,1851)    (79 tests, cond 0)
+		n1 false (test_time = 1.98933)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0241549)
+	variant   508/  909 = a(1852,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.78591)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020504)
+	variant   509/  909 = a(1852,1856)    (79 tests, cond 0)
+		n1 false (test_time = 2.66376)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0419271)
+	variant   510/  909 = a(1852,1854)    (79 tests, cond 0)
+		n1 false (test_time = 2.277)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020041)
+	variant   511/  909 = a(1852,1853)    (79 tests, cond 0)
+		n1 false (test_time = 2.21582)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03439)
+	variant   512/  909 = a(1852,1852)    (79 tests, cond 0)
+		n1 false (test_time = 2.35485)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0275419)
+	variant   513/  909 = a(1852,1851)    (79 tests, cond 0)
+		n1 false (test_time = 2.87036)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0191839)
+	variant   514/  909 = a(1852,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.54153)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0193851)
+	variant   515/  909 = a(1852,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.47171)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0264499)
+	variant   516/  909 = a(1852,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.21419)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0184159)
+	variant   517/  909 = a(1851,1856)    (79 tests, cond 0)
+		n1 false (test_time = 2.30211)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019742)
+	variant   518/  909 = a(1851,1854)    (79 tests, cond 0)
+		n1 false (test_time = 2.1529)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0191162)
+	variant   519/  909 = a(1851,1853)    (79 tests, cond 0)
+		n1 false (test_time = 2.31263)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021034)
+	variant   520/  909 = a(1851,1852)    (79 tests, cond 0)
+		n1 false (test_time = 2.22451)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019825)
+	variant   521/  909 = a(1851,1851)    (79 tests, cond 0)
+		n1 false (test_time = 2.38816)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0254011)
+	variant   522/  909 = a(1850,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.63478)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018393)
+	variant   523/  909 = a(1850,1856)    (79 tests, cond 0)
+		n1 false (test_time = 2.28685)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017621)
+	variant   524/  909 = a(1850,1854)    (79 tests, cond 0)
+		n1 false (test_time = 2.43596)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020514)
+	variant   525/  909 = a(1850,1853)    (79 tests, cond 0)
+		n1 false (test_time = 2.28484)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018296)
+	variant   526/  909 = a(1850,1852)    (79 tests, cond 0)
+		n1 false (test_time = 2.19926)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019001)
+	variant   527/  909 = a(1850,1851)    (79 tests, cond 0)
+		n1 false (test_time = 2.3085)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0285211)
+	variant   528/  909 = a(1850,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.49419)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0301378)
+	variant   529/  909 = a(1850,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.27129)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021384)
+	variant   530/  909 = a(1850,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.24358)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0198979)
+	variant   531/  909 = a(1516,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.42399)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0192821)
+	variant   532/  909 = a(1516,1516)    (79 tests, cond 0)
+		n1 false (test_time = 2.2134)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.030148)
+	variant   533/  909 = a(1516,1515)    (79 tests, cond 0)
+		n1 false (test_time = 2.34814)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0186889)
+	variant   534/  909 = a(1516,1514)    (79 tests, cond 0)
+		n1 false (test_time = 2.33508)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0182941)
+	variant   535/  909 = a(1516,1512)    (79 tests, cond 0)
+		n1 false (test_time = 2.31119)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0192881)
+	variant   536/  909 = a(1516,1511)    (79 tests, cond 0)
+		n1 false (test_time = 2.12805)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0161459)
+	variant   537/  909 = a(1516,1509)    (79 tests, cond 0)
+		n1 false (test_time = 2.14505)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0180709)
+	variant   538/  909 = a(1516,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.06279)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018445)
+	variant   539/  909 = a(1516,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.22859)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0213289)
+	variant   540/  909 = a(1516,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.43738)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033277)
+	variant   541/  909 = a(1515,1516)    (79 tests, cond 0)
+		n1 false (test_time = 2.32055)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0158682)
+	variant   542/  909 = a(1515,1515)    (79 tests, cond 0)
+		n1 false (test_time = 2.32855)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017132)
+	variant   543/  909 = a(1515,1514)    (79 tests, cond 0)
+		n1 false (test_time = 1.9293)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0186141)
+	variant   544/  909 = a(1515,1512)    (79 tests, cond 0)
+		n1 false (test_time = 2.13264)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033721)
+	variant   545/  909 = a(1515,1511)    (79 tests, cond 0)
+		n1 false (test_time = 2.30094)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020381)
+	variant   546/  909 = a(1515,1509)    (79 tests, cond 0)
+		n1 false (test_time = 2.30701)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.031054)
+	variant   547/  909 = a(1514,1516)    (79 tests, cond 0)
+		n1 false (test_time = 2.2029)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037487)
+	variant   548/  909 = a(1514,1513)    (79 tests, cond 0)
+		n1 false (test_time = 2.36398)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023103)
+	variant   549/  909 = a(1514,1509)    (79 tests, cond 0)
+		n1 false (test_time = 2.39576)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0222461)
+	variant   550/  909 = a(1513,1516)    (79 tests, cond 0)
+		n1 false (test_time = 2.33776)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.025517)
+	variant   551/  909 = a(1513,1513)    (79 tests, cond 0)
+		n1 false (test_time = 2.66344)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0218141)
+	variant   552/  909 = a(1513,1509)    (79 tests, cond 0)
+		n1 false (test_time = 2.01951)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0270798)
+	variant   553/  909 = a(1512,1516)    (79 tests, cond 0)
+		n1 false (test_time = 2.33801)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0221639)
+	variant   554/  909 = a(1512,1515)    (79 tests, cond 0)
+		n1 false (test_time = 2.60929)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0185149)
+	variant   555/  909 = a(1512,1514)    (79 tests, cond 0)
+		n1 false (test_time = 2.86035)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0304)
+	variant   556/  909 = a(1512,1509)    (79 tests, cond 0)
+		n1 false (test_time = 2.41509)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0310969)
+	variant   557/  909 = a(1511,1516)    (79 tests, cond 0)
+		n1 false (test_time = 2.37751)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.025501)
+	variant   558/  909 = a(1511,1510)    (79 tests, cond 0)
+		n1 false (test_time = 2.27345)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0265398)
+	variant   559/  909 = a(1511,1509)    (79 tests, cond 0)
+		n1 false (test_time = 2.41769)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.024363)
+	variant   560/  909 = a(1510,1516)    (79 tests, cond 0)
+		n1 false (test_time = 2.9901)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0268152)
+	variant   561/  909 = a(1510,1510)    (79 tests, cond 0)
+		n1 false (test_time = 2.39635)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022054)
+	variant   562/  909 = a(1510,1509)    (79 tests, cond 0)
+		n1 false (test_time = 2.27567)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0214009)
+	variant   563/  909 = a(1509,1516)    (79 tests, cond 0)
+		n1 false (test_time = 2.13855)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0191741)
+	variant   564/  909 = a(1509,1512)    (79 tests, cond 0)
+		n1 false (test_time = 2.2001)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0183599)
+	variant   565/  909 = a(1509,1511)    (79 tests, cond 0)
+		n1 false (test_time = 2.29191)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019727)
+	variant   566/  909 = a(1509,1509)    (79 tests, cond 0)
+		n1 false (test_time = 2.12108)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0214338)
+	variant   567/  909 = a(1425,2388)    (79 tests, cond 0)
+		n1 false (test_time = 2.38014)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02001)
+	variant   568/  909 = a(1425,1426)    (79 tests, cond 0)
+		n1 false (test_time = 2.31123)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0302751)
+	variant   569/  909 = a(1425,1425)    (79 tests, cond 0)
+		n1 false (test_time = 2.538)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018477)
+	variant   570/  909 = a(1425,1421)    (79 tests, cond 0)
+		n1 false (test_time = 2.12003)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0281899)
+	variant   571/  909 = a(1425,1420)    (79 tests, cond 0)
+		n1 false (test_time = 2.20031)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029285)
+	variant   572/  909 = a(1425,1419)    (79 tests, cond 0)
+		n1 false (test_time = 2.15681)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0156121)
+	variant   573/  909 = a(1425,815)     (79 tests, cond 0)
+		n1 false (test_time = 2.52102)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0158908)
+	variant   574/  909 = a(1425,778)     (79 tests, cond 0)
+		n1 false (test_time = 2.06473)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0173481)
+	variant   575/  909 = a(1424,1420)    (79 tests, cond 0)
+		n1 false (test_time = 2.50689)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0256181)
+	variant   576/  909 = a(1424,1419)    (79 tests, cond 0)
+		n1 false (test_time = 2.48122)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016037)
+	variant   577/  909 = a(1423,1420)    (79 tests, cond 0)
+		n1 false (test_time = 2.28405)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0245831)
+	variant   578/  909 = a(1423,1419)    (79 tests, cond 0)
+		n1 false (test_time = 2.0462)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017581)
+	variant   579/  909 = a(1422,1425)    (79 tests, cond 0)
+		n1 false (test_time = 2.46137)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0166409)
+	variant   580/  909 = a(1422,1419)    (79 tests, cond 0)
+		n1 false (test_time = 2.43322)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0293028)
+	variant   581/  909 = a(1421,1420)    (79 tests, cond 0)
+		n1 false (test_time = 2.32676)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0167742)
+	variant   582/  909 = a(1421,1419)    (79 tests, cond 0)
+		n1 false (test_time = 2.36622)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016016)
+	variant   583/  909 = a(1420,1420)    (79 tests, cond 0)
+		n1 false (test_time = 2.32918)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0163229)
+	variant   584/  909 = a(1420,1419)    (79 tests, cond 0)
+		n1 false (test_time = 2.40794)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.024935)
+	variant   585/  909 = a(1419,1425)    (79 tests, cond 0)
+		n1 false (test_time = 1.97597)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02127)
+	variant   586/  909 = a(1419,1421)    (79 tests, cond 0)
+		n1 false (test_time = 2.56275)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0167961)
+	variant   587/  909 = a(1419,1420)    (79 tests, cond 0)
+		n1 false (test_time = 2.54549)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.030051)
+	variant   588/  909 = a(1419,1419)    (79 tests, cond 0)
+		n1 false (test_time = 2.21965)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0256121)
+	variant   589/  909 = a(865,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.37394)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0156529)
+	variant   590/  909 = a(865,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.37281)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0190799)
+	variant   591/  909 = a(865,864)      (79 tests, cond 0)
+		n1 false (test_time = 2.15031)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0156059)
+	variant   592/  909 = a(865,862)      (79 tests, cond 0)
+		n1 false (test_time = 2.5865)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0154541)
+	variant   593/  909 = a(865,861)      (79 tests, cond 0)
+		n1 false (test_time = 1.9861)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0156991)
+	variant   594/  909 = a(865,860)      (79 tests, cond 0)
+		n1 false (test_time = 2.08609)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0160511)
+	variant   595/  909 = a(865,859)      (79 tests, cond 0)
+		n1 false (test_time = 2.42354)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0137269)
+	variant   596/  909 = a(865,815)      (79 tests, cond 0)
+		n1 false (test_time = 2.3409)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.015425)
+	variant   597/  909 = a(865,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.28439)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0223498)
+	variant   598/  909 = a(864,863)      (79 tests, cond 0)
+		n1 false (test_time = 2.39904)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016017)
+	variant   599/  909 = a(864,860)      (79 tests, cond 0)
+		n1 false (test_time = 2.217)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0160589)
+	variant   600/  909 = a(864,859)      (79 tests, cond 0)
+		n1 false (test_time = 2.12071)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0177138)
+	variant   601/  909 = a(863,863)      (79 tests, cond 0)
+		n1 false (test_time = 2.60598)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0160179)
+	variant   602/  909 = a(863,860)      (79 tests, cond 0)
+		n1 false (test_time = 2.42109)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.015624)
+	variant   603/  909 = a(863,859)      (79 tests, cond 0)
+		n1 false (test_time = 2.53247)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0142341)
+	variant   604/  909 = a(862,864)      (79 tests, cond 0)
+		n1 false (test_time = 2.50168)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.031985)
+	variant   605/  909 = a(862,859)      (79 tests, cond 0)
+		n1 false (test_time = 2.9879)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0172031)
+	variant   606/  909 = a(861,860)      (79 tests, cond 0)
+		n1 false (test_time = 2.66353)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01562)
+	variant   607/  909 = a(861,859)      (79 tests, cond 0)
+		n1 false (test_time = 1.94574)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0247219)
+	variant   608/  909 = a(860,860)      (79 tests, cond 0)
+		n1 false (test_time = 2.32785)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019408)
+	variant   609/  909 = a(860,859)      (79 tests, cond 0)
+		n1 false (test_time = 2.72697)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019413)
+	variant   610/  909 = a(859,864)      (79 tests, cond 0)
+		n1 false (test_time = 2.47997)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0227628)
+	variant   611/  909 = a(859,862)      (79 tests, cond 0)
+		n1 false (test_time = 2.60851)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0189149)
+	variant   612/  909 = a(859,861)      (79 tests, cond 0)
+		n1 false (test_time = 2.56286)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021214)
+	variant   613/  909 = a(859,860)      (79 tests, cond 0)
+		n1 false (test_time = 2.37907)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0172489)
+	variant   614/  909 = a(859,859)      (79 tests, cond 0)
+		n1 false (test_time = 2.61539)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0255949)
+	variant   615/  909 = a(830,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.63522)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019171)
+	variant   616/  909 = a(830,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.30167)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0160952)
+	variant   617/  909 = a(830,830)      (79 tests, cond 0)
+		n1 false (test_time = 2.51374)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01438)
+	variant   618/  909 = a(830,829)      (79 tests, cond 0)
+		n1 false (test_time = 2.09396)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0151241)
+	variant   619/  909 = a(830,827)      (79 tests, cond 0)
+		n1 false (test_time = 2.78495)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0237911)
+	variant   620/  909 = a(830,826)      (79 tests, cond 0)
+		n1 false (test_time = 2.36138)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0303681)
+	variant   621/  909 = a(830,815)      (79 tests, cond 0)
+		n1 false (test_time = 2.48793)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0161541)
+	variant   622/  909 = a(830,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.31049)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0177598)
+	variant   623/  909 = a(829,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.58148)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0149882)
+	variant   624/  909 = a(829,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.15812)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0124142)
+	variant   625/  909 = a(829,830)      (79 tests, cond 0)
+		n1 false (test_time = 2.03034)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0174131)
+	variant   626/  909 = a(829,829)      (79 tests, cond 0)
+		n1 false (test_time = 2.6676)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0148871)
+	variant   627/  909 = a(829,827)      (79 tests, cond 0)
+		n1 false (test_time = 2.0517)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0205121)
+	variant   628/  909 = a(829,826)      (79 tests, cond 0)
+		n1 false (test_time = 2.23825)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0148499)
+	variant   629/  909 = a(829,815)      (79 tests, cond 0)
+		n1 false (test_time = 2.23836)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014569)
+	variant   630/  909 = a(829,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.23103)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0154848)
+	variant   631/  909 = a(827,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.0321)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0170469)
+	variant   632/  909 = a(827,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.13022)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014178)
+	variant   633/  909 = a(827,830)      (79 tests, cond 0)
+		n1 false (test_time = 2.00779)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013344)
+	variant   634/  909 = a(827,829)      (79 tests, cond 0)
+		n1 false (test_time = 2.32721)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02774)
+	variant   635/  909 = a(827,827)      (79 tests, cond 0)
+		n1 false (test_time = 2.62614)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0225911)
+	variant   636/  909 = a(827,826)      (79 tests, cond 0)
+		n1 false (test_time = 2.37092)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0136421)
+	variant   637/  909 = a(827,815)      (79 tests, cond 0)
+		n1 false (test_time = 2.42701)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0139291)
+	variant   638/  909 = a(827,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.15392)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0220141)
+	variant   639/  909 = a(820,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.26689)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0142109)
+	variant   640/  909 = a(820,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.65539)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0141301)
+	variant   641/  909 = a(820,821)      (79 tests, cond 0)
+		n1 false (test_time = 2.46776)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0198171)
+	variant   642/  909 = a(820,820)      (79 tests, cond 0)
+		n1 false (test_time = 2.57618)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026638)
+	variant   643/  909 = a(820,815)      (79 tests, cond 0)
+		n1 false (test_time = 2.08601)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0141141)
+	variant   644/  909 = a(820,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.60829)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0136461)
+	variant   645/  909 = a(819,819)      (79 tests, cond 0)
+		n1 false (test_time = 2.14837)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0146561)
+	variant   646/  909 = a(818,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.08004)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0119741)
+	variant   647/  909 = a(818,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.69743)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013545)
+	variant   648/  909 = a(818,818)      (79 tests, cond 0)
+		n1 false (test_time = 2.16193)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.015332)
+	variant   649/  909 = a(818,817)      (79 tests, cond 0)
+		n1 false (test_time = 2.41465)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0198131)
+	variant   650/  909 = a(818,816)      (79 tests, cond 0)
+		n1 false (test_time = 2.56399)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013597)
+	variant   651/  909 = a(818,815)      (79 tests, cond 0)
+		n1 false (test_time = 2.23613)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0190601)
+	variant   652/  909 = a(818,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.117)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.015748)
+	variant   653/  909 = a(817,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.32325)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0137269)
+	variant   654/  909 = a(817,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.45455)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0236499)
+	variant   655/  909 = a(817,818)      (79 tests, cond 0)
+		n1 false (test_time = 2.59096)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.012682)
+	variant   656/  909 = a(817,817)      (79 tests, cond 0)
+		n1 false (test_time = 2.34154)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02319)
+	variant   657/  909 = a(817,816)      (79 tests, cond 0)
+		n1 false (test_time = 2.13853)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0114369)
+	variant   658/  909 = a(817,815)      (79 tests, cond 0)
+		n1 false (test_time = 2.46124)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01405)
+	variant   659/  909 = a(817,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.2209)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0137441)
+	variant   660/  909 = a(816,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.64714)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.025949)
+	variant   661/  909 = a(816,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.37396)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0193639)
+	variant   662/  909 = a(816,818)      (79 tests, cond 0)
+		n1 false (test_time = 2.30769)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0161719)
+	variant   663/  909 = a(816,817)      (79 tests, cond 0)
+		n1 false (test_time = 2.18109)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029783)
+	variant   664/  909 = a(816,816)      (79 tests, cond 0)
+		n1 false (test_time = 2.5315)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017221)
+	variant   665/  909 = a(816,815)      (79 tests, cond 0)
+		n1 false (test_time = 2.28859)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013221)
+	variant   666/  909 = a(816,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.67961)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0177069)
+	variant   667/  909 = a(810,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.37222)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.012764)
+	variant   668/  909 = a(810,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.36652)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0197949)
+	variant   669/  909 = a(810,815)      (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/000668/find/parser.c  a(810,815)  fails to compile
+ false (test_time = 0.616462)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0115509)
+	variant   670/  909 = a(810,809)      (79 tests, cond 0)
+		n1 false (test_time = 2.37112)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0218308)
+	variant   671/  909 = a(810,808)      (79 tests, cond 0)
+		n1 false (test_time = 2.59801)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0134771)
+	variant   672/  909 = a(810,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.16729)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0224652)
+	variant   673/  909 = a(810,805)      (79 tests, cond 0)
+		n1 false (test_time = 2.52214)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0163569)
+	variant   674/  909 = a(810,804)      (79 tests, cond 0)
+		n1 false (test_time = 2.75118)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0122821)
+	variant   675/  909 = a(810,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.2602)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0114188)
+	variant   676/  909 = a(810,799)      (79 tests, cond 0)
+		n1 false (test_time = 2.08236)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010968)
+	variant   677/  909 = a(810,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.11883)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016861)
+	variant   678/  909 = a(810,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.10952)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018811)
+	variant   679/  909 = a(810,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.36516)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011982)
+	variant   680/  909 = a(810,777)      (79 tests, cond 0)
+		n1 false (test_time = 2.36339)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017957)
+	variant   681/  909 = a(810,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.31134)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0136089)
+	variant   682/  909 = a(809,809)      (79 tests, cond 0)
+		n1 false (test_time = 2.64829)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0138681)
+	variant   683/  909 = a(809,808)      (79 tests, cond 0)
+		n1 false (test_time = 2.41795)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0247989)
+	variant   684/  909 = a(809,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.23125)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0173161)
+	variant   685/  909 = a(809,805)      (79 tests, cond 0)
+		n1 false (test_time = 2.3741)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011431)
+	variant   686/  909 = a(809,804)      (79 tests, cond 0)
+		n1 false (test_time = 2.67271)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0169499)
+	variant   687/  909 = a(809,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.28783)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011997)
+	variant   688/  909 = a(809,799)      (79 tests, cond 0)
+		n1 false (test_time = 1.7099)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0120389)
+	variant   689/  909 = a(809,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.30174)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0109799)
+	variant   690/  909 = a(809,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.12265)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0177209)
+	variant   691/  909 = a(809,777)      (79 tests, cond 0)
+		n1 false (test_time = 2.21171)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0116749)
+	variant   692/  909 = a(809,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.34304)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0187831)
+	variant   693/  909 = a(808,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.8106)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0105648)
+	variant   694/  909 = a(808,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.88161)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.015532)
+	variant   695/  909 = a(808,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.65742)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.012326)
+	variant   696/  909 = a(808,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.48213)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016974)
+	variant   697/  909 = a(807,808)      (79 tests, cond 0)
+		n1 false (test_time = 2.42799)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0104239)
+	variant   698/  909 = a(807,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.35382)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010941)
+	variant   699/  909 = a(807,805)      (79 tests, cond 0)
+		n1 false (test_time = 2.19098)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014235)
+	variant   700/  909 = a(807,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.73267)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0108259)
+	variant   701/  909 = a(807,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.10511)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00964999)
+	variant   702/  909 = a(807,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.58869)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02037)
+	variant   703/  909 = a(807,777)      (79 tests, cond 0)
+		n1 false (test_time = 2.39789)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0196989)
+	variant   704/  909 = a(807,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.09975)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0206208)
+	variant   705/  909 = a(806,808)      (79 tests, cond 0)
+		n1 false (test_time = 2.36245)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0147729)
+	variant   706/  909 = a(806,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.4042)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021167)
+	variant   707/  909 = a(806,805)      (79 tests, cond 0)
+		n1 false (test_time = 3.08574)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0174351)
+	variant   708/  909 = a(806,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.45432)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013772)
+	variant   709/  909 = a(806,799)      (79 tests, cond 0)
+		n1 false (test_time = 1.39221)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0114579)
+	variant   710/  909 = a(806,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.29377)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0123231)
+	variant   711/  909 = a(806,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.15176)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0115969)
+	variant   712/  909 = a(806,777)      (79 tests, cond 0)
+		n1 false (test_time = 2.10312)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0144122)
+	variant   713/  909 = a(806,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.20131)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0114701)
+	variant   714/  909 = a(805,808)      (79 tests, cond 0)
+		n1 false (test_time = 1.8084)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016217)
+	variant   715/  909 = a(805,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.29825)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219512)
+	variant   716/  909 = a(805,805)      (79 tests, cond 0)
+		n1 false (test_time = 1.81241)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0116801)
+	variant   717/  909 = a(805,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.29033)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.015702)
+	variant   718/  909 = a(805,799)      (79 tests, cond 0)
+		n1 false (test_time = 1.72934)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0209599)
+	variant   719/  909 = a(805,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.37239)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018194)
+	variant   720/  909 = a(805,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.34741)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013031)
+	variant   721/  909 = a(805,777)      (79 tests, cond 0)
+		n1 false (test_time = 2.0439)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.012598)
+	variant   722/  909 = a(805,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.38239)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0168822)
+	variant   723/  909 = a(804,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.07179)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018322)
+	variant   724/  909 = a(804,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.81544)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01284)
+	variant   725/  909 = a(804,815)      (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/000724/find/parser.c  a(804,815)  fails to compile
+ false (test_time = 0.999241)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0118811)
+	variant   726/  909 = a(804,808)      (79 tests, cond 0)
+		n1 false (test_time = 3.50381)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013036)
+	variant   727/  909 = a(804,807)      (79 tests, cond 0)
+		n1 false (test_time = 1.97967)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00998497)
+	variant   728/  909 = a(804,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.40295)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00843501)
+	variant   729/  909 = a(804,801)      (79 tests, cond 0)
+		n1 false (test_time = 2.19676)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011178)
+	variant   730/  909 = a(804,799)      (79 tests, cond 0)
+		n1 false (test_time = 2.28576)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0134678)
+	variant   731/  909 = a(804,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.53376)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.015703)
+	variant   732/  909 = a(804,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.30526)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0103431)
+	variant   733/  909 = a(804,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.31043)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00999904)
+	variant   734/  909 = a(804,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.26017)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016005)
+	variant   735/  909 = a(803,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.23247)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.012084)
+	variant   736/  909 = a(803,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.24622)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0212009)
+	variant   737/  909 = a(803,801)      (79 tests, cond 0)
+		n1 false (test_time = 2.35475)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0180821)
+	variant   738/  909 = a(803,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.06433)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00888395)
+	variant   739/  909 = a(803,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.45967)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00855207)
+	variant   740/  909 = a(802,808)      (79 tests, cond 0)
+		n1 false (test_time = 2.36977)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00876403)
+	variant   741/  909 = a(802,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.5832)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00818896)
+	variant   742/  909 = a(802,803)      (79 tests, cond 0)
+		n1 false (test_time = 3.05358)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0153749)
+	variant   743/  909 = a(802,801)      (79 tests, cond 0)
+		n1 false (test_time = 2.34981)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00813389)
+	variant   744/  909 = a(802,799)      (79 tests, cond 0)
+		n1 false (test_time = 1.969)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0197661)
+	variant   745/  909 = a(802,798)      (79 tests, cond 0)
+		n1 false (test_time = 1.87026)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00880384)
+	variant   746/  909 = a(802,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.25459)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017905)
+	variant   747/  909 = a(802,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.07626)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00907898)
+	variant   748/  909 = a(801,808)      (79 tests, cond 0)
+		n1 false (test_time = 2.74296)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00828004)
+	variant   749/  909 = a(801,807)      (79 tests, cond 0)
+		n1 false (test_time = 0.023057)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00762892)
+	variant   750/  909 = a(801,803)      (79 tests, cond 0)
+		n1 false (test_time = 0.0184269)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0173249)
+	variant   751/  909 = a(801,801)      (79 tests, cond 0)
+		n1 false (test_time = 0.0192671)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00767398)
+	variant   752/  909 = a(801,799)      (79 tests, cond 0)
+		n1 false (test_time = 0.0179992)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00791311)
+	variant   753/  909 = a(801,798)      (79 tests, cond 0)
+		n1 false (test_time = 0.0188041)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0122781)
+	variant   754/  909 = a(801,796)      (79 tests, cond 0)
+		n1 false (test_time = 0.0202601)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00750303)
+	variant   755/  909 = a(801,769)      (79 tests, cond 0)
+		n1 false (test_time = 0.020129)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00797009)
+	variant   756/  909 = a(800,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.37999)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0119901)
+	variant   757/  909 = a(800,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.06158)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0108821)
+	variant   758/  909 = a(800,815)      (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/000750/find/parser.c  a(800,815)  fails to compile
+ false (test_time = 0.504657)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011889)
+	variant   759/  909 = a(800,808)      (79 tests, cond 0)
+		n1 false (test_time = 1.93245)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00752997)
+	variant   760/  909 = a(800,807)      (79 tests, cond 0)
+		n1 false (test_time = 1.84365)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00771213)
+	variant   761/  909 = a(800,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.10163)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00775695)
+	variant   762/  909 = a(800,801)      (79 tests, cond 0)
+		n1 false (test_time = 2.22525)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00755)
+	variant   763/  909 = a(800,799)      (79 tests, cond 0)
+		n1 false (test_time = 2.17353)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00750089)
+	variant   764/  909 = a(800,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.27734)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00889397)
+	variant   765/  909 = a(800,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.55995)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00841904)
+	variant   766/  909 = a(800,778)      (79 tests, cond 0)
+		n1 false (test_time = 3.01189)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0117171)
+	variant   767/  909 = a(800,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.53282)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0071311)
+	variant   768/  909 = a(798,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.47149)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0169241)
+	variant   769/  909 = a(798,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.03304)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00816107)
+	variant   770/  909 = a(798,815)      (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/000762/find/parser.c  a(798,815)  fails to compile
+ false (test_time = 0.529037)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00768089)
+	variant   771/  909 = a(798,808)      (79 tests, cond 0)
+		n1 false (test_time = 2.13958)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00736904)
+	variant   772/  909 = a(798,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.46398)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00709105)
+	variant   773/  909 = a(798,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.68521)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00745416)
+	variant   774/  909 = a(798,801)      (79 tests, cond 0)
+		n1 false (test_time = 2.16972)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00738692)
+	variant   775/  909 = a(798,799)      (79 tests, cond 0)
+		n1 false (test_time = 2.04275)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00712299)
+	variant   776/  909 = a(798,798)      (79 tests, cond 0)
+		n1 false (test_time = 1.97821)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00787091)
+	variant   777/  909 = a(798,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.66824)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.006428)
+	variant   778/  909 = a(798,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.42197)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0163751)
+	variant   779/  909 = a(798,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.26606)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0077281)
+	variant   780/  909 = a(797,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.0435)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0076611)
+	variant   781/  909 = a(797,1426)     (79 tests, cond 0)
+		n1 false (test_time = 1.69163)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00587606)
+	variant   782/  909 = a(797,815)      (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/000774/find/parser.c  a(797,815)  fails to compile
+ false (test_time = 0.583005)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00678492)
+	variant   783/  909 = a(797,808)      (79 tests, cond 0)
+		n1 false (test_time = 1.88503)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00997591)
+	variant   784/  909 = a(797,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.18947)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00634909)
+	variant   785/  909 = a(797,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.5475)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00673604)
+	variant   786/  909 = a(797,801)      (79 tests, cond 0)
+		n1 false (test_time = 1.96863)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00633788)
+	variant   787/  909 = a(797,799)      (79 tests, cond 0)
+		n1 false (test_time = 1.92528)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00708508)
+	variant   788/  909 = a(797,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.40937)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.012634)
+	variant   789/  909 = a(797,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.63489)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00769091)
+	variant   790/  909 = a(797,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.01125)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00614786)
+	variant   791/  909 = a(797,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.95683)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00593185)
+	variant   792/  909 = a(796,808)      (79 tests, cond 0)
+		n1 false (test_time = 2.22412)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00852799)
+	variant   793/  909 = a(796,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.16028)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00602198)
+	variant   794/  909 = a(796,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.18638)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00556684)
+	variant   795/  909 = a(796,801)      (79 tests, cond 0)
+		n1 false (test_time = 1.94832)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013324)
+	variant   796/  909 = a(796,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.18391)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00585604)
+	variant   797/  909 = a(796,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.08893)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00911403)
+	variant   798/  909 = a(779,2388)     (79 tests, cond 0)
+		n1 false (test_time = 0.0323799)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00966907)
+	variant   799/  909 = a(779,1426)     (79 tests, cond 0)
+		n1 false (test_time = 0.0266662)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00882292)
+	variant   800/  909 = a(779,815)      (79 tests, cond 0)
+		n1 false (test_time = 0.029155)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00528598)
+	variant   801/  909 = a(779,808)      (79 tests, cond 0)
+		n1 false (test_time = 0.0195642)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00529313)
+	variant   802/  909 = a(779,807)      (79 tests, cond 0)
+		n1 false (test_time = 0.0196881)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00577497)
+	variant   803/  909 = a(779,803)      (79 tests, cond 0)
+		n1 false (test_time = 0.018501)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00552392)
+	variant   804/  909 = a(779,801)      (79 tests, cond 0)
+		n1 false (test_time = 0.0204661)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00591087)
+	variant   805/  909 = a(779,799)      (79 tests, cond 0)
+		n1 false (test_time = 0.0179441)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00508714)
+	variant   806/  909 = a(779,798)      (79 tests, cond 0)
+		n1 false (test_time = 0.018487)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00515103)
+	variant   807/  909 = a(779,796)      (79 tests, cond 0)
+		n1 false (test_time = 0.0186729)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00549197)
+	variant   808/  909 = a(779,778)      (79 tests, cond 0)
+		n1 false (test_time = 0.020514)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00524592)
+	variant   809/  909 = a(779,769)      (79 tests, cond 0)
+		n1 false (test_time = 0.0223761)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00504613)
+	variant   810/  909 = a(778,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.85992)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00805998)
+	variant   811/  909 = a(778,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.31193)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00804591)
+	variant   812/  909 = a(778,815)      (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/000792/find/parser.c  a(778,815)  fails to compile
+ false (test_time = 0.524485)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00564814)
+	variant   813/  909 = a(778,808)      (79 tests, cond 0)
+		n1 false (test_time = 2.48937)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00980806)
+	variant   814/  909 = a(778,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.50865)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00479317)
+	variant   815/  909 = a(778,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.37426)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00794291)
+	variant   816/  909 = a(778,799)      (79 tests, cond 0)
+		n1 false (test_time = 1.94336)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0049839)
+	variant   817/  909 = a(778,798)      (79 tests, cond 0)
+		n1 false (test_time = 1.95058)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00427604)
+	variant   818/  909 = a(778,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.27629)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00437784)
+	variant   819/  909 = a(778,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.17991)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00679684)
+	variant   820/  909 = a(778,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.77834)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00784612)
+	variant   821/  909 = a(777,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.8071)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0130281)
+	variant   822/  909 = a(777,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.29234)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00876594)
+	variant   823/  909 = a(777,815)      (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/000803/find/parser.c  a(777,815)  fails to compile
+ false (test_time = 0.91372)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00445199)
+	variant   824/  909 = a(777,808)      (79 tests, cond 0)
+		n1 false (test_time = 2.3547)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00423098)
+	variant   825/  909 = a(777,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.4617)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00449109)
+	variant   826/  909 = a(777,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.1551)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00416899)
+	variant   827/  909 = a(777,799)      (79 tests, cond 0)
+		n1 false (test_time = 2.29129)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00808001)
+	variant   828/  909 = a(777,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.62275)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00631309)
+	variant   829/  909 = a(777,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.60326)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00493193)
+	variant   830/  909 = a(777,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.03113)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00452209)
+	variant   831/  909 = a(777,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.39961)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00833893)
+	variant   832/  909 = a(776,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.42146)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00679779)
+	variant   833/  909 = a(776,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.45336)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0054369)
+	variant   834/  909 = a(776,815)      (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/000814/find/parser.c  a(776,815)  fails to compile
+ false (test_time = 0.731551)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00372195)
+	variant   835/  909 = a(776,808)      (79 tests, cond 0)
+		n1 false (test_time = 2.54078)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00370789)
+	variant   836/  909 = a(776,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.44272)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00413513)
+	variant   837/  909 = a(776,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.11207)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00384402)
+	variant   838/  909 = a(776,799)      (79 tests, cond 0)
+		n1 false (test_time = 2.40303)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00537205)
+	variant   839/  909 = a(776,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.26935)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00577092)
+	variant   840/  909 = a(776,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.99775)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00479794)
+	variant   841/  909 = a(776,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.24038)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00431299)
+	variant   842/  909 = a(776,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.70937)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0100391)
+	variant   843/  909 = a(770,2388)     (79 tests, cond 0)
+		n1 false (test_time = 1.58285)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00991583)
+	variant   844/  909 = a(770,1426)     (79 tests, cond 0)
+		n1 false (test_time = 1.64941)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00616813)
+	variant   845/  909 = a(770,815)      (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/000825/find/parser.c  a(770,815)  fails to compile
+ false (test_time = 0.727188)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0052619)
+	variant   846/  909 = a(770,808)      (79 tests, cond 0)
+		n1 false (test_time = 2.48769)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00330901)
+	variant   847/  909 = a(770,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.91948)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00315881)
+	variant   848/  909 = a(770,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.44523)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00315189)
+	variant   849/  909 = a(770,799)      (79 tests, cond 0)
+		n1 false (test_time = 1.4125)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00405693)
+	variant   850/  909 = a(770,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.28624)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00496006)
+	variant   851/  909 = a(770,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.59768)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00284791)
+	variant   852/  909 = a(770,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.55651)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00341702)
+	variant   853/  909 = a(770,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.49396)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00313497)
+	variant   854/  909 = a(769,808)      (79 tests, cond 0)
+		n1 false (test_time = 2.57801)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010905)
+	variant   855/  909 = a(769,807)      (79 tests, cond 0)
+		n1 false (test_time = 2.72306)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00274706)
+	variant   856/  909 = a(769,803)      (79 tests, cond 0)
+		n1 false (test_time = 2.428)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00368786)
+	variant   857/  909 = a(769,798)      (79 tests, cond 0)
+		n1 false (test_time = 2.10268)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00413609)
+	variant   858/  909 = a(769,796)      (79 tests, cond 0)
+		n1 false (test_time = 2.42716)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00275111)
+	variant   859/  909 = a(769,769)      (79 tests, cond 0)
+		n1 false (test_time = 2.68183)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0036869)
+	variant   860/  909 = a(747,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.0957)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00252199)
+	variant   861/  909 = a(747,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.39881)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00485206)
+	variant   862/  909 = a(747,815)      (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/000842/find/parser.c  a(747,815)  fails to compile
+ false (test_time = 0.639133)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00240612)
+	variant   863/  909 = a(747,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.26248)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00349307)
+	variant   864/  909 = a(747,748)      (79 tests, cond 0)
+		n1 false (test_time = 3.24568)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00350904)
+	variant   865/  909 = a(747,747)      (79 tests, cond 0)
+		n1 false (test_time = 2.42317)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00349808)
+	variant   866/  909 = a(747,745)      (79 tests, cond 0)
+		n1 false (test_time = 2.29362)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00211191)
+	variant   867/  909 = a(747,744)      (79 tests, cond 0)
+		n1 false (test_time = 2.625)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00323081)
+	variant   868/  909 = a(747,742)      (79 tests, cond 0)
+		n1 false (test_time = 2.36878)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00347996)
+	variant   869/  909 = a(747,733)      (79 tests, cond 0)
+		n1 false (test_time = 2.46912)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00303006)
+	variant   870/  909 = a(745,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.20948)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00210309)
+	variant   871/  909 = a(745,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.26384)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00284314)
+	variant   872/  909 = a(745,815)      (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/000852/find/parser.c  a(745,815)  fails to compile
+ false (test_time = 0.613422)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00324917)
+	variant   873/  909 = a(745,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.22094)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00434995)
+	variant   874/  909 = a(745,748)      (79 tests, cond 0)
+		n1 false (test_time = 2.61589)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0018611)
+	variant   875/  909 = a(745,747)      (79 tests, cond 0)
+		n1 false (test_time = 2.34357)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00246978)
+	variant   876/  909 = a(745,745)      (79 tests, cond 0)
+		n1 false (test_time = 2.75405)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00167894)
+	variant   877/  909 = a(745,744)      (79 tests, cond 0)
+		n1 false (test_time = 2.59202)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00344706)
+	variant   878/  909 = a(744,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.63628)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00156093)
+	variant   879/  909 = a(744,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.36875)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00144315)
+	variant   880/  909 = a(744,815)      (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/000860/find/parser.c  a(744,815)  fails to compile
+ false (test_time = 0.550283)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00148511)
+	variant   881/  909 = a(744,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.34114)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00355196)
+	variant   882/  909 = a(744,748)      (79 tests, cond 0)
+		n1 false (test_time = 2.33084)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00246811)
+	variant   883/  909 = a(744,747)      (79 tests, cond 0)
+		n1 false (test_time = 2.22782)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0014801)
+	variant   884/  909 = a(744,745)      (79 tests, cond 0)
+		n1 false (test_time = 2.58102)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00128293)
+	variant   885/  909 = a(744,744)      (79 tests, cond 0)
+		n1 false (test_time = 2.17383)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00140595)
+	variant   886/  909 = a(743,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.17255)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00116301)
+	variant   887/  909 = a(743,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.18956)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00115585)
+	variant   888/  909 = a(743,815)      (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/000868/find/parser.c  a(743,815)  fails to compile
+ false (test_time = 0.783103)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.001019)
+	variant   889/  909 = a(743,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.19372)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0010612)
+	variant   890/  909 = a(743,748)      (79 tests, cond 0)
+		n1 false (test_time = 2.19916)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000952959)
+	variant   891/  909 = a(743,747)      (79 tests, cond 0)
+		n1 false (test_time = 2.1134)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.001652)
+	variant   892/  909 = a(743,745)      (79 tests, cond 0)
+		n1 false (test_time = 2.16884)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00081706)
+	variant   893/  909 = a(743,744)      (79 tests, cond 0)
+		n1 false (test_time = 2.17548)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000768185)
+	variant   894/  909 = a(742,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.08516)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000711918)
+	variant   895/  909 = a(742,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.37759)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000684977)
+	variant   896/  909 = a(742,815)      (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-e8bd5a2c-66c536bb/000876/find/parser.c  a(742,815)  fails to compile
+ false (test_time = 0.588739)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000585079)
+	variant   897/  909 = a(742,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.07801)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000563145)
+	variant   898/  909 = a(742,748)      (79 tests, cond 0)
+		n1 false (test_time = 2.17818)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000778198)
+	variant   899/  909 = a(742,747)      (79 tests, cond 0)
+		n1 false (test_time = 2.53253)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000734091)
+	variant   900/  909 = a(742,745)      (79 tests, cond 0)
+		n1 false (test_time = 3.24555)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000807047)
+	variant   901/  909 = a(742,744)      (79 tests, cond 0)
+		n1 false (test_time = 2.5757)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000509977)
+	variant   902/  909 = a(733,2388)     (79 tests, cond 0)
+		n1 false (test_time = 3.02471)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000494957)
+	variant   903/  909 = a(733,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.62096)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000521183)
+	variant   904/  909 = a(733,815)      (79 tests, cond 0)
+		n1 false (test_time = 2.76684)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000361919)
+	variant   905/  909 = a(733,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.99953)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000259876)
+	variant   906/  909 = a(731,2388)     (79 tests, cond 0)
+		n1 false (test_time = 2.26695)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.000200033)
+	variant   907/  909 = a(731,1426)     (79 tests, cond 0)
+		n1 false (test_time = 2.38758)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 9.20296e-05)
+	variant   908/  909 = a(731,815)      (79 tests, cond 0)
+		n1 false (test_time = 2.53871)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.40667e-05)
+	variant   909/  909 = a(731,778)      (79 tests, cond 0)
+		n1 false (test_time = 2.69886)
+search: ww_adaptive: ends (no repair)
+
+Variant Test Case Queries: 890
+"Test Suite Evaluations": 11.2658
+
+Compile Failures: 14
+Wall-Clock Seconds Elapsed: 2218.26
+  Activity Name                     Count Seconds = Percent of Total Time
+  append_sources                      126   4.111 = 0.189346%
+  progeq partition                    102   5.555 = 0.255879%
+  find_best_edit                      909  25.752 = 1.18623%
+  test                                955 180.986 = 8.33679%
+  compile                             891 1954.503 = 90.0304%
+  TOTAL                                   2170.937 = 97.8661% (avg CPU usage)

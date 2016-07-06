@@ -1,0 +1,1378 @@
+WARNING: the argument --multi-file is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --suffix-extension is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --mutp is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete true
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 78
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Mon Feb  1 16:34:21 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat: /etc/redhat-release: No such file or directory
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp78dc46.c /tmp/tmpc293b3.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: find/ftsfind.c: parsing
+cilRep: find/ftsfind.c: parsed (0.135666 MB)
+cilRep: computing liveness
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 1007
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/stdio2.h:94
+	cannot instrument for coverage (would be recursive)
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/string3.h:75
+	cannot instrument for coverage (would be recursive)
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+coverage positive:
+	test: 1
+id:1
+PASS:1
+	test: 2
+id:2
+PASS:2
+	test: 3
+id:3
+PASS:3
+	test: 4
+id:4
+PASS:4
+	test: 5
+id:5
+PASS:5
+	test: 6
+id:6
+PASS:6
+	test: 7
+id:7
+PASS:7
+	test: 8
+id:8
+PASS:8
+	test: 9
+id:9
+PASS:9
+	test: 10
+id:10
+PASS:10
+	test: 11
+id:11
+PASS:11
+	test: 12
+id:12
+PASS:12
+	test: 13
+id:13
+PASS:13
+	test: 14
+id:14
+PASS:14
+	test: 15
+id:15
+PASS:15
+	test: 16
+id:16
+PASS:16
+	test: 17
+id:17
+PASS:17
+	test: 18
+id:18
+PASS:18
+	test: 19
+id:19
+PASS:19
+	test: 20
+id:20
+PASS:20
+	test: 21
+id:21
+PASS:21
+	test: 22
+id:22
+PASS:22
+	test: 23
+id:23
+PASS:23
+	test: 24
+id:24
+PASS:24
+	test: 25
+id:25
+PASS:25
+	test: 26
+id:26
+PASS:26
+	test: 27
+id:27
+PASS:27
+	test: 28
+id:28
+PASS:28
+	test: 29
+id:29
+PASS:29
+	test: 30
+id:30
+PASS:30
+	test: 31
+id:31
+PASS:31
+	test: 32
+id:32
+PASS:32
+	test: 33
+id:33
+PASS:33
+	test: 34
+id:34
+PASS:34
+	test: 35
+id:35
+PASS:35
+	test: 36
+id:36
+PASS:36
+	test: 37
+id:37
+PASS:37
+	test: 38
+id:38
+PASS:38
+	test: 39
+id:39
+PASS:39
+	test: 40
+id:40
+PASS:40
+	test: 41
+id:41
+PASS:41
+	test: 42
+id:42
+PASS:42
+	test: 43
+id:43
+PASS:43
+	test: 44
+id:44
+PASS:44
+	test: 45
+id:45
+PASS:45
+	test: 46
+id:46
+PASS:46
+	test: 47
+id:47
+PASS:47
+	test: 48
+id:48
+PASS:48
+	test: 49
+id:49
+PASS:49
+	test: 50
+id:50
+PASS:50
+	test: 51
+id:51
+PASS:51
+	test: 52
+id:52
+PASS:52
+	test: 53
+id:53
+PASS:53
+	test: 54
+id:54
+PASS:54
+	test: 55
+id:55
+PASS:55
+	test: 56
+id:56
+PASS:56
+	test: 57
+id:57
+PASS:57
+	test: 58
+id:58
+PASS:58
+	test: 59
+id:59
+PASS:59
+	test: 60
+id:60
+PASS:60
+	test: 61
+id:61
+PASS:61
+	test: 62
+id:62
+PASS:62
+	test: 63
+id:63
+PASS:63
+	test: 64
+id:64
+PASS:64
+	test: 65
+id:65
+PASS:65
+	test: 66
+id:66
+PASS:66
+	test: 67
+id:67
+PASS:67
+	test: 68
+id:68
+PASS:68
+	test: 69
+id:69
+PASS:69
+	test: 70
+id:70
+PASS:70
+	test: 71
+id:71
+PASS:71
+	test: 72
+id:72
+PASS:72
+	test: 73
+id:73
+PASS:73
+	test: 74
+id:74
+PASS:74
+	test: 75
+id:75
+PASS:75
+	test: 76
+id:76
+PASS:76
+	test: 77
+id:77
+PASS:77
+	test: 78
+id:78
+PASS:78
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 1007
+cilRep: stmts in weighted_path = 127
+cilRep: total weight = 127
+cilRep: stmts in weighted_path with weight >= 1.0 = 127
+cilRep: find/ftsfind.c (code bank/base file; atoms [1,1007])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454315677.157815)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 671
+cilRep: fix-space quotient by string: 120 -> 99
+progeq: WARNING: cannot resolve call: __builtin_va_arg_pack_len
+progeq: WARNING: cannot resolve call: __open_too_many_args
+progeq: WARNING: cannot resolve call: __open_2
+progeq: WARNING: cannot resolve call: __open_alias
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: __fxstat
+progeq: WARNING: cannot resolve call: __fxstatat
+progeq: WARNING: cannot resolve call: __xmknod
+progeq: WARNING: cannot resolve call: __xmknodat
+progeq: WARNING: cannot resolve call: __xstat64
+progeq: WARNING: cannot resolve call: __lxstat64
+progeq: WARNING: cannot resolve call: __fxstat64
+progeq: WARNING: cannot resolve call: __fxstatat64
+progeq: WARNING: cannot resolve call: __builtin_expect
+progeq: WARNING: cannot resolve call: __uflow
+progeq: WARNING: cannot resolve call: __overflow
+progeq: WARNING: cannot resolve call: __getdelim
+progeq: WARNING: cannot resolve call: __builtin_object_size
+progeq: WARNING: cannot resolve call: __builtin___sprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___snprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsnprintf_chk
+progeq: WARNING: cannot resolve call: __fprintf_chk
+progeq: WARNING: cannot resolve call: __printf_chk
+progeq: WARNING: cannot resolve call: __vfprintf_chk
+progeq: WARNING: cannot resolve call: __dprintf_chk
+progeq: WARNING: cannot resolve call: __vdprintf_chk
+progeq: WARNING: cannot resolve call: __asprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_printf_chk
+progeq: WARNING: cannot resolve call: __vasprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_vprintf_chk
+progeq: WARNING: cannot resolve call: __fgets_chk
+progeq: WARNING: cannot resolve call: __fgets_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_alias
+progeq: WARNING: cannot resolve call: __fread_chk
+progeq: WARNING: cannot resolve call: __fread_chk_warn
+progeq: WARNING: cannot resolve call: __fread_alias
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_unlocked_alias
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fread_unlocked_alias
+progeq: WARNING: cannot resolve call: __builtin_strchr
+progeq: WARNING: cannot resolve call: __builtin___memcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memmove_chk
+progeq: WARNING: cannot resolve call: __builtin___mempcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memset_chk
+progeq: WARNING: cannot resolve call: __builtin___strcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___stpcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___strncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_alias
+progeq: WARNING: cannot resolve call: __builtin___strcat_chk
+progeq: WARNING: cannot resolve call: __builtin___strncat_chk
+progeq: WARNING: cannot resolve call: *__compar
+progeq: WARNING: cannot resolve call: __realpath_chk
+progeq: WARNING: cannot resolve call: __realpath_alias
+progeq: WARNING: cannot resolve call: __ptsname_r_chk
+progeq: WARNING: cannot resolve call: __ptsname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ptsname_r_alias
+progeq: WARNING: cannot resolve call: __wctomb_chk
+progeq: WARNING: cannot resolve call: __wctomb_alias
+progeq: WARNING: cannot resolve call: __mbstowcs_chk
+progeq: WARNING: cannot resolve call: __mbstowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbstowcs_alias
+progeq: WARNING: cannot resolve call: __wcstombs_chk
+progeq: WARNING: cannot resolve call: __wcstombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcstombs_alias
+progeq: WARNING: cannot resolve call: __read_chk
+progeq: WARNING: cannot resolve call: __read_chk_warn
+progeq: WARNING: cannot resolve call: __read_alias
+progeq: WARNING: cannot resolve call: __pread_chk
+progeq: WARNING: cannot resolve call: __pread_chk_warn
+progeq: WARNING: cannot resolve call: __pread_alias
+progeq: WARNING: cannot resolve call: __pread64_chk
+progeq: WARNING: cannot resolve call: __pread64_chk_warn
+progeq: WARNING: cannot resolve call: __pread64_alias
+progeq: WARNING: cannot resolve call: __readlink_chk
+progeq: WARNING: cannot resolve call: __readlink_chk_warn
+progeq: WARNING: cannot resolve call: __readlink_alias
+progeq: WARNING: cannot resolve call: __readlinkat_chk
+progeq: WARNING: cannot resolve call: __readlinkat_chk_warn
+progeq: WARNING: cannot resolve call: __readlinkat_alias
+progeq: WARNING: cannot resolve call: __getcwd_chk
+progeq: WARNING: cannot resolve call: __getcwd_chk_warn
+progeq: WARNING: cannot resolve call: __getcwd_alias
+progeq: WARNING: cannot resolve call: __getwd_chk
+progeq: WARNING: cannot resolve call: __getwd_warn
+progeq: WARNING: cannot resolve call: __confstr_chk
+progeq: WARNING: cannot resolve call: __confstr_chk_warn
+progeq: WARNING: cannot resolve call: __confstr_alias
+progeq: WARNING: cannot resolve call: __getgroups_chk
+progeq: WARNING: cannot resolve call: __getgroups_chk_warn
+progeq: WARNING: cannot resolve call: __getgroups_alias
+progeq: WARNING: cannot resolve call: __ttyname_r_chk
+progeq: WARNING: cannot resolve call: __ttyname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ttyname_r_alias
+progeq: WARNING: cannot resolve call: __getlogin_r_chk
+progeq: WARNING: cannot resolve call: __getlogin_r_chk_warn
+progeq: WARNING: cannot resolve call: __getlogin_r_alias
+progeq: WARNING: cannot resolve call: __gethostname_chk
+progeq: WARNING: cannot resolve call: __gethostname_chk_warn
+progeq: WARNING: cannot resolve call: __gethostname_alias
+progeq: WARNING: cannot resolve call: __getdomainname_chk
+progeq: WARNING: cannot resolve call: __getdomainname_chk_warn
+progeq: WARNING: cannot resolve call: __getdomainname_alias
+progeq: WARNING: cannot resolve call: __strtol_internal
+progeq: WARNING: cannot resolve call: __strtoul_internal
+progeq: WARNING: cannot resolve call: __wcstol_internal
+progeq: WARNING: cannot resolve call: __wcstoul_internal
+progeq: WARNING: cannot resolve call: __open64_too_many_args
+progeq: WARNING: cannot resolve call: __open64_2
+progeq: WARNING: cannot resolve call: __open64_alias
+progeq: WARNING: cannot resolve call: __openat_too_many_args
+progeq: WARNING: cannot resolve call: __openat_2
+progeq: WARNING: cannot resolve call: __openat_alias
+progeq: WARNING: cannot resolve call: __openat64_too_many_args
+progeq: WARNING: cannot resolve call: __openat64_2
+progeq: WARNING: cannot resolve call: __openat64_alias
+progeq: WARNING: cannot resolve call: fcntl
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: close
+progeq: WARNING: cannot resolve call: dup
+progeq: WARNING: cannot resolve call: get_eval_tree
+progeq: WARNING: cannot resolve call: *(eval_tree->pred_func)
+progeq: WARNING: cannot resolve call: fts_set
+progeq: WARNING: cannot resolve call: quotearg_n_style
+progeq: WARNING: cannot resolve call: dcgettext
+progeq: WARNING: cannot resolve call: error
+progeq: WARNING: cannot resolve call: following_links
+progeq: WARNING: cannot resolve call: stat
+progeq: WARNING: cannot resolve call: lstat
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: complete_pending_execdirs
+progeq: WARNING: cannot resolve call: digest_mode
+progeq: WARNING: cannot resolve call: run_in_dir
+progeq: WARNING: cannot resolve call: looks_like_expression
+progeq: WARNING: cannot resolve call: fts_open
+progeq: WARNING: cannot resolve call: fts_read
+progeq: WARNING: cannot resolve call: fts_close
+progeq: WARNING: cannot resolve call: set_option_defaults
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: process_leading_options
+progeq: WARNING: cannot resolve call: build_expression_tree
+progeq: WARNING: cannot resolve call: fchdir
+progeq: WARNING: cannot resolve call: xgetcwd
+progeq: WARNING: cannot resolve call: cleanup
+search: fix space reduced (time_taken = 2.00534)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 120 deletes
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:1:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:11:after0
+REMOVED?false
+CARDINAL?before:11:after0
+REMOVED?false
+CARDINAL?before:11:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:11:after0
+REMOVED?false
+CARDINAL?before:11:after0
+REMOVED?false
+CARDINAL?before:11:after0
+REMOVED?false
+CARDINAL?before:11:after0
+REMOVED?false
+CARDINAL?before:11:after0
+REMOVED?false
+CARDINAL?before:11:after0
+REMOVED?false
+CARDINAL?before:11:after0
+REMOVED?false
+CARDINAL?before:11:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:40:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:97:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:15:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:21:after0
+REMOVED?false
+CARDINAL?before:21:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:21:after0
+REMOVED?false
+CARDINAL?before:21:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:21:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:21:after0
+REMOVED?false
+CARDINAL?before:99:after0
+REMOVED?false
+CARDINAL?before:21:after0
+REMOVED?false
+CARDINAL?before:21:after0
+REMOVED?false
+CARDINAL?before:21:after0
+REMOVED?false
+CARDINAL?before:21:after0
+REMOVED?false
+CARDINAL?before:21:after0
+REMOVED?false
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 0 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 3295 appends
+search: ww_adaptive: 3295 possible edits
+search: ready to start (time_taken = 7.76392)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.133566)
+	variant     1/ 3295 = a(1003,1003)    (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.3947)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.158971)
+	variant     2/ 3295 = a(1003,1002)    (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.57601)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.135936)
+	variant     3/ 3295 = a(1003,1001)    (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.78477)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.143159)
+	variant     4/ 3295 = a(1003,999)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.14233)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.25646)
+	variant     5/ 3295 = a(1003,998)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.50473)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.222215)
+	variant     6/ 3295 = a(1003,997)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 2.00218)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.308283)
+	variant     7/ 3295 = a(1003,996)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.49812)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.275067)
+	variant     8/ 3295 = a(1003,995)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.60159)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.248648)
+	variant     9/ 3295 = a(1003,994)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.563)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.20655)
+	variant    10/ 3295 = a(1003,993)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.76773)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.26746)
+	variant    11/ 3295 = a(1003,992)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.87206)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.251999)
+	variant    12/ 3295 = a(1003,991)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.95901)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.154595)
+	variant    13/ 3295 = a(1003,990)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.94775)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.282353)
+	variant    14/ 3295 = a(1003,989)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.50951)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.149495)
+	variant    15/ 3295 = a(1003,988)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.21194)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.138889)
+	variant    16/ 3295 = a(1003,987)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.5905)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.163195)
+	variant    17/ 3295 = a(1003,975)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.88606)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.135097)
+	variant    18/ 3295 = a(1003,974)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.65183)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.225018)
+	variant    19/ 3295 = a(1003,947)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.30124)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.13202)
+	variant    20/ 3295 = a(1003,944)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.44148)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.134337)
+	variant    21/ 3295 = a(1003,937)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.37237)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.141006)
+	variant    22/ 3295 = a(1003,936)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.43343)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.151843)
+	variant    23/ 3295 = a(1003,935)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.50327)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.147092)
+	variant    24/ 3295 = a(1003,890)     (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/000023/find/ftsfind.c  a(1003,890)  fails to compile
+ false (test_time = 0.736007)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.138703)
+	variant    25/ 3295 = a(1003,868)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.77729)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.168186)
+	variant    26/ 3295 = a(1003,860)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.56306)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.180858)
+	variant    27/ 3295 = a(1003,859)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.61912)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.139064)
+	variant    28/ 3295 = a(1003,827)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.34725)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.142714)
+	variant    29/ 3295 = a(1003,697)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.50547)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.138709)
+	variant    30/ 3295 = a(1003,696)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.42136)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.152653)
+	variant    31/ 3295 = a(1002,1003)    (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.25279)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.222642)
+	variant    32/ 3295 = a(1002,1002)    (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.56347)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.146817)
+	variant    33/ 3295 = a(1002,1001)    (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.25232)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.147912)
+	variant    34/ 3295 = a(1002,999)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.51221)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.194051)
+	variant    35/ 3295 = a(1002,998)     (79 tests, cond 0)
+		n1find: pred.c:1582: pred_type: Assertion `state.type != 0' failed.
+Aborted
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+FAILED:0
+ false (test_time = 1.61445)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.208245)
+	variant    36/ 3295 = a(1002,997)     (79 tests, cond 0)
+		n1/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find/find: invalid expression; you have used a binary operator '-a' with nothing before it.
+/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find
+id:0
+line:"/home/ubuntu/corebench/findutils/findutils-case-b46b0d89-091557f6/find/find: invalid expression; you have used a binary operator '-a' with nothing before it."
+PASS:0
+ true (test_time = 1.55963)
+		p1id:1
+PASS:1
+ true (test_time = 0.151035)
+		p2id:2
+PASS:2
+ true (test_time = 0.170479)
+		p3id:3
+PASS:3
+ true (test_time = 0.154758)
+		p4id:4
+PASS:4
+ true (test_time = 0.10261)
+		p5id:5
+PASS:5
+ true (test_time = 0.170948)
+		p6id:6
+PASS:6
+ true (test_time = 0.179788)
+		p7id:7
+PASS:7
+ true (test_time = 0.151978)
+		p8id:8
+PASS:8
+ true (test_time = 0.13269)
+		p9id:9
+PASS:9
+ true (test_time = 0.180661)
+		p10id:10
+PASS:10
+ true (test_time = 0.188771)
+		p11id:11
+PASS:11
+ true (test_time = 0.182098)
+		p12id:12
+PASS:12
+ true (test_time = 0.221087)
+		p13id:13
+PASS:13
+ true (test_time = 0.239348)
+		p14id:14
+PASS:14
+ true (test_time = 0.166998)
+		p15id:15
+PASS:15
+ true (test_time = 0.188992)
+		p16id:16
+PASS:16
+ true (test_time = 0.109137)
+		p17id:17
+PASS:17
+ true (test_time = 0.214057)
+		p18id:18
+PASS:18
+ true (test_time = 0.131508)
+		p19id:19
+PASS:19
+ true (test_time = 0.227168)
+		p20id:20
+PASS:20
+ true (test_time = 0.123355)
+		p21id:21
+PASS:21
+ true (test_time = 0.124915)
+		p22id:22
+PASS:22
+ true (test_time = 0.133461)
+		p23id:23
+PASS:23
+ true (test_time = 0.163241)
+		p24id:24
+PASS:24
+ true (test_time = 0.270533)
+		p25id:25
+PASS:25
+ true (test_time = 0.154083)
+		p26id:26
+PASS:26
+ true (test_time = 0.154622)
+		p27id:27
+PASS:27
+ true (test_time = 0.128982)
+		p28id:28
+PASS:28
+ true (test_time = 0.115353)
+		p29id:29
+PASS:29
+ true (test_time = 0.142766)
+		p30id:30
+PASS:30
+ true (test_time = 0.179867)
+		p31id:31
+PASS:31
+ true (test_time = 0.177957)
+		p32id:32
+PASS:32
+ true (test_time = 0.188641)
+		p33id:33
+PASS:33
+ true (test_time = 0.144552)
+		p34id:34
+PASS:34
+ true (test_time = 0.129635)
+		p35id:35
+PASS:35
+ true (test_time = 0.191289)
+		p36id:36
+PASS:36
+ true (test_time = 0.299839)
+		p37id:37
+PASS:37
+ true (test_time = 0.229462)
+		p38id:38
+PASS:38
+ true (test_time = 0.126047)
+		p39id:39
+PASS:39
+ true (test_time = 0.19881)
+		p40id:40
+PASS:40
+ true (test_time = 0.116739)
+		p41id:41
+PASS:41
+ true (test_time = 0.177007)
+		p42id:42
+PASS:42
+ true (test_time = 0.165809)
+		p43id:43
+PASS:43
+ true (test_time = 0.156755)
+		p44id:44
+PASS:44
+ true (test_time = 0.140534)
+		p45id:45
+PASS:45
+ true (test_time = 0.119032)
+		p46id:46
+PASS:46
+ true (test_time = 0.114559)
+		p47id:47
+PASS:47
+ true (test_time = 0.202567)
+		p48id:48
+PASS:48
+ true (test_time = 0.159736)
+		p49id:49
+PASS:49
+ true (test_time = 0.291468)
+		p50id:50
+PASS:50
+ true (test_time = 0.138326)
+		p51id:51
+PASS:51
+ true (test_time = 0.132749)
+		p52id:52
+PASS:52
+ true (test_time = 0.145889)
+		p53id:53
+PASS:53
+ true (test_time = 0.160825)
+		p54id:54
+PASS:54
+ true (test_time = 0.208261)
+		p55id:55
+PASS:55
+ true (test_time = 0.167348)
+		p56id:56
+PASS:56
+ true (test_time = 0.191448)
+		p57id:57
+PASS:57
+ true (test_time = 0.123587)
+		p58id:58
+PASS:58
+ true (test_time = 0.21747)
+		p59id:59
+PASS:59
+ true (test_time = 0.198996)
+		p60id:60
+PASS:60
+ true (test_time = 0.122163)
+		p61id:61
+PASS:61
+ true (test_time = 0.151658)
+		p62id:62
+PASS:62
+ true (test_time = 0.145565)
+		p63id:63
+PASS:63
+ true (test_time = 0.176319)
+		p64id:64
+PASS:64
+ true (test_time = 0.14389)
+		p65id:65
+PASS:65
+ true (test_time = 0.122451)
+		p66id:66
+PASS:66
+ true (test_time = 0.146389)
+		p67id:67
+PASS:67
+ true (test_time = 0.131005)
+		p68id:68
+PASS:68
+ true (test_time = 0.13455)
+		p69id:69
+PASS:69
+ true (test_time = 0.143672)
+		p70id:70
+PASS:70
+ true (test_time = 0.11172)
+		p71id:71
+PASS:71
+ true (test_time = 0.182437)
+		p72id:72
+PASS:72
+ true (test_time = 0.166636)
+		p73id:73
+PASS:73
+ true (test_time = 0.182447)
+		p74id:74
+PASS:74
+ true (test_time = 0.156736)
+		p75id:75
+PASS:75
+ true (test_time = 0.196524)
+		p76id:76
+PASS:76
+ true (test_time = 0.166965)
+		p77id:77
+PASS:77
+ true (test_time = 0.133211)
+		p78id:78
+PASS:78
+ true (test_time = 0.194867)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: a(1002,997)
+Repair Name: a(1002,997) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454315762.051798
+
+Variant Test Case Queries: 114
+"Test Suite Evaluations": 1.44304
+
+Compile Failures: 1
+Wall-Clock Seconds Elapsed: 100.387
+  Activity Name                     Count Seconds = Percent of Total Time
+  delete_sources                      120   0.025 = 0.0259902%
+  progeq partition                     99   1.334 = 1.37231%
+  find_best_edit                       36   6.543 = 6.73011%
+  append_sources                      120   7.734 = 7.95503%
+  test                                192  30.117 = 30.9764%
+  compile                              37  51.472 = 52.9402%
+  TOTAL                                    97.227 = 96.8393% (avg CPU usage)

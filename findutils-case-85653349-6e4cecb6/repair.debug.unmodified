@@ -1,0 +1,1051 @@
+--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 78
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Tue Feb  2 12:29:46 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp590ec2.c /tmp/tmp86c65e.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: find/find.c: parsing
+cilRep: find/find.c: parsed (0.179482 MB)
+cilRep: computing liveness
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 1713
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/findutils/findutils-case-85653349-6e4cecb6/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/stdio2.h:94
+	cannot instrument for coverage (would be recursive)
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/string3.h:75
+	cannot instrument for coverage (would be recursive)
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+coverage positive:
+	test: 1
+	test: 2
+	test: 3
+	test: 4
+	test: 5
+	test: 6
+	test: 7
+	test: 8
+	test: 9
+	test: 10
+	test: 11
+	test: 12
+	test: 13
+	test: 14
+	test: 15
+	test: 16
+	test: 17
+	test: 18
+	test: 19
+	test: 20
+	test: 21
+	test: 22
+	test: 23
+	test: 24
+	test: 25
+	test: 26
+	test: 27
+	test: 28
+	test: 29
+	test: 30
+	test: 31
+	test: 32
+	test: 33
+	test: 34
+	test: 35
+	test: 36
+	test: 37
+	test: 38
+	test: 39
+	test: 40
+	test: 41
+	test: 42
+	test: 43
+	test: 44
+	test: 45
+	test: 46
+	test: 47
+	test: 48
+	test: 49
+	test: 50
+	test: 51
+	test: 52
+	test: 53
+	test: 54
+	test: 55
+	test: 56
+	test: 57
+	test: 58
+	test: 59
+	test: 60
+	test: 61
+	test: 62
+	test: 63
+	test: 64
+	test: 65
+	test: 66
+	test: 67
+	test: 68
+	test: 69
+	test: 70
+	test: 71
+	test: 72
+	test: 73
+	test: 74
+	test: 75
+	test: 76
+	test: 77
+	test: 78
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 1713
+cilRep: stmts in weighted_path = 282
+cilRep: total weight = 282
+cilRep: stmts in weighted_path with weight >= 1.0 = 282
+cilRep: find/find.c (code bank/base file; atoms [1,1713])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454387397.717301)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 671
+cilRep: fix-space quotient by string: 273 -> 225
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: get_mounted_devices
+progeq: WARNING: cannot resolve call: chdir
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: error
+progeq: WARNING: cannot resolve call: *(options.xstat)
+progeq: WARNING: cannot resolve call: __builtin_strlen
+progeq: WARNING: cannot resolve call: __builtin_strcmp
+progeq: WARNING: cannot resolve call: __builtin_object_size
+progeq: WARNING: cannot resolve call: __getcwd_chk
+progeq: WARNING: cannot resolve call: __getcwd_chk_warn
+progeq: WARNING: cannot resolve call: __getcwd_alias
+progeq: WARNING: cannot resolve call: __strdup
+progeq: WARNING: cannot resolve call: canonicalize_filename_mode
+progeq: WARNING: cannot resolve call: filesystem_type
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: dcgettext
+progeq: WARNING: cannot resolve call: fchdir
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: __fxstat
+progeq: WARNING: cannot resolve call: __fxstatat
+progeq: WARNING: cannot resolve call: __xmknod
+progeq: WARNING: cannot resolve call: __xmknodat
+progeq: WARNING: cannot resolve call: __xstat64
+progeq: WARNING: cannot resolve call: __lxstat64
+progeq: WARNING: cannot resolve call: __fxstat64
+progeq: WARNING: cannot resolve call: __fxstatat64
+progeq: WARNING: cannot resolve call: __builtin_expect
+progeq: WARNING: cannot resolve call: __uflow
+progeq: WARNING: cannot resolve call: __overflow
+progeq: WARNING: cannot resolve call: __getdelim
+progeq: WARNING: cannot resolve call: __builtin___sprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___snprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsnprintf_chk
+progeq: WARNING: cannot resolve call: __fprintf_chk
+progeq: WARNING: cannot resolve call: __printf_chk
+progeq: WARNING: cannot resolve call: __vfprintf_chk
+progeq: WARNING: cannot resolve call: __dprintf_chk
+progeq: WARNING: cannot resolve call: __vdprintf_chk
+progeq: WARNING: cannot resolve call: __asprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_printf_chk
+progeq: WARNING: cannot resolve call: __vasprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_vprintf_chk
+progeq: WARNING: cannot resolve call: __fgets_chk
+progeq: WARNING: cannot resolve call: __fgets_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_alias
+progeq: WARNING: cannot resolve call: __fread_chk
+progeq: WARNING: cannot resolve call: __fread_chk_warn
+progeq: WARNING: cannot resolve call: __fread_alias
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_unlocked_alias
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fread_unlocked_alias
+progeq: WARNING: cannot resolve call: __builtin_strchr
+progeq: WARNING: cannot resolve call: __builtin___memcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memmove_chk
+progeq: WARNING: cannot resolve call: __builtin___mempcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memset_chk
+progeq: WARNING: cannot resolve call: __builtin___strcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___stpcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___strncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_alias
+progeq: WARNING: cannot resolve call: __builtin___strcat_chk
+progeq: WARNING: cannot resolve call: __builtin___strncat_chk
+progeq: WARNING: cannot resolve call: *__compar
+progeq: WARNING: cannot resolve call: __realpath_chk
+progeq: WARNING: cannot resolve call: __realpath_alias
+progeq: WARNING: cannot resolve call: __ptsname_r_chk
+progeq: WARNING: cannot resolve call: __ptsname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ptsname_r_alias
+progeq: WARNING: cannot resolve call: __wctomb_chk
+progeq: WARNING: cannot resolve call: __wctomb_alias
+progeq: WARNING: cannot resolve call: __mbstowcs_chk
+progeq: WARNING: cannot resolve call: __mbstowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbstowcs_alias
+progeq: WARNING: cannot resolve call: __wcstombs_chk
+progeq: WARNING: cannot resolve call: __wcstombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcstombs_alias
+progeq: WARNING: cannot resolve call: __read_chk
+progeq: WARNING: cannot resolve call: __read_chk_warn
+progeq: WARNING: cannot resolve call: __read_alias
+progeq: WARNING: cannot resolve call: __pread_chk
+progeq: WARNING: cannot resolve call: __pread_chk_warn
+progeq: WARNING: cannot resolve call: __pread_alias
+progeq: WARNING: cannot resolve call: __pread64_chk
+progeq: WARNING: cannot resolve call: __pread64_chk_warn
+progeq: WARNING: cannot resolve call: __pread64_alias
+progeq: WARNING: cannot resolve call: __readlink_chk
+progeq: WARNING: cannot resolve call: __readlink_chk_warn
+progeq: WARNING: cannot resolve call: __readlink_alias
+progeq: WARNING: cannot resolve call: __readlinkat_chk
+progeq: WARNING: cannot resolve call: __readlinkat_chk_warn
+progeq: WARNING: cannot resolve call: __readlinkat_alias
+progeq: WARNING: cannot resolve call: __getwd_chk
+progeq: WARNING: cannot resolve call: __getwd_warn
+progeq: WARNING: cannot resolve call: __confstr_chk
+progeq: WARNING: cannot resolve call: __confstr_chk_warn
+progeq: WARNING: cannot resolve call: __confstr_alias
+progeq: WARNING: cannot resolve call: __getgroups_chk
+progeq: WARNING: cannot resolve call: __getgroups_chk_warn
+progeq: WARNING: cannot resolve call: __getgroups_alias
+progeq: WARNING: cannot resolve call: __ttyname_r_chk
+progeq: WARNING: cannot resolve call: __ttyname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ttyname_r_alias
+progeq: WARNING: cannot resolve call: __getlogin_r_chk
+progeq: WARNING: cannot resolve call: __getlogin_r_chk_warn
+progeq: WARNING: cannot resolve call: __getlogin_r_alias
+progeq: WARNING: cannot resolve call: __gethostname_chk
+progeq: WARNING: cannot resolve call: __gethostname_chk_warn
+progeq: WARNING: cannot resolve call: __gethostname_alias
+progeq: WARNING: cannot resolve call: __getdomainname_chk
+progeq: WARNING: cannot resolve call: __getdomainname_chk_warn
+progeq: WARNING: cannot resolve call: __getdomainname_alias
+progeq: WARNING: cannot resolve call: __strtol_internal
+progeq: WARNING: cannot resolve call: __strtoul_internal
+progeq: WARNING: cannot resolve call: __wcstol_internal
+progeq: WARNING: cannot resolve call: __wcstoul_internal
+progeq: WARNING: cannot resolve call: __builtin_va_arg_pack_len
+progeq: WARNING: cannot resolve call: __open_too_many_args
+progeq: WARNING: cannot resolve call: __open_2
+progeq: WARNING: cannot resolve call: __open_alias
+progeq: WARNING: cannot resolve call: __open64_too_many_args
+progeq: WARNING: cannot resolve call: __open64_2
+progeq: WARNING: cannot resolve call: __open64_alias
+progeq: WARNING: cannot resolve call: __openat_too_many_args
+progeq: WARNING: cannot resolve call: __openat_2
+progeq: WARNING: cannot resolve call: __openat_alias
+progeq: WARNING: cannot resolve call: __openat64_too_many_args
+progeq: WARNING: cannot resolve call: __openat64_2
+progeq: WARNING: cannot resolve call: __openat64_alias
+progeq: WARNING: cannot resolve call: stat
+progeq: WARNING: cannot resolve call: lstat
+progeq: WARNING: cannot resolve call: launch
+progeq: WARNING: cannot resolve call: uname
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: isatty
+progeq: WARNING: cannot resolve call: parse_open
+progeq: WARNING: cannot resolve call: usage
+progeq: WARNING: cannot resolve call: find_parser
+progeq: WARNING: cannot resolve call: *parse_function
+progeq: WARNING: cannot resolve call: parse_print
+progeq: WARNING: cannot resolve call: parse_close
+progeq: WARNING: cannot resolve call: get_expr
+progeq: WARNING: cannot resolve call: opt_expr
+progeq: WARNING: cannot resolve call: mark_stat
+progeq: WARNING: cannot resolve call: mark_type
+progeq: WARNING: cannot resolve call: close
+progeq: WARNING: cannot resolve call: xgetcwd
+progeq: WARNING: cannot resolve call: dir_name
+progeq: WARNING: cannot resolve call: base_name
+progeq: WARNING: cannot resolve call: *(eval_tree->pred_func)
+progeq: WARNING: cannot resolve call: xrealloc
+progeq: WARNING: cannot resolve call: savedirinfo
+progeq: WARNING: cannot resolve call: xmalloc
+search: fix space reduced (time_taken = 11.3749)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 273 deletes
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:208:after208
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:86:after86
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:15:after15
+REMOVED?true
+CARDINAL?before:15:after15
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:15:after15
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:15:after15
+REMOVED?true
+CARDINAL?before:15:after15
+REMOVED?true
+CARDINAL?before:15:after15
+REMOVED?true
+CARDINAL?before:15:after15
+REMOVED?true
+CARDINAL?before:15:after15
+REMOVED?true
+CARDINAL?before:15:after15
+REMOVED?true
+CARDINAL?before:15:after15
+REMOVED?true
+CARDINAL?before:15:after15
+REMOVED?true
+CARDINAL?before:15:after15
+REMOVED?true
+CARDINAL?before:15:after15
+REMOVED?true
+CARDINAL?before:15:after15
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:95:after95
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:25:after25
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:66:after66
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:66:after66
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:34:after34
+REMOVED?true
+CARDINAL?before:66:after66
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:225:after225
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 27386 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 10071 appends
+search: ww_adaptive: 37457 possible edits
+search: ready to start (time_taken = 142.696)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 1.64231)
+	variant     1/37457 = d(1704)         (79 tests, cond 0)
+		n1 true (test_time = 0.901841)
+		p1 true (test_time = 0.112493)
+		p2 true (test_time = 0.112271)
+		p3 true (test_time = 0.106386)
+		p4 true (test_time = 0.111034)
+		p5 true (test_time = 0.113642)
+		p6 true (test_time = 0.110556)
+		p7 true (test_time = 0.098634)
+		p8 true (test_time = 0.133907)
+		p9 true (test_time = 0.111459)
+		p10 true (test_time = 0.091408)
+		p11 true (test_time = 0.102164)
+		p12 true (test_time = 0.125755)
+		p13 true (test_time = 0.0981052)
+		p14 true (test_time = 0.096226)
+		p15 true (test_time = 0.0987072)
+		p16 true (test_time = 0.0996668)
+		p17 true (test_time = 0.139761)
+		p18 true (test_time = 0.101876)
+		p19 true (test_time = 0.0918438)
+		p20 true (test_time = 0.091886)
+		p21 true (test_time = 0.0971351)
+		p22 true (test_time = 0.122856)
+		p23 true (test_time = 0.110341)
+		p24 true (test_time = 0.099982)
+		p25 true (test_time = 0.115405)
+		p26 true (test_time = 0.125371)
+		p27 true (test_time = 0.0908849)
+		p28 true (test_time = 0.0932889)
+		p29 true (test_time = 0.114637)
+		p30 true (test_time = 0.120291)
+		p31 true (test_time = 0.095386)
+		p32 true (test_time = 0.094219)
+		p33 true (test_time = 0.109922)
+		p34 true (test_time = 0.121507)
+		p35 true (test_time = 0.137988)
+		p36 true (test_time = 0.0923679)
+		p37 true (test_time = 0.0883868)
+		p38 true (test_time = 0.0973179)
+		p39 true (test_time = 0.0976698)
+		p40 true (test_time = 0.094938)
+		p41 true (test_time = 0.104281)
+		p42 true (test_time = 0.0962081)
+		p43 true (test_time = 0.0878561)
+		p44 true (test_time = 0.365155)
+		p45 true (test_time = 0.131723)
+		p46 true (test_time = 0.111941)
+		p47 true (test_time = 0.107723)
+		p48 true (test_time = 0.103606)
+		p49 true (test_time = 0.094697)
+		p50 true (test_time = 0.0920269)
+		p51 true (test_time = 0.0890789)
+		p52 true (test_time = 0.0935509)
+		p53 true (test_time = 0.0994189)
+		p54 true (test_time = 0.10652)
+		p55 true (test_time = 0.102938)
+		p56 true (test_time = 0.104017)
+		p57 true (test_time = 0.09761)
+		p58 true (test_time = 0.0947828)
+		p59 true (test_time = 0.095351)
+		p60 true (test_time = 0.0959859)
+		p61 true (test_time = 0.10255)
+		p62 true (test_time = 0.114491)
+		p63 true (test_time = 0.101112)
+		p64 true (test_time = 0.10754)
+		p65 true (test_time = 0.108367)
+		p66 true (test_time = 0.10601)
+		p67 true (test_time = 0.094399)
+		p68 true (test_time = 0.1217)
+		p69 true (test_time = 0.105053)
+		p70 true (test_time = 0.100513)
+		p71 true (test_time = 0.10355)
+		p72 true (test_time = 0.097923)
+		p73 true (test_time = 0.0993011)
+		p74 true (test_time = 0.099771)
+		p75 true (test_time = 0.101203)
+		p76 true (test_time = 0.115181)
+		p77 true (test_time = 0.113309)
+		p78 true (test_time = 0.104186)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: d(1704)
+Repair Name: d(1704) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454387562.840843
+
+Variant Test Case Queries: 79
+"Test Suite Evaluations": 1
+
+Compile Failures: 0
+Wall-Clock Seconds Elapsed: 176.547
+  Activity Name                     Count Seconds = Percent of Total Time
+  find_best_edit                        1   1.642 = 0.948957%
+  compile                               2   3.363 = 1.94314%
+  progeq partition                    225   9.246 = 5.34249%
+  test                                158  16.170 = 9.34327%
+  delete_sources                      273  55.438 = 32.0332%
+  append_sources                      273  87.205 = 50.389%
+  TOTAL                                   173.064 = 98.021% (avg CPU usage)

@@ -1,0 +1,1503 @@
+WARNING: the argument --multi-file is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --suffix-extension is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --mutp is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 78
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Mon Feb  1 02:02:09 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat: /etc/redhat-release: No such file or directory
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp262f69.c /tmp/tmp41e09c.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: find/parser.c: parsing
+cilRep: find/parser.c: parsed (0.269075 MB)
+cilRep: computing liveness
+Bug: BF(Liveness): stmtStartData is not initialized for -1: _L: 
+#line 1007 "parser.c"
+tmp___2 = __errno_location();
+Liveness failed on function:
+ static int safe_atoi(char const   *s ) 
+{ long lval ;
+  char *end ;
+  int *tmp ;
+  int *tmp___0 ;
+  int *tmp___1 ;
+  int *tmp___2 ;
+  int *tmp___3 ;
+  int *tmp___4 ;
+  char *tmp___5 ;
+  char *tmp___6 ;
+  int *tmp___7 ;
+  char *tmp___8 ;
+  int *tmp___9 ;
+
+  {
+   1078: /* CIL Label */ 
+#line 1002
+  tmp = __errno_location();
+   1079: /* CIL Label */ 
+#line 1002
+  *tmp = 0;
+   1080: /* CIL Label */ 
+#line 1003
+  lval = strtol((char const   */* __restrict  */)s,
+                (char **/* __restrict  */)(& end), 10);
+   1081: /* CIL Label */ 
+#line 1004
+  if (9223372036854775807L == lval) {
+    goto _L;
+  } else {
+#line 1004
+    if ((-0x7FFFFFFFFFFFFFFF-1) == lval) {
+      _L: 
+#line 1007
+      tmp___2 = __errno_location();
+#line 1007
+      if (*tmp___2 == 34) {
+#line 1010
+        tmp___0 = __errno_location();
+#line 1010
+        error(1, *tmp___0, "%s", s);
+      } else {
+#line 1015
+        tmp___1 = __errno_location();
+#line 1015
+        error(1, *tmp___1, "%s", s);
+      }
+    } else {
+
+    }
+  }
+   1082: /* CIL Label */ 
+#line 1022
+  if (lval > 2147483647L) {
+#line 1025
+    tmp___3 = __errno_location();
+#line 1025
+    *tmp___3 = 34;
+#line 1026
+    tmp___4 = __errno_location();
+#line 1026
+    error(1, *tmp___4, "%s", s);
+  } else {
+#line 1022
+    if (lval < (-0x7FFFFFFF-1)) {
+#line 1025
+      tmp___3 = __errno_location();
+#line 1025
+      *tmp___3 = 34;
+#line 1026
+      tmp___4 = __errno_location();
+#line 1026
+      error(1, *tmp___4, "%s", s);
+    } else {
+#line 1028
+      if (*end) {
+#line 1030
+        tmp___5 = quotearg_n_style(1, options.err_quoting_style, s);
+#line 1030
+        tmp___6 = quotearg_n_style(0, options.err_quoting_style,
+                                   (char const   *)end);
+#line 1030
+        tmp___7 = __errno_location();
+#line 1030
+        error(1, *tmp___7, "Unexpected suffix %s on %s", tmp___6, tmp___5);
+      } else {
+#line 1034
+        if ((unsigned long )end == (unsigned long )s) {
+#line 1036
+          tmp___8 = quotearg_n_style(0, options.err_quoting_style, s);
+#line 1036
+          tmp___9 = __errno_location();
+#line 1036
+          error(1, *tmp___9, "Expected an integer: %s", tmp___8);
+        } else {
+
+        }
+      }
+    }
+  }
+   1083: /* CIL Label */ 
+#line 1039
+  return ((int )lval);
+}
+}
+
+cilRep: liveness failure for safe_atoi: Errormsg.Error
+Bug: BF(Liveness): stmtStartData is not initialized for -1: __Cont: 
+#line 2692
+scan ++;
+Liveness failed on function:
+ static boolean insert_fprintf(struct format_val *vec ,
+                               struct parser_table  const  *entry ,
+                               boolean (*func)(char const   *pathname ,
+                                               struct stat *stat_buf ,
+                                               struct predicate *pred_ptr ) ,
+                               char const   *format_const ) 
+{ char *format ;
+  register char *scan ;
+  register char *scan2 ;
+  struct segment **segmentp ;
+  struct predicate *our_pred ;
+  boolean tmp ;
+  register int n ;
+  register int i ;
+  char *tmp___0 ;
+  char *tmp___1 ;
+  char *tmp___3 ;
+  unsigned short const   **tmp___4 ;
+  unsigned short const   **tmp___5 ;
+  char *tmp___6 ;
+  char *tmp___8 ;
+  char *tmp___10 ;
+
+  {
+   1980: /* CIL Label */ 
+#line 2676
+  format = (char *)format_const;
+   1981: /* CIL Label */ 
+#line 2682
+  our_pred = insert_primary_withpred(entry, func);
+   1982: /* CIL Label */ 
+#line 2683
+  tmp = (_Bool)1;
+   1983: /* CIL Label */ 
+#line 2683
+  our_pred->no_default_print = tmp;
+   1984: /* CIL Label */ 
+#line 2683
+  our_pred->side_effects = tmp;
+   1985: /* CIL Label */ 
+#line 2684
+  our_pred->args.printf_vec = *vec;
+   1986: /* CIL Label */ 
+#line 2685
+  our_pred->need_type = (_Bool)0;
+   1987: /* CIL Label */ 
+#line 2686
+  our_pred->need_stat = (_Bool)0;
+   1988: /* CIL Label */ 
+#line 2687
+  our_pred->p_cost = (enum EvaluationCost )0;
+   1989: /* CIL Label */ 
+#line 2689
+  segmentp = & our_pred->args.printf_vec.segment;
+   1990: /* CIL Label */ 
+#line 2690
+  *segmentp = (struct segment *)((void *)0);
+   1991: /* CIL Label */ 
+#line 2692
+  scan = format;
+   1992: /* CIL Label */ 
+#line 2692
+  while (*scan) {
+#line 2694
+    if ((int )*scan == 92) {
+#line 2696
+      scan2 = scan + 1;
+#line 2697
+      if ((int )*scan2 >= 48) {
+#line 2697
+        if ((int )*scan2 <= 55) {
+#line 2701
+          n = 0;
+#line 2701
+          i = n;
+#line 2701
+          while (1) {
+#line 2701
+            if (i < 3) {
+#line 2701
+              if ((int )*scan2 >= 48) {
+#line 2701
+                if (! ((int )*scan2 <= 55)) {
+#line 2701
+                  break;
+                } else {
+
+                }
+              } else {
+#line 2701
+                break;
+              }
+            } else {
+#line 2701
+              break;
+            }
+#line 2703
+            n = (8 * n + (int )*scan2) - 48;
+#line 2701
+            i ++;
+#line 2701
+            scan2 ++;
+          }
+#line 2704
+          scan2 --;
+#line 2705
+          *scan = (char )n;
+        } else {
+          goto _L;
+        }
+      } else {
+        _L: 
+#line 2709
+        switch ((int )*scan2) {
+        case 97: 
+#line 2712
+        *scan = (char)7;
+#line 2713
+        break;
+        case 98: 
+#line 2715
+        *scan = (char )'\b';
+#line 2716
+        break;
+        case 99: 
+#line 2718
+        make_segment(segmentp, format, scan - format, 1, (char)0, (char)0,
+                     our_pred);
+#line 2721
+        if (our_pred->need_stat) {
+#line 2721
+          if ((unsigned int )our_pred->p_cost < 2U) {
+#line 2722
+            our_pred->p_cost = (enum EvaluationCost )2;
+          } else {
+
+          }
+        } else {
+
+        }
+#line 2723
+        return ((_Bool)1);
+        case 102: 
+#line 2725
+        *scan = (char )'\f';
+#line 2726
+        break;
+        case 110: 
+#line 2728
+        *scan = (char )'\n';
+#line 2729
+        break;
+        case 114: 
+#line 2731
+        *scan = (char )'\r';
+#line 2732
+        break;
+        case 116: 
+#line 2734
+        *scan = (char )'\t';
+#line 2735
+        break;
+        case 118: 
+#line 2737
+        *scan = (char )'\v';
+#line 2738
+        break;
+        case 92: 
+#line 2741
+        break;
+        default: 
+#line 2743
+        tmp___0 = dcgettext((char const   *)((void *)0),
+                            "warning: unrecognized escape `\\%c\'", 5);
+#line 2743
+        error(0, 0, (char const   *)tmp___0, *scan2);
+#line 2745
+        scan ++;
+        goto __Cont;
+        }
+      }
+#line 2749
+      segmentp = make_segment(segmentp, format, (scan - format) + 1, 0, (char)0,
+                              (char)0, our_pred);
+#line 2752
+      format = scan2 + 1;
+#line 2753
+      scan = scan2;
+    } else {
+#line 2755
+      if ((int )*scan == 37) {
+#line 2757
+        if ((int )*(scan + 1) == 0) {
+#line 2760
+          tmp___1 = dcgettext((char const   *)((void *)0),
+                              "error: %s at end of format string", 5);
+#line 2760
+          error(1, 0, (char const   *)tmp___1, scan);
+        } else {
+#line 2762
+          if ((int )*(scan + 1) == 37) {
+#line 2764
+            segmentp = make_segment(segmentp, format, (scan - format) + 1, 0,
+                                    (char)0, (char)0, our_pred);
+#line 2767
+            scan ++;
+#line 2768
+            format = scan + 1;
+            goto __Cont;
+          } else {
+
+          }
+        }
+#line 2772
+        scan2 = scan;
+#line 2772
+        while (1) {
+#line 2772
+          scan2 ++;
+#line 2772
+          if (*scan2) {
+#line 2772
+            tmp___3 = __builtin_strchr((char *)"-+ #", (int )*scan2);
+#line 2772
+            if (! tmp___3) {
+#line 2772
+              break;
+            } else {
+
+            }
+          } else {
+#line 2772
+            break;
+          }
+        }
+#line 2774
+        while (1) {
+#line 2774
+          tmp___4 = __ctype_b_loc();
+#line 2774
+          if (! ((int const   )*(*tmp___4 + (int )((unsigned char )*scan2)) & 2048)) {
+#line 2774
+            break;
+          } else {
+
+          }
+#line 2775
+          scan2 ++;
+        }
+#line 2776
+        if ((int )*scan2 == 46) {
+#line 2777
+          scan2 ++;
+#line 2777
+          while (1) {
+#line 2777
+            tmp___5 = __ctype_b_loc();
+#line 2777
+            if (! ((int const   )*(*tmp___5 + (int )((unsigned char )*scan2)) & 2048)) {
+#line 2777
+              break;
+            } else {
+
+            }
+#line 2777
+            scan2 ++;
+          }
+        } else {
+
+        }
+#line 2779
+        tmp___10 = __builtin_strchr((char *)"abcdDfFgGhHiklmMnpPsStuUyY",
+                                    (int )*scan2);
+#line 2779
+        if (tmp___10) {
+#line 2781
+          segmentp = make_segment(segmentp, format, scan2 - format, 2, *scan2,
+                                  (char)0, our_pred);
+#line 2784
+          scan = scan2;
+#line 2785
+          format = scan + 1;
+        } else {
+#line 2787
+          tmp___8 = __builtin_strchr((char *)"ABCT", (int )*scan2);
+#line 2787
+          if (tmp___8) {
+#line 2787
+            if (*(scan2 + 1)) {
+#line 2789
+              segmentp = make_segment(segmentp, format, scan2 - format, 2,
+                                      *(scan2 + 0), *(scan2 + 1), our_pred);
+#line 2792
+              scan = scan2 + 1;
+#line 2793
+              format = scan + 1;
+              goto __Cont;
+            } else {
+#line 2799
+              tmp___6 = dcgettext((char const   *)((void *)0),
+                                  "warning: unrecognized format directive `%%%c\'",
+                                  5);
+#line 2799
+              error(0, 0, (char const   *)tmp___6, *scan2);
+#line 2801
+              segmentp = make_segment(segmentp, format, scan - format, 0,
+                                      (char)0, (char)0, our_pred);
+#line 2804
+              format = scan + 1;
+              goto __Cont;
+            }
+          } else {
+#line 2799
+            tmp___6 = dcgettext((char const   *)((void *)0),
+                                "warning: unrecognized format directive `%%%c\'",
+                                5);
+#line 2799
+            error(0, 0, (char const   *)tmp___6, *scan2);
+#line 2801
+            segmentp = make_segment(segmentp, format, scan - format, 0, (char)0,
+                                    (char)0, our_pred);
+#line 2804
+            format = scan + 1;
+            goto __Cont;
+          }
+        }
+      } else {
+
+      }
+    }
+    __Cont: 
+#line 2692
+    scan ++;
+  }
+   1993: /* CIL Label */ 
+#line 2810
+  if ((unsigned long )scan > (unsigned long )format) {
+#line 2811
+    make_segment(segmentp, format, scan - format, 0, (char)0, (char)0, our_pred);
+  } else {
+
+  }
+   1994: /* CIL Label */ 
+#line 2813
+  return ((_Bool)1);
+}
+}
+
+cilRep: liveness failure for insert_fprintf: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 2425
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/findutils/findutils-case-b130c9b9-c8491c11/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/stdio2.h:94
+	cannot instrument for coverage (would be recursive)
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/string3.h:75
+	cannot instrument for coverage (would be recursive)
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+Segmentation fault
+id:0
+FAILED:0
+coverage positive:
+	test: 1
+id:1
+PASS:1
+	test: 2
+id:2
+PASS:2
+	test: 3
+id:3
+PASS:3
+	test: 4
+id:4
+PASS:4
+	test: 5
+id:5
+PASS:5
+	test: 6
+id:6
+PASS:6
+	test: 7
+id:7
+PASS:7
+	test: 8
+id:8
+PASS:8
+	test: 9
+id:9
+PASS:9
+	test: 10
+id:10
+PASS:10
+	test: 11
+id:11
+PASS:11
+	test: 12
+id:12
+PASS:12
+	test: 13
+id:13
+PASS:13
+	test: 14
+id:14
+PASS:14
+	test: 15
+id:15
+PASS:15
+	test: 16
+id:16
+PASS:16
+	test: 17
+id:17
+PASS:17
+	test: 18
+id:18
+PASS:18
+	test: 19
+id:19
+PASS:19
+	test: 20
+id:20
+PASS:20
+	test: 21
+id:21
+PASS:21
+	test: 22
+id:22
+PASS:22
+	test: 23
+id:23
+PASS:23
+	test: 24
+id:24
+PASS:24
+	test: 25
+id:25
+PASS:25
+	test: 26
+id:26
+PASS:26
+	test: 27
+id:27
+PASS:27
+	test: 28
+id:28
+PASS:28
+	test: 29
+id:29
+PASS:29
+	test: 30
+id:30
+PASS:30
+	test: 31
+id:31
+PASS:31
+	test: 32
+id:32
+PASS:32
+	test: 33
+id:33
+PASS:33
+	test: 34
+id:34
+PASS:34
+	test: 35
+id:35
+PASS:35
+	test: 36
+id:36
+PASS:36
+	test: 37
+id:37
+PASS:37
+	test: 38
+id:38
+PASS:38
+	test: 39
+id:39
+PASS:39
+	test: 40
+id:40
+PASS:40
+	test: 41
+id:41
+PASS:41
+	test: 42
+id:42
+PASS:42
+	test: 43
+id:43
+PASS:43
+	test: 44
+id:44
+PASS:44
+	test: 45
+id:45
+PASS:45
+	test: 46
+id:46
+PASS:46
+	test: 47
+id:47
+PASS:47
+	test: 48
+id:48
+PASS:48
+	test: 49
+id:49
+PASS:49
+	test: 50
+id:50
+PASS:50
+	test: 51
+id:51
+PASS:51
+	test: 52
+id:52
+PASS:52
+	test: 53
+id:53
+PASS:53
+	test: 54
+id:54
+PASS:54
+	test: 55
+id:55
+PASS:55
+	test: 56
+id:56
+PASS:56
+	test: 57
+id:57
+PASS:57
+	test: 58
+id:58
+PASS:58
+	test: 59
+id:59
+PASS:59
+	test: 60
+id:60
+PASS:60
+	test: 61
+id:61
+PASS:61
+	test: 62
+id:62
+PASS:62
+	test: 63
+id:63
+PASS:63
+	test: 64
+id:64
+PASS:64
+	test: 65
+id:65
+PASS:65
+	test: 66
+id:66
+PASS:66
+	test: 67
+id:67
+PASS:67
+	test: 68
+id:68
+PASS:68
+	test: 69
+id:69
+PASS:69
+	test: 70
+id:70
+PASS:70
+	test: 71
+id:71
+PASS:71
+	test: 72
+id:72
+PASS:72
+	test: 73
+id:73
+PASS:73
+	test: 74
+id:74
+PASS:74
+	test: 75
+id:75
+PASS:75
+	test: 76
+id:76
+PASS:76
+	test: 77
+id:77
+PASS:77
+	test: 78
+id:78
+PASS:78
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 2425
+cilRep: stmts in weighted_path = 75
+cilRep: total weight = 75
+cilRep: stmts in weighted_path with weight >= 1.0 = 75
+cilRep: find/parser.c (code bank/base file; atoms [1,2425])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454263347.866554)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 695
+cilRep: fix-space quotient by string: 75 -> 68
+progeq: WARNING: cannot resolve call: __builtin_strchr
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: __xstat
+progeq: WARNING: cannot resolve call: __lxstat
+progeq: WARNING: cannot resolve call: __fxstat
+progeq: WARNING: cannot resolve call: __fxstatat
+progeq: WARNING: cannot resolve call: __xmknod
+progeq: WARNING: cannot resolve call: __xmknodat
+progeq: WARNING: cannot resolve call: __xstat64
+progeq: WARNING: cannot resolve call: __lxstat64
+progeq: WARNING: cannot resolve call: __fxstat64
+progeq: WARNING: cannot resolve call: __fxstatat64
+progeq: WARNING: cannot resolve call: __builtin_expect
+progeq: WARNING: cannot resolve call: __uflow
+progeq: WARNING: cannot resolve call: __overflow
+progeq: WARNING: cannot resolve call: __getdelim
+progeq: WARNING: cannot resolve call: __builtin_object_size
+progeq: WARNING: cannot resolve call: __builtin___sprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___snprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsnprintf_chk
+progeq: WARNING: cannot resolve call: __fprintf_chk
+progeq: WARNING: cannot resolve call: __printf_chk
+progeq: WARNING: cannot resolve call: __vfprintf_chk
+progeq: WARNING: cannot resolve call: __dprintf_chk
+progeq: WARNING: cannot resolve call: __vdprintf_chk
+progeq: WARNING: cannot resolve call: __asprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_printf_chk
+progeq: WARNING: cannot resolve call: __vasprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_vprintf_chk
+progeq: WARNING: cannot resolve call: __fgets_chk
+progeq: WARNING: cannot resolve call: __fgets_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_alias
+progeq: WARNING: cannot resolve call: __fread_chk
+progeq: WARNING: cannot resolve call: __fread_chk_warn
+progeq: WARNING: cannot resolve call: __fread_alias
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_unlocked_alias
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fread_unlocked_alias
+progeq: WARNING: cannot resolve call: __builtin___memcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memmove_chk
+progeq: WARNING: cannot resolve call: __builtin___mempcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memset_chk
+progeq: WARNING: cannot resolve call: __builtin___strcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___stpcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___strncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_alias
+progeq: WARNING: cannot resolve call: __builtin___strcat_chk
+progeq: WARNING: cannot resolve call: __builtin___strncat_chk
+progeq: WARNING: cannot resolve call: *__compar
+progeq: WARNING: cannot resolve call: __realpath_chk
+progeq: WARNING: cannot resolve call: __realpath_alias
+progeq: WARNING: cannot resolve call: __ptsname_r_chk
+progeq: WARNING: cannot resolve call: __ptsname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ptsname_r_alias
+progeq: WARNING: cannot resolve call: __wctomb_chk
+progeq: WARNING: cannot resolve call: __wctomb_alias
+progeq: WARNING: cannot resolve call: __mbstowcs_chk
+progeq: WARNING: cannot resolve call: __mbstowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbstowcs_alias
+progeq: WARNING: cannot resolve call: __wcstombs_chk
+progeq: WARNING: cannot resolve call: __wcstombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcstombs_alias
+progeq: WARNING: cannot resolve call: __read_chk
+progeq: WARNING: cannot resolve call: __read_chk_warn
+progeq: WARNING: cannot resolve call: __read_alias
+progeq: WARNING: cannot resolve call: __pread_chk
+progeq: WARNING: cannot resolve call: __pread_chk_warn
+progeq: WARNING: cannot resolve call: __pread_alias
+progeq: WARNING: cannot resolve call: __pread64_chk
+progeq: WARNING: cannot resolve call: __pread64_chk_warn
+progeq: WARNING: cannot resolve call: __pread64_alias
+progeq: WARNING: cannot resolve call: __readlink_chk
+progeq: WARNING: cannot resolve call: __readlink_chk_warn
+progeq: WARNING: cannot resolve call: __readlink_alias
+progeq: WARNING: cannot resolve call: __readlinkat_chk
+progeq: WARNING: cannot resolve call: __readlinkat_chk_warn
+progeq: WARNING: cannot resolve call: __readlinkat_alias
+progeq: WARNING: cannot resolve call: __getcwd_chk
+progeq: WARNING: cannot resolve call: __getcwd_chk_warn
+progeq: WARNING: cannot resolve call: __getcwd_alias
+progeq: WARNING: cannot resolve call: __getwd_chk
+progeq: WARNING: cannot resolve call: __getwd_warn
+progeq: WARNING: cannot resolve call: __confstr_chk
+progeq: WARNING: cannot resolve call: __confstr_chk_warn
+progeq: WARNING: cannot resolve call: __confstr_alias
+progeq: WARNING: cannot resolve call: __getgroups_chk
+progeq: WARNING: cannot resolve call: __getgroups_chk_warn
+progeq: WARNING: cannot resolve call: __getgroups_alias
+progeq: WARNING: cannot resolve call: __ttyname_r_chk
+progeq: WARNING: cannot resolve call: __ttyname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ttyname_r_alias
+progeq: WARNING: cannot resolve call: __getlogin_r_chk
+progeq: WARNING: cannot resolve call: __getlogin_r_chk_warn
+progeq: WARNING: cannot resolve call: __getlogin_r_alias
+progeq: WARNING: cannot resolve call: __gethostname_chk
+progeq: WARNING: cannot resolve call: __gethostname_chk_warn
+progeq: WARNING: cannot resolve call: __gethostname_alias
+progeq: WARNING: cannot resolve call: __getdomainname_chk
+progeq: WARNING: cannot resolve call: __getdomainname_chk_warn
+progeq: WARNING: cannot resolve call: __getdomainname_alias
+progeq: WARNING: cannot resolve call: __strtol_internal
+progeq: WARNING: cannot resolve call: __strtoul_internal
+progeq: WARNING: cannot resolve call: __wcstol_internal
+progeq: WARNING: cannot resolve call: __wcstoul_internal
+progeq: WARNING: cannot resolve call: __ctype_tolower_loc
+progeq: WARNING: cannot resolve call: __ctype_toupper_loc
+progeq: WARNING: cannot resolve call: __builtin_va_arg_pack_len
+progeq: WARNING: cannot resolve call: __open_too_many_args
+progeq: WARNING: cannot resolve call: __open_2
+progeq: WARNING: cannot resolve call: __open_alias
+progeq: WARNING: cannot resolve call: __open64_too_many_args
+progeq: WARNING: cannot resolve call: __open64_2
+progeq: WARNING: cannot resolve call: __open64_alias
+progeq: WARNING: cannot resolve call: __openat_too_many_args
+progeq: WARNING: cannot resolve call: __openat_2
+progeq: WARNING: cannot resolve call: __openat_alias
+progeq: WARNING: cannot resolve call: __openat64_too_many_args
+progeq: WARNING: cannot resolve call: __openat64_2
+progeq: WARNING: cannot resolve call: __openat64_alias
+progeq: WARNING: cannot resolve call: dcgettext
+progeq: WARNING: cannot resolve call: error
+progeq: WARNING: cannot resolve call: __builtin_strlen
+progeq: WARNING: cannot resolve call: __builtin_strcmp
+progeq: WARNING: cannot resolve call: *(options.xstat)
+progeq: WARNING: cannot resolve call: fatal_file_error
+progeq: WARNING: cannot resolve call: get_new_pred
+progeq: WARNING: cannot resolve call: set_stat_placeholders
+progeq: WARNING: cannot resolve call: insert_primary
+progeq: WARNING: cannot resolve call: get_start_dirfd
+progeq: WARNING: cannot resolve call: insert_primary_withpred
+progeq: WARNING: cannot resolve call: next_element
+progeq: WARNING: cannot resolve call: safely_quote_err_filename
+progeq: WARNING: cannot resolve call: mbsstr
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: bc_init_controlinfo
+progeq: WARNING: cannot resolve call: bc_use_sensible_arg_max
+progeq: WARNING: cannot resolve call: bc_init_state
+progeq: WARNING: cannot resolve call: bc_push_arg
+progeq: WARNING: cannot resolve call: xmalloc
+progeq: WARNING: cannot resolve call: clone_quoting_options
+progeq: WARNING: cannot resolve call: fopen_safer
+progeq: WARNING: cannot resolve call: fileno
+progeq: WARNING: cannot resolve call: isatty
+progeq: WARNING: cannot resolve call: filesystem_type
+progeq: WARNING: cannot resolve call: xstrtoumax
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: quotearg_n_style
+progeq: WARNING: cannot resolve call: getgrnam
+progeq: WARNING: cannot resolve call: endgrent
+progeq: WARNING: cannot resolve call: __builtin_strspn
+progeq: WARNING: cannot resolve call: usage
+progeq: WARNING: cannot resolve call: __builtin_strpbrk
+progeq: WARNING: cannot resolve call: fnmatch
+progeq: WARNING: cannot resolve call: rpl_re_set_syntax
+progeq: WARNING: cannot resolve call: rpl_re_compile_pattern
+progeq: WARNING: cannot resolve call: xstrtod
+progeq: WARNING: cannot resolve call: get_new_pred_chk_op
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: get_date
+progeq: WARNING: cannot resolve call: get_regex_type
+progeq: WARNING: cannot resolve call: close
+progeq: WARNING: cannot resolve call: getpwnam
+progeq: WARNING: cannot resolve call: endpwent
+progeq: WARNING: cannot resolve call: display_findutils_version
+progeq: WARNING: cannot resolve call: is_fts_enabled
+search: fix space reduced (time_taken = 5.4178)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 75 deletes
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:68:after68
+REMOVED?true
+CARDINAL?before:68:after68
+REMOVED?true
+CARDINAL?before:68:after68
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:68:after68
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:68:after68
+REMOVED?true
+CARDINAL?before:68:after68
+REMOVED?true
+CARDINAL?before:68:after68
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:68:after68
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:68:after68
+REMOVED?true
+CARDINAL?before:68:after68
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:8:after8
+REMOVED?true
+CARDINAL?before:8:after8
+REMOVED?true
+CARDINAL?before:8:after8
+REMOVED?true
+CARDINAL?before:8:after8
+REMOVED?true
+CARDINAL?before:8:after8
+REMOVED?true
+CARDINAL?before:8:after8
+REMOVED?true
+CARDINAL?before:8:after8
+REMOVED?true
+CARDINAL?before:68:after68
+REMOVED?true
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 2153 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 840 appends
+search: ww_adaptive: 2993 possible edits
+search: ready to start (time_taken = 17.549)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.132724)
+	variant     1/ 2993 = d(1447)         (79 tests, cond 0)
+		n1Segmentation fault
+id:0
+FAILED:0
+ false (test_time = 2.40823)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.147579)
+	variant     2/ 2993 = d(1446)         (79 tests, cond 0)
+		n1Segmentation fault
+id:0
+FAILED:0
+ false (test_time = 2.58721)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.136735)
+	variant     3/ 2993 = d(1445)         (79 tests, cond 0)
+		n1Segmentation fault
+id:0
+FAILED:0
+ false (test_time = 2.33828)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.150959)
+	variant     4/ 2993 = d(1444)         (79 tests, cond 0)
+		n1Segmentation fault
+id:0
+FAILED:0
+ false (test_time = 2.33795)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.12962)
+	variant     5/ 2993 = d(1443)         (79 tests, cond 0)
+		n1Segmentation fault
+id:0
+FAILED:0
+ false (test_time = 2.22128)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.130711)
+	variant     6/ 2993 = d(1442)         (79 tests, cond 0)
+		n1/home/ubuntu/corebench/findutils/findutils-case-b130c9b9-c8491c11/find/find: oops -- invalid default insertion of and!
+id:0
+line:'/home/ubuntu/corebench/findutils/findutils-case-b130c9b9-c8491c11/find/find: oops -- invalid default insertion of and!'
+FAILED:0
+ false (test_time = 2.22098)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.129593)
+	variant     7/ 2993 = d(1441)         (79 tests, cond 0)
+		n1find: pred.c:2483: pred_sanity_check: Assertion `p->pred_func != ((void *)0)' failed.
+Aborted
+id:0
+line:"find: pred.c:2483: pred_sanity_check: Assertion `p->pred_func != ((void *)0)' failed."
+PASS:0
+ true (test_time = 2.29313)
+		p1id:1
+PASS:1
+ true (test_time = 0.120692)
+		p2id:2
+PASS:2
+ true (test_time = 0.11737)
+		p3id:3
+PASS:3
+ true (test_time = 0.117579)
+		p4id:4
+PASS:4
+ true (test_time = 0.117942)
+		p5id:5
+PASS:5
+ true (test_time = 0.116463)
+		p6id:6
+PASS:6
+ true (test_time = 0.115372)
+		p7id:7
+PASS:7
+ true (test_time = 0.116547)
+		p8id:8
+PASS:8
+ true (test_time = 0.120714)
+		p9id:9
+PASS:9
+ true (test_time = 0.121003)
+		p10id:10
+PASS:10
+ true (test_time = 0.121515)
+		p11id:11
+PASS:11
+ true (test_time = 0.122192)
+		p12id:12
+PASS:12
+ true (test_time = 0.120541)
+		p13id:13
+PASS:13
+ true (test_time = 0.135859)
+		p14id:14
+PASS:14
+ true (test_time = 0.12871)
+		p15id:15
+PASS:15
+ true (test_time = 0.14854)
+		p16id:16
+PASS:16
+ true (test_time = 0.154948)
+		p17id:17
+PASS:17
+ true (test_time = 0.13233)
+		p18id:18
+PASS:18
+ true (test_time = 0.131072)
+		p19id:19
+PASS:19
+ true (test_time = 0.134162)
+		p20id:20
+PASS:20
+ true (test_time = 0.144637)
+		p21id:21
+PASS:21
+ true (test_time = 0.137319)
+		p22id:22
+PASS:22
+ true (test_time = 0.165872)
+		p23id:23
+PASS:23
+ true (test_time = 0.151684)
+		p24id:24
+PASS:24
+ true (test_time = 0.14139)
+		p25id:25
+PASS:25
+ true (test_time = 0.139704)
+		p26id:26
+PASS:26
+ true (test_time = 0.131663)
+		p27id:27
+PASS:27
+ true (test_time = 0.146214)
+		p28id:28
+PASS:28
+ true (test_time = 0.133175)
+		p29id:29
+PASS:29
+ true (test_time = 0.138791)
+		p30id:30
+PASS:30
+ true (test_time = 0.13672)
+		p31id:31
+PASS:31
+ true (test_time = 0.130819)
+		p32id:32
+PASS:32
+ true (test_time = 0.154017)
+		p33id:33
+PASS:33
+ true (test_time = 0.196703)
+		p34id:34
+PASS:34
+ true (test_time = 0.15899)
+		p35id:35
+PASS:35
+ true (test_time = 0.147322)
+		p36id:36
+PASS:36
+ true (test_time = 0.14776)
+		p37id:37
+PASS:37
+ true (test_time = 0.161809)
+		p38id:38
+PASS:38
+ true (test_time = 0.222708)
+		p39id:39
+PASS:39
+ true (test_time = 0.164361)
+		p40id:40
+PASS:40
+ true (test_time = 0.198382)
+		p41id:41
+PASS:41
+ true (test_time = 0.197462)
+		p42id:42
+PASS:42
+ true (test_time = 0.156348)
+		p43id:43
+PASS:43
+ true (test_time = 0.14087)
+		p44id:44
+PASS:44
+ true (test_time = 0.131394)
+		p45id:45
+PASS:45
+ true (test_time = 0.132211)
+		p46id:46
+PASS:46
+ true (test_time = 0.132049)
+		p47id:47
+PASS:47
+ true (test_time = 0.126902)
+		p48id:48
+PASS:48
+ true (test_time = 0.128955)
+		p49id:49
+PASS:49
+ true (test_time = 0.147982)
+		p50id:50
+PASS:50
+ true (test_time = 0.13438)
+		p51id:51
+PASS:51
+ true (test_time = 0.138482)
+		p52id:52
+PASS:52
+ true (test_time = 0.135805)
+		p53id:53
+PASS:53
+ true (test_time = 0.133426)
+		p54id:54
+PASS:54
+ true (test_time = 0.132084)
+		p55id:55
+PASS:55
+ true (test_time = 0.148994)
+		p56id:56
+PASS:56
+ true (test_time = 0.142211)
+		p57id:57
+PASS:57
+ true (test_time = 0.146965)
+		p58id:58
+PASS:58
+ true (test_time = 0.133124)
+		p59id:59
+PASS:59
+ true (test_time = 0.145599)
+		p60id:60
+PASS:60
+ true (test_time = 0.158573)
+		p61id:61
+PASS:61
+ true (test_time = 0.187496)
+		p62id:62
+PASS:62
+ true (test_time = 0.158854)
+		p63id:63
+PASS:63
+ true (test_time = 0.152449)
+		p64id:64
+PASS:64
+ true (test_time = 0.196565)
+		p65id:65
+PASS:65
+ true (test_time = 0.133663)
+		p66id:66
+PASS:66
+ true (test_time = 0.142616)
+		p67id:67
+PASS:67
+ true (test_time = 0.150723)
+		p68id:68
+PASS:68
+ true (test_time = 0.142569)
+		p69id:69
+PASS:69
+ true (test_time = 0.151061)
+		p70id:70
+PASS:70
+ true (test_time = 0.158953)
+		p71id:71
+PASS:71
+ true (test_time = 0.138091)
+		p72id:72
+PASS:72
+ true (test_time = 0.154818)
+		p73id:73
+PASS:73
+ true (test_time = 0.153044)
+		p74id:74
+PASS:74
+ true (test_time = 0.136847)
+		p75id:75
+PASS:75
+ true (test_time = 0.135247)
+		p76id:76
+PASS:76
+ true (test_time = 0.146529)
+		p77id:77
+PASS:77
+ true (test_time = 0.188903)
+		p78id:78
+PASS:78
+ true (test_time = 0.168717)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: d(1441)
+Repair Name: d(1441) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454263399.582892
+
+Variant Test Case Queries: 85
+"Test Suite Evaluations": 1.07595
+
+Compile Failures: 0
+Wall-Clock Seconds Elapsed: 69.7361
+  Activity Name                     Count Seconds = Percent of Total Time
+  find_best_edit                        7   0.958 = 1.42811%
+  progeq partition                     68   4.715 = 7.02965%
+  delete_sources                       75   7.481 = 11.154%
+  append_sources                       75  10.064 = 15.0046%
+  compile                               8  20.218 = 30.1428%
+  test                                164  23.637 = 35.2408%
+  TOTAL                                    67.073 = 96.1616% (avg CPU usage)
