@@ -1,0 +1,1597 @@
+--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete true
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 7
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Tue Feb  2 02:34:56 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmpf91e4e.c /tmp/tmp1961d9.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/tail.c: parsing
+cilRep: src/tail.c: parsed (0.132051 MB)
+cilRep: computing liveness
+cilRep: liveness failure for recheck: Errormsg.Error
+cilRep: liveness failure for tail_forever: Errormsg.Error
+cilRep: liveness failure for tail_forever_inotify: Errormsg.Error
+cilRep: liveness failure for tail_bytes: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 1666
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/coreutils/coreutils-case-d461bfd2-8f976798/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+coverage positive:
+	test: 1
+	test: 2
+	test: 3
+	test: 4
+	test: 5
+	test: 6
+	test: 7
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 1666
+cilRep: stmts in weighted_path = 262
+cilRep: total weight = 143.2
+cilRep: stmts in weighted_path with weight >= 1.0 = 130
+cilRep: src/tail.c (code bank/base file; atoms [1,1666])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454351732.317074)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 0
+cilRep: fix-space quotient by string: 510 -> 390
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: xmalloc
+progeq: WARNING: cannot resolve call: xrealloc
+progeq: WARNING: cannot resolve call: fchownat
+progeq: WARNING: cannot resolve call: fchmodat
+progeq: WARNING: cannot resolve call: fstatat
+progeq: WARNING: cannot resolve call: gettext
+progeq: WARNING: cannot resolve call: fputs_unlocked
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: last_component
+progeq: WARNING: cannot resolve call: fwrite_unlocked
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: error
+progeq: WARNING: cannot resolve call: close
+progeq: WARNING: cannot resolve call: safe_read
+progeq: WARNING: cannot resolve call: quote
+progeq: WARNING: cannot resolve call: lseek
+progeq: WARNING: cannot resolve call: offtostr
+progeq: WARNING: cannot resolve call: memcpy
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: fstatfs
+progeq: WARNING: cannot resolve call: open_safer
+progeq: WARNING: cannot resolve call: fstat
+progeq: WARNING: cannot resolve call: rpl_fcntl
+progeq: WARNING: cannot resolve call: fflush_unlocked
+progeq: WARNING: cannot resolve call: kill
+progeq: WARNING: cannot resolve call: xnanosleep
+progeq: WARNING: cannot resolve call: hash_initialize
+progeq: WARNING: cannot resolve call: dir_len
+progeq: WARNING: cannot resolve call: inotify_add_watch
+progeq: WARNING: cannot resolve call: hash_insert
+progeq: WARNING: cannot resolve call: hash_get_n_entries
+progeq: WARNING: cannot resolve call: select
+progeq: WARNING: cannot resolve call: hash_delete
+progeq: WARNING: cannot resolve call: hash_lookup
+progeq: WARNING: cannot resolve call: inotify_rm_watch
+progeq: WARNING: cannot resolve call: posix2_version
+progeq: WARNING: cannot resolve call: getopt_long
+progeq: WARNING: cannot resolve call: xstrtoumax
+progeq: WARNING: cannot resolve call: __xargmatch_internal
+progeq: WARNING: cannot resolve call: xstrtoul
+progeq: WARNING: cannot resolve call: xstrtod
+progeq: WARNING: cannot resolve call: version_etc
+progeq: WARNING: cannot resolve call: set_program_name
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: isatty
+progeq: WARNING: cannot resolve call: inotify_init
+search: fix space reduced (time_taken = 17.685)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 262 deletes
+CARDINAL?before:1:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:43:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:2:after0
+REMOVED?false
+CARDINAL?before:2:after0
+REMOVED?false
+CARDINAL?before:2:after0
+REMOVED?false
+CARDINAL?before:2:after0
+REMOVED?false
+CARDINAL?before:2:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:28:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:20:after0
+REMOVED?false
+CARDINAL?before:20:after0
+REMOVED?false
+CARDINAL?before:20:after0
+REMOVED?false
+CARDINAL?before:20:after0
+REMOVED?false
+CARDINAL?before:20:after0
+REMOVED?false
+CARDINAL?before:20:after0
+REMOVED?false
+CARDINAL?before:20:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:22:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:8:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:390:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+CARDINAL?before:71:after0
+REMOVED?false
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 0 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 10432 appends
+search: ww_adaptive: 10432 possible edits
+search: ready to start (time_taken = 19.9642)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.053822)
+	variant     1/10432 = a(1617,1666)    (8 tests, cond 0)
+		n1 false (test_time = 20.8485)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.058774)
+	variant     2/10432 = a(1617,1665)    (8 tests, cond 0)
+		n1 false (test_time = 19.5357)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.062191)
+	variant     3/10432 = a(1617,1664)    (8 tests, cond 0)
+		n1 false (test_time = 21.1465)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0537169)
+	variant     4/10432 = a(1617,1663)    (8 tests, cond 0)
+		n1 false (test_time = 20.4879)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0621212)
+	variant     5/10432 = a(1617,1662)    (8 tests, cond 0)
+		n1 false (test_time = 21.4159)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0675089)
+	variant     6/10432 = a(1617,1660)    (8 tests, cond 0)
+		n1 false (test_time = 19.2362)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0524428)
+	variant     7/10432 = a(1617,1659)    (8 tests, cond 0)
+		n1 false (test_time = 21.267)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0553448)
+	variant     8/10432 = a(1617,1656)    (8 tests, cond 0)
+		n1 false (test_time = 20.1677)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056401)
+	variant     9/10432 = a(1617,1655)    (8 tests, cond 0)
+		n1 false (test_time = 21.6924)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0601571)
+	variant    10/10432 = a(1617,1654)    (8 tests, cond 0)
+		n1 false (test_time = 20.7888)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0561218)
+	variant    11/10432 = a(1617,1653)    (8 tests, cond 0)
+		n1 false (test_time = 19.2345)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0740051)
+	variant    12/10432 = a(1617,1652)    (8 tests, cond 0)
+		n1 false (test_time = 21.4811)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0839999)
+	variant    13/10432 = a(1617,1649)    (8 tests, cond 0)
+		n1 false (test_time = 19.8988)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0603921)
+	variant    14/10432 = a(1617,1648)    (8 tests, cond 0)
+		n1 false (test_time = 20.1117)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0539799)
+	variant    15/10432 = a(1617,1647)    (8 tests, cond 0)
+		n1 false (test_time = 20.4087)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0613019)
+	variant    16/10432 = a(1617,1644)    (8 tests, cond 0)
+		n1 false (test_time = 19.9237)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0507681)
+	variant    17/10432 = a(1617,1638)    (8 tests, cond 0)
+		n1 false (test_time = 21.2445)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054045)
+	variant    18/10432 = a(1617,1637)    (8 tests, cond 0)
+		n1 false (test_time = 21.2252)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0566971)
+	variant    19/10432 = a(1617,1636)    (8 tests, cond 0)
+		n1 false (test_time = 21.0978)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0546992)
+	variant    20/10432 = a(1617,1635)    (8 tests, cond 0)
+		n1 false (test_time = 20.9916)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0775089)
+	variant    21/10432 = a(1617,1634)    (8 tests, cond 0)
+		n1 false (test_time = 20.9556)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0674741)
+	variant    22/10432 = a(1617,1626)    (8 tests, cond 0)
+		n1 false (test_time = 20.6412)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0736759)
+	variant    23/10432 = a(1617,1625)    (8 tests, cond 0)
+		n1 false (test_time = 20.7912)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.069932)
+	variant    24/10432 = a(1617,1620)    (8 tests, cond 0)
+		n1 false (test_time = 21.2308)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0632961)
+	variant    25/10432 = a(1617,1619)    (8 tests, cond 0)
+		n1 false (test_time = 21.5023)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0627079)
+	variant    26/10432 = a(1617,1617)    (8 tests, cond 0)
+		n1 false (test_time = 21.8214)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0610781)
+	variant    27/10432 = a(1617,1615)    (8 tests, cond 0)
+		n1 false (test_time = 20.2387)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0754571)
+	variant    28/10432 = a(1617,1614)    (8 tests, cond 0)
+		n1 false (test_time = 20.4104)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0594649)
+	variant    29/10432 = a(1617,1609)    (8 tests, cond 0)
+		n1 false (test_time = 20.209)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0739632)
+	variant    30/10432 = a(1617,1607)    (8 tests, cond 0)
+		n1 false (test_time = 20.1864)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0588579)
+	variant    31/10432 = a(1617,1604)    (8 tests, cond 0)
+		n1 false (test_time = 20.3179)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0518701)
+	variant    32/10432 = a(1617,1603)    (8 tests, cond 0)
+		n1 false (test_time = 20.3634)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0532951)
+	variant    33/10432 = a(1617,1602)    (8 tests, cond 0)
+		n1 false (test_time = 21.784)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0538321)
+	variant    34/10432 = a(1617,1594)    (8 tests, cond 0)
+		n1 false (test_time = 20.1731)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0500588)
+	variant    35/10432 = a(1617,1593)    (8 tests, cond 0)
+		n1 false (test_time = 20.8017)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0508099)
+	variant    36/10432 = a(1617,1592)    (8 tests, cond 0)
+		n1 false (test_time = 19.8789)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.053633)
+	variant    37/10432 = a(1617,1591)    (8 tests, cond 0)
+		n1 false (test_time = 20.5389)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0492611)
+	variant    38/10432 = a(1617,1590)    (8 tests, cond 0)
+		n1 false (test_time = 21.1403)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0603781)
+	variant    39/10432 = a(1617,1588)    (8 tests, cond 0)
+		n1 false (test_time = 21.119)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0581911)
+	variant    40/10432 = a(1617,1581)    (8 tests, cond 0)
+		n1 false (test_time = 20.5933)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.057811)
+	variant    41/10432 = a(1617,1578)    (8 tests, cond 0)
+		n1 false (test_time = 20.0349)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.05495)
+	variant    42/10432 = a(1617,1576)    (8 tests, cond 0)
+		n1 false (test_time = 21.1581)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0516832)
+	variant    43/10432 = a(1617,1571)    (8 tests, cond 0)
+		n1 false (test_time = 21.1519)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0568919)
+	variant    44/10432 = a(1617,1567)    (8 tests, cond 0)
+		n1 false (test_time = 21.0832)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.066262)
+	variant    45/10432 = a(1617,1561)    (8 tests, cond 0)
+		n1 false (test_time = 20.8819)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0689149)
+	variant    46/10432 = a(1617,1553)    (8 tests, cond 0)
+		n1 false (test_time = 19.9909)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.05549)
+	variant    47/10432 = a(1617,1547)    (8 tests, cond 0)
+		n1 false (test_time = 20.9952)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.070312)
+	variant    48/10432 = a(1617,1546)    (8 tests, cond 0)
+		n1 false (test_time = 21.2372)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0557199)
+	variant    49/10432 = a(1617,1480)    (8 tests, cond 0)
+		n1 false (test_time = 21.1633)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.067282)
+	variant    50/10432 = a(1617,1460)    (8 tests, cond 0)
+		n1 false (test_time = 20.8347)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0523639)
+	variant    51/10432 = a(1617,1430)    (8 tests, cond 0)
+		n1 false (test_time = 20.0973)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0505772)
+	variant    52/10432 = a(1617,1274)    (8 tests, cond 0)
+		n1 false (test_time = 20.0131)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0577071)
+	variant    53/10432 = a(1617,1241)    (8 tests, cond 0)
+		n1 false (test_time = 20.6384)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0530579)
+	variant    54/10432 = a(1617,925)     (8 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-d461bfd2-8f976798/000053/src/tail.c  a(1617,925)  fails to compile
+ false (test_time = 10.2754)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0601342)
+	variant    55/10432 = a(1617,908)     (8 tests, cond 0)
+		n1 false (test_time = 21.0693)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.066618)
+	variant    56/10432 = a(1617,843)     (8 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-d461bfd2-8f976798/000055/src/tail.c  a(1617,843)  fails to compile
+ false (test_time = 10.311)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0612919)
+	variant    57/10432 = a(1617,744)     (8 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-d461bfd2-8f976798/000056/src/tail.c  a(1617,744)  fails to compile
+ false (test_time = 10.3113)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.05427)
+	variant    58/10432 = a(1617,621)     (8 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-d461bfd2-8f976798/000057/src/tail.c  a(1617,621)  fails to compile
+ false (test_time = 9.99654)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.062161)
+	variant    59/10432 = a(1617,237)     (8 tests, cond 0)
+		n1 false (test_time = 21.1398)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0573099)
+	variant    60/10432 = a(1616,1666)    (8 tests, cond 0)
+		n1 false (test_time = 11.1849)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.059494)
+	variant    61/10432 = a(1616,1665)    (8 tests, cond 0)
+		n1 false (test_time = 20.0378)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054805)
+	variant    62/10432 = a(1616,1664)    (8 tests, cond 0)
+		n1 false (test_time = 20.5776)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.05021)
+	variant    63/10432 = a(1616,1663)    (8 tests, cond 0)
+		n1 false (test_time = 21.2577)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0558591)
+	variant    64/10432 = a(1616,1662)    (8 tests, cond 0)
+		n1 false (test_time = 19.9395)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.057035)
+	variant    65/10432 = a(1616,1660)    (8 tests, cond 0)
+		n1 false (test_time = 20.7957)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.062372)
+	variant    66/10432 = a(1616,1659)    (8 tests, cond 0)
+		n1 false (test_time = 21.0289)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.077322)
+	variant    67/10432 = a(1616,1656)    (8 tests, cond 0)
+		n1 false (test_time = 21.2457)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0757771)
+	variant    68/10432 = a(1616,1655)    (8 tests, cond 0)
+		n1 false (test_time = 20.0092)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.055274)
+	variant    69/10432 = a(1616,1654)    (8 tests, cond 0)
+		n1 false (test_time = 20.9664)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0610609)
+	variant    70/10432 = a(1616,1653)    (8 tests, cond 0)
+		n1 false (test_time = 21.9972)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0562451)
+	variant    71/10432 = a(1616,1652)    (8 tests, cond 0)
+		n1 false (test_time = 21.1985)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.057858)
+	variant    72/10432 = a(1616,1649)    (8 tests, cond 0)
+		n1 false (test_time = 21.0308)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0635159)
+	variant    73/10432 = a(1616,1648)    (8 tests, cond 0)
+		n1 false (test_time = 20.9838)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056421)
+	variant    74/10432 = a(1616,1647)    (8 tests, cond 0)
+		n1 false (test_time = 20.8368)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.057178)
+	variant    75/10432 = a(1616,1644)    (8 tests, cond 0)
+		n1 false (test_time = 20.272)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0714102)
+	variant    76/10432 = a(1616,1638)    (8 tests, cond 0)
+		n1 false (test_time = 20.9791)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.055506)
+	variant    77/10432 = a(1616,1637)    (8 tests, cond 0)
+		n1 false (test_time = 20.6989)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0641792)
+	variant    78/10432 = a(1616,1636)    (8 tests, cond 0)
+		n1 false (test_time = 20.9491)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0571718)
+	variant    79/10432 = a(1616,1635)    (8 tests, cond 0)
+		n1 false (test_time = 19.8479)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.057272)
+	variant    80/10432 = a(1616,1634)    (8 tests, cond 0)
+		n1 false (test_time = 21.2008)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.067497)
+	variant    81/10432 = a(1616,1626)    (8 tests, cond 0)
+		n1 false (test_time = 22.1246)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.057699)
+	variant    82/10432 = a(1616,1625)    (8 tests, cond 0)
+		n1 false (test_time = 20.7971)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054518)
+	variant    83/10432 = a(1616,1620)    (8 tests, cond 0)
+		n1 false (test_time = 20.8841)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.060524)
+	variant    84/10432 = a(1616,1619)    (8 tests, cond 0)
+		n1 false (test_time = 21.7262)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0583239)
+	variant    85/10432 = a(1616,1617)    (8 tests, cond 0)
+		n1 false (test_time = 21.4836)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.062397)
+	variant    86/10432 = a(1616,1615)    (8 tests, cond 0)
+		n1 false (test_time = 21.9794)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.06425)
+	variant    87/10432 = a(1616,1614)    (8 tests, cond 0)
+		n1 false (test_time = 21.0695)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0555239)
+	variant    88/10432 = a(1616,1609)    (8 tests, cond 0)
+		n1 true (test_time = 11.2197)
+		p1 true (test_time = 0.058064)
+		p2 false (test_time = 9.14341)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0631921)
+	variant    89/10432 = a(1616,1607)    (8 tests, cond 0)
+		n1 false (test_time = 21.8893)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.067811)
+	variant    90/10432 = a(1616,1604)    (8 tests, cond 0)
+		n1 false (test_time = 19.9841)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0772831)
+	variant    91/10432 = a(1616,1603)    (8 tests, cond 0)
+		n1 false (test_time = 20.9565)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.074297)
+	variant    92/10432 = a(1616,1602)    (8 tests, cond 0)
+		n1 false (test_time = 19.6505)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0536301)
+	variant    93/10432 = a(1616,1594)    (8 tests, cond 0)
+		n1 false (test_time = 20.905)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0625451)
+	variant    94/10432 = a(1616,1593)    (8 tests, cond 0)
+		n1 false (test_time = 21.3739)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.058687)
+	variant    95/10432 = a(1616,1592)    (8 tests, cond 0)
+		n1 false (test_time = 21)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0695748)
+	variant    96/10432 = a(1616,1591)    (8 tests, cond 0)
+		n1 false (test_time = 19.6581)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0594151)
+	variant    97/10432 = a(1616,1590)    (8 tests, cond 0)
+		n1 false (test_time = 21.1438)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054019)
+	variant    98/10432 = a(1616,1588)    (8 tests, cond 0)
+		n1 false (test_time = 21.9205)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0644419)
+	variant    99/10432 = a(1616,1581)    (8 tests, cond 0)
+		n1 false (test_time = 9.69361)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0726259)
+	variant   100/10432 = a(1616,1578)    (8 tests, cond 0)
+		n1 false (test_time = 21.3552)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0542331)
+	variant   101/10432 = a(1616,1576)    (8 tests, cond 0)
+		n1 false (test_time = 22.1517)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.059098)
+	variant   102/10432 = a(1616,1571)    (8 tests, cond 0)
+		n1 false (test_time = 21.4238)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0528309)
+	variant   103/10432 = a(1616,1567)    (8 tests, cond 0)
+		n1 false (test_time = 21.2382)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.063658)
+	variant   104/10432 = a(1616,1561)    (8 tests, cond 0)
+		n1 false (test_time = 21.3752)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0574169)
+	variant   105/10432 = a(1616,1553)    (8 tests, cond 0)
+		n1 false (test_time = 19.3189)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0615621)
+	variant   106/10432 = a(1616,1547)    (8 tests, cond 0)
+		n1 false (test_time = 19.6019)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0543561)
+	variant   107/10432 = a(1616,1546)    (8 tests, cond 0)
+		n1 false (test_time = 10.526)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0590742)
+	variant   108/10432 = a(1616,1480)    (8 tests, cond 0)
+		n1 false (test_time = 10.855)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0549181)
+	variant   109/10432 = a(1616,1460)    (8 tests, cond 0)
+		n1 false (test_time = 11.0661)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.055582)
+	variant   110/10432 = a(1616,1430)    (8 tests, cond 0)
+		n1 false (test_time = 10.0183)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.049926)
+	variant   111/10432 = a(1616,925)     (8 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-d461bfd2-8f976798/000110/src/tail.c  a(1616,925)  fails to compile
+ false (test_time = 10.2758)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0569582)
+	variant   112/10432 = a(1616,843)     (8 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-d461bfd2-8f976798/000111/src/tail.c  a(1616,843)  fails to compile
+ false (test_time = 9.02993)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0711811)
+	variant   113/10432 = a(1616,744)     (8 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-d461bfd2-8f976798/000112/src/tail.c  a(1616,744)  fails to compile
+ false (test_time = 8.94985)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0784159)
+	variant   114/10432 = a(1616,621)     (8 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-d461bfd2-8f976798/000113/src/tail.c  a(1616,621)  fails to compile
+ false (test_time = 9.17151)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0729411)
+	variant   115/10432 = a(1613,1666)    (8 tests, cond 0)
+		n1 false (test_time = 9.97364)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.066113)
+	variant   116/10432 = a(1613,1665)    (8 tests, cond 0)
+		n1 false (test_time = 20.131)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0715151)
+	variant   117/10432 = a(1613,1664)    (8 tests, cond 0)
+		n1 false (test_time = 21.1456)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0712631)
+	variant   118/10432 = a(1613,1663)    (8 tests, cond 0)
+		n1 false (test_time = 19.7452)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0850198)
+	variant   119/10432 = a(1613,1662)    (8 tests, cond 0)
+		n1 false (test_time = 22.0049)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0664871)
+	variant   120/10432 = a(1613,1660)    (8 tests, cond 0)
+		n1 false (test_time = 21.6329)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052686)
+	variant   121/10432 = a(1613,1659)    (8 tests, cond 0)
+		n1 false (test_time = 20.5207)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0693469)
+	variant   122/10432 = a(1613,1656)    (8 tests, cond 0)
+		n1 false (test_time = 21.2281)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0689938)
+	variant   123/10432 = a(1613,1655)    (8 tests, cond 0)
+		n1 false (test_time = 21.2596)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0594192)
+	variant   124/10432 = a(1613,1654)    (8 tests, cond 0)
+		n1 false (test_time = 20.5604)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.071418)
+	variant   125/10432 = a(1613,1653)    (8 tests, cond 0)
+		n1 false (test_time = 20.8277)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0551989)
+	variant   126/10432 = a(1613,1652)    (8 tests, cond 0)
+		n1 false (test_time = 20.2985)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054117)
+	variant   127/10432 = a(1613,1649)    (8 tests, cond 0)
+		n1 false (test_time = 19.7016)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0608439)
+	variant   128/10432 = a(1613,1648)    (8 tests, cond 0)
+		n1 false (test_time = 21.1344)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0561368)
+	variant   129/10432 = a(1613,1647)    (8 tests, cond 0)
+		n1 false (test_time = 20.7111)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0549939)
+	variant   130/10432 = a(1613,1644)    (8 tests, cond 0)
+		n1 false (test_time = 21.2903)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0625532)
+	variant   131/10432 = a(1613,1638)    (8 tests, cond 0)
+		n1 false (test_time = 20.7612)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0559649)
+	variant   132/10432 = a(1613,1637)    (8 tests, cond 0)
+		n1 false (test_time = 19.4258)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.069344)
+	variant   133/10432 = a(1613,1636)    (8 tests, cond 0)
+		n1 false (test_time = 20.4043)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0617979)
+	variant   134/10432 = a(1613,1635)    (8 tests, cond 0)
+		n1 false (test_time = 20.7503)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0526969)
+	variant   135/10432 = a(1613,1634)    (8 tests, cond 0)
+		n1 false (test_time = 21.3569)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0559411)
+	variant   136/10432 = a(1613,1626)    (8 tests, cond 0)
+		n1 false (test_time = 20.8296)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.067162)
+	variant   137/10432 = a(1613,1625)    (8 tests, cond 0)
+		n1 false (test_time = 20.2605)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0557308)
+	variant   138/10432 = a(1613,1620)    (8 tests, cond 0)
+		n1 false (test_time = 19.525)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0609801)
+	variant   139/10432 = a(1613,1619)    (8 tests, cond 0)
+		n1 false (test_time = 19.1108)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.068733)
+	variant   140/10432 = a(1613,1617)    (8 tests, cond 0)
+		n1 false (test_time = 21.0392)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.066926)
+	variant   141/10432 = a(1613,1615)    (8 tests, cond 0)
+		n1 false (test_time = 20.1937)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0557032)
+	variant   142/10432 = a(1613,1614)    (8 tests, cond 0)
+		n1 false (test_time = 20.1708)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0655079)
+	variant   143/10432 = a(1613,1609)    (8 tests, cond 0)
+		n1 true (test_time = 10.6098)
+		p2 false (test_time = 9.2303)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056843)
+	variant   144/10432 = a(1613,1607)    (8 tests, cond 0)
+		n1 false (test_time = 20.2633)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0541811)
+	variant   145/10432 = a(1613,1604)    (8 tests, cond 0)
+		n1 false (test_time = 20.8646)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0513179)
+	variant   146/10432 = a(1613,1603)    (8 tests, cond 0)
+		n1 true (test_time = 9.81232)
+		p2 false (test_time = 9.23901)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0604122)
+	variant   147/10432 = a(1613,1602)    (8 tests, cond 0)
+		n1 false (test_time = 20.6407)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0610161)
+	variant   148/10432 = a(1613,1594)    (8 tests, cond 0)
+		n1 false (test_time = 20.7214)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.051353)
+	variant   149/10432 = a(1613,1593)    (8 tests, cond 0)
+		n1 false (test_time = 19.4812)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0521631)
+	variant   150/10432 = a(1613,1592)    (8 tests, cond 0)
+		n1 false (test_time = 20.6191)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0584049)
+	variant   151/10432 = a(1613,1591)    (8 tests, cond 0)
+		n1 false (test_time = 20.882)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.086158)
+	variant   152/10432 = a(1613,1590)    (8 tests, cond 0)
+		n1 false (test_time = 20.0824)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.055958)
+	variant   153/10432 = a(1613,1588)    (8 tests, cond 0)
+		n1 false (test_time = 20.264)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0769019)
+	variant   154/10432 = a(1613,1581)    (8 tests, cond 0)
+		n1 false (test_time = 9.41269)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0551679)
+	variant   155/10432 = a(1613,1578)    (8 tests, cond 0)
+		n1 false (test_time = 19.6337)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052855)
+	variant   156/10432 = a(1613,1576)    (8 tests, cond 0)
+		n1 false (test_time = 19.7288)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0548499)
+	variant   157/10432 = a(1613,1571)    (8 tests, cond 0)
+		n1 false (test_time = 20.1433)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052238)
+	variant   158/10432 = a(1613,1567)    (8 tests, cond 0)
+		n1 false (test_time = 21.0219)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.063066)
+	variant   159/10432 = a(1613,1561)    (8 tests, cond 0)
+		n1 false (test_time = 20.6719)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.078764)
+	variant   160/10432 = a(1613,1553)    (8 tests, cond 0)
+		n1 false (test_time = 20.6451)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0568991)
+	variant   161/10432 = a(1613,1547)    (8 tests, cond 0)
+		n1 false (test_time = 21.1918)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.062113)
+	variant   162/10432 = a(1613,1546)    (8 tests, cond 0)
+		n1 false (test_time = 10.9729)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.093838)
+	variant   163/10432 = a(1613,1480)    (8 tests, cond 0)
+		n1 false (test_time = 10.3812)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0544529)
+	variant   164/10432 = a(1613,1460)    (8 tests, cond 0)
+		n1 false (test_time = 9.72765)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0504999)
+	variant   165/10432 = a(1613,1430)    (8 tests, cond 0)
+		n1 false (test_time = 10.0201)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0566318)
+	variant   166/10432 = a(1613,1274)    (8 tests, cond 0)
+		n1 true (test_time = 10.9807)
+		p2 false (test_time = 9.20497)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.058588)
+	variant   167/10432 = a(1613,1241)    (8 tests, cond 0)
+		n1 false (test_time = 20.8372)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0596731)
+	variant   168/10432 = a(1613,925)     (8 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-d461bfd2-8f976798/000167/src/tail.c  a(1613,925)  fails to compile
+ false (test_time = 10.8562)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0546539)
+	variant   169/10432 = a(1613,908)     (8 tests, cond 0)
+		n1 false (test_time = 9.89791)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056772)
+	variant   170/10432 = a(1613,843)     (8 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-d461bfd2-8f976798/000169/src/tail.c  a(1613,843)  fails to compile
+ false (test_time = 10.2332)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.060792)
+	variant   171/10432 = a(1613,744)     (8 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-d461bfd2-8f976798/000170/src/tail.c  a(1613,744)  fails to compile
+ false (test_time = 8.97104)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0722301)
+	variant   172/10432 = a(1613,621)     (8 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-d461bfd2-8f976798/000171/src/tail.c  a(1613,621)  fails to compile
+ false (test_time = 9.81475)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.063442)
+	variant   173/10432 = a(1613,237)     (8 tests, cond 0)
+		n1 false (test_time = 10.8939)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0785339)
+	variant   174/10432 = a(1588,1666)    (8 tests, cond 0)
+		n1 false (test_time = 10.1209)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0597832)
+	variant   175/10432 = a(1588,1665)    (8 tests, cond 0)
+		n1 false (test_time = 20.8969)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056967)
+	variant   176/10432 = a(1588,1664)    (8 tests, cond 0)
+		n1 false (test_time = 19.9379)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0720031)
+	variant   177/10432 = a(1588,1663)    (8 tests, cond 0)
+		n1 false (test_time = 20.1831)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0579481)
+	variant   178/10432 = a(1588,1662)    (8 tests, cond 0)
+		n1 false (test_time = 20.6316)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.062695)
+	variant   179/10432 = a(1588,1660)    (8 tests, cond 0)
+		n1 false (test_time = 20.3694)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0583971)
+	variant   180/10432 = a(1588,1659)    (8 tests, cond 0)
+		n1 false (test_time = 20.9377)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.061409)
+	variant   181/10432 = a(1588,1656)    (8 tests, cond 0)
+		n1 false (test_time = 21.707)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0691872)
+	variant   182/10432 = a(1588,1655)    (8 tests, cond 0)
+		n1 false (test_time = 21.5239)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.081619)
+	variant   183/10432 = a(1588,1654)    (8 tests, cond 0)
+		n1 false (test_time = 19.9044)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0586638)
+	variant   184/10432 = a(1588,1653)    (8 tests, cond 0)
+		n1 false (test_time = 20.6264)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.071547)
+	variant   185/10432 = a(1588,1652)    (8 tests, cond 0)
+		n1 false (test_time = 18.8874)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.064213)
+	variant   186/10432 = a(1588,1649)    (8 tests, cond 0)
+		n1 false (test_time = 20.2838)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0579422)
+	variant   187/10432 = a(1588,1648)    (8 tests, cond 0)
+		n1 false (test_time = 21.0214)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.072129)
+	variant   188/10432 = a(1588,1647)    (8 tests, cond 0)
+		n1 false (test_time = 20.5593)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056392)
+	variant   189/10432 = a(1588,1644)    (8 tests, cond 0)
+		n1 false (test_time = 21.2293)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0568659)
+	variant   190/10432 = a(1588,1638)    (8 tests, cond 0)
+		n1 false (test_time = 21.3798)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.04954)
+	variant   191/10432 = a(1588,1637)    (8 tests, cond 0)
+		n1 false (test_time = 20.978)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0722618)
+	variant   192/10432 = a(1588,1636)    (8 tests, cond 0)
+		n1 false (test_time = 20.0324)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0682671)
+	variant   193/10432 = a(1588,1635)    (8 tests, cond 0)
+		n1 false (test_time = 21.0358)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.062007)
+	variant   194/10432 = a(1588,1634)    (8 tests, cond 0)
+		n1 false (test_time = 19.5462)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0555632)
+	variant   195/10432 = a(1588,1626)    (8 tests, cond 0)
+		n1 false (test_time = 20.9531)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.059963)
+	variant   196/10432 = a(1588,1625)    (8 tests, cond 0)
+		n1 false (test_time = 22.2503)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0687652)
+	variant   197/10432 = a(1588,1620)    (8 tests, cond 0)
+		n1 false (test_time = 19.7363)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0700591)
+	variant   198/10432 = a(1588,1619)    (8 tests, cond 0)
+		n1 false (test_time = 20.9562)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.060365)
+	variant   199/10432 = a(1588,1617)    (8 tests, cond 0)
+		n1 false (test_time = 20.6928)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0556328)
+	variant   200/10432 = a(1588,1615)    (8 tests, cond 0)
+		n1 false (test_time = 21.4509)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056356)
+	variant   201/10432 = a(1588,1614)    (8 tests, cond 0)
+		n1 false (test_time = 21.1983)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0677221)
+	variant   202/10432 = a(1588,1609)    (8 tests, cond 0)
+		n1 true (test_time = 10.9071)
+		p2 true (test_time = 3.30384)
+		p3 true (test_time = 1.88744)
+		p4 true (test_time = 1.8885)
+		p5 true (test_time = 1.93368)
+		p6 true (test_time = 2.0255)
+		p7 true (test_time = 2.05988)
+		p1 true (test_time = 0.0493181)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: a(1588,1609)
+Repair Name: a(1588,1609) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454355684.034933
+
+Variant Test Case Queries: 214
+"Test Suite Evaluations": 26.75
+
+Compile Failures: 12
+Wall-Clock Seconds Elapsed: 3987.44
+  Activity Name                     Count Seconds = Percent of Total Time
+  find_best_edit                      202  12.387 = 0.311407%
+  progeq partition                    390  15.731 = 0.395488%
+  append_sources                      262  19.554 = 0.491599%
+  test                                210 1790.088 = 45.0032%
+  compile                             203 2139.534 = 53.7884%
+  TOTAL                                   3977.689 = 99.7553% (avg CPU usage)

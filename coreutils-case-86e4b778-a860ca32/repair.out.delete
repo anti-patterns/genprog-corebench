@@ -1,0 +1,2196 @@
+WARNING: the argument --multi-file is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --suffix-extension is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --mutp is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete true
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 32
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Sun Feb 14 21:23:56 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat: /etc/redhat-release: No such file or directory
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp5aa48b.c /tmp/tmp7060f4.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/seq.c: parsing
+cilRep: src/seq.c: parsed (0.0315485 MB)
+cilRep: computing liveness
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 272
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: done instrumenting for fault localization
+Coverage only: 
+Repair files: src/seq.c
+Allfiles: src/seq.c
+COPY: cp coverage/src/seq.c src/seq.c
+Making all in lib
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make  all-am
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+Making all in src
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+make  all-am
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+cilly  -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt  -Wl,-z,ignore -o [ lbracket.o ../lib/libcoreutils.a  ../lib/libcoreutils.a  
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+cilly  -I. -I../lib  -I../lib   -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt -MT seq.o -MD -MP -MF .deps/seq.Tpo -c -o seq.o seq.c
+gcc -D_GNUCC -E -MT seq.o -MD -MP -MF .deps/seq.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 seq.c -o ./seq.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./seq.cil.c ./seq.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./seq.cil.c -o ./seq.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o seq.o ./seq.cil.i
+mv -f .deps/seq.Tpo .deps/seq.Po
+cilly  -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt  -Wl,-z,ignore -o seq seq.o ../lib/libcoreutils.a  ../lib/libcoreutils.a  
+gcc -D_GNUCC -o seq -std=c99 -std=c99 -Wno-error seq.o ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+Making all in doc
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/doc'
+make[1]: `all' is up to date.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/doc'
+Making all in man
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/man'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/man'
+Making all in po
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/po'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/po'
+Making all in tests
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+Making all in chgrp
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chgrp'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chgrp'
+Making all in chmod
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chmod'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chmod'
+Making all in chown
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chown'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chown'
+Making all in cp
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cp'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cp'
+Making all in cut
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cut'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cut'
+Making all in dd
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dd'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dd'
+Making all in dircolors
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dircolors'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dircolors'
+Making all in du
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/du'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/du'
+Making all in expr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/expr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/expr'
+Making all in factor
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/factor'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/factor'
+Making all in fmt
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/fmt'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/fmt'
+Making all in head
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/head'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/head'
+Making all in install
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/install'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/install'
+Making all in join
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/join'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/join'
+Making all in ln
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ln'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ln'
+Making all in ls
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls'
+Making all in ls-2
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls-2'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls-2'
+Making all in md5sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/md5sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/md5sum'
+Making all in misc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/misc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/misc'
+Making all in mkdir
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mkdir'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mkdir'
+Making all in mv
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mv'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mv'
+Making all in od
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/od'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/od'
+Making all in pr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/pr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/pr'
+Making all in readlink
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/readlink'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/readlink'
+Making all in rm
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rm'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rm'
+Making all in rmdir
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rmdir'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rmdir'
+Making all in seq
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/seq'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/seq'
+Making all in sha1sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sha1sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sha1sum'
+Making all in shred
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/shred'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/shred'
+Making all in sort
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sort'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sort'
+Making all in stty
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/stty'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/stty'
+Making all in sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sum'
+Making all in tac
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tac'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tac'
+Making all in tail
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail'
+Making all in tail-2
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail-2'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail-2'
+Making all in tee
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tee'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tee'
+Making all in test
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/test'
+Making all in touch
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/touch'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/touch'
+Making all in tr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tr'
+Making all in tsort
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tsort'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tsort'
+Making all in unexpand
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/unexpand'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/unexpand'
+Making all in uniq
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/uniq'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/uniq'
+Making all in wc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/wc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/wc'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32'
+make[1]: Nothing to be done for `all-am'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32'
+coverage negative:
+	test: 1
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/86e4b778_a860ca32/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32
+FAILED: 0
+coverage positive:
+	test: 1
+PASS: 2
+	test: 2
+PASS: 3
+	test: 3
+PASS: 4
+	test: 4
+PASS: 5
+	test: 5
+PASS: 6
+	test: 6
+PASS: 7
+	test: 7
+PASS: 9
+	test: 8
+PASS: 10
+	test: 9
+PASS: 12
+	test: 10
+PASS: 13
+	test: 11
+PASS: 14
+	test: 12
+PASS: 15
+	test: 13
+PASS: 16
+	test: 14
+PASS: 17
+	test: 15
+PASS: 18
+	test: 16
+PASS: 20
+	test: 17
+PASS: 21
+	test: 18
+PASS: 22
+	test: 19
+PASS: 24
+	test: 20
+PASS: 26
+	test: 21
+	test: 22
+PASS: 28
+	test: 23
+PASS: 29
+	test: 24
+PASS: 30
+	test: 25
+PASS: 31
+	test: 26
+PASS: 32
+	test: 27
+PASS: 33
+	test: 28
+PASS: 34
+	test: 29
+PASS: 38
+	test: 30
+PASS: 39
+	test: 31
+PASS: 40
+	test: 32
+PASS: 41
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 272
+cilRep: stmts in weighted_path = 138
+cilRep: total weight = 54.3
+cilRep: stmts in weighted_path with weight >= 1.0 = 45
+cilRep: src/seq.c (code bank/base file; atoms [1,272])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1455456243.812716)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 0
+cilRep: fix-space quotient by string: 144 -> 125
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: gettext
+progeq: WARNING: cannot resolve call: fputs_unlocked
+progeq: WARNING: cannot resolve call: xstrtold
+progeq: WARNING: cannot resolve call: error
+progeq: WARNING: cannot resolve call: xmalloc
+progeq: WARNING: cannot resolve call: memcpy
+progeq: WARNING: cannot resolve call: strcpy
+progeq: WARNING: cannot resolve call: asprintf
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: sprintf
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: getopt_long
+progeq: WARNING: cannot resolve call: version_etc
+progeq: WARNING: cannot resolve call: quote
+search: fix space reduced (time_taken = 0.265989)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 138 deletes
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:61:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:31:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:19:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:42:after0
+REMOVED?false
+CARDINAL?before:125:after0
+REMOVED?false
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 0 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 3306 appends
+search: ww_adaptive: 3306 possible edits
+search: ready to start (time_taken = 0.765114)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.013247)
+	variant     1/ 3306 = a(237,272)      (33 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/seq.c
+Allfiles: src/seq.c
+COPY: cp 000000/src/seq.c src/seq.c
+Making all in lib
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make  all-am
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+Making all in src
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+make  all-am
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+cilly  -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt  -Wl,-z,ignore -o [ lbracket.o ../lib/libcoreutils.a  ../lib/libcoreutils.a  
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+cilly  -I. -I../lib  -I../lib   -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt -MT seq.o -MD -MP -MF .deps/seq.Tpo -c -o seq.o seq.c
+gcc -D_GNUCC -E -MT seq.o -MD -MP -MF .deps/seq.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 seq.c -o ./seq.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./seq.cil.c ./seq.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./seq.cil.c -o ./seq.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o seq.o ./seq.cil.i
+mv -f .deps/seq.Tpo .deps/seq.Po
+cilly  -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt  -Wl,-z,ignore -o seq seq.o ../lib/libcoreutils.a  ../lib/libcoreutils.a  
+gcc -D_GNUCC -o seq -std=c99 -std=c99 -Wno-error seq.o ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+Making all in doc
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/doc'
+make[1]: `all' is up to date.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/doc'
+Making all in man
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/man'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/man'
+Making all in po
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/po'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/po'
+Making all in tests
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+Making all in chgrp
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chgrp'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chgrp'
+Making all in chmod
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chmod'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chmod'
+Making all in chown
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chown'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chown'
+Making all in cp
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cp'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cp'
+Making all in cut
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cut'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cut'
+Making all in dd
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dd'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dd'
+Making all in dircolors
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dircolors'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dircolors'
+Making all in du
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/du'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/du'
+Making all in expr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/expr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/expr'
+Making all in factor
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/factor'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/factor'
+Making all in fmt
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/fmt'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/fmt'
+Making all in head
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/head'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/head'
+Making all in install
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/install'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/install'
+Making all in join
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/join'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/join'
+Making all in ln
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ln'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ln'
+Making all in ls
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls'
+Making all in ls-2
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls-2'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls-2'
+Making all in md5sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/md5sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/md5sum'
+Making all in misc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/misc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/misc'
+Making all in mkdir
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mkdir'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mkdir'
+Making all in mv
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mv'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mv'
+Making all in od
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/od'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/od'
+Making all in pr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/pr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/pr'
+Making all in readlink
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/readlink'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/readlink'
+Making all in rm
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rm'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rm'
+Making all in rmdir
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rmdir'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rmdir'
+Making all in seq
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/seq'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/seq'
+Making all in sha1sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sha1sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sha1sum'
+Making all in shred
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/shred'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/shred'
+Making all in sort
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sort'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sort'
+Making all in stty
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/stty'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/stty'
+Making all in sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sum'
+Making all in tac
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tac'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tac'
+Making all in tail
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail'
+Making all in tail-2
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail-2'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail-2'
+Making all in tee
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tee'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tee'
+Making all in test
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/test'
+Making all in touch
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/touch'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/touch'
+Making all in tr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tr'
+Making all in tsort
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tsort'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tsort'
+Making all in unexpand
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/unexpand'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/unexpand'
+Making all in uniq
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/uniq'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/uniq'
+Making all in wc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/wc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/wc'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32'
+make[1]: Nothing to be done for `all-am'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/86e4b778_a860ca32/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32
+FAILED: 0
+ false (test_time = 0.636825)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013669)
+	variant     2/ 3306 = a(237,271)      (33 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/seq.c
+Allfiles: src/seq.c
+COPY: cp 000001/src/seq.c src/seq.c
+Making all in lib
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make  all-am
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+Making all in src
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+make  all-am
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+cilly  -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt  -Wl,-z,ignore -o [ lbracket.o ../lib/libcoreutils.a  ../lib/libcoreutils.a  
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+cilly  -I. -I../lib  -I../lib   -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt -MT seq.o -MD -MP -MF .deps/seq.Tpo -c -o seq.o seq.c
+gcc -D_GNUCC -E -MT seq.o -MD -MP -MF .deps/seq.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 seq.c -o ./seq.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./seq.cil.c ./seq.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./seq.cil.c -o ./seq.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o seq.o ./seq.cil.i
+mv -f .deps/seq.Tpo .deps/seq.Po
+cilly  -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt  -Wl,-z,ignore -o seq seq.o ../lib/libcoreutils.a  ../lib/libcoreutils.a  
+gcc -D_GNUCC -o seq -std=c99 -std=c99 -Wno-error seq.o ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+Making all in doc
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/doc'
+make[1]: `all' is up to date.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/doc'
+Making all in man
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/man'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/man'
+Making all in po
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/po'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/po'
+Making all in tests
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+Making all in chgrp
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chgrp'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chgrp'
+Making all in chmod
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chmod'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chmod'
+Making all in chown
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chown'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chown'
+Making all in cp
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cp'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cp'
+Making all in cut
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cut'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cut'
+Making all in dd
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dd'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dd'
+Making all in dircolors
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dircolors'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dircolors'
+Making all in du
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/du'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/du'
+Making all in expr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/expr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/expr'
+Making all in factor
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/factor'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/factor'
+Making all in fmt
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/fmt'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/fmt'
+Making all in head
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/head'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/head'
+Making all in install
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/install'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/install'
+Making all in join
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/join'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/join'
+Making all in ln
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ln'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ln'
+Making all in ls
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls'
+Making all in ls-2
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls-2'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls-2'
+Making all in md5sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/md5sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/md5sum'
+Making all in misc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/misc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/misc'
+Making all in mkdir
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mkdir'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mkdir'
+Making all in mv
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mv'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mv'
+Making all in od
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/od'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/od'
+Making all in pr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/pr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/pr'
+Making all in readlink
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/readlink'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/readlink'
+Making all in rm
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rm'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rm'
+Making all in rmdir
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rmdir'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rmdir'
+Making all in seq
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/seq'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/seq'
+Making all in sha1sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sha1sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sha1sum'
+Making all in shred
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/shred'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/shred'
+Making all in sort
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sort'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sort'
+Making all in stty
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/stty'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/stty'
+Making all in sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sum'
+Making all in tac
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tac'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tac'
+Making all in tail
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail'
+Making all in tail-2
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail-2'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail-2'
+Making all in tee
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tee'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tee'
+Making all in test
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/test'
+Making all in touch
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/touch'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/touch'
+Making all in tr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tr'
+Making all in tsort
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tsort'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tsort'
+Making all in unexpand
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/unexpand'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/unexpand'
+Making all in uniq
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/uniq'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/uniq'
+Making all in wc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/wc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/wc'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32'
+make[1]: Nothing to be done for `all-am'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/86e4b778_a860ca32/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32
+FAILED: 0
+ false (test_time = 0.636287)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0141408)
+	variant     3/ 3306 = a(237,270)      (33 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/seq.c
+Allfiles: src/seq.c
+COPY: cp 000002/src/seq.c src/seq.c
+Making all in lib
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make  all-am
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+Making all in src
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+make  all-am
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+cilly  -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt  -Wl,-z,ignore -o [ lbracket.o ../lib/libcoreutils.a  ../lib/libcoreutils.a  
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+cilly  -I. -I../lib  -I../lib   -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt -MT seq.o -MD -MP -MF .deps/seq.Tpo -c -o seq.o seq.c
+gcc -D_GNUCC -E -MT seq.o -MD -MP -MF .deps/seq.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 seq.c -o ./seq.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./seq.cil.c ./seq.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./seq.cil.c -o ./seq.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o seq.o ./seq.cil.i
+mv -f .deps/seq.Tpo .deps/seq.Po
+cilly  -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt  -Wl,-z,ignore -o seq seq.o ../lib/libcoreutils.a  ../lib/libcoreutils.a  
+gcc -D_GNUCC -o seq -std=c99 -std=c99 -Wno-error seq.o ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+Making all in doc
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/doc'
+make[1]: `all' is up to date.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/doc'
+Making all in man
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/man'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/man'
+Making all in po
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/po'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/po'
+Making all in tests
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+Making all in chgrp
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chgrp'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chgrp'
+Making all in chmod
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chmod'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chmod'
+Making all in chown
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chown'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chown'
+Making all in cp
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cp'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cp'
+Making all in cut
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cut'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cut'
+Making all in dd
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dd'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dd'
+Making all in dircolors
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dircolors'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dircolors'
+Making all in du
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/du'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/du'
+Making all in expr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/expr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/expr'
+Making all in factor
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/factor'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/factor'
+Making all in fmt
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/fmt'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/fmt'
+Making all in head
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/head'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/head'
+Making all in install
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/install'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/install'
+Making all in join
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/join'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/join'
+Making all in ln
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ln'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ln'
+Making all in ls
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls'
+Making all in ls-2
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls-2'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls-2'
+Making all in md5sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/md5sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/md5sum'
+Making all in misc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/misc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/misc'
+Making all in mkdir
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mkdir'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mkdir'
+Making all in mv
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mv'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mv'
+Making all in od
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/od'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/od'
+Making all in pr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/pr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/pr'
+Making all in readlink
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/readlink'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/readlink'
+Making all in rm
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rm'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rm'
+Making all in rmdir
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rmdir'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rmdir'
+Making all in seq
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/seq'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/seq'
+Making all in sha1sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sha1sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sha1sum'
+Making all in shred
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/shred'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/shred'
+Making all in sort
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sort'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sort'
+Making all in stty
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/stty'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/stty'
+Making all in sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sum'
+Making all in tac
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tac'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tac'
+Making all in tail
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail'
+Making all in tail-2
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail-2'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail-2'
+Making all in tee
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tee'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tee'
+Making all in test
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/test'
+Making all in touch
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/touch'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/touch'
+Making all in tr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tr'
+Making all in tsort
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tsort'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tsort'
+Making all in unexpand
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/unexpand'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/unexpand'
+Making all in uniq
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/uniq'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/uniq'
+Making all in wc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/wc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/wc'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32'
+make[1]: Nothing to be done for `all-am'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/86e4b778_a860ca32/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32
+FAILED: 0
+ false (test_time = 0.639834)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01387)
+	variant     4/ 3306 = a(237,269)      (33 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/seq.c
+Allfiles: src/seq.c
+COPY: cp 000003/src/seq.c src/seq.c
+Making all in lib
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make  all-am
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+Making all in src
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+make  all-am
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+cilly  -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt  -Wl,-z,ignore -o [ lbracket.o ../lib/libcoreutils.a  ../lib/libcoreutils.a  
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+cilly  -I. -I../lib  -I../lib   -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt -MT seq.o -MD -MP -MF .deps/seq.Tpo -c -o seq.o seq.c
+gcc -D_GNUCC -E -MT seq.o -MD -MP -MF .deps/seq.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 seq.c -o ./seq.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./seq.cil.c ./seq.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./seq.cil.c -o ./seq.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o seq.o ./seq.cil.i
+mv -f .deps/seq.Tpo .deps/seq.Po
+cilly  -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt  -Wl,-z,ignore -o seq seq.o ../lib/libcoreutils.a  ../lib/libcoreutils.a  
+gcc -D_GNUCC -o seq -std=c99 -std=c99 -Wno-error seq.o ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+Making all in doc
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/doc'
+make[1]: `all' is up to date.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/doc'
+Making all in man
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/man'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/man'
+Making all in po
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/po'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/po'
+Making all in tests
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+Making all in chgrp
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chgrp'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chgrp'
+Making all in chmod
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chmod'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chmod'
+Making all in chown
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chown'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chown'
+Making all in cp
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cp'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cp'
+Making all in cut
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cut'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cut'
+Making all in dd
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dd'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dd'
+Making all in dircolors
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dircolors'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dircolors'
+Making all in du
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/du'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/du'
+Making all in expr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/expr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/expr'
+Making all in factor
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/factor'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/factor'
+Making all in fmt
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/fmt'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/fmt'
+Making all in head
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/head'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/head'
+Making all in install
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/install'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/install'
+Making all in join
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/join'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/join'
+Making all in ln
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ln'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ln'
+Making all in ls
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls'
+Making all in ls-2
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls-2'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls-2'
+Making all in md5sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/md5sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/md5sum'
+Making all in misc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/misc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/misc'
+Making all in mkdir
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mkdir'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mkdir'
+Making all in mv
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mv'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mv'
+Making all in od
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/od'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/od'
+Making all in pr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/pr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/pr'
+Making all in readlink
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/readlink'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/readlink'
+Making all in rm
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rm'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rm'
+Making all in rmdir
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rmdir'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rmdir'
+Making all in seq
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/seq'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/seq'
+Making all in sha1sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sha1sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sha1sum'
+Making all in shred
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/shred'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/shred'
+Making all in sort
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sort'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sort'
+Making all in stty
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/stty'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/stty'
+Making all in sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sum'
+Making all in tac
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tac'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tac'
+Making all in tail
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail'
+Making all in tail-2
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail-2'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail-2'
+Making all in tee
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tee'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tee'
+Making all in test
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/test'
+Making all in touch
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/touch'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/touch'
+Making all in tr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tr'
+Making all in tsort
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tsort'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tsort'
+Making all in unexpand
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/unexpand'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/unexpand'
+Making all in uniq
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/uniq'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/uniq'
+Making all in wc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/wc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/wc'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32'
+make[1]: Nothing to be done for `all-am'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/86e4b778_a860ca32/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32
+FAILED: 0
+ false (test_time = 0.634007)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0139179)
+	variant     5/ 3306 = a(237,268)      (33 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/seq.c
+Allfiles: src/seq.c
+COPY: cp 000004/src/seq.c src/seq.c
+Making all in lib
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make  all-am
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+Making all in src
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+make  all-am
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+cilly  -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt  -Wl,-z,ignore -o [ lbracket.o ../lib/libcoreutils.a  ../lib/libcoreutils.a  
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+cilly  -I. -I../lib  -I../lib   -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt -MT seq.o -MD -MP -MF .deps/seq.Tpo -c -o seq.o seq.c
+gcc -D_GNUCC -E -MT seq.o -MD -MP -MF .deps/seq.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 seq.c -o ./seq.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./seq.cil.c ./seq.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./seq.cil.c -o ./seq.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o seq.o ./seq.cil.i
+mv -f .deps/seq.Tpo .deps/seq.Po
+cilly  -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt  -Wl,-z,ignore -o seq seq.o ../lib/libcoreutils.a  ../lib/libcoreutils.a  
+gcc -D_GNUCC -o seq -std=c99 -std=c99 -Wno-error seq.o ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+Making all in doc
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/doc'
+make[1]: `all' is up to date.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/doc'
+Making all in man
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/man'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/man'
+Making all in po
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/po'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/po'
+Making all in tests
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+Making all in chgrp
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chgrp'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chgrp'
+Making all in chmod
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chmod'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chmod'
+Making all in chown
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chown'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chown'
+Making all in cp
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cp'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cp'
+Making all in cut
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cut'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cut'
+Making all in dd
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dd'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dd'
+Making all in dircolors
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dircolors'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dircolors'
+Making all in du
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/du'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/du'
+Making all in expr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/expr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/expr'
+Making all in factor
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/factor'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/factor'
+Making all in fmt
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/fmt'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/fmt'
+Making all in head
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/head'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/head'
+Making all in install
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/install'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/install'
+Making all in join
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/join'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/join'
+Making all in ln
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ln'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ln'
+Making all in ls
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls'
+Making all in ls-2
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls-2'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls-2'
+Making all in md5sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/md5sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/md5sum'
+Making all in misc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/misc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/misc'
+Making all in mkdir
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mkdir'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mkdir'
+Making all in mv
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mv'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mv'
+Making all in od
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/od'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/od'
+Making all in pr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/pr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/pr'
+Making all in readlink
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/readlink'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/readlink'
+Making all in rm
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rm'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rm'
+Making all in rmdir
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rmdir'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rmdir'
+Making all in seq
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/seq'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/seq'
+Making all in sha1sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sha1sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sha1sum'
+Making all in shred
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/shred'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/shred'
+Making all in sort
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sort'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sort'
+Making all in stty
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/stty'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/stty'
+Making all in sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sum'
+Making all in tac
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tac'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tac'
+Making all in tail
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail'
+Making all in tail-2
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail-2'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail-2'
+Making all in tee
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tee'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tee'
+Making all in test
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/test'
+Making all in touch
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/touch'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/touch'
+Making all in tr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tr'
+Making all in tsort
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tsort'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tsort'
+Making all in unexpand
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/unexpand'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/unexpand'
+Making all in uniq
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/uniq'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/uniq'
+Making all in wc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/wc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/wc'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32'
+make[1]: Nothing to be done for `all-am'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/86e4b778_a860ca32/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32
+FAILED: 0
+ false (test_time = 0.637228)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0139182)
+	variant     6/ 3306 = a(237,267)      (33 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/seq.c
+Allfiles: src/seq.c
+COPY: cp 000005/src/seq.c src/seq.c
+Making all in lib
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make  all-am
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/lib'
+Making all in src
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+make  all-am
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+cilly  -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt  -Wl,-z,ignore -o [ lbracket.o ../lib/libcoreutils.a  ../lib/libcoreutils.a  
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+cilly  -I. -I../lib  -I../lib   -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt -MT seq.o -MD -MP -MF .deps/seq.Tpo -c -o seq.o seq.c
+gcc -D_GNUCC -E -MT seq.o -MD -MP -MF .deps/seq.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 seq.c -o ./seq.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./seq.cil.c ./seq.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./seq.cil.c -o ./seq.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o seq.o ./seq.cil.i
+mv -f .deps/seq.Tpo .deps/seq.Po
+cilly  -std=c99 -Wno-error --save-temps --leavealone=getdate --leavealone=stat --leavealone=dircolors --leavealone=expr --leavealone=pr --leavealone=od --leavealone=getlimits --leavealone=tr --leavealone=sort --leavealone=join --leavealone=uniq --leavealone=libstdbuf --leavealone=shred --leavealone=randint --leavealone=ino-map --leavealone=malloca --leavealone=fts --leavealone=bitrotate --leavealone=parse-datetime --leavealone=mktime --leavealone=human --leavealone=backupfile --leavealone=hash --leavealone=xstrtoumax --leavealone=exclude --leavealone=i-ring --leavealone=set-acl --leavealone=copy-acl --leavealone=rand-isaac --leavealone=utimecmp --leavealone=xfts --leavealone=fsusage --leavealone=nanosleep --leavealone=df --leavealone=extent-scan --leavealone=date --leavealone=fmt  -Wl,-z,ignore -o seq seq.o ../lib/libcoreutils.a  ../lib/libcoreutils.a  
+gcc -D_GNUCC -o seq -std=c99 -std=c99 -Wno-error seq.o ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/src'
+Making all in doc
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/doc'
+make[1]: `all' is up to date.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/doc'
+Making all in man
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/man'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/man'
+Making all in po
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/po'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/po'
+Making all in tests
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+Making all in chgrp
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chgrp'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chgrp'
+Making all in chmod
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chmod'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chmod'
+Making all in chown
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chown'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/chown'
+Making all in cp
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cp'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cp'
+Making all in cut
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cut'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/cut'
+Making all in dd
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dd'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dd'
+Making all in dircolors
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dircolors'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/dircolors'
+Making all in du
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/du'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/du'
+Making all in expr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/expr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/expr'
+Making all in factor
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/factor'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/factor'
+Making all in fmt
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/fmt'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/fmt'
+Making all in head
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/head'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/head'
+Making all in install
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/install'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/install'
+Making all in join
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/join'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/join'
+Making all in ln
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ln'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ln'
+Making all in ls
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls'
+Making all in ls-2
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls-2'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/ls-2'
+Making all in md5sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/md5sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/md5sum'
+Making all in misc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/misc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/misc'
+Making all in mkdir
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mkdir'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mkdir'
+Making all in mv
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mv'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/mv'
+Making all in od
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/od'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/od'
+Making all in pr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/pr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/pr'
+Making all in readlink
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/readlink'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/readlink'
+Making all in rm
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rm'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rm'
+Making all in rmdir
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rmdir'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/rmdir'
+Making all in seq
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/seq'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/seq'
+Making all in sha1sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sha1sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sha1sum'
+Making all in shred
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/shred'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/shred'
+Making all in sort
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sort'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sort'
+Making all in stty
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/stty'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/stty'
+Making all in sum
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sum'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/sum'
+Making all in tac
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tac'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tac'
+Making all in tail
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail'
+Making all in tail-2
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail-2'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tail-2'
+Making all in tee
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tee'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tee'
+Making all in test
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/test'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/test'
+Making all in touch
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/touch'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/touch'
+Making all in tr
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tr'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tr'
+Making all in tsort
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tsort'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/tsort'
+Making all in unexpand
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/unexpand'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/unexpand'
+Making all in uniq
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/uniq'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/uniq'
+Making all in wc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/wc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests/wc'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32/tests'
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32'
+make[1]: Nothing to be done for `all-am'.
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/86e4b778_a860ca32/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-86e4b778-a860ca32
+PASS: 0
+ true (test_time = 0.635962)
+		p1PASS: 2
+ true (test_time = 0.101434)
+		p2PASS: 3
+ true (test_time = 0.080297)
+		p3PASS: 4
+ true (test_time = 0.082859)
+		p4PASS: 5
+ true (test_time = 0.268704)
+		p5PASS: 6
+ true (test_time = 0.118443)
+		p6PASS: 7
+ true (test_time = 0.0857949)
+		p7PASS: 9
+ true (test_time = 0.655711)
+		p8PASS: 10
+ true (test_time = 0.0790851)
+		p9PASS: 12
+ true (test_time = 0.109632)
+		p10PASS: 13
+ true (test_time = 0.0909181)
+		p11PASS: 14
+ true (test_time = 0.078335)
+		p12PASS: 15
+ true (test_time = 0.0924609)
+		p13PASS: 16
+ true (test_time = 0.0781338)
+		p14PASS: 17
+ true (test_time = 0.0990949)
+		p15PASS: 18
+ true (test_time = 0.0773032)
+		p16PASS: 20
+ true (test_time = 0.12166)
+		p17PASS: 21
+ true (test_time = 0.083241)
+		p18PASS: 22
+ true (test_time = 0.085155)
+		p19PASS: 24
+ true (test_time = 0.0804789)
+		p20PASS: 26
+ true (test_time = 0.079247)
+		p21 true (test_time = 0.00209999)
+		p22PASS: 28
+ true (test_time = 0.103669)
+		p23PASS: 29
+ true (test_time = 0.106329)
+		p24PASS: 30
+ true (test_time = 0.102718)
+		p25PASS: 31
+ true (test_time = 0.102203)
+		p26PASS: 32
+ true (test_time = 0.0850301)
+		p27PASS: 33
+ true (test_time = 0.0880539)
+		p28PASS: 34
+ true (test_time = 0.080411)
+		p29PASS: 38
+ true (test_time = 0.106059)
+		p30PASS: 39
+ true (test_time = 0.107669)
+		p31PASS: 40
+ true (test_time = 0.0743918)
+		p32PASS: 41
+ true (test_time = 0.0888789)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: a(237,267)
+Repair Name: a(237,267) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1455456252.353409
+
+Variant Test Case Queries: 38
+"Test Suite Evaluations": 1.15152
+
+Compile Failures: 0
+Wall-Clock Seconds Elapsed: 15.9305
+  Activity Name                     Count Seconds = Percent of Total Time
+  delete_sources                      138   0.026 = 0.164069%
+  find_best_edit                        6   0.083 = 0.525353%
+  progeq partition                    125   0.196 = 1.24555%
+  append_sources                      138   0.739 = 4.68955%
+  compile                               7   4.229 = 26.8478%
+  test                                 71  10.480 = 66.5277%
+  TOTAL                                    15.753 = 98.8617% (avg CPU usage)

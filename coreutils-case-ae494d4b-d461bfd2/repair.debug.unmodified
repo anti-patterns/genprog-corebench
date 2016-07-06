@@ -1,0 +1,807 @@
+--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 6
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Tue Feb  2 12:16:44 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp1cbfde.c /tmp/tmp9c0ad0.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/tail.c: parsing
+cilRep: src/tail.c: parsed (0.132221 MB)
+cilRep: computing liveness
+cilRep: liveness failure for recheck: Errormsg.Error
+cilRep: liveness failure for tail_forever: Errormsg.Error
+cilRep: liveness failure for tail_forever_inotify: Errormsg.Error
+cilRep: liveness failure for tail_bytes: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 1663
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+coverage positive:
+	test: 1
+	test: 2
+	test: 3
+	test: 4
+	test: 5
+	test: 6
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 1663
+cilRep: stmts in weighted_path = 199
+cilRep: total weight = 46.9
+cilRep: stmts in weighted_path with weight >= 1.0 = 30
+cilRep: src/tail.c (code bank/base file; atoms [1,1663])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454386636.235177)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 0
+cilRep: fix-space quotient by string: 409 -> 317
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: xmalloc
+progeq: WARNING: cannot resolve call: xrealloc
+progeq: WARNING: cannot resolve call: fchownat
+progeq: WARNING: cannot resolve call: fchmodat
+progeq: WARNING: cannot resolve call: fstatat
+progeq: WARNING: cannot resolve call: gettext
+progeq: WARNING: cannot resolve call: fputs_unlocked
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: last_component
+progeq: WARNING: cannot resolve call: fwrite_unlocked
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: error
+progeq: WARNING: cannot resolve call: close
+progeq: WARNING: cannot resolve call: safe_read
+progeq: WARNING: cannot resolve call: quote
+progeq: WARNING: cannot resolve call: lseek
+progeq: WARNING: cannot resolve call: offtostr
+progeq: WARNING: cannot resolve call: memcpy
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: fstatfs
+progeq: WARNING: cannot resolve call: open_safer
+progeq: WARNING: cannot resolve call: fstat
+progeq: WARNING: cannot resolve call: rpl_fcntl
+progeq: WARNING: cannot resolve call: fflush_unlocked
+progeq: WARNING: cannot resolve call: kill
+progeq: WARNING: cannot resolve call: xnanosleep
+progeq: WARNING: cannot resolve call: hash_initialize
+progeq: WARNING: cannot resolve call: dir_len
+progeq: WARNING: cannot resolve call: inotify_add_watch
+progeq: WARNING: cannot resolve call: hash_insert
+progeq: WARNING: cannot resolve call: hash_get_n_entries
+progeq: WARNING: cannot resolve call: select
+progeq: WARNING: cannot resolve call: hash_delete
+progeq: WARNING: cannot resolve call: hash_lookup
+progeq: WARNING: cannot resolve call: inotify_rm_watch
+progeq: WARNING: cannot resolve call: posix2_version
+progeq: WARNING: cannot resolve call: getopt_long
+progeq: WARNING: cannot resolve call: xstrtoumax
+progeq: WARNING: cannot resolve call: __xargmatch_internal
+progeq: WARNING: cannot resolve call: xstrtoul
+progeq: WARNING: cannot resolve call: xstrtod
+progeq: WARNING: cannot resolve call: version_etc
+progeq: WARNING: cannot resolve call: set_program_name
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: isatty
+progeq: WARNING: cannot resolve call: inotify_init
+search: fix space reduced (time_taken = 15.3047)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 199 deletes
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:20:after20
+REMOVED?true
+CARDINAL?before:20:after20
+REMOVED?true
+CARDINAL?before:20:after20
+REMOVED?true
+CARDINAL?before:20:after20
+REMOVED?true
+CARDINAL?before:20:after20
+REMOVED?true
+CARDINAL?before:20:after20
+REMOVED?true
+CARDINAL?before:20:after20
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 19447 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 7588 appends
+search: ww_adaptive: 27035 possible edits
+search: ready to start (time_taken = 36.3063)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.0867591)
+	variant     1/27035 = d(1663)         (7 tests, cond 0)
+		n1 false (test_time = 18.8269)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.107091)
+	variant     2/27035 = d(1662)         (7 tests, cond 0)
+		n1 false (test_time = 18.3817)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.130243)
+	variant     3/27035 = d(1661)         (7 tests, cond 0)
+		n1 false (test_time = 18.2727)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0987358)
+	variant     4/27035 = d(1660)         (7 tests, cond 0)
+		n1 false (test_time = 19.352)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.089998)
+	variant     5/27035 = d(1659)         (7 tests, cond 0)
+		n1 false (test_time = 13.506)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0914681)
+	variant     6/27035 = d(1657)         (7 tests, cond 0)
+		n1 false (test_time = 17.6658)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0870571)
+	variant     7/27035 = d(1656)         (7 tests, cond 0)
+		n1 false (test_time = 20.2047)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0958362)
+	variant     8/27035 = d(1654)         (7 tests, cond 0)
+		n1 false (test_time = 20.4605)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0872691)
+	variant     9/27035 = d(1653)         (7 tests, cond 0)
+		n1 false (test_time = 25.0429)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.093436)
+	variant    10/27035 = d(1652)         (7 tests, cond 0)
+		n1 false (test_time = 19.2248)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0887668)
+	variant    11/27035 = d(1651)         (7 tests, cond 0)
+		n1 false (test_time = 13.7772)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0851901)
+	variant    12/27035 = d(1650)         (7 tests, cond 0)
+		n1 false (test_time = 16.4472)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0933681)
+	variant    13/27035 = d(1649)         (7 tests, cond 0)
+		n1 false (test_time = 17.9956)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0987401)
+	variant    14/27035 = d(1647)         (7 tests, cond 0)
+		n1 false (test_time = 20.5186)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.105503)
+	variant    15/27035 = d(1646)         (7 tests, cond 0)
+		n1 false (test_time = 25.2309)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0964081)
+	variant    16/27035 = d(1645)         (7 tests, cond 0)
+		n1 false (test_time = 18.7552)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0842068)
+	variant    17/27035 = d(1644)         (7 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2/000016/src/tail.c  d(1644)  fails to compile
+ false (test_time = 6.62494)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0879071)
+	variant    18/27035 = d(1643)         (7 tests, cond 0)
+		n1 false (test_time = 16.9793)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.093838)
+	variant    19/27035 = d(1642)         (7 tests, cond 0)
+		n1 false (test_time = 13.9466)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0920899)
+	variant    20/27035 = d(1641)         (7 tests, cond 0)
+		n1 false (test_time = 14.2855)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.138409)
+	variant    21/27035 = d(1640)         (7 tests, cond 0)
+		n1 false (test_time = 17.326)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0817678)
+	variant    22/27035 = d(1639)         (7 tests, cond 0)
+		n1 false (test_time = 18.5434)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0846591)
+	variant    23/27035 = d(1638)         (7 tests, cond 0)
+		n1 false (test_time = 18.0287)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.085381)
+	variant    24/27035 = d(1637)         (7 tests, cond 0)
+		n1 false (test_time = 18.5608)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0812402)
+	variant    25/27035 = d(1636)         (7 tests, cond 0)
+		n1 false (test_time = 18.6327)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0876889)
+	variant    26/27035 = d(1635)         (7 tests, cond 0)
+		n1 false (test_time = 17.8935)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0969799)
+	variant    27/27035 = d(1634)         (7 tests, cond 0)
+		n1 false (test_time = 18.9212)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.149243)
+	variant    28/27035 = d(1633)         (7 tests, cond 0)
+		n1 false (test_time = 18.5396)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.083514)
+	variant    29/27035 = d(1632)         (7 tests, cond 0)
+		n1 false (test_time = 13.6049)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0926859)
+	variant    30/27035 = d(1631)         (7 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2/000029/src/tail.c  d(1631)  fails to compile
+ false (test_time = 10.555)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0811439)
+	variant    31/27035 = d(1630)         (7 tests, cond 0)
+		n1 false (test_time = 18.7409)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.161324)
+	variant    32/27035 = d(1629)         (7 tests, cond 0)
+		n1 false (test_time = 19.1155)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.117529)
+	variant    33/27035 = d(1628)         (7 tests, cond 0)
+		n1 false (test_time = 18.5205)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.089155)
+	variant    34/27035 = d(1627)         (7 tests, cond 0)
+		n1 false (test_time = 17.6511)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.081044)
+	variant    35/27035 = d(1625)         (7 tests, cond 0)
+		n1 false (test_time = 13.022)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.087872)
+	variant    36/27035 = d(1623)         (7 tests, cond 0)
+		n1 false (test_time = 13.408)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0832949)
+	variant    37/27035 = d(1622)         (7 tests, cond 0)
+		n1 false (test_time = 19.1375)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.078573)
+	variant    38/27035 = d(1617)         (7 tests, cond 0)
+		n1 false (test_time = 15.4855)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.081455)
+	variant    39/27035 = d(1616)         (7 tests, cond 0)
+		n1 false (test_time = 18.5326)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0879099)
+	variant    40/27035 = d(1612)         (7 tests, cond 0)
+		n1 true (test_time = 12.8155)
+		p1 true (test_time = 3.43336)
+		p2 true (test_time = 1.71317)
+		p3 true (test_time = 1.67774)
+		p4 true (test_time = 1.73103)
+		p5 true (test_time = 1.70362)
+		p6 true (test_time = 1.85488)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: d(1612)
+Repair Name: d(1612) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454387397.451754
+
+Variant Test Case Queries: 46
+"Test Suite Evaluations": 6.57143
+
+Compile Failures: 2
+Wall-Clock Seconds Elapsed: 793.102
+  Activity Name                     Count Seconds = Percent of Total Time
+  find_best_edit                       40   3.825 = 0.484615%
+  progeq partition                    317  13.868 = 1.7572%
+  delete_sources                      199  16.361 = 2.0731%
+  append_sources                      199  19.896 = 2.52107%
+  test                                 51 299.836 = 37.9928%
+  compile                              41 435.407 = 55.1713%
+  TOTAL                                   789.192 = 99.5061% (avg CPU usage)

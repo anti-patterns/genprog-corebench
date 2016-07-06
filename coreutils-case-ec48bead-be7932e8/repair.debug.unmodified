@@ -1,0 +1,656 @@
+--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 31
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Tue Feb  2 12:26:30 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp275f42.c /tmp/tmp3ac99e.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/cut.c: parsing
+cilRep: src/cut.c: parsed (0.0606833 MB)
+cilRep: computing liveness
+cilRep: liveness failure for set_fields: Errormsg.Error
+cilRep: liveness failure for cut_fields: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 672
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/coreutils/coreutils-case-ec48bead-be7932e8/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+coverage positive:
+	test: 1
+	test: 2
+	test: 3
+	test: 4
+	test: 5
+	test: 6
+	test: 7
+	test: 8
+	test: 9
+	test: 10
+	test: 11
+	test: 12
+	test: 13
+	test: 14
+	test: 15
+	test: 16
+	test: 17
+	test: 18
+	test: 19
+	test: 20
+	test: 21
+	test: 22
+	test: 23
+	test: 24
+	test: 25
+	test: 26
+	test: 27
+	test: 28
+	test: 29
+	test: 30
+	test: 31
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 672
+cilRep: stmts in weighted_path = 96
+cilRep: total weight = 96
+cilRep: stmts in weighted_path with weight >= 1.0 = 96
+cilRep: src/cut.c (code bank/base file; atoms [1,672])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454387266.648254)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 0
+cilRep: fix-space quotient by string: 96 -> 83
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: xmalloc
+progeq: WARNING: cannot resolve call: xrealloc
+progeq: WARNING: cannot resolve call: fchownat
+progeq: WARNING: cannot resolve call: fchmodat
+progeq: WARNING: cannot resolve call: fstatat
+progeq: WARNING: cannot resolve call: gettext
+progeq: WARNING: cannot resolve call: fputs_unlocked
+progeq: WARNING: cannot resolve call: last_component
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: hash_insert
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: hash_lookup
+progeq: WARNING: cannot resolve call: error
+progeq: WARNING: cannot resolve call: xstrndup
+progeq: WARNING: cannot resolve call: quote
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: xzalloc
+progeq: WARNING: cannot resolve call: qsort
+progeq: WARNING: cannot resolve call: getc_unlocked
+progeq: WARNING: cannot resolve call: putchar_unlocked
+progeq: WARNING: cannot resolve call: fwrite_unlocked
+progeq: WARNING: cannot resolve call: getndelim2
+progeq: WARNING: cannot resolve call: ferror_unlocked
+progeq: WARNING: cannot resolve call: feof_unlocked
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: fadvise
+progeq: WARNING: cannot resolve call: clearerr_unlocked
+progeq: WARNING: cannot resolve call: rpl_fclose
+progeq: WARNING: cannot resolve call: set_program_name
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: getopt_long
+progeq: WARNING: cannot resolve call: xstrdup
+progeq: WARNING: cannot resolve call: version_etc
+progeq: WARNING: cannot resolve call: hash_initialize
+progeq: WARNING: cannot resolve call: hash_free
+search: fix space reduced (time_taken = 0.885534)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 96 deletes
+CARDINAL?before:1:after1
+REMOVED?true
+CARDINAL?before:83:after83
+REMOVED?true
+CARDINAL?before:83:after83
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:83:after83
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:83:after83
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:83:after83
+REMOVED?true
+CARDINAL?before:83:after83
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:55:after55
+REMOVED?true
+CARDINAL?before:83:after83
+REMOVED?true
+CARDINAL?before:83:after83
+REMOVED?true
+CARDINAL?before:27:after27
+REMOVED?true
+CARDINAL?before:27:after27
+REMOVED?true
+CARDINAL?before:82:after82
+REMOVED?true
+CARDINAL?before:27:after27
+REMOVED?true
+CARDINAL?before:27:after27
+REMOVED?true
+CARDINAL?before:82:after82
+REMOVED?true
+CARDINAL?before:27:after27
+REMOVED?true
+CARDINAL?before:27:after27
+REMOVED?true
+CARDINAL?before:83:after83
+REMOVED?true
+CARDINAL?before:83:after83
+REMOVED?true
+CARDINAL?before:83:after83
+REMOVED?true
+CARDINAL?before:83:after83
+REMOVED?true
+CARDINAL?before:82:after82
+REMOVED?true
+CARDINAL?before:82:after82
+REMOVED?true
+CARDINAL?before:27:after27
+REMOVED?true
+CARDINAL?before:27:after27
+REMOVED?true
+CARDINAL?before:27:after27
+REMOVED?true
+CARDINAL?before:82:after82
+REMOVED?true
+CARDINAL?before:82:after82
+REMOVED?true
+CARDINAL?before:82:after82
+REMOVED?true
+CARDINAL?before:82:after82
+REMOVED?true
+CARDINAL?before:82:after82
+REMOVED?true
+CARDINAL?before:82:after82
+REMOVED?true
+CARDINAL?before:82:after82
+REMOVED?true
+CARDINAL?before:82:after82
+REMOVED?true
+CARDINAL?before:27:after27
+REMOVED?true
+CARDINAL?before:27:after27
+REMOVED?true
+CARDINAL?before:27:after27
+REMOVED?true
+CARDINAL?before:27:after27
+REMOVED?true
+CARDINAL?before:82:after82
+REMOVED?true
+CARDINAL?before:27:after27
+REMOVED?true
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 5521 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 3489 appends
+search: ww_adaptive: 9010 possible edits
+search: ready to start (time_taken = 3.18808)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.137371)
+	variant     1/ 9010 = d(664)          (32 tests, cond 0)
+		n1 false (test_time = 1.74342)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.135985)
+	variant     2/ 9010 = d(663)          (32 tests, cond 0)
+		n1 false (test_time = 1.64313)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.163919)
+	variant     3/ 9010 = d(662)          (32 tests, cond 0)
+		n1 false (test_time = 1.74772)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.170767)
+	variant     4/ 9010 = d(661)          (32 tests, cond 0)
+		n1 false (test_time = 1.57352)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.136195)
+	variant     5/ 9010 = d(660)          (32 tests, cond 0)
+		n1 false (test_time = 1.83629)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.139443)
+	variant     6/ 9010 = d(659)          (32 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-ec48bead-be7932e8/000005/src/cut.c  d(659)  fails to compile
+ false (test_time = 1.30971)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.135196)
+	variant     7/ 9010 = d(658)          (32 tests, cond 0)
+		n1 false (test_time = 1.61994)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.132269)
+	variant     8/ 9010 = d(657)          (32 tests, cond 0)
+		n1 false (test_time = 1.53277)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.130114)
+	variant     9/ 9010 = d(656)          (32 tests, cond 0)
+		n1 false (test_time = 1.79878)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.155775)
+	variant    10/ 9010 = d(655)          (32 tests, cond 0)
+		n1 false (test_time = 1.70307)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.160455)
+	variant    11/ 9010 = d(654)          (32 tests, cond 0)
+		n1 false (test_time = 1.86253)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.158049)
+	variant    12/ 9010 = d(653)          (32 tests, cond 0)
+		n1 false (test_time = 1.79598)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.137228)
+	variant    13/ 9010 = d(652)          (32 tests, cond 0)
+		n1 false (test_time = 1.64309)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.134354)
+	variant    14/ 9010 = d(651)          (32 tests, cond 0)
+		n1 false (test_time = 1.59993)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.135261)
+	variant    15/ 9010 = d(650)          (32 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-ec48bead-be7932e8/000014/src/cut.c  d(650)  fails to compile
+ false (test_time = 1.59343)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.158189)
+	variant    16/ 9010 = d(649)          (32 tests, cond 0)
+		n1 false (test_time = 1.72952)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.165224)
+	variant    17/ 9010 = d(648)          (32 tests, cond 0)
+		n1 false (test_time = 1.63375)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.148139)
+	variant    18/ 9010 = d(610)          (32 tests, cond 0)
+		n1 false (test_time = 1.76419)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.152641)
+	variant    19/ 9010 = d(609)          (32 tests, cond 0)
+		n1 false (test_time = 1.69288)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.132298)
+	variant    20/ 9010 = d(587)          (32 tests, cond 0)
+		n1 false (test_time = 1.59309)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.126669)
+	variant    21/ 9010 = d(586)          (32 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-ec48bead-be7932e8/000020/src/cut.c  d(586)  fails to compile
+ false (test_time = 1.61194)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.151326)
+	variant    22/ 9010 = d(579)          (32 tests, cond 0)
+		n1 false (test_time = 2.01948)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.158693)
+	variant    23/ 9010 = d(578)          (32 tests, cond 0)
+		n1 false (test_time = 1.74193)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.172315)
+	variant    24/ 9010 = d(570)          (32 tests, cond 0)
+		n1 false (test_time = 1.76201)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.155532)
+	variant    25/ 9010 = d(569)          (32 tests, cond 0)
+		n1 false (test_time = 1.75173)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.15331)
+	variant    26/ 9010 = d(567)          (32 tests, cond 0)
+		n1 false (test_time = 1.72697)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.127821)
+	variant    27/ 9010 = d(566)          (32 tests, cond 0)
+		n1 false (test_time = 1.73522)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.122581)
+	variant    28/ 9010 = d(373)          (32 tests, cond 0)
+		n1 false (test_time = 1.80151)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.120673)
+	variant    29/ 9010 = d(372)          (32 tests, cond 0)
+		n1 false (test_time = 1.6883)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.12248)
+	variant    30/ 9010 = d(371)          (32 tests, cond 0)
+		n1 false (test_time = 1.58068)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.122161)
+	variant    31/ 9010 = d(370)          (32 tests, cond 0)
+		n1 false (test_time = 1.57905)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.119127)
+	variant    32/ 9010 = d(369)          (32 tests, cond 0)
+		n1 false (test_time = 1.66776)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.117508)
+	variant    33/ 9010 = d(368)          (32 tests, cond 0)
+		n1 false (test_time = 1.59391)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.113226)
+	variant    34/ 9010 = d(367)          (32 tests, cond 0)
+		n1 false (test_time = 1.87826)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.117947)
+	variant    35/ 9010 = d(366)          (32 tests, cond 0)
+		n1 false (test_time = 1.85722)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.130384)
+	variant    36/ 9010 = d(363)          (32 tests, cond 0)
+		n1 false (test_time = 1.7194)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.13055)
+	variant    37/ 9010 = d(318)          (32 tests, cond 0)
+		n1 false (test_time = 31.6915)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.147781)
+	variant    38/ 9010 = d(317)          (32 tests, cond 0)
+		n1 false (test_time = 32.054)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.11241)
+	variant    39/ 9010 = d(316)          (32 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-ec48bead-be7932e8/000038/src/cut.c  d(316)  fails to compile
+ false (test_time = 1.02363)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.110743)
+	variant    40/ 9010 = d(315)          (32 tests, cond 0)
+		n1 false (test_time = 1.54532)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.120521)
+	variant    41/ 9010 = d(314)          (32 tests, cond 0)
+		n1 false (test_time = 1.54453)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.10818)
+	variant    42/ 9010 = d(313)          (32 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-ec48bead-be7932e8/000041/src/cut.c  d(313)  fails to compile
+ false (test_time = 1.23848)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.102956)
+	variant    43/ 9010 = d(312)          (32 tests, cond 0)
+		n1 false (test_time = 31.5986)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.105481)
+	variant    44/ 9010 = d(306)          (32 tests, cond 0)
+		n1 true (test_time = 2.03313)
+		p1 true (test_time = 1.89559)
+		p2 true (test_time = 1.8831)
+		p3 true (test_time = 1.87749)
+		p4 true (test_time = 2.6647)
+		p5 true (test_time = 1.91266)
+		p6 true (test_time = 1.96263)
+		p7 true (test_time = 4.64273)
+		p8 true (test_time = 4.86465)
+		p9 true (test_time = 1.98119)
+		p10 true (test_time = 1.90686)
+		p11 true (test_time = 1.76322)
+		p12 true (test_time = 1.68107)
+		p13 true (test_time = 1.75873)
+		p14 true (test_time = 1.70892)
+		p15 true (test_time = 1.71308)
+		p16 true (test_time = 1.93564)
+		p17 true (test_time = 1.69059)
+		p18 true (test_time = 1.79315)
+		p19 true (test_time = 1.72017)
+		p20 true (test_time = 1.67004)
+		p21 true (test_time = 1.81265)
+		p22 true (test_time = 1.76618)
+		p23 true (test_time = 1.56328)
+		p24 true (test_time = 1.57844)
+		p25 true (test_time = 1.56903)
+		p26 true (test_time = 1.69802)
+		p27 true (test_time = 1.63032)
+		p28 true (test_time = 2.02434)
+		p29 true (test_time = 1.84604)
+		p30 true (test_time = 1.61954)
+		p31 true (test_time = 1.81097)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: d(306)
+Repair Name: d(306) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454387502.874156
+
+Variant Test Case Queries: 75
+"Test Suite Evaluations": 2.34375
+
+Compile Failures: 5
+Wall-Clock Seconds Elapsed: 312.865
+  Activity Name                     Count Seconds = Percent of Total Time
+  progeq partition                     83   0.771 = 0.247253%
+  delete_sources                       96   1.382 = 0.443076%
+  append_sources                       96   1.802 = 0.57787%
+  find_best_edit                       44   5.989 = 1.92067%
+  compile                              45  72.963 = 23.399%
+  test                                102 228.914 = 73.4121%
+  TOTAL                                   311.820 = 99.6637% (avg CPU usage)

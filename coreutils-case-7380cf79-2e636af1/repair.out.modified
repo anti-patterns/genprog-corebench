@@ -1,0 +1,4536 @@
+WARNING: the argument --multi-file is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --suffix-extension is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --mutp is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.--allow-coverage-fail true
+--anti-append-returngoto true
+--anti-delete-cfgblock true
+--anti-delete-empty true
+--anti-delete-exit true
+--anti-delete-setbeforeif true
+--anti-delete-setinsideloop true
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 22
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Fri Feb  5 01:13:03 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat: /etc/redhat-release: No such file or directory
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp5a38ff.c /tmp/tmpc01f85.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/cut.c: parsing
+cilRep: src/cut.c: parsed (0.0506363 MB)
+cilRep: computing liveness
+Bug: BF(Liveness): stmtStartData is not initialized for -1: _L___2: 
+#line 379 "cut.c"
+in_digits = (_Bool)0;
+Liveness failed on function:
+ static _Bool set_fields(char const   *fieldstr ) 
+{ size_t initial ;
+  size_t value ;
+  _Bool lhs_specified ;
+  _Bool rhs_specified ;
+  _Bool dash_found ;
+  _Bool field_found ;
+  struct range_pair *rp ;
+  size_t n_rp ;
+  size_t n_rp_allocated ;
+  size_t i ;
+  _Bool in_digits ;
+  char *tmp ;
+  char *tmp___0 ;
+  char *tmp___1 ;
+  char *tmp___2 ;
+  void *tmp___3 ;
+  char *tmp___4 ;
+  void *tmp___5 ;
+  char *tmp___6 ;
+  void *tmp___7 ;
+  size_t len ;
+  size_t tmp___8 ;
+  char *bad_num ;
+  char *tmp___9 ;
+  char const   *tmp___10 ;
+  char *tmp___11 ;
+  char const   *tmp___12 ;
+  char *tmp___13 ;
+  int tmp___14 ;
+  char *tmp___15 ;
+  unsigned short const   **tmp___16 ;
+  unsigned char tmp___17 ;
+  void *tmp___18 ;
+  size_t j ;
+  size_t rsi_candidate ;
+  _Bool tmp___19 ;
+  _Bool tmp___20 ;
+
+  {
+   269: /* CIL Label */ 
+#line 345
+  initial = 1UL;
+   270: /* CIL Label */ 
+#line 346
+  value = 0UL;
+   271: /* CIL Label */ 
+#line 347
+  lhs_specified = (_Bool)0;
+   272: /* CIL Label */ 
+#line 348
+  rhs_specified = (_Bool)0;
+   273: /* CIL Label */ 
+#line 349
+  dash_found = (_Bool)0;
+   274: /* CIL Label */ 
+#line 350
+  field_found = (_Bool)0;
+   275: /* CIL Label */ 
+#line 353
+  rp = (struct range_pair *)((void *)0);
+   276: /* CIL Label */ 
+#line 354
+  n_rp = 0UL;
+   277: /* CIL Label */ 
+#line 355
+  n_rp_allocated = 0UL;
+   278: /* CIL Label */ 
+#line 357
+  in_digits = (_Bool)0;
+   279: /* CIL Label */ 
+#line 362
+  while (1) {
+#line 364
+    if ((int const   )*fieldstr == 45) {
+#line 366
+      in_digits = (_Bool)0;
+#line 368
+      if (dash_found) {
+#line 369
+        while (1) {
+#line 369
+          tmp = gettext("invalid byte or field list");
+#line 369
+          error(0, 0, (char const   *)tmp);
+#line 369
+          usage(1);
+#line 369
+          break;
+        }
+      } else {
+
+      }
+#line 370
+      dash_found = (_Bool)1;
+#line 371
+      fieldstr ++;
+#line 373
+      if (lhs_specified) {
+#line 373
+        initial = value;
+      } else {
+#line 373
+        initial = 1UL;
+      }
+#line 374
+      value = 0UL;
+    } else {
+#line 376
+      if ((int const   )*fieldstr == 44) {
+        goto _L___2;
+      } else {
+#line 376
+        tmp___16 = __ctype_b_loc();
+#line 376
+        tmp___17 = to_uchar((char )*fieldstr);
+#line 376
+        if ((int const   )*(*tmp___16 + (int )tmp___17) & 1) {
+          goto _L___2;
+        } else {
+#line 376
+          if ((int const   )*fieldstr == 0) {
+            _L___2: 
+#line 379
+            in_digits = (_Bool)0;
+#line 381
+            if (dash_found) {
+#line 383
+              dash_found = (_Bool)0;
+#line 385
+              if (! lhs_specified) {
+#line 385
+                if (! rhs_specified) {
+#line 386
+                  while (1) {
+#line 386
+                    tmp___0 = gettext("invalid range with no endpoint: -");
+#line 386
+                    error(0, 0, (char const   *)tmp___0);
+#line 386
+                    usage(1);
+#line 386
+                    break;
+                  }
+                } else {
+
+                }
+              } else {
+
+              }
+#line 390
+              if (! rhs_specified) {
+#line 393
+                eol_range_start = initial;
+#line 394
+                field_found = (_Bool)1;
+              } else {
+#line 399
+                if (value < initial) {
+#line 400
+                  while (1) {
+#line 400
+                    tmp___1 = gettext("invalid decreasing range");
+#line 400
+                    error(0, 0, (char const   *)tmp___1);
+#line 400
+                    usage(1);
+#line 400
+                    break;
+                  }
+                } else {
+
+                }
+#line 403
+                if (eol_range_start != 0UL) {
+#line 408
+                  if (initial < eol_range_start) {
+#line 413
+                    if (eol_range_start <= value) {
+#line 416
+                      eol_range_start = initial;
+                    } else {
+#line 422
+                      while (1) {
+#line 422
+                        if (initial == 0UL) {
+                          goto _L;
+                        } else {
+#line 422
+                          if (value == 0UL) {
+                            _L: 
+#line 422
+                            while (1) {
+#line 422
+                              tmp___2 = gettext("fields and positions are numbered from 1");
+#line 422
+                              error(0, 0, (char const   *)tmp___2);
+#line 422
+                              usage(1);
+#line 422
+                              break;
+                            }
+                          } else {
+
+                          }
+                        }
+#line 422
+                        if (n_rp >= n_rp_allocated) {
+#line 422
+                          rp = (struct range_pair *)tmp___3;
+                        } else {
+
+                        }
+#line 422
+                        (rp + n_rp)->lo = initial;
+#line 422
+                        (rp + n_rp)->hi = value;
+#line 422
+                        n_rp ++;
+#line 422
+                        break;
+                      }
+                    }
+#line 426
+                    field_found = (_Bool)1;
+                  } else {
+
+                  }
+                } else {
+#line 432
+                  while (1) {
+#line 432
+                    if (initial == 0UL) {
+                      goto _L___0;
+                    } else {
+#line 432
+                      if (value == 0UL) {
+                        _L___0: 
+#line 432
+                        while (1) {
+#line 432
+                          tmp___4 = gettext("fields and positions are numbered from 1");
+#line 432
+                          error(0, 0, (char const   *)tmp___4);
+#line 432
+                          usage(1);
+#line 432
+                          break;
+                        }
+                      } else {
+
+                      }
+                    }
+#line 432
+                    if (n_rp >= n_rp_allocated) {
+#line 432
+                      rp = (struct range_pair *)tmp___5;
+                    } else {
+
+                    }
+#line 432
+                    (rp + n_rp)->lo = initial;
+#line 432
+                    (rp + n_rp)->hi = value;
+#line 432
+                    n_rp ++;
+#line 432
+                    break;
+                  }
+#line 433
+                  field_found = (_Bool)1;
+                }
+#line 435
+                value = 0UL;
+              }
+            } else {
+#line 441
+              while (1) {
+#line 441
+                if (value == 0UL) {
+                  goto _L___1;
+                } else {
+#line 441
+                  if (value == 0UL) {
+                    _L___1: 
+#line 441
+                    while (1) {
+#line 441
+                      tmp___6 = gettext("fields and positions are numbered from 1");
+#line 441
+                      error(0, 0, (char const   *)tmp___6);
+#line 441
+                      usage(1);
+#line 441
+                      break;
+                    }
+                  } else {
+
+                  }
+                }
+#line 441
+                if (n_rp >= n_rp_allocated) {
+#line 441
+                  rp = (struct range_pair *)tmp___7;
+                } else {
+
+                }
+#line 441
+                (rp + n_rp)->lo = value;
+#line 441
+                (rp + n_rp)->hi = value;
+#line 441
+                n_rp ++;
+#line 441
+                break;
+              }
+#line 442
+              value = 0UL;
+#line 443
+              field_found = (_Bool)1;
+            }
+#line 446
+            if ((int const   )*fieldstr == 0) {
+#line 448
+              break;
+            } else {
+
+            }
+#line 451
+            fieldstr ++;
+#line 452
+            lhs_specified = (_Bool)0;
+#line 453
+            rhs_specified = (_Bool)0;
+          } else {
+#line 455
+            if ((unsigned int )*fieldstr - 48U <= 9U) {
+#line 460
+              if (! in_digits) {
+#line 461
+                num_start = fieldstr;
+              } else {
+#line 460
+                if (! num_start) {
+#line 461
+                  num_start = fieldstr;
+                } else {
+
+                }
+              }
+#line 462
+              in_digits = (_Bool)1;
+#line 464
+              if (dash_found) {
+#line 465
+                rhs_specified = (_Bool)1;
+              } else {
+#line 467
+                lhs_specified = (_Bool)1;
+              }
+#line 470
+              if (0UL < value) {
+#line 470
+                tmp___14 = 0;
+              } else {
+#line 470
+                if (value * 10UL + (unsigned long )((int const   )*fieldstr - 48) < value) {
+#line 470
+                  tmp___14 = 0;
+                } else {
+#line 470
+                  value = value * 10UL + (unsigned long )((int const   )*fieldstr - 48);
+#line 470
+                  tmp___14 = 1;
+                }
+              }
+#line 470
+              if (! tmp___14) {
+#line 475
+                tmp___8 = strspn(num_start, "0123456789");
+#line 475
+                len = tmp___8;
+#line 476
+                tmp___9 = xstrndup(num_start, len);
+#line 476
+                bad_num = tmp___9;
+#line 477
+                if ((unsigned int )operating_mode == 1U) {
+#line 478
+                  tmp___10 = quote((char const   *)bad_num);
+#line 478
+                  tmp___11 = gettext("byte offset %s is too large");
+#line 478
+                  error(0, 0, (char const   *)tmp___11, tmp___10);
+                } else {
+#line 481
+                  tmp___12 = quote((char const   *)bad_num);
+#line 481
+                  tmp___13 = gettext("field number %s is too large");
+#line 481
+                  error(0, 0, (char const   *)tmp___13, tmp___12);
+                }
+#line 483
+                free((void *)bad_num);
+#line 484
+                exit(1);
+              } else {
+
+              }
+#line 487
+              fieldstr ++;
+            } else {
+#line 490
+              while (1) {
+#line 490
+                tmp___15 = gettext("invalid byte or field list");
+#line 490
+                error(0, 0, (char const   *)tmp___15);
+#line 490
+                usage(1);
+#line 490
+                break;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+   280: /* CIL Label */ 
+#line 493
+  max_range_endpoint = 0UL;
+   281: /* CIL Label */ 
+#line 494
+  i = 0UL;
+   282: /* CIL Label */ 
+#line 494
+  while (i < n_rp) {
+#line 496
+    if ((rp + i)->hi > max_range_endpoint) {
+#line 497
+      max_range_endpoint = (rp + i)->hi;
+    } else {
+
+    }
+#line 494
+    i ++;
+  }
+   283: /* CIL Label */ 
+#line 504
+  tmp___18 = xzalloc(max_range_endpoint / 8UL + 1UL);
+   284: /* CIL Label */ 
+#line 504
+  printable_field = (unsigned char *)tmp___18;
+   285: /* CIL Label */ 
+#line 506
+  qsort((void *)rp, n_rp, sizeof(*(rp + 0)), & compare_ranges);
+   286: /* CIL Label */ 
+#line 509
+  i = 0UL;
+   287: /* CIL Label */ 
+#line 509
+  while (i < n_rp) {
+#line 516
+    if (complement) {
+#line 516
+      rsi_candidate = (rp + i)->hi + 1UL;
+    } else {
+#line 516
+      rsi_candidate = (rp + i)->lo;
+    }
+#line 517
+    if (output_delimiter_specified) {
+#line 517
+      tmp___19 = is_printable_field(rsi_candidate);
+#line 517
+      if (! tmp___19) {
+#line 519
+        mark_range_start(rsi_candidate);
+      } else {
+
+      }
+    } else {
+
+    }
+#line 521
+    j = (rp + i)->lo;
+#line 521
+    while (j <= (rp + i)->hi) {
+#line 522
+      mark_printable_field(j);
+#line 521
+      j ++;
+    }
+#line 509
+    i ++;
+  }
+   288: /* CIL Label */ 
+#line 525
+  if (output_delimiter_specified) {
+#line 525
+    if (! complement) {
+#line 525
+      if (eol_range_start) {
+#line 525
+        tmp___20 = is_printable_field(eol_range_start);
+#line 525
+        if (! tmp___20) {
+#line 528
+          mark_range_start(eol_range_start);
+        } else {
+
+        }
+      } else {
+
+      }
+    } else {
+
+    }
+  } else {
+
+  }
+   289: /* CIL Label */ 
+#line 530
+  free((void *)rp);
+   290: /* CIL Label */ 
+#line 532
+  return (field_found);
+}
+}
+
+cilRep: liveness failure for set_fields: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 570
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: done instrumenting for fault localization
+Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp coverage/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+coverage negative:
+	test: 1
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+coverage positive:
+	test: 1
+PASS: 3
+	test: 2
+PASS: 4
+	test: 3
+PASS: 7
+	test: 4
+PASS: 8
+	test: 5
+PASS: 10
+	test: 6
+PASS: 11
+	test: 7
+PASS: 14
+	test: 8
+PASS: 16
+	test: 9
+PASS: 18
+	test: 10
+PASS: 20
+	test: 11
+PASS: 21
+	test: 12
+PASS: 22
+	test: 13
+PASS: 24
+	test: 14
+PASS: 25
+	test: 15
+PASS: 26
+	test: 16
+PASS: 27
+	test: 17
+PASS: 32
+	test: 18
+PASS: 34
+	test: 19
+PASS: 36
+	test: 20
+PASS: 37
+	test: 21
+PASS: 38
+	test: 22
+PASS: 40
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 570
+cilRep: stmts in weighted_path = 76
+cilRep: total weight = 76
+cilRep: stmts in weighted_path with weight >= 1.0 = 76
+cilRep: src/cut.c (code bank/base file; atoms [1,570])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454605998.357125)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 0
+cilRep: fix-space quotient by string: 76 -> 69
+progeq: WARNING: cannot resolve call: error
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: last_component
+progeq: WARNING: cannot resolve call: gettext
+progeq: WARNING: cannot resolve call: fputs_unlocked
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: hash_insert
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: hash_lookup
+progeq: WARNING: cannot resolve call: xstrndup
+progeq: WARNING: cannot resolve call: quote
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: xzalloc
+progeq: WARNING: cannot resolve call: qsort
+progeq: WARNING: cannot resolve call: getc_unlocked
+progeq: WARNING: cannot resolve call: putchar_unlocked
+progeq: WARNING: cannot resolve call: fwrite_unlocked
+progeq: WARNING: cannot resolve call: getndelim2
+progeq: WARNING: cannot resolve call: ferror_unlocked
+progeq: WARNING: cannot resolve call: feof_unlocked
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: fadvise
+progeq: WARNING: cannot resolve call: clearerr_unlocked
+progeq: WARNING: cannot resolve call: set_program_name
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: getopt_long
+progeq: WARNING: cannot resolve call: xstrdup
+progeq: WARNING: cannot resolve call: version_etc
+progeq: WARNING: cannot resolve call: hash_initialize
+progeq: WARNING: cannot resolve call: hash_free
+search: fix space reduced (time_taken = 1.11925)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 76 deletes
+EXIT_ASSERT
+CARDINAL?before:1:after0
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 1765 appends
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 2129 appends
+search: ww_adaptive: 3894 possible edits
+search: ready to start (time_taken = 13.591)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.0616391)
+	variant     1/ 3894 = d(555)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000000/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.22195)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.098726)
+	variant     2/ 3894 = d(554)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000001/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.08124)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0910289)
+	variant     3/ 3894 = d(553)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000002/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.24285)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.092231)
+	variant     4/ 3894 = d(552)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000003/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.05032)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.102686)
+	variant     5/ 3894 = d(551)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000004/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 1.83045)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0994709)
+	variant     6/ 3894 = d(550)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000005/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.21798)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.090368)
+	variant     7/ 3894 = d(549)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000006/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.04774)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.10014)
+	variant     8/ 3894 = d(548)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000007/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+help2man: can't get `--help' info from cut.td/cut
+make[2]: *** [cut.1] Error 139
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make: *** [all] Error 2
+	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000007/src/cut.c  d(548)  fails to compile
+ false (test_time = 1.63976)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.09271)
+	variant     9/ 3894 = d(547)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000008/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.42378)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.055264)
+	variant    10/ 3894 = d(491)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000009/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 1.94162)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0971549)
+	variant    11/ 3894 = d(478)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000010/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.40537)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0794098)
+	variant    12/ 3894 = d(472)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000011/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.13967)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.090446)
+	variant    13/ 3894 = d(471)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000012/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 1.90927)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046525)
+	variant    14/ 3894 = d(466)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000013/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.48598)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0804961)
+	variant    15/ 3894 = d(465)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000014/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.11443)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.090477)
+	variant    16/ 3894 = d(277)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000015/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 1.8)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.075278)
+	variant    17/ 3894 = d(276)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000016/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.07466)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0902019)
+	variant    18/ 3894 = d(275)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000017/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.24701)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0674329)
+	variant    19/ 3894 = d(274)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000018/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.08991)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0833309)
+	variant    20/ 3894 = d(273)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000019/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.19546)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0801489)
+	variant    21/ 3894 = d(272)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000020/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.37072)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0883482)
+	variant    22/ 3894 = d(271)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000021/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 1.88645)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042762)
+	variant    23/ 3894 = d(270)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000022/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.45734)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.068558)
+	variant    24/ 3894 = d(269)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000023/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.32348)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0833619)
+	variant    25/ 3894 = d(231)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000024/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.09344)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0725241)
+	variant    26/ 3894 = d(220)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000025/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.09773)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0730391)
+	variant    27/ 3894 = d(216)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000026/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.00919)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0709059)
+	variant    28/ 3894 = d(214)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000027/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.28389)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056242)
+	variant    29/ 3894 = d(213)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000028/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.08474)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.062747)
+	variant    30/ 3894 = d(212)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000029/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 1.88086)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0390229)
+	variant    31/ 3894 = d(211)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000030/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 1.58074)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056149)
+	variant    32/ 3894 = d(210)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000031/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.0529)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.047632)
+	variant    33/ 3894 = d(209)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000032/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 2.14617)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052999)
+	variant    34/ 3894 = d(208)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000033/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+FAILED: 0
+ false (test_time = 1.83724)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.073545)
+	variant    35/ 3894 = d(202)          (23 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/cut.c
+Allfiles: src/cut.c
+COPY: cp 000034/src/cut.c src/cut.c
+make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+  CC       cut.o
+  CCLD     cut
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+make[2]: `all' is up to date.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+  GEN      cut.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7380cf79_2e636af1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1
+PASS: 0
+ true (test_time = 2.04654)
+		p1PASS: 3
+ true (test_time = 0.61196)
+		p2PASS: 4
+ true (test_time = 0.567131)
+		p3PASS: 7
+ true (test_time = 0.660672)
+		p4PASS: 8
+ true (test_time = 0.630476)
+		p5PASS: 10
+ true (test_time = 0.482397)
+		p6PASS: 11
+ true (test_time = 0.422485)
+		p7PASS: 14
+ true (test_time = 0.257843)
+		p8PASS: 16
+ true (test_time = 0.509284)
+		p9PASS: 18
+ true (test_time = 0.514736)
+		p10PASS: 20
+ true (test_time = 1.02029)
+		p11PASS: 21
+ true (test_time = 0.502326)
+		p12PASS: 22
+ true (test_time = 0.554636)
+		p13PASS: 24
+ true (test_time = 0.459705)
+		p14PASS: 25
+ true (test_time = 0.515005)
+		p15PASS: 26
+ true (test_time = 0.454965)
+		p16PASS: 27
+ true (test_time = 0.857315)
+		p17PASS: 32
+ true (test_time = 0.603485)
+		p18PASS: 34
+ true (test_time = 0.787217)
+		p19PASS: 36
+ true (test_time = 0.65101)
+		p20PASS: 37
+ true (test_time = 0.633216)
+		p21PASS: 38
+ true (test_time = 0.801095)
+		p22PASS: 40
+ true (test_time = 0.765609)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: d(202)
+Repair Name: d(202) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454606102.754691
+
+Variant Test Case Queries: 57
+"Test Suite Evaluations": 2.47826
+
+Compile Failures: 1
+Wall-Clock Seconds Elapsed: 119.596
+  Activity Name                     Count Seconds = Percent of Total Time
+  progeq partition                     69   0.878 = 0.743132%
+  find_best_edit                       35   2.653 = 2.24494%
+  append_sources                       76   4.475 = 3.78745%
+  delete_sources                       76   9.111 = 7.71072%
+  test                                 79  32.451 = 27.4625%
+  compile                              36  68.596 = 58.0513%
+  TOTAL                                   118.165 = 98.793% (avg CPU usage)

@@ -1,0 +1,854 @@
+WARNING: the argument --multi-file is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --suffix-extension is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --mutp is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 20
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Sun Feb 14 22:04:33 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat: /etc/redhat-release: No such file or directory
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmpb23efa.c /tmp/tmp1deed5.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/expr.c: parsing
+cilRep: src/expr.c: parsed (0.0453491 MB)
+cilRep: computing liveness
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 461
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+coverage positive:
+	test: 1
+	test: 2
+	test: 3
+	test: 4
+	test: 5
+	test: 6
+	test: 7
+	test: 8
+	test: 9
+	test: 10
+	test: 11
+	test: 12
+PASS: 15
+	test: 13
+PASS: 16
+	test: 14
+PASS: 17
+	test: 15
+PASS: 18
+	test: 16
+PASS: 20
+	test: 17
+PASS: 21
+	test: 18
+PASS: 22
+	test: 19
+PASS: 24
+	test: 20
+PASS: 26
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 461
+cilRep: stmts in weighted_path = 164
+cilRep: total weight = 164
+cilRep: stmts in weighted_path with weight >= 1.0 = 164
+cilRep: src/expr.c (code bank/base file; atoms [1,461])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1455458674.932201)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 0
+cilRep: fix-space quotient by string: 164 -> 142
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: gettext
+progeq: WARNING: cannot resolve call: putchar_unlocked
+progeq: WARNING: cannot resolve call: fputs_unlocked
+progeq: WARNING: cannot resolve call: error
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: parse_long_options
+progeq: WARNING: cannot resolve call: xmalloc
+progeq: WARNING: cannot resolve call: xstrdup
+progeq: WARNING: cannot resolve call: imaxtostr
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: memset
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: re_compile_pattern
+progeq: WARNING: cannot resolve call: re_match
+progeq: WARNING: cannot resolve call: quotearg_colon
+progeq: WARNING: cannot resolve call: strncpy
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: quotearg_n_style
+search: fix space reduced (time_taken = 0.986179)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 164 deletes
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:139:after139
+REMOVED?true
+CARDINAL?before:139:after139
+REMOVED?true
+CARDINAL?before:139:after139
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:139:after139
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:1:after1
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:139:after139
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:139:after139
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:142:after142
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:18:after18
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:17:after17
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 5125 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 2733 appends
+search: ww_adaptive: 7858 possible edits
+search: ready to start (time_taken = 0.951693)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.0628359)
+	variant     1/ 7858 = d(461)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.682547)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0646861)
+	variant     2/ 7858 = d(460)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.685013)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0647452)
+	variant     3/ 7858 = d(459)          (21 tests, cond 0)
+		n1 false (test_time = 30.6559)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.06477)
+	variant     4/ 7858 = d(458)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.636912)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0591838)
+	variant     5/ 7858 = d(444)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.629866)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0587759)
+	variant     6/ 7858 = d(443)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.633922)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0587699)
+	variant     7/ 7858 = d(442)          (21 tests, cond 0)
+		n1 false (test_time = 30.5987)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0715179)
+	variant     8/ 7858 = d(441)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.740756)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0634561)
+	variant     9/ 7858 = d(426)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.659184)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.058521)
+	variant    10/ 7858 = d(425)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.674884)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0618382)
+	variant    11/ 7858 = d(407)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.648377)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0610681)
+	variant    12/ 7858 = d(406)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.651241)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0617878)
+	variant    13/ 7858 = d(381)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.705078)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0614841)
+	variant    14/ 7858 = d(380)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.687862)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0600321)
+	variant    15/ 7858 = d(379)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.676612)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0564132)
+	variant    16/ 7858 = d(378)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.65644)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0593889)
+	variant    17/ 7858 = d(377)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.678996)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0672369)
+	variant    18/ 7858 = d(376)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.647906)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0567179)
+	variant    19/ 7858 = d(375)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.642714)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0569)
+	variant    20/ 7858 = d(374)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.643209)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.05618)
+	variant    21/ 7858 = d(373)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.641918)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.05564)
+	variant    22/ 7858 = d(372)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.642803)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056679)
+	variant    23/ 7858 = d(371)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.643025)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.053412)
+	variant    24/ 7858 = d(370)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.643707)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0542479)
+	variant    25/ 7858 = d(369)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.647722)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0530851)
+	variant    26/ 7858 = d(361)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.698249)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.053581)
+	variant    27/ 7858 = d(360)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.71818)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.057483)
+	variant    28/ 7858 = d(358)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.707937)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.059885)
+	variant    29/ 7858 = d(357)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.691754)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.057776)
+	variant    30/ 7858 = d(356)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.711207)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0574548)
+	variant    31/ 7858 = d(355)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.707807)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0797179)
+	variant    32/ 7858 = d(354)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.731631)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0594811)
+	variant    33/ 7858 = d(353)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.749447)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0573671)
+	variant    34/ 7858 = d(352)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.755165)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0585971)
+	variant    35/ 7858 = d(350)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.758425)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056179)
+	variant    36/ 7858 = d(349)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.743264)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0503101)
+	variant    37/ 7858 = d(348)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.674927)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0517151)
+	variant    38/ 7858 = d(346)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.6794)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0507412)
+	variant    39/ 7858 = d(343)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.646107)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0533271)
+	variant    40/ 7858 = d(342)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.664642)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.06006)
+	variant    41/ 7858 = d(338)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.689962)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0512521)
+	variant    42/ 7858 = d(337)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+FAILED: 0
+ false (test_time = 0.689051)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0519919)
+	variant    43/ 7858 = d(334)          (21 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/7eff5901_6fc0ccf7/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7
+PASS: 0
+ true (test_time = 0.672722)
+		p1 true (test_time = 0.002666)
+		p2 true (test_time = 0.00247312)
+		p3 true (test_time = 0.00230289)
+		p4 true (test_time = 0.00236797)
+		p5 true (test_time = 0.00236607)
+		p6 true (test_time = 0.00230598)
+		p7 true (test_time = 0.00231981)
+		p8 true (test_time = 0.00233293)
+		p9 true (test_time = 0.0023489)
+		p10 true (test_time = 0.00253105)
+		p11 true (test_time = 0.00232601)
+		p12PASS: 15
+ true (test_time = 0.103133)
+		p13PASS: 16
+ true (test_time = 0.0819781)
+		p14PASS: 17
+ true (test_time = 0.110924)
+		p15PASS: 18
+ true (test_time = 0.0887649)
+		p16PASS: 20
+ true (test_time = 0.137224)
+		p17PASS: 21
+ true (test_time = 0.093353)
+		p18PASS: 22
+ true (test_time = 0.0943689)
+		p19PASS: 24
+ true (test_time = 0.0912731)
+		p20PASS: 26
+ true (test_time = 0.0833371)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: d(334)
+Repair Name: d(334) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1455458769.561993
+
+Variant Test Case Queries: 63
+"Test Suite Evaluations": 3
+
+Compile Failures: 0
+Wall-Clock Seconds Elapsed: 96.3901
+  Activity Name                     Count Seconds = Percent of Total Time
+  append_sources                      164   0.423 = 0.440421%
+  delete_sources                      164   0.527 = 0.549475%
+  progeq partition                    142   0.863 = 0.899398%
+  find_best_edit                       43   2.526 = 2.63225%
+  compile                              44  28.056 = 29.2338%
+  test                                 84  63.576 = 66.2446%
+  TOTAL                                    95.972 = 99.5616% (avg CPU usage)

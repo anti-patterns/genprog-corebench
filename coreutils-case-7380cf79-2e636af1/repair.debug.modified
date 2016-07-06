@@ -1,0 +1,2057 @@
+--allow-coverage-fail true
+--anti-append-returngoto true
+--anti-delete-cfgblock true
+--anti-delete-empty true
+--anti-delete-exit true
+--anti-delete-setbeforeif true
+--anti-delete-setinsideloop true
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 22
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Fri Feb  5 01:13:03 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp5a38ff.c /tmp/tmpc01f85.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/cut.c: parsing
+cilRep: src/cut.c: parsed (0.0506363 MB)
+cilRep: computing liveness
+cilRep: liveness failure for set_fields: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 570
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+coverage positive:
+	test: 1
+	test: 2
+	test: 3
+	test: 4
+	test: 5
+	test: 6
+	test: 7
+	test: 8
+	test: 9
+	test: 10
+	test: 11
+	test: 12
+	test: 13
+	test: 14
+	test: 15
+	test: 16
+	test: 17
+	test: 18
+	test: 19
+	test: 20
+	test: 21
+	test: 22
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 570
+cilRep: stmts in weighted_path = 76
+cilRep: total weight = 76
+cilRep: stmts in weighted_path with weight >= 1.0 = 76
+cilRep: src/cut.c (code bank/base file; atoms [1,570])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454605998.357125)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 0
+cilRep: fix-space quotient by string: 76 -> 69
+progeq: WARNING: cannot resolve call: error
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: last_component
+progeq: WARNING: cannot resolve call: gettext
+progeq: WARNING: cannot resolve call: fputs_unlocked
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: hash_insert
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: hash_lookup
+progeq: WARNING: cannot resolve call: xstrndup
+progeq: WARNING: cannot resolve call: quote
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: xzalloc
+progeq: WARNING: cannot resolve call: qsort
+progeq: WARNING: cannot resolve call: getc_unlocked
+progeq: WARNING: cannot resolve call: putchar_unlocked
+progeq: WARNING: cannot resolve call: fwrite_unlocked
+progeq: WARNING: cannot resolve call: getndelim2
+progeq: WARNING: cannot resolve call: ferror_unlocked
+progeq: WARNING: cannot resolve call: feof_unlocked
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: fadvise
+progeq: WARNING: cannot resolve call: clearerr_unlocked
+progeq: WARNING: cannot resolve call: set_program_name
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: getopt_long
+progeq: WARNING: cannot resolve call: xstrdup
+progeq: WARNING: cannot resolve call: version_etc
+progeq: WARNING: cannot resolve call: hash_initialize
+progeq: WARNING: cannot resolve call: hash_free
+search: fix space reduced (time_taken = 1.11925)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 76 deletes
+EXIT_ASSERT
+CARDINAL?before:1:after0
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:41:after20
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:69:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+SINGLE_CFG
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+SINGLE_CFG
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+CARDINAL?before:68:after35
+REMOVED?false
+EXIT_ASSERT
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+SET_BEFORE
+CARDINAL?before:27:after15
+REMOVED?false
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 1765 appends
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 2129 appends
+search: ww_adaptive: 3894 possible edits
+search: ready to start (time_taken = 13.591)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.0616391)
+	variant     1/ 3894 = d(555)          (23 tests, cond 0)
+		n1 false (test_time = 2.22195)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.098726)
+	variant     2/ 3894 = d(554)          (23 tests, cond 0)
+		n1 false (test_time = 2.08124)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0910289)
+	variant     3/ 3894 = d(553)          (23 tests, cond 0)
+		n1 false (test_time = 2.24285)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.092231)
+	variant     4/ 3894 = d(552)          (23 tests, cond 0)
+		n1 false (test_time = 2.05032)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.102686)
+	variant     5/ 3894 = d(551)          (23 tests, cond 0)
+		n1 false (test_time = 1.83045)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0994709)
+	variant     6/ 3894 = d(550)          (23 tests, cond 0)
+		n1 false (test_time = 2.21798)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.090368)
+	variant     7/ 3894 = d(549)          (23 tests, cond 0)
+		n1 false (test_time = 2.04774)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.10014)
+	variant     8/ 3894 = d(548)          (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000007/src/cut.c  d(548)  fails to compile
+ false (test_time = 1.63976)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.09271)
+	variant     9/ 3894 = d(547)          (23 tests, cond 0)
+		n1 false (test_time = 2.42378)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.055264)
+	variant    10/ 3894 = d(491)          (23 tests, cond 0)
+		n1 false (test_time = 1.94162)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0971549)
+	variant    11/ 3894 = d(478)          (23 tests, cond 0)
+		n1 false (test_time = 2.40537)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0794098)
+	variant    12/ 3894 = d(472)          (23 tests, cond 0)
+		n1 false (test_time = 2.13967)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.090446)
+	variant    13/ 3894 = d(471)          (23 tests, cond 0)
+		n1 false (test_time = 1.90927)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046525)
+	variant    14/ 3894 = d(466)          (23 tests, cond 0)
+		n1 false (test_time = 2.48598)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0804961)
+	variant    15/ 3894 = d(465)          (23 tests, cond 0)
+		n1 false (test_time = 2.11443)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.090477)
+	variant    16/ 3894 = d(277)          (23 tests, cond 0)
+		n1 false (test_time = 1.8)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.075278)
+	variant    17/ 3894 = d(276)          (23 tests, cond 0)
+		n1 false (test_time = 2.07466)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0902019)
+	variant    18/ 3894 = d(275)          (23 tests, cond 0)
+		n1 false (test_time = 2.24701)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0674329)
+	variant    19/ 3894 = d(274)          (23 tests, cond 0)
+		n1 false (test_time = 2.08991)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0833309)
+	variant    20/ 3894 = d(273)          (23 tests, cond 0)
+		n1 false (test_time = 2.19546)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0801489)
+	variant    21/ 3894 = d(272)          (23 tests, cond 0)
+		n1 false (test_time = 2.37072)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0883482)
+	variant    22/ 3894 = d(271)          (23 tests, cond 0)
+		n1 false (test_time = 1.88645)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042762)
+	variant    23/ 3894 = d(270)          (23 tests, cond 0)
+		n1 false (test_time = 2.45734)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.068558)
+	variant    24/ 3894 = d(269)          (23 tests, cond 0)
+		n1 false (test_time = 2.32348)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0833619)
+	variant    25/ 3894 = d(231)          (23 tests, cond 0)
+		n1 false (test_time = 2.09344)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0725241)
+	variant    26/ 3894 = d(220)          (23 tests, cond 0)
+		n1 false (test_time = 2.09773)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0730391)
+	variant    27/ 3894 = d(216)          (23 tests, cond 0)
+		n1 false (test_time = 2.00919)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0709059)
+	variant    28/ 3894 = d(214)          (23 tests, cond 0)
+		n1 false (test_time = 2.28389)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056242)
+	variant    29/ 3894 = d(213)          (23 tests, cond 0)
+		n1 false (test_time = 2.08474)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.062747)
+	variant    30/ 3894 = d(212)          (23 tests, cond 0)
+		n1 false (test_time = 1.88086)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0390229)
+	variant    31/ 3894 = d(211)          (23 tests, cond 0)
+		n1 false (test_time = 1.58074)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056149)
+	variant    32/ 3894 = d(210)          (23 tests, cond 0)
+		n1 false (test_time = 2.0529)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.047632)
+	variant    33/ 3894 = d(209)          (23 tests, cond 0)
+		n1 false (test_time = 2.14617)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052999)
+	variant    34/ 3894 = d(208)          (23 tests, cond 0)
+		n1 false (test_time = 1.83724)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.073545)
+	variant    35/ 3894 = d(202)          (23 tests, cond 0)
+		n1 true (test_time = 2.04654)
+		p1 true (test_time = 0.61196)
+		p2 true (test_time = 0.567131)
+		p3 true (test_time = 0.660672)
+		p4 true (test_time = 0.630476)
+		p5 true (test_time = 0.482397)
+		p6 true (test_time = 0.422485)
+		p7 true (test_time = 0.257843)
+		p8 true (test_time = 0.509284)
+		p9 true (test_time = 0.514736)
+		p10 true (test_time = 1.02029)
+		p11 true (test_time = 0.502326)
+		p12 true (test_time = 0.554636)
+		p13 true (test_time = 0.459705)
+		p14 true (test_time = 0.515005)
+		p15 true (test_time = 0.454965)
+		p16 true (test_time = 0.857315)
+		p17 true (test_time = 0.603485)
+		p18 true (test_time = 0.787217)
+		p19 true (test_time = 0.65101)
+		p20 true (test_time = 0.633216)
+		p21 true (test_time = 0.801095)
+		p22 true (test_time = 0.765609)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: d(202)
+Repair Name: d(202) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454606102.754691
+
+Variant Test Case Queries: 57
+"Test Suite Evaluations": 2.47826
+
+Compile Failures: 1
+Wall-Clock Seconds Elapsed: 119.596
+  Activity Name                     Count Seconds = Percent of Total Time
+  progeq partition                     69   0.878 = 0.743132%
+  find_best_edit                       35   2.653 = 2.24494%
+  append_sources                       76   4.475 = 3.78745%
+  delete_sources                       76   9.111 = 7.71072%
+  test                                 79  32.451 = 27.4625%
+  compile                              36  68.596 = 58.0513%
+  TOTAL                                   118.165 = 98.7932% (avg CPU usage)

@@ -1,0 +1,1557 @@
+--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 32
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Wed Feb  3 16:23:30 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmpf59cde.c /tmp/tmp073b3a.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/ls.c: parsing
+cilRep: src/ls.c: parsed (0.268332 MB)
+cilRep: computing liveness
+cilRep: liveness failure for main: Errormsg.Error
+cilRep: liveness failure for decode_switches: Errormsg.Error
+cilRep: liveness failure for file_ignored: Errormsg.Error
+cilRep: liveness failure for gobble_file: Errormsg.Error
+cilRep: liveness failure for print_long_format: Errormsg.Error
+cilRep: liveness failure for print_color_indicator: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 3261
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/coreutils/coreutils-case-84457c49-a04ddb8d/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+coverage positive:
+	test: 1
+	test: 2
+	test: 3
+	test: 4
+	test: 5
+	test: 6
+	test: 7
+	test: 8
+	test: 9
+	test: 10
+	test: 11
+	test: 12
+	test: 13
+	test: 14
+	test: 15
+	test: 16
+	test: 17
+	test: 18
+	test: 19
+	test: 20
+	test: 21
+	test: 22
+	test: 23
+	test: 24
+	test: 25
+	test: 26
+	test: 27
+	test: 28
+	test: 29
+	test: 30
+	test: 31
+	test: 32
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 3261
+cilRep: stmts in weighted_path = 590
+cilRep: total weight = 378.5
+cilRep: stmts in weighted_path with weight >= 1.0 = 355
+cilRep: src/ls.c (code bank/base file; atoms [1,3261])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454487876.386812)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 0
+cilRep: fix-space quotient by string: 841 -> 676
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: gettext
+progeq: WARNING: cannot resolve call: fputs_unlocked
+progeq: WARNING: cannot resolve call: last_component
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: imaxtostr
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: _obstack_newchunk
+progeq: WARNING: cannot resolve call: putchar_unlocked
+progeq: WARNING: cannot resolve call: nl_langinfo
+progeq: WARNING: cannot resolve call: mbsalign
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: xmalloc
+progeq: WARNING: cannot resolve call: hash_insert
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: fwrite_unlocked
+progeq: WARNING: cannot resolve call: fflush_unlocked
+progeq: WARNING: cannot resolve call: sigprocmask
+progeq: WARNING: cannot resolve call: signal
+progeq: WARNING: cannot resolve call: raise
+progeq: WARNING: cannot resolve call: set_program_name
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: set_quoting_style
+progeq: WARNING: cannot resolve call: isatty
+progeq: WARNING: cannot resolve call: argmatch
+progeq: WARNING: cannot resolve call: quotearg
+progeq: WARNING: cannot resolve call: error
+progeq: WARNING: cannot resolve call: xstrtoul
+progeq: WARNING: cannot resolve call: ioctl
+progeq: WARNING: cannot resolve call: getopt_long
+progeq: WARNING: cannot resolve call: __xargmatch_internal
+progeq: WARNING: cannot resolve call: human_options
+progeq: WARNING: cannot resolve call: xstrtol_fatal
+progeq: WARNING: cannot resolve call: version_etc
+progeq: WARNING: cannot resolve call: clone_quoting_options
+progeq: WARNING: cannot resolve call: get_quoting_style
+progeq: WARNING: cannot resolve call: set_char_quoting
+progeq: WARNING: cannot resolve call: hard_locale
+progeq: WARNING: cannot resolve call: quote
+progeq: WARNING: cannot resolve call: argmatch_invalid
+progeq: WARNING: cannot resolve call: dcgettext
+progeq: WARNING: cannot resolve call: strcpy
+progeq: WARNING: cannot resolve call: xstrdup
+progeq: WARNING: cannot resolve call: tcgetpgrp
+progeq: WARNING: cannot resolve call: sigemptyset
+progeq: WARNING: cannot resolve call: sigaction
+progeq: WARNING: cannot resolve call: sigaddset
+progeq: WARNING: cannot resolve call: sigismember
+progeq: WARNING: cannot resolve call: hash_initialize
+progeq: WARNING: cannot resolve call: _obstack_begin
+progeq: WARNING: cannot resolve call: xnmalloc
+progeq: WARNING: cannot resolve call: xnrealloc
+progeq: WARNING: cannot resolve call: memset
+progeq: WARNING: cannot resolve call: __builtin_alloca
+progeq: WARNING: cannot resolve call: stat
+progeq: WARNING: cannot resolve call: lstat
+progeq: WARNING: cannot resolve call: quotearg_colon
+progeq: WARNING: cannot resolve call: file_has_acl
+progeq: WARNING: cannot resolve call: areadlink_with_size
+progeq: WARNING: cannot resolve call: dir_len
+progeq: WARNING: cannot resolve call: stpncpy
+progeq: WARNING: cannot resolve call: stpcpy
+progeq: WARNING: cannot resolve call: human_readable
+progeq: WARNING: cannot resolve call: gnu_mbswidth
+progeq: WARNING: cannot resolve call: getuser
+progeq: WARNING: cannot resolve call: sprintf
+progeq: WARNING: cannot resolve call: getgroup
+progeq: WARNING: cannot resolve call: umaxtostr
+progeq: WARNING: cannot resolve call: gnu_dev_major
+progeq: WARNING: cannot resolve call: gnu_dev_minor
+progeq: WARNING: cannot resolve call: _setjmp
+progeq: WARNING: cannot resolve call: mpsort
+progeq: WARNING: cannot resolve call: file_name_concat
+progeq: WARNING: cannot resolve call: memcpy
+progeq: WARNING: cannot resolve call: quotearg_buffer
+progeq: WARNING: cannot resolve call: __ctype_get_mb_cur_max
+progeq: WARNING: cannot resolve call: mbrtowc
+progeq: WARNING: cannot resolve call: wcwidth
+progeq: WARNING: cannot resolve call: mbsnwidth
+progeq: WARNING: cannot resolve call: filemodestring
+progeq: WARNING: cannot resolve call: gettime
+progeq: WARNING: cannot resolve call: mempcpy
+progeq: WARNING: cannot resolve call: nstrftime
+progeq: WARNING: cannot resolve call: hash_delete
+progeq: WARNING: cannot resolve call: opendir
+progeq: WARNING: cannot resolve call: dirfd
+progeq: WARNING: cannot resolve call: fstat
+progeq: WARNING: cannot resolve call: closedir
+progeq: WARNING: cannot resolve call: readdir
+progeq: WARNING: cannot resolve call: fnmatch
+progeq: WARNING: cannot resolve call: hash_get_n_entries
+progeq: WARNING: cannot resolve call: hash_free
+progeq: WARNING: cannot resolve call: quote_n
+progeq: WARNING: cannot resolve call: longjmp
+progeq: WARNING: cannot resolve call: *cmp
+progeq: WARNING: cannot resolve call: filevercmp
+search: fix space reduced (time_taken = 50.1013)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 590 deletes
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:641:after641
+REMOVED?true
+CARDINAL?before:641:after641
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:16:after16
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:41:after41
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:638:after638
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:30:after30
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:10:after10
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:641:after641
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:23:after23
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:671:after671
+REMOVED?true
+CARDINAL?before:671:after671
+REMOVED?true
+CARDINAL?before:671:after671
+REMOVED?true
+CARDINAL?before:673:after673
+REMOVED?true
+CARDINAL?before:671:after671
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:653:after653
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:94:after94
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:84:after84
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:101:after101
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:179:after179
+REMOVED?true
+CARDINAL?before:670:after670
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:676:after676
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:638:after638
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+CARDINAL?before:22:after22
+REMOVED?true
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 158261 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 66241 appends
+search: ww_adaptive: 224502 possible edits
+search: ready to start (time_taken = 224.777)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 1.76682)
+	variant     1/224502 = d(2967)         (33 tests, cond 0)
+		n1 false (test_time = 2.26273)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.77163)
+	variant     2/224502 = d(2966)         (33 tests, cond 0)
+		n1 false (test_time = 2.24608)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.79881)
+	variant     3/224502 = d(2963)         (33 tests, cond 0)
+		n1 false (test_time = 2.32101)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.78741)
+	variant     4/224502 = d(2962)         (33 tests, cond 0)
+		n1 false (test_time = 1.89015)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.84431)
+	variant     5/224502 = d(2961)         (33 tests, cond 0)
+		n1 false (test_time = 1.95427)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.79629)
+	variant     6/224502 = d(2960)         (33 tests, cond 0)
+		n1 false (test_time = 2.30451)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.7993)
+	variant     7/224502 = d(2959)         (33 tests, cond 0)
+		n1 true (test_time = 2.27699)
+		p1 true (test_time = 1.5141)
+		p2 true (test_time = 2.10388)
+		p3 true (test_time = 1.90317)
+		p4 true (test_time = 2.95326)
+		p5 true (test_time = 1.71775)
+		p6 true (test_time = 0.025099)
+		p7 true (test_time = 3.63542)
+		p8 true (test_time = 1.59069)
+		p9 true (test_time = 1.8813)
+		p10 true (test_time = 1.55077)
+		p11 true (test_time = 1.66799)
+		p12 true (test_time = 1.68311)
+		p13 true (test_time = 1.58691)
+		p14 true (test_time = 1.37008)
+		p15 true (test_time = 1.67691)
+		p16 true (test_time = 1.72431)
+		p17 true (test_time = 1.39956)
+		p18 true (test_time = 1.34985)
+		p19 true (test_time = 1.5699)
+		p20 true (test_time = 1.35686)
+		p21 true (test_time = 1.4757)
+		p22 true (test_time = 1.55836)
+		p23 true (test_time = 1.79036)
+		p24 true (test_time = 1.71542)
+		p25 true (test_time = 1.63179)
+		p26 true (test_time = 1.72129)
+		p27 true (test_time = 1.84896)
+		p28 true (test_time = 1.48072)
+		p29 true (test_time = 1.88473)
+		p30 true (test_time = 1.92778)
+		p31 true (test_time = 1.43058)
+		p32 true (test_time = 1.69758)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: d(2959)
+Repair Name: d(2959) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454488234.120875
+
+Variant Test Case Queries: 39
+"Test Suite Evaluations": 1.18182
+
+Compile Failures: 0
+Wall-Clock Seconds Elapsed: 424.008
+  Activity Name                     Count Seconds = Percent of Total Time
+  find_best_edit                        7  12.565 = 3.02398%
+  compile                               8  17.521 = 4.21678%
+  progeq partition                    676  43.444 = 10.4559%
+  append_sources                      590 108.012 = 25.9958%
+  delete_sources                      590 116.588 = 28.0598%
+  test                                 72 117.369 = 28.2478%
+  TOTAL                                   415.497 = 97.9899% (avg CPU usage)

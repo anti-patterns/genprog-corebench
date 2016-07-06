@@ -1,0 +1,1149 @@
+WARNING: the argument --multi-file is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --suffix-extension is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --mutp is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 31
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Sun Feb 14 04:36:49 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat: /etc/redhat-release: No such file or directory
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp4f3579.c /tmp/tmpa0af41.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/cut.c: parsing
+cilRep: src/cut.c: parsed (0.0464802 MB)
+cilRep: computing liveness
+Bug: BF(Liveness): stmtStartData is not initialized for -1: _L: 
+#line 376 "cut.c"
+in_digits = (_Bool)0;
+Liveness failed on function:
+ static _Bool set_fields(char const   *fieldstr ) 
+{ size_t initial ;
+  size_t value ;
+  _Bool lhs_specified ;
+  _Bool rhs_specified ;
+  _Bool dash_found ;
+  _Bool field_found ;
+  struct range_pair *rp ;
+  size_t n_rp ;
+  size_t n_rp_allocated ;
+  size_t i ;
+  _Bool in_digits ;
+  char *tmp ;
+  char *tmp___0 ;
+  char *tmp___1 ;
+  void *tmp___2 ;
+  void *tmp___3 ;
+  void *tmp___4 ;
+  size_t len ;
+  size_t tmp___5 ;
+  char *bad_num ;
+  char *tmp___6 ;
+  char const   *tmp___7 ;
+  char *tmp___8 ;
+  char const   *tmp___9 ;
+  char *tmp___10 ;
+  int tmp___11 ;
+  char *tmp___12 ;
+  unsigned short const   **tmp___13 ;
+  void *tmp___14 ;
+  size_t j ;
+  size_t rsi_candidate ;
+  _Bool tmp___15 ;
+  _Bool tmp___16 ;
+
+  {
+   229: /* CIL Label */ 
+#line 343
+  initial = 1UL;
+   230: /* CIL Label */ 
+#line 344
+  value = 0UL;
+   231: /* CIL Label */ 
+#line 345
+  lhs_specified = (_Bool)0;
+   232: /* CIL Label */ 
+#line 346
+  rhs_specified = (_Bool)0;
+   233: /* CIL Label */ 
+#line 347
+  dash_found = (_Bool)0;
+   234: /* CIL Label */ 
+#line 348
+  field_found = (_Bool)0;
+   235: /* CIL Label */ 
+#line 351
+  rp = (struct range_pair *)((void *)0);
+   236: /* CIL Label */ 
+#line 352
+  n_rp = 0UL;
+   237: /* CIL Label */ 
+#line 353
+  n_rp_allocated = 0UL;
+   238: /* CIL Label */ 
+#line 355
+  in_digits = (_Bool)0;
+   239: /* CIL Label */ 
+#line 360
+  while (1) {
+#line 362
+    if ((int const   )*fieldstr == 45) {
+#line 364
+      in_digits = (_Bool)0;
+#line 366
+      if (dash_found) {
+#line 367
+        while (1) {
+#line 367
+          tmp = gettext("invalid byte or field list");
+#line 367
+          error(0, 0, (char const   *)tmp);
+#line 367
+          usage(1);
+#line 367
+          break;
+        }
+      } else {
+
+      }
+#line 368
+      dash_found = (_Bool)1;
+#line 369
+      fieldstr ++;
+#line 371
+      if (lhs_specified) {
+#line 371
+        initial = value;
+      } else {
+#line 371
+        initial = 1UL;
+      }
+#line 372
+      value = 0UL;
+    } else {
+#line 374
+      if ((int const   )*fieldstr == 44) {
+        goto _L;
+      } else {
+#line 374
+        tmp___13 = __ctype_b_loc();
+#line 374
+        if ((int const   )*(*tmp___13 + (int )*fieldstr) & 1) {
+          goto _L;
+        } else {
+#line 374
+          if ((int const   )*fieldstr == 0) {
+            _L: 
+#line 376
+            in_digits = (_Bool)0;
+#line 378
+            if (dash_found) {
+#line 380
+              dash_found = (_Bool)0;
+#line 382
+              if (! lhs_specified) {
+#line 382
+                if (! rhs_specified) {
+#line 383
+                  while (1) {
+#line 383
+                    tmp___0 = gettext("invalid range with no endpoint: -");
+#line 383
+                    error(0, 0, (char const   *)tmp___0);
+#line 383
+                    usage(1);
+#line 383
+                    break;
+                  }
+                } else {
+
+                }
+              } else {
+
+              }
+#line 387
+              if (! rhs_specified) {
+#line 390
+                eol_range_start = initial;
+#line 391
+                field_found = (_Bool)1;
+              } else {
+#line 396
+                if (value < initial) {
+#line 397
+                  while (1) {
+#line 397
+                    tmp___1 = gettext("invalid decreasing range");
+#line 397
+                    error(0, 0, (char const   *)tmp___1);
+#line 397
+                    usage(1);
+#line 397
+                    break;
+                  }
+                } else {
+
+                }
+#line 400
+                if (eol_range_start != 0UL) {
+#line 405
+                  if (initial < eol_range_start) {
+#line 410
+                    if (eol_range_start <= value) {
+#line 413
+                      eol_range_start = initial;
+                    } else {
+#line 419
+                      while (1) {
+#line 419
+                        if (n_rp >= n_rp_allocated) {
+#line 419
+                          tmp___2 = x2nrealloc((void *)rp, & n_rp_allocated,
+                                               sizeof(*rp));
+#line 419
+                          rp = (struct range_pair *)tmp___2;
+                        } else {
+
+                        }
+#line 419
+                        (rp + n_rp)->lo = initial;
+#line 419
+                        (rp + n_rp)->hi = value;
+#line 419
+                        n_rp ++;
+#line 419
+                        break;
+                      }
+                    }
+#line 423
+                    field_found = (_Bool)1;
+                  } else {
+
+                  }
+                } else {
+#line 429
+                  while (1) {
+#line 429
+                    if (n_rp >= n_rp_allocated) {
+#line 429
+                      tmp___3 = x2nrealloc((void *)rp, & n_rp_allocated,
+                                           sizeof(*rp));
+#line 429
+                      rp = (struct range_pair *)tmp___3;
+                    } else {
+
+                    }
+#line 429
+                    (rp + n_rp)->lo = initial;
+#line 429
+                    (rp + n_rp)->hi = value;
+#line 429
+                    n_rp ++;
+#line 429
+                    break;
+                  }
+#line 430
+                  field_found = (_Bool)1;
+                }
+#line 432
+                value = 0UL;
+              }
+            } else {
+#line 438
+              while (1) {
+#line 438
+                if (n_rp >= n_rp_allocated) {
+#line 438
+                  tmp___4 = x2nrealloc((void *)rp, & n_rp_allocated, sizeof(*rp));
+#line 438
+                  rp = (struct range_pair *)tmp___4;
+                } else {
+
+                }
+#line 438
+                (rp + n_rp)->lo = value;
+#line 438
+                (rp + n_rp)->hi = value;
+#line 438
+                n_rp ++;
+#line 438
+                break;
+              }
+#line 439
+              value = 0UL;
+#line 440
+              field_found = (_Bool)1;
+            }
+#line 443
+            if ((int const   )*fieldstr == 0) {
+#line 445
+              break;
+            } else {
+
+            }
+#line 448
+            fieldstr ++;
+#line 449
+            lhs_specified = (_Bool)0;
+#line 450
+            rhs_specified = (_Bool)0;
+          } else {
+#line 452
+            if ((unsigned int )*fieldstr - 48U <= 9U) {
+#line 457
+              if (! in_digits) {
+#line 458
+                num_start = fieldstr;
+              } else {
+#line 457
+                if (! num_start) {
+#line 458
+                  num_start = fieldstr;
+                } else {
+
+                }
+              }
+#line 459
+              in_digits = (_Bool)1;
+#line 461
+              if (dash_found) {
+#line 462
+                rhs_specified = (_Bool)1;
+              } else {
+#line 464
+                lhs_specified = (_Bool)1;
+              }
+#line 467
+              if (0UL < value) {
+#line 467
+                tmp___11 = 0;
+              } else {
+#line 467
+                if (value * 10UL + (unsigned long )((int const   )*fieldstr - 48) < value) {
+#line 467
+                  tmp___11 = 0;
+                } else {
+#line 467
+                  value = value * 10UL + (unsigned long )((int const   )*fieldstr - 48);
+#line 467
+                  tmp___11 = 1;
+                }
+              }
+#line 467
+              if (! tmp___11) {
+#line 472
+                tmp___5 = strspn(num_start, "0123456789");
+#line 472
+                len = tmp___5;
+#line 473
+                tmp___6 = xstrndup(num_start, len);
+#line 473
+                bad_num = tmp___6;
+#line 474
+                if ((unsigned int )operating_mode == 1U) {
+#line 475
+                  tmp___7 = quote((char const   *)bad_num);
+#line 475
+                  tmp___8 = gettext("byte offset %s is too large");
+#line 475
+                  error(0, 0, (char const   *)tmp___8, tmp___7);
+                } else {
+#line 478
+                  tmp___9 = quote((char const   *)bad_num);
+#line 478
+                  tmp___10 = gettext("field number %s is too large");
+#line 478
+                  error(0, 0, (char const   *)tmp___10, tmp___9);
+                }
+#line 480
+                free((void *)bad_num);
+#line 481
+                exit(1);
+              } else {
+
+              }
+#line 484
+              fieldstr ++;
+            } else {
+#line 487
+              while (1) {
+#line 487
+                tmp___12 = gettext("invalid byte or field list");
+#line 487
+                error(0, 0, (char const   *)tmp___12);
+#line 487
+                usage(1);
+#line 487
+                break;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+   240: /* CIL Label */ 
+#line 490
+  max_range_endpoint = 0UL;
+   241: /* CIL Label */ 
+#line 491
+  i = 0UL;
+   242: /* CIL Label */ 
+#line 491
+  while (i < n_rp) {
+#line 493
+    if ((rp + i)->hi > max_range_endpoint) {
+#line 494
+      max_range_endpoint = (rp + i)->hi;
+    } else {
+
+    }
+#line 491
+    i ++;
+  }
+   243: /* CIL Label */ 
+#line 501
+  tmp___14 = xzalloc(max_range_endpoint / 8UL + 1UL);
+   244: /* CIL Label */ 
+#line 501
+  printable_field = (unsigned char *)tmp___14;
+   245: /* CIL Label */ 
+#line 503
+  qsort((void *)rp, n_rp, sizeof(*(rp + 0)), & compare_ranges);
+   246: /* CIL Label */ 
+#line 506
+  i = 0UL;
+   247: /* CIL Label */ 
+#line 506
+  while (i < n_rp) {
+#line 513
+    if (complement) {
+#line 513
+      rsi_candidate = (rp + i)->hi + 1UL;
+    } else {
+#line 513
+      rsi_candidate = (rp + i)->lo;
+    }
+#line 514
+    if (output_delimiter_specified) {
+#line 514
+      tmp___15 = is_printable_field(rsi_candidate);
+#line 514
+      if (! tmp___15) {
+#line 516
+        mark_range_start(rsi_candidate);
+      } else {
+
+      }
+    } else {
+
+    }
+#line 518
+    j = (rp + i)->lo;
+#line 518
+    while (j <= (rp + i)->hi) {
+#line 519
+      mark_printable_field(j);
+#line 518
+      j ++;
+    }
+#line 506
+    i ++;
+  }
+   248: /* CIL Label */ 
+#line 522
+  if (output_delimiter_specified) {
+#line 522
+    if (! complement) {
+#line 522
+      if (eol_range_start) {
+#line 522
+        tmp___16 = is_printable_field(eol_range_start);
+#line 522
+        if (! tmp___16) {
+#line 525
+          mark_range_start(eol_range_start);
+        } else {
+
+        }
+      } else {
+
+      }
+    } else {
+
+    }
+  } else {
+
+  }
+   249: /* CIL Label */ 
+#line 527
+  free((void *)rp);
+   250: /* CIL Label */ 
+#line 529
+  return (field_found);
+}
+}
+
+cilRep: liveness failure for set_fields: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 529
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/coreutils/coreutils-case-ae571715-a6a447fc/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae571715_a6a447fc/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae571715-a6a447fc
+FAILED: 0
+coverage positive:
+	test: 1
+PASS: 2
+	test: 2
+PASS: 3
+	test: 3
+PASS: 4
+	test: 4
+PASS: 5
+	test: 5
+PASS: 6
+	test: 6
+PASS: 7
+	test: 7
+	test: 8
+	test: 9
+PASS: 12
+	test: 10
+PASS: 13
+	test: 11
+PASS: 14
+	test: 12
+PASS: 15
+	test: 13
+PASS: 16
+	test: 14
+PASS: 17
+	test: 15
+PASS: 18
+	test: 16
+PASS: 20
+	test: 17
+PASS: 21
+	test: 18
+PASS: 22
+	test: 19
+PASS: 24
+	test: 20
+PASS: 26
+	test: 21
+	test: 22
+PASS: 28
+	test: 23
+PASS: 29
+	test: 24
+PASS: 30
+	test: 25
+PASS: 31
+	test: 26
+PASS: 32
+	test: 27
+PASS: 34
+	test: 28
+PASS: 38
+	test: 29
+PASS: 39
+	test: 30
+PASS: 40
+	test: 31
+PASS: 41
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 529
+cilRep: stmts in weighted_path = 162
+cilRep: total weight = 162
+cilRep: stmts in weighted_path with weight >= 1.0 = 162
+cilRep: src/cut.c (code bank/base file; atoms [1,529])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1455395813.911841)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 0
+cilRep: fix-space quotient by string: 162 -> 134
+progeq: WARNING: cannot resolve call: gettext
+progeq: WARNING: cannot resolve call: error
+progeq: WARNING: cannot resolve call: fputs_unlocked
+progeq: WARNING: cannot resolve call: x2nrealloc
+progeq: WARNING: cannot resolve call: xstrndup
+progeq: WARNING: cannot resolve call: quote
+progeq: WARNING: cannot resolve call: free
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: hash_insert
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: hash_lookup
+progeq: WARNING: cannot resolve call: xzalloc
+progeq: WARNING: cannot resolve call: qsort
+progeq: WARNING: cannot resolve call: getc_unlocked
+progeq: WARNING: cannot resolve call: putchar_unlocked
+progeq: WARNING: cannot resolve call: fwrite_unlocked
+progeq: WARNING: cannot resolve call: getndelim2
+progeq: WARNING: cannot resolve call: ferror_unlocked
+progeq: WARNING: cannot resolve call: feof_unlocked
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: clearerr_unlocked
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: getopt_long
+progeq: WARNING: cannot resolve call: xstrdup
+progeq: WARNING: cannot resolve call: version_etc
+progeq: WARNING: cannot resolve call: hash_initialize
+progeq: WARNING: cannot resolve call: hash_free
+search: fix space reduced (time_taken = 0.789685)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 162 deletes
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:7:after7
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:59:after59
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:14:after14
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:11:after11
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:132:after132
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:134:after134
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+CARDINAL?before:38:after38
+REMOVED?true
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 10355 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 5411 appends
+search: ww_adaptive: 15766 possible edits
+search: ready to start (time_taken = 3.06904)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.185314)
+	variant     1/15766 = d(529)          (32 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae571715_a6a447fc/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae571715-a6a447fc
+FAILED: 0
+ false (test_time = 0.72004)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.183366)
+	variant     2/15766 = d(528)          (32 tests, cond 0)
+		n1calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae571715_a6a447fc/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae571715-a6a447fc
+PASS: 0
+ true (test_time = 0.720208)
+		p1PASS: 2
+ true (test_time = 0.112702)
+		p2PASS: 3
+ true (test_time = 0.0883281)
+		p3PASS: 4
+ true (test_time = 0.0910091)
+		p4PASS: 5
+ true (test_time = 0.309818)
+		p5PASS: 6
+ true (test_time = 0.133024)
+		p6PASS: 7
+ true (test_time = 0.09707)
+		p7 true (test_time = 0.002841)
+		p8 true (test_time = 0.00248885)
+		p9PASS: 12
+ true (test_time = 0.12368)
+		p10PASS: 13
+ true (test_time = 0.100258)
+		p11PASS: 14
+ true (test_time = 0.0862629)
+		p12PASS: 15
+ true (test_time = 0.102322)
+		p13PASS: 16
+ true (test_time = 0.090534)
+		p14PASS: 17
+ true (test_time = 0.11205)
+		p15PASS: 18
+ true (test_time = 0.08921)
+		p16PASS: 20
+ true (test_time = 0.141389)
+		p17PASS: 21
+ true (test_time = 0.0960209)
+		p18PASS: 22
+ true (test_time = 0.194939)
+		p19PASS: 24
+ true (test_time = 0.0910158)
+		p20PASS: 26
+ true (test_time = 0.0878649)
+		p21 true (test_time = 0.00269818)
+		p22PASS: 28
+ true (test_time = 0.111585)
+		p23PASS: 29
+ true (test_time = 0.116988)
+		p24PASS: 30
+ true (test_time = 0.112808)
+		p25PASS: 31
+ true (test_time = 0.11462)
+		p26PASS: 32
+ true (test_time = 0.0951111)
+		p27PASS: 34
+ true (test_time = 0.0891271)
+		p28PASS: 38
+ true (test_time = 0.124163)
+		p29PASS: 39
+ true (test_time = 0.122479)
+		p30PASS: 40
+ true (test_time = 0.086386)
+		p31PASS: 41
+ true (test_time = 0.10112)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: d(528)
+Repair Name: d(528) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1455395822.817824
+
+Variant Test Case Queries: 33
+"Test Suite Evaluations": 1.03125
+
+Compile Failures: 0
+Wall-Clock Seconds Elapsed: 12.9388
+  Activity Name                     Count Seconds = Percent of Total Time
+  find_best_edit                        2   0.369 = 2.90472%
+  progeq partition                    134   0.674 = 5.31141%
+  delete_sources                      162   1.505 = 11.8546%
+  append_sources                      162   1.561 = 12.3004%
+  compile                               3   2.122 = 16.7195%
+  test                                 65   6.462 = 50.9093%
+  TOTAL                                    12.692 = 98.0652% (avg CPU usage)

@@ -1,0 +1,4233 @@
+--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete true
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 22
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Thu Feb  4 23:56:44 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp0ce91d.c /tmp/tmpaa1f44.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/cut.c: parsing
+cilRep: src/cut.c: parsed (0.0506363 MB)
+cilRep: computing liveness
+cilRep: liveness failure for set_fields: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 570
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+coverage positive:
+	test: 1
+	test: 2
+	test: 3
+	test: 4
+	test: 5
+	test: 6
+	test: 7
+	test: 8
+	test: 9
+	test: 10
+	test: 11
+	test: 12
+	test: 13
+	test: 14
+	test: 15
+	test: 16
+	test: 17
+	test: 18
+	test: 19
+	test: 20
+	test: 21
+	test: 22
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 570
+cilRep: stmts in weighted_path = 76
+cilRep: total weight = 76
+cilRep: stmts in weighted_path with weight >= 1.0 = 76
+cilRep: src/cut.c (code bank/base file; atoms [1,570])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454601415.824276)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 0
+cilRep: fix-space quotient by string: 76 -> 69
+progeq: WARNING: cannot resolve call: error
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: last_component
+progeq: WARNING: cannot resolve call: gettext
+progeq: WARNING: cannot resolve call: fputs_unlocked
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: hash_insert
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: hash_lookup
+progeq: WARNING: cannot resolve call: xstrndup
+progeq: WARNING: cannot resolve call: quote
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: xzalloc
+progeq: WARNING: cannot resolve call: qsort
+progeq: WARNING: cannot resolve call: getc_unlocked
+progeq: WARNING: cannot resolve call: putchar_unlocked
+progeq: WARNING: cannot resolve call: fwrite_unlocked
+progeq: WARNING: cannot resolve call: getndelim2
+progeq: WARNING: cannot resolve call: ferror_unlocked
+progeq: WARNING: cannot resolve call: feof_unlocked
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: fadvise
+progeq: WARNING: cannot resolve call: clearerr_unlocked
+progeq: WARNING: cannot resolve call: set_program_name
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: getopt_long
+progeq: WARNING: cannot resolve call: xstrdup
+progeq: WARNING: cannot resolve call: version_etc
+progeq: WARNING: cannot resolve call: hash_initialize
+progeq: WARNING: cannot resolve call: hash_free
+search: fix space reduced (time_taken = 1.01198)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 76 deletes
+CARDINAL?before:1:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:69:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:69:after0
+REMOVED?false
+CARDINAL?before:69:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:41:after0
+REMOVED?false
+CARDINAL?before:69:after0
+REMOVED?false
+CARDINAL?before:69:after0
+REMOVED?false
+CARDINAL?before:27:after0
+REMOVED?false
+CARDINAL?before:27:after0
+REMOVED?false
+CARDINAL?before:68:after0
+REMOVED?false
+CARDINAL?before:27:after0
+REMOVED?false
+CARDINAL?before:27:after0
+REMOVED?false
+CARDINAL?before:68:after0
+REMOVED?false
+CARDINAL?before:27:after0
+REMOVED?false
+CARDINAL?before:27:after0
+REMOVED?false
+CARDINAL?before:69:after0
+REMOVED?false
+CARDINAL?before:69:after0
+REMOVED?false
+CARDINAL?before:69:after0
+REMOVED?false
+CARDINAL?before:69:after0
+REMOVED?false
+CARDINAL?before:68:after0
+REMOVED?false
+CARDINAL?before:68:after0
+REMOVED?false
+CARDINAL?before:27:after0
+REMOVED?false
+CARDINAL?before:27:after0
+REMOVED?false
+CARDINAL?before:68:after0
+REMOVED?false
+CARDINAL?before:68:after0
+REMOVED?false
+CARDINAL?before:68:after0
+REMOVED?false
+CARDINAL?before:68:after0
+REMOVED?false
+CARDINAL?before:68:after0
+REMOVED?false
+CARDINAL?before:68:after0
+REMOVED?false
+CARDINAL?before:68:after0
+REMOVED?false
+CARDINAL?before:68:after0
+REMOVED?false
+CARDINAL?before:27:after0
+REMOVED?false
+CARDINAL?before:27:after0
+REMOVED?false
+CARDINAL?before:27:after0
+REMOVED?false
+CARDINAL?before:27:after0
+REMOVED?false
+CARDINAL?before:68:after0
+REMOVED?false
+CARDINAL?before:27:after0
+REMOVED?false
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 0 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 2261 appends
+search: ww_adaptive: 2261 possible edits
+search: ready to start (time_taken = 2.08357)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.0357039)
+	variant     1/ 2261 = a(562,562)      (23 tests, cond 0)
+		n1 false (test_time = 1.55554)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039665)
+	variant     2/ 2261 = a(562,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.63859)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0556691)
+	variant     3/ 2261 = a(562,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.67501)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.051774)
+	variant     4/ 2261 = a(562,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.63848)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0351589)
+	variant     5/ 2261 = a(562,558)      (23 tests, cond 0)
+		n1 false (test_time = 1.69384)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0329759)
+	variant     6/ 2261 = a(562,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.63902)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0409789)
+	variant     7/ 2261 = a(562,556)      (23 tests, cond 0)
+		n1 false (test_time = 1.63418)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0393889)
+	variant     8/ 2261 = a(562,555)      (23 tests, cond 0)
+		n1 false (test_time = 1.71275)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.050153)
+	variant     9/ 2261 = a(562,553)      (23 tests, cond 0)
+		n1 false (test_time = 1.87327)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.055378)
+	variant    10/ 2261 = a(562,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.76494)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0666728)
+	variant    11/ 2261 = a(562,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.75109)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0546799)
+	variant    12/ 2261 = a(562,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.4946)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0372438)
+	variant    13/ 2261 = a(562,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.60611)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039571)
+	variant    14/ 2261 = a(562,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.71143)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0431602)
+	variant    15/ 2261 = a(562,547)      (23 tests, cond 0)
+		n1 false (test_time = 1.41377)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.048171)
+	variant    16/ 2261 = a(562,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.77772)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040293)
+	variant    17/ 2261 = a(562,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.67755)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056489)
+	variant    18/ 2261 = a(562,491)      (23 tests, cond 0)
+		n1 false (test_time = 1.69541)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0377431)
+	variant    19/ 2261 = a(562,485)      (23 tests, cond 0)
+		n1 false (test_time = 1.90918)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0351651)
+	variant    20/ 2261 = a(562,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.73987)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0361898)
+	variant    21/ 2261 = a(562,477)      (23 tests, cond 0)
+		n1 false (test_time = 1.62739)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0488579)
+	variant    22/ 2261 = a(562,471)      (23 tests, cond 0)
+		n1 false (test_time = 1.91375)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0406048)
+	variant    23/ 2261 = a(562,465)      (23 tests, cond 0)
+		n1 false (test_time = 2.01681)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0342009)
+	variant    24/ 2261 = a(562,217)      (23 tests, cond 0)
+		n1 false (test_time = 1.66434)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.041791)
+	variant    25/ 2261 = a(561,562)      (23 tests, cond 0)
+		n1 false (test_time = 1.8073)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.04)
+	variant    26/ 2261 = a(561,561)      (23 tests, cond 0)
+		n1 false (test_time = 2.08215)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0551131)
+	variant    27/ 2261 = a(561,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.93127)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0360191)
+	variant    28/ 2261 = a(561,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.58367)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0378559)
+	variant    29/ 2261 = a(561,558)      (23 tests, cond 0)
+		n1 false (test_time = 1.68748)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0393541)
+	variant    30/ 2261 = a(561,557)      (23 tests, cond 0)
+		n1 false (test_time = 2.11863)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0472581)
+	variant    31/ 2261 = a(561,556)      (23 tests, cond 0)
+		n1 false (test_time = 1.93545)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0501571)
+	variant    32/ 2261 = a(561,555)      (23 tests, cond 0)
+		n1 false (test_time = 2.18761)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0560949)
+	variant    33/ 2261 = a(561,553)      (23 tests, cond 0)
+		n1 false (test_time = 2.03129)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.05056)
+	variant    34/ 2261 = a(561,552)      (23 tests, cond 0)
+		n1 false (test_time = 2.01337)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.048382)
+	variant    35/ 2261 = a(561,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.7023)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0375249)
+	variant    36/ 2261 = a(561,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.04587)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0386758)
+	variant    37/ 2261 = a(561,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.95115)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052181)
+	variant    38/ 2261 = a(561,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.8478)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.060215)
+	variant    39/ 2261 = a(561,547)      (23 tests, cond 0)
+		n1 false (test_time = 2.05069)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0496602)
+	variant    40/ 2261 = a(561,509)      (23 tests, cond 0)
+		n1 false (test_time = 2.12746)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0592251)
+	variant    41/ 2261 = a(561,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.92976)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0357599)
+	variant    42/ 2261 = a(561,485)      (23 tests, cond 0)
+		n1 false (test_time = 1.89583)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056515)
+	variant    43/ 2261 = a(561,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.84433)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0574028)
+	variant    44/ 2261 = a(561,477)      (23 tests, cond 0)
+		n1 false (test_time = 1.83093)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0480969)
+	variant    45/ 2261 = a(561,472)      (23 tests, cond 0)
+		n1 false (test_time = 1.92925)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0348411)
+	variant    46/ 2261 = a(561,471)      (23 tests, cond 0)
+		n1 false (test_time = 1.81317)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0364349)
+	variant    47/ 2261 = a(561,465)      (23 tests, cond 0)
+		n1 false (test_time = 1.86953)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0396719)
+	variant    48/ 2261 = a(561,217)      (23 tests, cond 0)
+		n1 false (test_time = 1.6127)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0514851)
+	variant    49/ 2261 = a(560,562)      (23 tests, cond 0)
+		n1 false (test_time = 1.82451)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0555131)
+	variant    50/ 2261 = a(560,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.60409)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03864)
+	variant    51/ 2261 = a(560,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.7561)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.034095)
+	variant    52/ 2261 = a(560,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.85192)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0530622)
+	variant    53/ 2261 = a(560,558)      (23 tests, cond 0)
+		n1 false (test_time = 1.9764)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0410039)
+	variant    54/ 2261 = a(560,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.76168)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0435789)
+	variant    55/ 2261 = a(560,556)      (23 tests, cond 0)
+		n1 false (test_time = 1.74689)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0519872)
+	variant    56/ 2261 = a(560,555)      (23 tests, cond 0)
+		n1 false (test_time = 1.96262)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0475662)
+	variant    57/ 2261 = a(560,553)      (23 tests, cond 0)
+		n1 false (test_time = 2.03642)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0535359)
+	variant    58/ 2261 = a(560,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.7557)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.050987)
+	variant    59/ 2261 = a(560,551)      (23 tests, cond 0)
+		n1 false (test_time = 2.10069)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035001)
+	variant    60/ 2261 = a(560,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.91997)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0569508)
+	variant    61/ 2261 = a(560,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.90406)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0540309)
+	variant    62/ 2261 = a(560,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.86157)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.049896)
+	variant    63/ 2261 = a(560,547)      (23 tests, cond 0)
+		n1 false (test_time = 2.11748)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0493889)
+	variant    64/ 2261 = a(560,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.82989)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.050915)
+	variant    65/ 2261 = a(560,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.45209)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.050828)
+	variant    66/ 2261 = a(560,485)      (23 tests, cond 0)
+		n1 false (test_time = 1.88152)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.053036)
+	variant    67/ 2261 = a(560,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.64363)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052073)
+	variant    68/ 2261 = a(560,477)      (23 tests, cond 0)
+		n1 false (test_time = 2.13434)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0549109)
+	variant    69/ 2261 = a(560,472)      (23 tests, cond 0)
+		n1 false (test_time = 1.80823)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0407028)
+	variant    70/ 2261 = a(560,471)      (23 tests, cond 0)
+		n1 false (test_time = 1.90616)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0465569)
+	variant    71/ 2261 = a(560,465)      (23 tests, cond 0)
+		n1 false (test_time = 1.68814)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0349741)
+	variant    72/ 2261 = a(560,217)      (23 tests, cond 0)
+		n1 false (test_time = 1.72284)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0568202)
+	variant    73/ 2261 = a(559,562)      (23 tests, cond 0)
+		n1 false (test_time = 1.80507)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0590968)
+	variant    74/ 2261 = a(559,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.73727)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.065793)
+	variant    75/ 2261 = a(559,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.98906)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0377591)
+	variant    76/ 2261 = a(559,559)      (23 tests, cond 0)
+		n1 false (test_time = 2.12418)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0482609)
+	variant    77/ 2261 = a(559,558)      (23 tests, cond 0)
+		n1 false (test_time = 1.84682)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0359871)
+	variant    78/ 2261 = a(559,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.83066)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.050473)
+	variant    79/ 2261 = a(559,556)      (23 tests, cond 0)
+		n1 false (test_time = 1.62763)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052357)
+	variant    80/ 2261 = a(559,555)      (23 tests, cond 0)
+		n1 false (test_time = 2.39874)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0625858)
+	variant    81/ 2261 = a(559,554)      (23 tests, cond 0)
+		n1 false (test_time = 1.85983)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.051208)
+	variant    82/ 2261 = a(559,553)      (23 tests, cond 0)
+		n1 false (test_time = 1.69017)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.058579)
+	variant    83/ 2261 = a(559,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.75648)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.04879)
+	variant    84/ 2261 = a(559,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.89477)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056262)
+	variant    85/ 2261 = a(559,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.85072)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037957)
+	variant    86/ 2261 = a(559,549)      (23 tests, cond 0)
+		n1 false (test_time = 2.03632)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0579822)
+	variant    87/ 2261 = a(559,548)      (23 tests, cond 0)
+		n1 false (test_time = 2.18005)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056731)
+	variant    88/ 2261 = a(559,547)      (23 tests, cond 0)
+		n1 false (test_time = 1.73705)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033942)
+	variant    89/ 2261 = a(559,509)      (23 tests, cond 0)
+		n1 false (test_time = 2.15689)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.049592)
+	variant    90/ 2261 = a(559,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.76768)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0430572)
+	variant    91/ 2261 = a(559,485)      (23 tests, cond 0)
+		n1 false (test_time = 1.94702)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0423181)
+	variant    92/ 2261 = a(559,478)      (23 tests, cond 0)
+		n1 false (test_time = 2.18108)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054436)
+	variant    93/ 2261 = a(559,477)      (23 tests, cond 0)
+		n1 false (test_time = 1.87654)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0335338)
+	variant    94/ 2261 = a(559,472)      (23 tests, cond 0)
+		n1 false (test_time = 2.18169)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0587151)
+	variant    95/ 2261 = a(559,471)      (23 tests, cond 0)
+		n1 false (test_time = 1.88629)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0332091)
+	variant    96/ 2261 = a(559,465)      (23 tests, cond 0)
+		n1 false (test_time = 1.69277)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.036324)
+	variant    97/ 2261 = a(559,217)      (23 tests, cond 0)
+		n1 false (test_time = 1.78773)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0493841)
+	variant    98/ 2261 = a(558,562)      (23 tests, cond 0)
+		n1 false (test_time = 2.16042)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0544691)
+	variant    99/ 2261 = a(558,561)      (23 tests, cond 0)
+		n1 false (test_time = 2.18782)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033762)
+	variant   100/ 2261 = a(558,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.74006)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.055948)
+	variant   101/ 2261 = a(558,559)      (23 tests, cond 0)
+		n1 false (test_time = 2.11968)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.064626)
+	variant   102/ 2261 = a(558,558)      (23 tests, cond 0)
+		n1 false (test_time = 2.23416)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042819)
+	variant   103/ 2261 = a(558,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.95858)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.030735)
+	variant   104/ 2261 = a(558,556)      (23 tests, cond 0)
+		n1 false (test_time = 1.80191)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.049341)
+	variant   105/ 2261 = a(558,555)      (23 tests, cond 0)
+		n1 false (test_time = 2.37783)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0518169)
+	variant   106/ 2261 = a(558,554)      (23 tests, cond 0)
+		n1 false (test_time = 2.0341)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0324671)
+	variant   107/ 2261 = a(558,553)      (23 tests, cond 0)
+		n1 false (test_time = 2.02943)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0479059)
+	variant   108/ 2261 = a(558,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.76744)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0371189)
+	variant   109/ 2261 = a(558,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.99417)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0576799)
+	variant   110/ 2261 = a(558,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.76412)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0583141)
+	variant   111/ 2261 = a(558,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.94161)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0349612)
+	variant   112/ 2261 = a(558,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.9764)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.045341)
+	variant   113/ 2261 = a(558,547)      (23 tests, cond 0)
+		n1 false (test_time = 1.74239)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0495529)
+	variant   114/ 2261 = a(558,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.92224)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044328)
+	variant   115/ 2261 = a(558,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.88675)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0473061)
+	variant   116/ 2261 = a(558,485)      (23 tests, cond 0)
+		n1 false (test_time = 1.88733)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0570741)
+	variant   117/ 2261 = a(558,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.82555)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.045994)
+	variant   118/ 2261 = a(558,477)      (23 tests, cond 0)
+		n1 false (test_time = 1.64547)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.057209)
+	variant   119/ 2261 = a(558,472)      (23 tests, cond 0)
+		n1 false (test_time = 1.82413)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.049448)
+	variant   120/ 2261 = a(558,471)      (23 tests, cond 0)
+		n1 false (test_time = 1.96594)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035593)
+	variant   121/ 2261 = a(558,465)      (23 tests, cond 0)
+		n1 false (test_time = 2.00746)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0540371)
+	variant   122/ 2261 = a(558,217)      (23 tests, cond 0)
+		n1 false (test_time = 1.54324)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0551031)
+	variant   123/ 2261 = a(557,562)      (23 tests, cond 0)
+		n1 false (test_time = 1.8786)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0571079)
+	variant   124/ 2261 = a(557,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.78038)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03899)
+	variant   125/ 2261 = a(557,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.7843)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.055702)
+	variant   126/ 2261 = a(557,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.96471)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0360348)
+	variant   127/ 2261 = a(557,558)      (23 tests, cond 0)
+		n1 false (test_time = 1.8734)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0352399)
+	variant   128/ 2261 = a(557,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.65354)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0579262)
+	variant   129/ 2261 = a(557,556)      (23 tests, cond 0)
+		n1 false (test_time = 1.94893)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0488961)
+	variant   130/ 2261 = a(557,555)      (23 tests, cond 0)
+		n1 false (test_time = 1.77373)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.050128)
+	variant   131/ 2261 = a(557,554)      (23 tests, cond 0)
+		n1 false (test_time = 1.87715)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0479369)
+	variant   132/ 2261 = a(557,553)      (23 tests, cond 0)
+		n1 false (test_time = 1.72407)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0393109)
+	variant   133/ 2261 = a(557,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.65266)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0322931)
+	variant   134/ 2261 = a(557,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.75143)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0421269)
+	variant   135/ 2261 = a(557,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.94868)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046941)
+	variant   136/ 2261 = a(557,549)      (23 tests, cond 0)
+		n1 false (test_time = 2.01323)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0464509)
+	variant   137/ 2261 = a(557,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.79893)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0402861)
+	variant   138/ 2261 = a(557,547)      (23 tests, cond 0)
+		n1 false (test_time = 1.72181)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039398)
+	variant   139/ 2261 = a(557,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.76985)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0349531)
+	variant   140/ 2261 = a(557,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.84607)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0359061)
+	variant   141/ 2261 = a(557,485)      (23 tests, cond 0)
+		n1 false (test_time = 1.76113)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046859)
+	variant   142/ 2261 = a(557,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.81479)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0372069)
+	variant   143/ 2261 = a(557,477)      (23 tests, cond 0)
+		n1 false (test_time = 1.90351)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0529449)
+	variant   144/ 2261 = a(557,472)      (23 tests, cond 0)
+		n1 false (test_time = 1.77251)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0464728)
+	variant   145/ 2261 = a(557,471)      (23 tests, cond 0)
+		n1 false (test_time = 1.93972)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0493011)
+	variant   146/ 2261 = a(557,465)      (23 tests, cond 0)
+		n1 false (test_time = 2.14474)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.047003)
+	variant   147/ 2261 = a(557,217)      (23 tests, cond 0)
+		n1 false (test_time = 1.80436)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0355151)
+	variant   148/ 2261 = a(556,562)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000147/src/cut.c  a(556,562)  fails to compile
+ false (test_time = 1.31369)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035116)
+	variant   149/ 2261 = a(556,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.68465)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0453608)
+	variant   150/ 2261 = a(556,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.85235)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0537241)
+	variant   151/ 2261 = a(556,559)      (23 tests, cond 0)
+		n1 false (test_time = 2.04865)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0327108)
+	variant   152/ 2261 = a(556,558)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000151/src/cut.c  a(556,558)  fails to compile
+ false (test_time = 1.2156)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0497751)
+	variant   153/ 2261 = a(556,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.8941)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0559208)
+	variant   154/ 2261 = a(556,556)      (23 tests, cond 0)
+		n1 false (test_time = 2.09034)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0317841)
+	variant   155/ 2261 = a(556,555)      (23 tests, cond 0)
+		n1 false (test_time = 1.61821)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0389171)
+	variant   156/ 2261 = a(556,554)      (23 tests, cond 0)
+		n1 false (test_time = 1.74033)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.05725)
+	variant   157/ 2261 = a(556,553)      (23 tests, cond 0)
+		n1 false (test_time = 1.68761)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056365)
+	variant   158/ 2261 = a(556,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.74347)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0464079)
+	variant   159/ 2261 = a(556,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.84344)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0351779)
+	variant   160/ 2261 = a(556,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.87389)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0578308)
+	variant   161/ 2261 = a(556,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.80048)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0344579)
+	variant   162/ 2261 = a(556,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.64152)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.036366)
+	variant   163/ 2261 = a(556,547)      (23 tests, cond 0)
+		n1 false (test_time = 1.77965)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0556002)
+	variant   164/ 2261 = a(556,509)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000163/src/cut.c  a(556,509)  fails to compile
+ false (test_time = 1.20473)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0484412)
+	variant   165/ 2261 = a(556,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.68059)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0662229)
+	variant   166/ 2261 = a(556,485)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000165/src/cut.c  a(556,485)  fails to compile
+ false (test_time = 1.37344)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0484579)
+	variant   167/ 2261 = a(556,478)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000166/src/cut.c  a(556,478)  fails to compile
+ false (test_time = 1.18685)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.047667)
+	variant   168/ 2261 = a(556,477)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000167/src/cut.c  a(556,477)  fails to compile
+ false (test_time = 1.17268)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0551701)
+	variant   169/ 2261 = a(556,472)      (23 tests, cond 0)
+		n1 false (test_time = 1.80514)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0539911)
+	variant   170/ 2261 = a(556,471)      (23 tests, cond 0)
+		n1 false (test_time = 1.91221)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0342109)
+	variant   171/ 2261 = a(556,465)      (23 tests, cond 0)
+		n1 false (test_time = 1.79618)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0314651)
+	variant   172/ 2261 = a(556,217)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000171/src/cut.c  a(556,217)  fails to compile
+ false (test_time = 1.03015)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046648)
+	variant   173/ 2261 = a(555,562)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000172/src/cut.c  a(555,562)  fails to compile
+ false (test_time = 1.258)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0405939)
+	variant   174/ 2261 = a(555,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.88122)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0550909)
+	variant   175/ 2261 = a(555,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.71225)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0343461)
+	variant   176/ 2261 = a(555,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.9257)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0460479)
+	variant   177/ 2261 = a(555,558)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000176/src/cut.c  a(555,558)  fails to compile
+ false (test_time = 1.19403)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0321789)
+	variant   178/ 2261 = a(555,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.76111)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.055274)
+	variant   179/ 2261 = a(555,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.78384)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0450881)
+	variant   180/ 2261 = a(555,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.05157)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052161)
+	variant   181/ 2261 = a(555,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.97553)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0384541)
+	variant   182/ 2261 = a(555,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.59036)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0486591)
+	variant   183/ 2261 = a(555,509)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000182/src/cut.c  a(555,509)  fails to compile
+ false (test_time = 1.35736)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0342929)
+	variant   184/ 2261 = a(555,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.73769)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056257)
+	variant   185/ 2261 = a(555,485)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000184/src/cut.c  a(555,485)  fails to compile
+ false (test_time = 1.33735)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0439169)
+	variant   186/ 2261 = a(555,478)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000185/src/cut.c  a(555,478)  fails to compile
+ false (test_time = 1.37681)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0487902)
+	variant   187/ 2261 = a(555,477)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000186/src/cut.c  a(555,477)  fails to compile
+ false (test_time = 1.17838)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035466)
+	variant   188/ 2261 = a(554,562)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000187/src/cut.c  a(554,562)  fails to compile
+ false (test_time = 1.3719)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.049068)
+	variant   189/ 2261 = a(554,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.89219)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0343671)
+	variant   190/ 2261 = a(554,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.78068)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0513711)
+	variant   191/ 2261 = a(554,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.74396)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0323839)
+	variant   192/ 2261 = a(554,558)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000191/src/cut.c  a(554,558)  fails to compile
+ false (test_time = 1.06663)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03565)
+	variant   193/ 2261 = a(554,557)      (23 tests, cond 0)
+		n1 false (test_time = 2.00416)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040823)
+	variant   194/ 2261 = a(554,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.89092)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0391762)
+	variant   195/ 2261 = a(554,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.7914)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0354049)
+	variant   196/ 2261 = a(554,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.74416)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.048435)
+	variant   197/ 2261 = a(554,548)      (23 tests, cond 0)
+		n1 false (test_time = 2.08695)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0343099)
+	variant   198/ 2261 = a(554,509)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000197/src/cut.c  a(554,509)  fails to compile
+ false (test_time = 1.40568)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0521519)
+	variant   199/ 2261 = a(554,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.85675)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0461471)
+	variant   200/ 2261 = a(554,485)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000199/src/cut.c  a(554,485)  fails to compile
+ false (test_time = 1.33092)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0356541)
+	variant   201/ 2261 = a(554,478)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000200/src/cut.c  a(554,478)  fails to compile
+ false (test_time = 1.28155)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.04969)
+	variant   202/ 2261 = a(553,562)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000201/src/cut.c  a(553,562)  fails to compile
+ false (test_time = 1.41234)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.053786)
+	variant   203/ 2261 = a(553,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.73212)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0475309)
+	variant   204/ 2261 = a(553,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.72087)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0325339)
+	variant   205/ 2261 = a(553,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.91423)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0378289)
+	variant   206/ 2261 = a(553,558)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000205/src/cut.c  a(553,558)  fails to compile
+ false (test_time = 1.49864)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0580351)
+	variant   207/ 2261 = a(553,557)      (23 tests, cond 0)
+		n1 false (test_time = 2.27896)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054275)
+	variant   208/ 2261 = a(553,551)      (23 tests, cond 0)
+		n1 false (test_time = 2.69682)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0549569)
+	variant   209/ 2261 = a(553,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.8316)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.053602)
+	variant   210/ 2261 = a(553,549)      (23 tests, cond 0)
+		n1 false (test_time = 2.74593)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0673499)
+	variant   211/ 2261 = a(553,548)      (23 tests, cond 0)
+		n1 false (test_time = 2.45902)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0488071)
+	variant   212/ 2261 = a(553,509)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000211/src/cut.c  a(553,509)  fails to compile
+ false (test_time = 1.43525)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0345888)
+	variant   213/ 2261 = a(553,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.66567)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03862)
+	variant   214/ 2261 = a(553,485)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000213/src/cut.c  a(553,485)  fails to compile
+ false (test_time = 1.46295)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0462608)
+	variant   215/ 2261 = a(553,478)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000214/src/cut.c  a(553,478)  fails to compile
+ false (test_time = 1.77184)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.045275)
+	variant   216/ 2261 = a(552,562)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000215/src/cut.c  a(552,562)  fails to compile
+ false (test_time = 1.43374)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.045819)
+	variant   217/ 2261 = a(552,561)      (23 tests, cond 0)
+		n1 false (test_time = 3.34649)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.060791)
+	variant   218/ 2261 = a(552,560)      (23 tests, cond 0)
+		n1 false (test_time = 3.10731)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054841)
+	variant   219/ 2261 = a(552,559)      (23 tests, cond 0)
+		n1 false (test_time = 2.14952)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0322032)
+	variant   220/ 2261 = a(552,558)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000219/src/cut.c  a(552,558)  fails to compile
+ false (test_time = 1.29963)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0464439)
+	variant   221/ 2261 = a(552,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.81639)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0452158)
+	variant   222/ 2261 = a(552,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.77071)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0527391)
+	variant   223/ 2261 = a(552,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.86371)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0549438)
+	variant   224/ 2261 = a(552,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.75084)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0332868)
+	variant   225/ 2261 = a(552,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.71222)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0338118)
+	variant   226/ 2261 = a(552,509)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000225/src/cut.c  a(552,509)  fails to compile
+ false (test_time = 1.31277)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046196)
+	variant   227/ 2261 = a(552,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.94382)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.053741)
+	variant   228/ 2261 = a(552,485)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000227/src/cut.c  a(552,485)  fails to compile
+ false (test_time = 1.40477)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.034483)
+	variant   229/ 2261 = a(552,478)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000228/src/cut.c  a(552,478)  fails to compile
+ false (test_time = 1.31214)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037585)
+	variant   230/ 2261 = a(552,477)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000229/src/cut.c  a(552,477)  fails to compile
+ false (test_time = 1.32166)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0356441)
+	variant   231/ 2261 = a(551,562)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000230/src/cut.c  a(551,562)  fails to compile
+ false (test_time = 1.1517)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0541761)
+	variant   232/ 2261 = a(551,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.93)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0481751)
+	variant   233/ 2261 = a(551,560)      (23 tests, cond 0)
+		n1 false (test_time = 2.15541)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0596349)
+	variant   234/ 2261 = a(551,559)      (23 tests, cond 0)
+		n1 false (test_time = 3.2072)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.048727)
+	variant   235/ 2261 = a(551,558)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000234/src/cut.c  a(551,558)  fails to compile
+ false (test_time = 2.17966)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0616109)
+	variant   236/ 2261 = a(551,557)      (23 tests, cond 0)
+		n1 false (test_time = 2.25146)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0581839)
+	variant   237/ 2261 = a(551,552)      (23 tests, cond 0)
+		n1 false (test_time = 2.01326)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0502012)
+	variant   238/ 2261 = a(551,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.89524)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0470932)
+	variant   239/ 2261 = a(551,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.08212)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.050446)
+	variant   240/ 2261 = a(551,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.6654)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0336509)
+	variant   241/ 2261 = a(551,548)      (23 tests, cond 0)
+		n1 false (test_time = 2.11226)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0473318)
+	variant   242/ 2261 = a(551,509)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000241/src/cut.c  a(551,509)  fails to compile
+ false (test_time = 1.44959)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033067)
+	variant   243/ 2261 = a(551,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.72362)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03265)
+	variant   244/ 2261 = a(551,485)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000243/src/cut.c  a(551,485)  fails to compile
+ false (test_time = 1.32902)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0473421)
+	variant   245/ 2261 = a(551,478)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000244/src/cut.c  a(551,478)  fails to compile
+ false (test_time = 1.33635)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0478721)
+	variant   246/ 2261 = a(551,217)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000245/src/cut.c  a(551,217)  fails to compile
+ false (test_time = 0.968806)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0343912)
+	variant   247/ 2261 = a(550,562)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000246/src/cut.c  a(550,562)  fails to compile
+ false (test_time = 1.23413)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0338881)
+	variant   248/ 2261 = a(550,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.84035)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046169)
+	variant   249/ 2261 = a(550,560)      (23 tests, cond 0)
+		n1 false (test_time = 2.33475)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0692749)
+	variant   250/ 2261 = a(550,559)      (23 tests, cond 0)
+		n1 false (test_time = 3.44302)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0543971)
+	variant   251/ 2261 = a(550,558)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000250/src/cut.c  a(550,558)  fails to compile
+ false (test_time = 1.43468)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0358369)
+	variant   252/ 2261 = a(550,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.80043)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044745)
+	variant   253/ 2261 = a(550,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.79401)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0320499)
+	variant   254/ 2261 = a(550,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.84284)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046958)
+	variant   255/ 2261 = a(550,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.90222)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0513289)
+	variant   256/ 2261 = a(550,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.83108)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0486131)
+	variant   257/ 2261 = a(550,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.84061)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03598)
+	variant   258/ 2261 = a(550,547)      (23 tests, cond 0)
+		n1 false (test_time = 1.59185)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0317988)
+	variant   259/ 2261 = a(550,509)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000258/src/cut.c  a(550,509)  fails to compile
+ false (test_time = 1.34026)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.031822)
+	variant   260/ 2261 = a(550,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.81747)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0458958)
+	variant   261/ 2261 = a(550,485)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000260/src/cut.c  a(550,485)  fails to compile
+ false (test_time = 1.39949)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046015)
+	variant   262/ 2261 = a(550,478)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000261/src/cut.c  a(550,478)  fails to compile
+ false (test_time = 1.39502)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0352051)
+	variant   263/ 2261 = a(550,477)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000262/src/cut.c  a(550,477)  fails to compile
+ false (test_time = 1.14879)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0434771)
+	variant   264/ 2261 = a(550,472)      (23 tests, cond 0)
+		n1 false (test_time = 1.69178)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0324578)
+	variant   265/ 2261 = a(550,465)      (23 tests, cond 0)
+		n1 false (test_time = 1.62267)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037616)
+	variant   266/ 2261 = a(550,217)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000265/src/cut.c  a(550,217)  fails to compile
+ false (test_time = 1.15379)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0309062)
+	variant   267/ 2261 = a(549,562)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000266/src/cut.c  a(549,562)  fails to compile
+ false (test_time = 1.16297)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035594)
+	variant   268/ 2261 = a(549,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.76157)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0332339)
+	variant   269/ 2261 = a(549,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.86075)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.045589)
+	variant   270/ 2261 = a(549,559)      (23 tests, cond 0)
+		n1 false (test_time = 2.96516)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0588582)
+	variant   271/ 2261 = a(549,558)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000270/src/cut.c  a(549,558)  fails to compile
+ false (test_time = 2.01385)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0542672)
+	variant   272/ 2261 = a(549,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.98343)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.053226)
+	variant   273/ 2261 = a(549,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.70357)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0490539)
+	variant   274/ 2261 = a(549,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.86398)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.028827)
+	variant   275/ 2261 = a(549,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.72098)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0324481)
+	variant   276/ 2261 = a(549,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.73707)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0464251)
+	variant   277/ 2261 = a(549,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.76744)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033988)
+	variant   278/ 2261 = a(549,547)      (23 tests, cond 0)
+		n1 false (test_time = 1.81477)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0345781)
+	variant   279/ 2261 = a(549,509)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000278/src/cut.c  a(549,509)  fails to compile
+ false (test_time = 1.38617)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038075)
+	variant   280/ 2261 = a(549,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.94118)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0469732)
+	variant   281/ 2261 = a(549,485)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000280/src/cut.c  a(549,485)  fails to compile
+ false (test_time = 1.2697)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0406969)
+	variant   282/ 2261 = a(549,478)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000281/src/cut.c  a(549,478)  fails to compile
+ false (test_time = 1.28031)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0388219)
+	variant   283/ 2261 = a(549,477)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000282/src/cut.c  a(549,477)  fails to compile
+ false (test_time = 1.42561)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0328629)
+	variant   284/ 2261 = a(549,472)      (23 tests, cond 0)
+		n1 false (test_time = 1.82658)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0366471)
+	variant   285/ 2261 = a(549,465)      (23 tests, cond 0)
+		n1 false (test_time = 1.75333)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0352011)
+	variant   286/ 2261 = a(549,217)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000285/src/cut.c  a(549,217)  fails to compile
+ false (test_time = 0.986976)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0461049)
+	variant   287/ 2261 = a(548,562)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000286/src/cut.c  a(548,562)  fails to compile
+ false (test_time = 1.19272)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043081)
+	variant   288/ 2261 = a(548,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.4871)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0437291)
+	variant   289/ 2261 = a(548,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.70547)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0367541)
+	variant   290/ 2261 = a(548,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.73564)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0473659)
+	variant   291/ 2261 = a(548,558)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000290/src/cut.c  a(548,558)  fails to compile
+ false (test_time = 1.14146)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03036)
+	variant   292/ 2261 = a(548,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.91986)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0298691)
+	variant   293/ 2261 = a(548,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.62971)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0367169)
+	variant   294/ 2261 = a(548,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.75607)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052047)
+	variant   295/ 2261 = a(548,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.81173)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.032511)
+	variant   296/ 2261 = a(548,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.72784)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0392649)
+	variant   297/ 2261 = a(548,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.7044)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.05234)
+	variant   298/ 2261 = a(548,547)      (23 tests, cond 0)
+		n1 false (test_time = 1.94899)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.034133)
+	variant   299/ 2261 = a(548,509)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000298/src/cut.c  a(548,509)  fails to compile
+ false (test_time = 1.32315)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0322871)
+	variant   300/ 2261 = a(548,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.97743)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0539141)
+	variant   301/ 2261 = a(548,485)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000300/src/cut.c  a(548,485)  fails to compile
+ false (test_time = 1.32109)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0490451)
+	variant   302/ 2261 = a(548,478)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000301/src/cut.c  a(548,478)  fails to compile
+ false (test_time = 1.13208)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0487981)
+	variant   303/ 2261 = a(548,477)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000302/src/cut.c  a(548,477)  fails to compile
+ false (test_time = 1.37365)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0549479)
+	variant   304/ 2261 = a(548,472)      (23 tests, cond 0)
+		n1 false (test_time = 1.65207)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0557461)
+	variant   305/ 2261 = a(548,465)      (23 tests, cond 0)
+		n1 false (test_time = 2.11192)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0450871)
+	variant   306/ 2261 = a(548,217)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000305/src/cut.c  a(548,217)  fails to compile
+ false (test_time = 1.1727)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039258)
+	variant   307/ 2261 = a(547,562)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000306/src/cut.c  a(547,562)  fails to compile
+ false (test_time = 1.32034)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0293291)
+	variant   308/ 2261 = a(547,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.71146)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0514481)
+	variant   309/ 2261 = a(547,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.77649)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0562351)
+	variant   310/ 2261 = a(547,559)      (23 tests, cond 0)
+		n1 false (test_time = 2.08658)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0541949)
+	variant   311/ 2261 = a(547,558)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000310/src/cut.c  a(547,558)  fails to compile
+ false (test_time = 1.48409)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043191)
+	variant   312/ 2261 = a(547,557)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000311/src/cut.c  a(547,557)  fails to compile
+ false (test_time = 1.3383)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0501189)
+	variant   313/ 2261 = a(547,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.92247)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0434878)
+	variant   314/ 2261 = a(547,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.85189)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.032197)
+	variant   315/ 2261 = a(547,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.78581)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0422771)
+	variant   316/ 2261 = a(547,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.7872)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029)
+	variant   317/ 2261 = a(547,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.70565)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0310371)
+	variant   318/ 2261 = a(547,547)      (23 tests, cond 0)
+		n1 false (test_time = 1.71077)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0603721)
+	variant   319/ 2261 = a(547,509)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000318/src/cut.c  a(547,509)  fails to compile
+ false (test_time = 1.55862)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0459309)
+	variant   320/ 2261 = a(547,508)      (23 tests, cond 0)
+		n1 false (test_time = 2.66)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0477722)
+	variant   321/ 2261 = a(547,485)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000320/src/cut.c  a(547,485)  fails to compile
+ false (test_time = 1.48743)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0461121)
+	variant   322/ 2261 = a(547,478)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000321/src/cut.c  a(547,478)  fails to compile
+ false (test_time = 1.50963)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0385811)
+	variant   323/ 2261 = a(547,477)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000322/src/cut.c  a(547,477)  fails to compile
+ false (test_time = 1.29756)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0463941)
+	variant   324/ 2261 = a(547,472)      (23 tests, cond 0)
+		n1 false (test_time = 1.70625)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038969)
+	variant   325/ 2261 = a(547,465)      (23 tests, cond 0)
+		n1 false (test_time = 1.69349)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03355)
+	variant   326/ 2261 = a(547,217)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000325/src/cut.c  a(547,217)  fails to compile
+ false (test_time = 1.00682)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0303209)
+	variant   327/ 2261 = a(509,562)      (23 tests, cond 0)
+		n1 false (test_time = 1.76671)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035306)
+	variant   328/ 2261 = a(509,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.85665)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.032413)
+	variant   329/ 2261 = a(509,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.82011)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.051909)
+	variant   330/ 2261 = a(509,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.73509)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0367351)
+	variant   331/ 2261 = a(509,558)      (23 tests, cond 0)
+		n1 false (test_time = 1.77762)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0516779)
+	variant   332/ 2261 = a(509,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.95203)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.050787)
+	variant   333/ 2261 = a(509,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.80829)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.047111)
+	variant   334/ 2261 = a(509,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.82934)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0499051)
+	variant   335/ 2261 = a(509,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.71813)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0483201)
+	variant   336/ 2261 = a(509,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.97982)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042841)
+	variant   337/ 2261 = a(509,548)      (23 tests, cond 0)
+		n1 false (test_time = 2.05331)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054075)
+	variant   338/ 2261 = a(509,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.80729)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043587)
+	variant   339/ 2261 = a(509,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.84592)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0471561)
+	variant   340/ 2261 = a(509,491)      (23 tests, cond 0)
+		n1 false (test_time = 1.99079)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0444448)
+	variant   341/ 2261 = a(509,485)      (23 tests, cond 0)
+		n1 false (test_time = 1.9356)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0339382)
+	variant   342/ 2261 = a(509,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.56415)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.047574)
+	variant   343/ 2261 = a(509,477)      (23 tests, cond 0)
+		n1 false (test_time = 1.91058)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0434561)
+	variant   344/ 2261 = a(509,465)      (23 tests, cond 0)
+		n1 false (test_time = 3.23276)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044189)
+	variant   345/ 2261 = a(509,217)      (23 tests, cond 0)
+		n1 false (test_time = 2.7536)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.048784)
+	variant   346/ 2261 = a(508,562)      (23 tests, cond 0)
+		n1 false (test_time = 3.02168)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0491679)
+	variant   347/ 2261 = a(508,561)      (23 tests, cond 0)
+		n1 false (test_time = 2.81398)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.048429)
+	variant   348/ 2261 = a(508,560)      (23 tests, cond 0)
+		n1 false (test_time = 2.93292)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.051805)
+	variant   349/ 2261 = a(508,559)      (23 tests, cond 0)
+		n1 false (test_time = 2.97945)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0548)
+	variant   350/ 2261 = a(508,558)      (23 tests, cond 0)
+		n1 false (test_time = 2.81062)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.049978)
+	variant   351/ 2261 = a(508,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.68609)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.030014)
+	variant   352/ 2261 = a(508,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.77065)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0451119)
+	variant   353/ 2261 = a(508,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.73447)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0424249)
+	variant   354/ 2261 = a(508,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.85683)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052001)
+	variant   355/ 2261 = a(508,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.86486)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.050123)
+	variant   356/ 2261 = a(508,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.82224)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0461061)
+	variant   357/ 2261 = a(508,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.7975)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0319099)
+	variant   358/ 2261 = a(508,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.67871)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044487)
+	variant   359/ 2261 = a(508,485)      (23 tests, cond 0)
+		n1 false (test_time = 1.7742)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0297449)
+	variant   360/ 2261 = a(508,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.78327)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0490229)
+	variant   361/ 2261 = a(508,477)      (23 tests, cond 0)
+		n1 false (test_time = 1.89118)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0473108)
+	variant   362/ 2261 = a(508,465)      (23 tests, cond 0)
+		n1 false (test_time = 2.82229)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0620458)
+	variant   363/ 2261 = a(508,217)      (23 tests, cond 0)
+		n1 false (test_time = 3.18492)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0451851)
+	variant   364/ 2261 = a(507,562)      (23 tests, cond 0)
+		n1 false (test_time = 3.22245)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0622199)
+	variant   365/ 2261 = a(507,561)      (23 tests, cond 0)
+		n1 false (test_time = 3.4226)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0531909)
+	variant   366/ 2261 = a(507,560)      (23 tests, cond 0)
+		n1 false (test_time = 2.79859)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0539751)
+	variant   367/ 2261 = a(507,559)      (23 tests, cond 0)
+		n1 false (test_time = 2.98788)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.060339)
+	variant   368/ 2261 = a(507,558)      (23 tests, cond 0)
+		n1 false (test_time = 3.26067)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.062319)
+	variant   369/ 2261 = a(507,557)      (23 tests, cond 0)
+		n1 false (test_time = 2.66096)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.053148)
+	variant   370/ 2261 = a(507,552)      (23 tests, cond 0)
+		n1 false (test_time = 2.80941)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.054383)
+	variant   371/ 2261 = a(507,551)      (23 tests, cond 0)
+		n1 false (test_time = 2.8821)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0573921)
+	variant   372/ 2261 = a(507,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.53235)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0377901)
+	variant   373/ 2261 = a(507,549)      (23 tests, cond 0)
+		n1 false (test_time = 2.78357)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0406749)
+	variant   374/ 2261 = a(507,548)      (23 tests, cond 0)
+		n1 false (test_time = 2.73607)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0547831)
+	variant   375/ 2261 = a(507,509)      (23 tests, cond 0)
+		n1 false (test_time = 3.05153)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0538349)
+	variant   376/ 2261 = a(507,508)      (23 tests, cond 0)
+		n1 false (test_time = 2.4531)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0313461)
+	variant   377/ 2261 = a(507,491)      (23 tests, cond 0)
+		n1 false (test_time = 1.83832)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0288091)
+	variant   378/ 2261 = a(507,485)      (23 tests, cond 0)
+		n1 false (test_time = 1.84267)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0335708)
+	variant   379/ 2261 = a(507,478)      (23 tests, cond 0)
+		n1 false (test_time = 2.8759)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0482628)
+	variant   380/ 2261 = a(507,477)      (23 tests, cond 0)
+		n1 false (test_time = 2.43907)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0356951)
+	variant   381/ 2261 = a(507,465)      (23 tests, cond 0)
+		n1 false (test_time = 1.89219)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0433581)
+	variant   382/ 2261 = a(507,217)      (23 tests, cond 0)
+		n1 false (test_time = 1.92622)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0460691)
+	variant   383/ 2261 = a(505,562)      (23 tests, cond 0)
+		n1 false (test_time = 1.90074)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0475929)
+	variant   384/ 2261 = a(505,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.95454)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0316741)
+	variant   385/ 2261 = a(505,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.68497)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0318098)
+	variant   386/ 2261 = a(505,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.99769)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0396311)
+	variant   387/ 2261 = a(505,558)      (23 tests, cond 0)
+		n1 false (test_time = 1.74229)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0453632)
+	variant   388/ 2261 = a(505,557)      (23 tests, cond 0)
+		n1 false (test_time = 2.04485)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0493901)
+	variant   389/ 2261 = a(505,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.84419)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0484312)
+	variant   390/ 2261 = a(505,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.69801)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0333848)
+	variant   391/ 2261 = a(505,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.8393)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.028641)
+	variant   392/ 2261 = a(505,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.65192)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.048243)
+	variant   393/ 2261 = a(505,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.77975)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0313199)
+	variant   394/ 2261 = a(505,509)      (23 tests, cond 0)
+		n1 false (test_time = 2.0067)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0311561)
+	variant   395/ 2261 = a(505,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.74919)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0309381)
+	variant   396/ 2261 = a(505,491)      (23 tests, cond 0)
+		n1 false (test_time = 1.93974)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.032191)
+	variant   397/ 2261 = a(505,485)      (23 tests, cond 0)
+		n1 false (test_time = 1.88729)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0329199)
+	variant   398/ 2261 = a(505,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.75348)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0328839)
+	variant   399/ 2261 = a(505,477)      (23 tests, cond 0)
+		n1 false (test_time = 1.75818)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033864)
+	variant   400/ 2261 = a(505,465)      (23 tests, cond 0)
+		n1 false (test_time = 2.06382)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0531859)
+	variant   401/ 2261 = a(505,217)      (23 tests, cond 0)
+		n1 false (test_time = 2.31278)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0556881)
+	variant   402/ 2261 = a(498,562)      (23 tests, cond 0)
+		n1 false (test_time = 3.35546)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0501101)
+	variant   403/ 2261 = a(498,561)      (23 tests, cond 0)
+		n1 false (test_time = 3.15316)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0559871)
+	variant   404/ 2261 = a(498,560)      (23 tests, cond 0)
+		n1 false (test_time = 2.54988)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0404232)
+	variant   405/ 2261 = a(498,559)      (23 tests, cond 0)
+		n1 false (test_time = 2.21673)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.032393)
+	variant   406/ 2261 = a(498,558)      (23 tests, cond 0)
+		n1 false (test_time = 2.09382)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0515571)
+	variant   407/ 2261 = a(498,557)      (23 tests, cond 0)
+		n1 false (test_time = 2.89062)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0480089)
+	variant   408/ 2261 = a(498,552)      (23 tests, cond 0)
+		n1 false (test_time = 3.27902)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0551031)
+	variant   409/ 2261 = a(498,551)      (23 tests, cond 0)
+		n1 false (test_time = 3.09788)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0501282)
+	variant   410/ 2261 = a(498,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.9483)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0411532)
+	variant   411/ 2261 = a(498,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.88221)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0422621)
+	variant   412/ 2261 = a(498,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.93141)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0407619)
+	variant   413/ 2261 = a(498,509)      (23 tests, cond 0)
+		n1 false (test_time = 3.12681)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0460191)
+	variant   414/ 2261 = a(498,508)      (23 tests, cond 0)
+		n1 false (test_time = 3.38164)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042717)
+	variant   415/ 2261 = a(498,491)      (23 tests, cond 0)
+		n1 false (test_time = 2.797)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.041151)
+	variant   416/ 2261 = a(498,485)      (23 tests, cond 0)
+		n1 false (test_time = 2.01508)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029958)
+	variant   417/ 2261 = a(498,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.85177)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0427032)
+	variant   418/ 2261 = a(498,477)      (23 tests, cond 0)
+		n1 false (test_time = 1.82877)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0486)
+	variant   419/ 2261 = a(498,465)      (23 tests, cond 0)
+		n1 false (test_time = 1.78586)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.056041)
+	variant   420/ 2261 = a(498,217)      (23 tests, cond 0)
+		n1 false (test_time = 1.89116)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.04491)
+	variant   421/ 2261 = a(491,562)      (23 tests, cond 0)
+		n1 false (test_time = 1.97541)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0471549)
+	variant   422/ 2261 = a(491,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.72509)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0490122)
+	variant   423/ 2261 = a(491,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.67326)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0465951)
+	variant   424/ 2261 = a(491,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.70382)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.047884)
+	variant   425/ 2261 = a(491,558)      (23 tests, cond 0)
+		n1 false (test_time = 1.97381)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0531089)
+	variant   426/ 2261 = a(491,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.93562)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0339611)
+	variant   427/ 2261 = a(491,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.97807)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0454071)
+	variant   428/ 2261 = a(491,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.80841)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029336)
+	variant   429/ 2261 = a(491,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.64003)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.048017)
+	variant   430/ 2261 = a(491,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.80445)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0314219)
+	variant   431/ 2261 = a(491,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.84188)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.045372)
+	variant   432/ 2261 = a(491,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.88321)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0423491)
+	variant   433/ 2261 = a(491,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.75225)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0392668)
+	variant   434/ 2261 = a(491,491)      (23 tests, cond 0)
+		n1 false (test_time = 1.74873)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.036536)
+	variant   435/ 2261 = a(491,485)      (23 tests, cond 0)
+		n1 false (test_time = 2.79064)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0484428)
+	variant   436/ 2261 = a(491,478)      (23 tests, cond 0)
+		n1 false (test_time = 3.02285)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0560901)
+	variant   437/ 2261 = a(491,477)      (23 tests, cond 0)
+		n1 false (test_time = 3.06904)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046473)
+	variant   438/ 2261 = a(491,465)      (23 tests, cond 0)
+		n1 false (test_time = 1.7196)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0397081)
+	variant   439/ 2261 = a(491,217)      (23 tests, cond 0)
+		n1 false (test_time = 1.43651)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0325251)
+	variant   440/ 2261 = a(486,562)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000439/src/cut.c  a(486,562)  fails to compile
+ false (test_time = 1.1969)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044915)
+	variant   441/ 2261 = a(486,561)      (23 tests, cond 0)
+		n1 false (test_time = 2.0169)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0419559)
+	variant   442/ 2261 = a(486,560)      (23 tests, cond 0)
+		n1 false (test_time = 2.93386)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0423489)
+	variant   443/ 2261 = a(486,559)      (23 tests, cond 0)
+		n1 false (test_time = 3.43267)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0594928)
+	variant   444/ 2261 = a(486,558)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000443/src/cut.c  a(486,558)  fails to compile
+ false (test_time = 1.83483)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0256481)
+	variant   445/ 2261 = a(486,557)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000444/src/cut.c  a(486,557)  fails to compile
+ false (test_time = 1.02441)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0395389)
+	variant   446/ 2261 = a(486,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.77328)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033478)
+	variant   447/ 2261 = a(486,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.77821)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0306761)
+	variant   448/ 2261 = a(486,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.63437)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044929)
+	variant   449/ 2261 = a(486,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.81897)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0457699)
+	variant   450/ 2261 = a(486,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.59159)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.045305)
+	variant   451/ 2261 = a(486,509)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000450/src/cut.c  a(486,509)  fails to compile
+ false (test_time = 1.21459)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0351701)
+	variant   452/ 2261 = a(486,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.81538)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044333)
+	variant   453/ 2261 = a(486,491)      (23 tests, cond 0)
+		n1 false (test_time = 1.87347)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0302649)
+	variant   454/ 2261 = a(486,486)      (23 tests, cond 0)
+		n1 false (test_time = 1.79126)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0424659)
+	variant   455/ 2261 = a(486,485)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000454/src/cut.c  a(486,485)  fails to compile
+ false (test_time = 1.56949)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0325961)
+	variant   456/ 2261 = a(486,478)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000455/src/cut.c  a(486,478)  fails to compile
+ false (test_time = 1.78617)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.031445)
+	variant   457/ 2261 = a(486,477)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000456/src/cut.c  a(486,477)  fails to compile
+ false (test_time = 1.48393)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0315139)
+	variant   458/ 2261 = a(486,465)      (23 tests, cond 0)
+		n1 false (test_time = 2.12949)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0329928)
+	variant   459/ 2261 = a(486,217)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000458/src/cut.c  a(486,217)  fails to compile
+ false (test_time = 1.18882)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.047652)
+	variant   460/ 2261 = a(485,562)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000459/src/cut.c  a(485,562)  fails to compile
+ false (test_time = 1.41369)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.051765)
+	variant   461/ 2261 = a(485,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.94536)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043829)
+	variant   462/ 2261 = a(485,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.69244)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0419109)
+	variant   463/ 2261 = a(485,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.97637)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.036391)
+	variant   464/ 2261 = a(485,558)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000463/src/cut.c  a(485,558)  fails to compile
+ false (test_time = 1.20778)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039772)
+	variant   465/ 2261 = a(485,557)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000464/src/cut.c  a(485,557)  fails to compile
+ false (test_time = 1.31454)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0295269)
+	variant   466/ 2261 = a(485,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.78208)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0282559)
+	variant   467/ 2261 = a(485,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.88185)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037626)
+	variant   468/ 2261 = a(485,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.96872)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.034622)
+	variant   469/ 2261 = a(485,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.89686)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0477262)
+	variant   470/ 2261 = a(485,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.97374)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0304039)
+	variant   471/ 2261 = a(485,509)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000470/src/cut.c  a(485,509)  fails to compile
+ false (test_time = 1.35067)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052141)
+	variant   472/ 2261 = a(485,508)      (23 tests, cond 0)
+		n1 false (test_time = 2.12242)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.04633)
+	variant   473/ 2261 = a(485,491)      (23 tests, cond 0)
+		n1 false (test_time = 2.00311)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0458469)
+	variant   474/ 2261 = a(485,486)      (23 tests, cond 0)
+		n1 false (test_time = 2.09553)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0556901)
+	variant   475/ 2261 = a(485,485)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000474/src/cut.c  a(485,485)  fails to compile
+ false (test_time = 1.67871)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0328212)
+	variant   476/ 2261 = a(485,478)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000475/src/cut.c  a(485,478)  fails to compile
+ false (test_time = 1.42803)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0327499)
+	variant   477/ 2261 = a(485,477)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000476/src/cut.c  a(485,477)  fails to compile
+ false (test_time = 1.82972)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0278502)
+	variant   478/ 2261 = a(485,465)      (23 tests, cond 0)
+		n1 false (test_time = 2.50095)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0481482)
+	variant   479/ 2261 = a(485,217)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000478/src/cut.c  a(485,217)  fails to compile
+ false (test_time = 1.26604)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046864)
+	variant   480/ 2261 = a(478,562)      (23 tests, cond 0)
+		n1 false (test_time = 2.15152)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0405691)
+	variant   481/ 2261 = a(478,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.95032)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0267138)
+	variant   482/ 2261 = a(478,560)      (23 tests, cond 0)
+		n1 false (test_time = 2.0638)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0486581)
+	variant   483/ 2261 = a(478,559)      (23 tests, cond 0)
+		n1 false (test_time = 2.03063)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052094)
+	variant   484/ 2261 = a(478,558)      (23 tests, cond 0)
+		n1 false (test_time = 1.49906)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0472889)
+	variant   485/ 2261 = a(478,557)      (23 tests, cond 0)
+		n1 false (test_time = 2.50857)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0475268)
+	variant   486/ 2261 = a(478,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.71823)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0466108)
+	variant   487/ 2261 = a(478,551)      (23 tests, cond 0)
+		n1 false (test_time = 2.24635)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0288689)
+	variant   488/ 2261 = a(478,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.5875)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0470839)
+	variant   489/ 2261 = a(478,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.78183)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043258)
+	variant   490/ 2261 = a(478,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.72796)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0365078)
+	variant   491/ 2261 = a(478,509)      (23 tests, cond 0)
+		n1 false (test_time = 2.01682)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035099)
+	variant   492/ 2261 = a(478,508)      (23 tests, cond 0)
+		n1 false (test_time = 2.30714)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.036705)
+	variant   493/ 2261 = a(478,491)      (23 tests, cond 0)
+		n1 false (test_time = 2.22855)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.051074)
+	variant   494/ 2261 = a(478,486)      (23 tests, cond 0)
+		n1 false (test_time = 2.27797)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0399101)
+	variant   495/ 2261 = a(478,485)      (23 tests, cond 0)
+		n1 false (test_time = 2.12143)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0322559)
+	variant   496/ 2261 = a(478,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.77772)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0464978)
+	variant   497/ 2261 = a(478,477)      (23 tests, cond 0)
+		n1 false (test_time = 2.47555)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0506279)
+	variant   498/ 2261 = a(478,465)      (23 tests, cond 0)
+		n1 false (test_time = 2.18067)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0453842)
+	variant   499/ 2261 = a(478,217)      (23 tests, cond 0)
+		n1 false (test_time = 1.85103)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0475352)
+	variant   500/ 2261 = a(477,562)      (23 tests, cond 0)
+		n1 false (test_time = 2.03505)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046278)
+	variant   501/ 2261 = a(477,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.7908)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046334)
+	variant   502/ 2261 = a(477,560)      (23 tests, cond 0)
+		n1 false (test_time = 2.08191)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0535071)
+	variant   503/ 2261 = a(477,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.88782)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0462658)
+	variant   504/ 2261 = a(477,558)      (23 tests, cond 0)
+		n1 false (test_time = 2.23456)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0399511)
+	variant   505/ 2261 = a(477,557)      (23 tests, cond 0)
+		n1 false (test_time = 2.31937)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.04707)
+	variant   506/ 2261 = a(477,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.92031)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033303)
+	variant   507/ 2261 = a(477,551)      (23 tests, cond 0)
+		n1 false (test_time = 2.34878)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0490279)
+	variant   508/ 2261 = a(477,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.98439)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0434949)
+	variant   509/ 2261 = a(477,549)      (23 tests, cond 0)
+		n1 false (test_time = 2.14538)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0449049)
+	variant   510/ 2261 = a(477,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.92813)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0348508)
+	variant   511/ 2261 = a(477,509)      (23 tests, cond 0)
+		n1 false (test_time = 2.1218)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043478)
+	variant   512/ 2261 = a(477,508)      (23 tests, cond 0)
+		n1 false (test_time = 2.24691)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046124)
+	variant   513/ 2261 = a(477,491)      (23 tests, cond 0)
+		n1 false (test_time = 2.06413)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046416)
+	variant   514/ 2261 = a(477,486)      (23 tests, cond 0)
+		n1 false (test_time = 2.56664)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.051152)
+	variant   515/ 2261 = a(477,485)      (23 tests, cond 0)
+		n1 false (test_time = 1.97195)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044399)
+	variant   516/ 2261 = a(477,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.97914)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0467579)
+	variant   517/ 2261 = a(477,477)      (23 tests, cond 0)
+		n1 false (test_time = 1.96125)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0513382)
+	variant   518/ 2261 = a(477,465)      (23 tests, cond 0)
+		n1 false (test_time = 2.17781)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037518)
+	variant   519/ 2261 = a(477,217)      (23 tests, cond 0)
+		n1 false (test_time = 2.22428)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0400529)
+	variant   520/ 2261 = a(472,562)      (23 tests, cond 0)
+		n1 false (test_time = 2.2869)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03953)
+	variant   521/ 2261 = a(472,561)      (23 tests, cond 0)
+		n1 false (test_time = 2.29822)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.04143)
+	variant   522/ 2261 = a(472,560)      (23 tests, cond 0)
+		n1 false (test_time = 2.26835)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046617)
+	variant   523/ 2261 = a(472,559)      (23 tests, cond 0)
+		n1 false (test_time = 2.08366)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0369968)
+	variant   524/ 2261 = a(472,558)      (23 tests, cond 0)
+		n1 false (test_time = 2.10826)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0515151)
+	variant   525/ 2261 = a(472,557)      (23 tests, cond 0)
+		n1 false (test_time = 2.46565)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0468249)
+	variant   526/ 2261 = a(472,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.89077)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0458882)
+	variant   527/ 2261 = a(472,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.89078)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0332429)
+	variant   528/ 2261 = a(472,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.98126)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0399318)
+	variant   529/ 2261 = a(472,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.80469)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0482631)
+	variant   530/ 2261 = a(472,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.80552)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0393159)
+	variant   531/ 2261 = a(472,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.90648)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0464752)
+	variant   532/ 2261 = a(472,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.88834)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0446031)
+	variant   533/ 2261 = a(472,491)      (23 tests, cond 0)
+		n1 false (test_time = 1.97504)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0342219)
+	variant   534/ 2261 = a(472,486)      (23 tests, cond 0)
+		n1 false (test_time = 1.85318)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0285928)
+	variant   535/ 2261 = a(472,485)      (23 tests, cond 0)
+		n1 false (test_time = 1.84001)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.028801)
+	variant   536/ 2261 = a(472,478)      (23 tests, cond 0)
+		n1 false (test_time = 2.18254)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0426612)
+	variant   537/ 2261 = a(472,477)      (23 tests, cond 0)
+		n1 false (test_time = 1.79022)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0396979)
+	variant   538/ 2261 = a(472,465)      (23 tests, cond 0)
+		n1 false (test_time = 2.11484)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0396399)
+	variant   539/ 2261 = a(472,217)      (23 tests, cond 0)
+		n1 false (test_time = 1.95406)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0350499)
+	variant   540/ 2261 = a(471,562)      (23 tests, cond 0)
+		n1 false (test_time = 1.74265)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043587)
+	variant   541/ 2261 = a(471,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.74303)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0421059)
+	variant   542/ 2261 = a(471,560)      (23 tests, cond 0)
+		n1 false (test_time = 2.27988)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0399652)
+	variant   543/ 2261 = a(471,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.88684)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0294659)
+	variant   544/ 2261 = a(471,558)      (23 tests, cond 0)
+		n1 false (test_time = 1.80464)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0402)
+	variant   545/ 2261 = a(471,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.73258)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.027426)
+	variant   546/ 2261 = a(471,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.86665)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0489409)
+	variant   547/ 2261 = a(471,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.75423)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0481839)
+	variant   548/ 2261 = a(471,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.10895)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0405569)
+	variant   549/ 2261 = a(471,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.90126)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.041292)
+	variant   550/ 2261 = a(471,548)      (23 tests, cond 0)
+		n1 false (test_time = 2.09086)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044405)
+	variant   551/ 2261 = a(471,509)      (23 tests, cond 0)
+		n1 false (test_time = 2.24051)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0461988)
+	variant   552/ 2261 = a(471,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.80687)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0456519)
+	variant   553/ 2261 = a(471,491)      (23 tests, cond 0)
+		n1 false (test_time = 1.78262)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029563)
+	variant   554/ 2261 = a(471,486)      (23 tests, cond 0)
+		n1 false (test_time = 1.6766)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0304852)
+	variant   555/ 2261 = a(471,485)      (23 tests, cond 0)
+		n1 false (test_time = 2.09777)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0414021)
+	variant   556/ 2261 = a(471,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.85549)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0459728)
+	variant   557/ 2261 = a(471,477)      (23 tests, cond 0)
+		n1 false (test_time = 2.11359)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0434301)
+	variant   558/ 2261 = a(471,465)      (23 tests, cond 0)
+		n1 false (test_time = 2.11961)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0323522)
+	variant   559/ 2261 = a(471,217)      (23 tests, cond 0)
+		n1 false (test_time = 1.90776)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0386829)
+	variant   560/ 2261 = a(466,562)      (23 tests, cond 0)
+		n1 false (test_time = 2.74654)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0512679)
+	variant   561/ 2261 = a(466,561)      (23 tests, cond 0)
+		n1 false (test_time = 3.529)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0550039)
+	variant   562/ 2261 = a(466,560)      (23 tests, cond 0)
+		n1 false (test_time = 3.30312)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.049299)
+	variant   563/ 2261 = a(466,559)      (23 tests, cond 0)
+		n1 false (test_time = 3.14588)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038866)
+	variant   564/ 2261 = a(466,558)      (23 tests, cond 0)
+		n1 false (test_time = 2.57698)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0403421)
+	variant   565/ 2261 = a(466,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.9788)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0436351)
+	variant   566/ 2261 = a(466,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.97546)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0439579)
+	variant   567/ 2261 = a(466,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.91677)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033725)
+	variant   568/ 2261 = a(466,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.78146)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0377309)
+	variant   569/ 2261 = a(466,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.84293)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0317819)
+	variant   570/ 2261 = a(466,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.78379)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043802)
+	variant   571/ 2261 = a(466,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.82704)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0431161)
+	variant   572/ 2261 = a(466,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.93943)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.036361)
+	variant   573/ 2261 = a(466,491)      (23 tests, cond 0)
+		n1 false (test_time = 2.05726)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046344)
+	variant   574/ 2261 = a(466,486)      (23 tests, cond 0)
+		n1 false (test_time = 1.99465)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0303671)
+	variant   575/ 2261 = a(466,485)      (23 tests, cond 0)
+		n1 false (test_time = 2.50104)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0480759)
+	variant   576/ 2261 = a(466,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.97412)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038084)
+	variant   577/ 2261 = a(466,477)      (23 tests, cond 0)
+		n1 false (test_time = 2.0196)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0440321)
+	variant   578/ 2261 = a(466,465)      (23 tests, cond 0)
+		n1 false (test_time = 1.79361)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0326741)
+	variant   579/ 2261 = a(466,217)      (23 tests, cond 0)
+		n1 false (test_time = 2.04926)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.047138)
+	variant   580/ 2261 = a(465,562)      (23 tests, cond 0)
+		n1 false (test_time = 2.2489)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0291018)
+	variant   581/ 2261 = a(465,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.85292)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0444191)
+	variant   582/ 2261 = a(465,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.92042)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0347252)
+	variant   583/ 2261 = a(465,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.73309)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0291469)
+	variant   584/ 2261 = a(465,558)      (23 tests, cond 0)
+		n1 false (test_time = 1.69478)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0270238)
+	variant   585/ 2261 = a(465,557)      (23 tests, cond 0)
+		n1 false (test_time = 1.81377)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029516)
+	variant   586/ 2261 = a(465,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.52341)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.030354)
+	variant   587/ 2261 = a(465,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.90878)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035908)
+	variant   588/ 2261 = a(465,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.39266)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0479469)
+	variant   589/ 2261 = a(465,549)      (23 tests, cond 0)
+		n1 false (test_time = 2.99687)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.045928)
+	variant   590/ 2261 = a(465,548)      (23 tests, cond 0)
+		n1 false (test_time = 2.60511)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052197)
+	variant   591/ 2261 = a(465,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.57998)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0422509)
+	variant   592/ 2261 = a(465,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.94668)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.04251)
+	variant   593/ 2261 = a(465,491)      (23 tests, cond 0)
+		n1 false (test_time = 1.90908)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0330648)
+	variant   594/ 2261 = a(465,486)      (23 tests, cond 0)
+		n1 false (test_time = 1.65538)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0404561)
+	variant   595/ 2261 = a(465,485)      (23 tests, cond 0)
+		n1 false (test_time = 1.87431)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.04251)
+	variant   596/ 2261 = a(465,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.98497)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0444019)
+	variant   597/ 2261 = a(465,477)      (23 tests, cond 0)
+		n1 false (test_time = 1.93265)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.045485)
+	variant   598/ 2261 = a(465,465)      (23 tests, cond 0)
+		n1 false (test_time = 2.04055)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.041337)
+	variant   599/ 2261 = a(465,217)      (23 tests, cond 0)
+		n1 false (test_time = 2.00685)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0439682)
+	variant   600/ 2261 = a(456,562)      (23 tests, cond 0)
+		n1 false (test_time = 1.71121)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026443)
+	variant   601/ 2261 = a(456,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.84323)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0417809)
+	variant   602/ 2261 = a(456,560)      (23 tests, cond 0)
+		n1 false (test_time = 1.99315)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0309079)
+	variant   603/ 2261 = a(456,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.69546)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037719)
+	variant   604/ 2261 = a(456,558)      (23 tests, cond 0)
+		n1 false (test_time = 2.11953)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035938)
+	variant   605/ 2261 = a(456,557)      (23 tests, cond 0)
+		n1 false (test_time = 2.00215)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037297)
+	variant   606/ 2261 = a(456,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.89966)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0346711)
+	variant   607/ 2261 = a(456,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.78308)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040339)
+	variant   608/ 2261 = a(456,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.73745)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.036694)
+	variant   609/ 2261 = a(456,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.96032)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0302069)
+	variant   610/ 2261 = a(456,548)      (23 tests, cond 0)
+		n1 false (test_time = 1.70515)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0311799)
+	variant   611/ 2261 = a(456,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.66409)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0446541)
+	variant   612/ 2261 = a(456,508)      (23 tests, cond 0)
+		n1 false (test_time = 2.2893)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0405679)
+	variant   613/ 2261 = a(456,491)      (23 tests, cond 0)
+		n1 false (test_time = 2.29957)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0464649)
+	variant   614/ 2261 = a(456,486)      (23 tests, cond 0)
+		n1 false (test_time = 1.71256)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029429)
+	variant   615/ 2261 = a(456,485)      (23 tests, cond 0)
+		n1 false (test_time = 1.93271)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0481601)
+	variant   616/ 2261 = a(456,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.96295)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0479999)
+	variant   617/ 2261 = a(456,477)      (23 tests, cond 0)
+		n1 false (test_time = 2.20221)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.055197)
+	variant   618/ 2261 = a(456,465)      (23 tests, cond 0)
+		n1 false (test_time = 1.91601)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044893)
+	variant   619/ 2261 = a(456,217)      (23 tests, cond 0)
+		n1 false (test_time = 2.25428)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.048089)
+	variant   620/ 2261 = a(446,562)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000619/src/cut.c  a(446,562)  fails to compile
+ false (test_time = 1.71501)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.045495)
+	variant   621/ 2261 = a(446,561)      (23 tests, cond 0)
+		n1 false (test_time = 2.27478)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043952)
+	variant   622/ 2261 = a(446,560)      (23 tests, cond 0)
+		n1 false (test_time = 2.01608)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023984)
+	variant   623/ 2261 = a(446,559)      (23 tests, cond 0)
+		n1 false (test_time = 1.72039)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.04281)
+	variant   624/ 2261 = a(446,558)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000623/src/cut.c  a(446,558)  fails to compile
+ false (test_time = 1.31871)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.051497)
+	variant   625/ 2261 = a(446,557)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000624/src/cut.c  a(446,557)  fails to compile
+ false (test_time = 1.458)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0482929)
+	variant   626/ 2261 = a(446,552)      (23 tests, cond 0)
+		n1 false (test_time = 2.38472)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0386591)
+	variant   627/ 2261 = a(446,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.9062)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0274)
+	variant   628/ 2261 = a(446,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.14682)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0270579)
+	variant   629/ 2261 = a(446,549)      (23 tests, cond 0)
+		n1 false (test_time = 2.33303)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038928)
+	variant   630/ 2261 = a(446,548)      (23 tests, cond 0)
+		n1 false (test_time = 2.01829)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.047323)
+	variant   631/ 2261 = a(446,509)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000630/src/cut.c  a(446,509)  fails to compile
+ false (test_time = 1.24376)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0414259)
+	variant   632/ 2261 = a(446,508)      (23 tests, cond 0)
+		n1 false (test_time = 2.31243)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038219)
+	variant   633/ 2261 = a(446,491)      (23 tests, cond 0)
+		n1 false (test_time = 2.07827)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.027797)
+	variant   634/ 2261 = a(446,486)      (23 tests, cond 0)
+		n1 false (test_time = 2.06735)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0439301)
+	variant   635/ 2261 = a(446,485)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000634/src/cut.c  a(446,485)  fails to compile
+ false (test_time = 1.75074)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0455432)
+	variant   636/ 2261 = a(446,478)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000635/src/cut.c  a(446,478)  fails to compile
+ false (test_time = 1.75319)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02689)
+	variant   637/ 2261 = a(446,477)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000636/src/cut.c  a(446,477)  fails to compile
+ false (test_time = 1.78712)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0412951)
+	variant   638/ 2261 = a(446,465)      (23 tests, cond 0)
+		n1 false (test_time = 2.06018)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.034286)
+	variant   639/ 2261 = a(446,217)      (23 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-7380cf79-2e636af1/000638/src/cut.c  a(446,217)  fails to compile
+ false (test_time = 1.87985)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0438938)
+	variant   640/ 2261 = a(279,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.99123)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0472081)
+	variant   641/ 2261 = a(279,556)      (23 tests, cond 0)
+		n1 false (test_time = 2.32977)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.048517)
+	variant   642/ 2261 = a(279,555)      (23 tests, cond 0)
+		n1 false (test_time = 2.03008)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035814)
+	variant   643/ 2261 = a(279,554)      (23 tests, cond 0)
+		n1 false (test_time = 2.5657)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.046098)
+	variant   644/ 2261 = a(279,553)      (23 tests, cond 0)
+		n1 false (test_time = 2.3049)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0383511)
+	variant   645/ 2261 = a(279,552)      (23 tests, cond 0)
+		n1 false (test_time = 2.25652)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0440969)
+	variant   646/ 2261 = a(279,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.65908)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0433869)
+	variant   647/ 2261 = a(279,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.19966)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039402)
+	variant   648/ 2261 = a(279,549)      (23 tests, cond 0)
+		n1 false (test_time = 2.07821)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0274589)
+	variant   649/ 2261 = a(279,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.78146)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0424402)
+	variant   650/ 2261 = a(279,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.86309)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0423861)
+	variant   651/ 2261 = a(279,491)      (23 tests, cond 0)
+		n1 false (test_time = 2.33502)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0412619)
+	variant   652/ 2261 = a(279,478)      (23 tests, cond 0)
+		n1 false (test_time = 2.42191)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0375321)
+	variant   653/ 2261 = a(279,471)      (23 tests, cond 0)
+		n1 false (test_time = 1.95478)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0393529)
+	variant   654/ 2261 = a(279,278)      (23 tests, cond 0)
+		n1 false (test_time = 1.95525)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033093)
+	variant   655/ 2261 = a(279,277)      (23 tests, cond 0)
+		n1 false (test_time = 2.49071)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.030777)
+	variant   656/ 2261 = a(279,276)      (23 tests, cond 0)
+		n1 false (test_time = 2.21536)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0270729)
+	variant   657/ 2261 = a(279,275)      (23 tests, cond 0)
+		n1 false (test_time = 2.17939)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0462291)
+	variant   658/ 2261 = a(279,274)      (23 tests, cond 0)
+		n1 false (test_time = 1.61063)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0415051)
+	variant   659/ 2261 = a(279,273)      (23 tests, cond 0)
+		n1 false (test_time = 1.81775)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0438628)
+	variant   660/ 2261 = a(279,272)      (23 tests, cond 0)
+		n1 false (test_time = 2.58838)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.041708)
+	variant   661/ 2261 = a(279,271)      (23 tests, cond 0)
+		n1 false (test_time = 2.46522)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0401502)
+	variant   662/ 2261 = a(279,270)      (23 tests, cond 0)
+		n1 false (test_time = 2.39901)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0393949)
+	variant   663/ 2261 = a(279,269)      (23 tests, cond 0)
+		n1 false (test_time = 2.13102)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0441759)
+	variant   664/ 2261 = a(279,232)      (23 tests, cond 0)
+		n1 false (test_time = 2.52929)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0285919)
+	variant   665/ 2261 = a(279,231)      (23 tests, cond 0)
+		n1 false (test_time = 1.92292)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040518)
+	variant   666/ 2261 = a(279,229)      (23 tests, cond 0)
+		n1 false (test_time = 2.33772)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0412319)
+	variant   667/ 2261 = a(279,224)      (23 tests, cond 0)
+		n1 false (test_time = 1.64967)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0239539)
+	variant   668/ 2261 = a(279,223)      (23 tests, cond 0)
+		n1 false (test_time = 1.93275)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0362082)
+	variant   669/ 2261 = a(279,222)      (23 tests, cond 0)
+		n1 false (test_time = 1.8828)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.041219)
+	variant   670/ 2261 = a(279,221)      (23 tests, cond 0)
+		n1 false (test_time = 1.81105)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0368092)
+	variant   671/ 2261 = a(279,220)      (23 tests, cond 0)
+		n1 false (test_time = 2.01477)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043282)
+	variant   672/ 2261 = a(279,219)      (23 tests, cond 0)
+		n1 false (test_time = 2.41793)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0326982)
+	variant   673/ 2261 = a(279,217)      (23 tests, cond 0)
+		n1 false (test_time = 1.76637)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0434299)
+	variant   674/ 2261 = a(279,216)      (23 tests, cond 0)
+		n1 false (test_time = 2.08625)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0476139)
+	variant   675/ 2261 = a(279,215)      (23 tests, cond 0)
+		n1 false (test_time = 1.96712)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039284)
+	variant   676/ 2261 = a(279,214)      (23 tests, cond 0)
+		n1 false (test_time = 2.21255)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0273969)
+	variant   677/ 2261 = a(279,213)      (23 tests, cond 0)
+		n1 false (test_time = 1.66837)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0343239)
+	variant   678/ 2261 = a(279,212)      (23 tests, cond 0)
+		n1 false (test_time = 1.5405)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.028091)
+	variant   679/ 2261 = a(279,211)      (23 tests, cond 0)
+		n1 false (test_time = 1.98323)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.04496)
+	variant   680/ 2261 = a(279,210)      (23 tests, cond 0)
+		n1 false (test_time = 1.62605)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0381219)
+	variant   681/ 2261 = a(279,209)      (23 tests, cond 0)
+		n1 false (test_time = 1.48955)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.034013)
+	variant   682/ 2261 = a(279,208)      (23 tests, cond 0)
+		n1 false (test_time = 1.60095)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0336301)
+	variant   683/ 2261 = a(279,204)      (23 tests, cond 0)
+		n1 false (test_time = 1.74814)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0305049)
+	variant   684/ 2261 = a(279,203)      (23 tests, cond 0)
+		n1 false (test_time = 1.63306)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0338511)
+	variant   685/ 2261 = a(279,202)      (23 tests, cond 0)
+		n1 false (test_time = 1.71377)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0279348)
+	variant   686/ 2261 = a(279,200)      (23 tests, cond 0)
+		n1 false (test_time = 1.34842)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0248671)
+	variant   687/ 2261 = a(279,199)      (23 tests, cond 0)
+		n1 false (test_time = 1.65656)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026684)
+	variant   688/ 2261 = a(279,197)      (23 tests, cond 0)
+		n1 false (test_time = 1.78919)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0427032)
+	variant   689/ 2261 = a(279,194)      (23 tests, cond 0)
+		n1 false (test_time = 2.28902)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.049794)
+	variant   690/ 2261 = a(278,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.54434)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0287921)
+	variant   691/ 2261 = a(278,556)      (23 tests, cond 0)
+		n1 false (test_time = 1.50833)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0262249)
+	variant   692/ 2261 = a(278,555)      (23 tests, cond 0)
+		n1 false (test_time = 1.82191)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.041693)
+	variant   693/ 2261 = a(278,554)      (23 tests, cond 0)
+		n1 false (test_time = 1.34161)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0322192)
+	variant   694/ 2261 = a(278,553)      (23 tests, cond 0)
+		n1 false (test_time = 1.89769)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0430679)
+	variant   695/ 2261 = a(278,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.74647)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0256159)
+	variant   696/ 2261 = a(278,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.83331)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0424321)
+	variant   697/ 2261 = a(278,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.4786)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.024441)
+	variant   698/ 2261 = a(278,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.94232)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0407379)
+	variant   699/ 2261 = a(278,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.8509)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040906)
+	variant   700/ 2261 = a(278,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.6119)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0239909)
+	variant   701/ 2261 = a(278,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.75068)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0374529)
+	variant   702/ 2261 = a(278,471)      (23 tests, cond 0)
+		n1 false (test_time = 1.99999)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0352499)
+	variant   703/ 2261 = a(278,278)      (23 tests, cond 0)
+		n1 false (test_time = 2.16196)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.028239)
+	variant   704/ 2261 = a(278,277)      (23 tests, cond 0)
+		n1 false (test_time = 1.61824)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02718)
+	variant   705/ 2261 = a(278,276)      (23 tests, cond 0)
+		n1 false (test_time = 1.74296)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0398581)
+	variant   706/ 2261 = a(278,275)      (23 tests, cond 0)
+		n1 false (test_time = 1.61102)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0346751)
+	variant   707/ 2261 = a(278,274)      (23 tests, cond 0)
+		n1 false (test_time = 2.16083)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0489249)
+	variant   708/ 2261 = a(278,273)      (23 tests, cond 0)
+		n1 false (test_time = 2.14223)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.025389)
+	variant   709/ 2261 = a(278,272)      (23 tests, cond 0)
+		n1 false (test_time = 2.34853)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0321832)
+	variant   710/ 2261 = a(278,271)      (23 tests, cond 0)
+		n1 false (test_time = 2.13506)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0313702)
+	variant   711/ 2261 = a(278,270)      (23 tests, cond 0)
+		n1 false (test_time = 2.35933)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.032584)
+	variant   712/ 2261 = a(278,269)      (23 tests, cond 0)
+		n1 false (test_time = 1.90612)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0331559)
+	variant   713/ 2261 = a(278,232)      (23 tests, cond 0)
+		n1 false (test_time = 2.0406)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0320098)
+	variant   714/ 2261 = a(278,231)      (23 tests, cond 0)
+		n1 false (test_time = 1.93105)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.034327)
+	variant   715/ 2261 = a(278,229)      (23 tests, cond 0)
+		n1 false (test_time = 1.82846)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.041369)
+	variant   716/ 2261 = a(278,224)      (23 tests, cond 0)
+		n1 false (test_time = 2.10979)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0349569)
+	variant   717/ 2261 = a(278,223)      (23 tests, cond 0)
+		n1 false (test_time = 1.50992)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0445969)
+	variant   718/ 2261 = a(278,222)      (23 tests, cond 0)
+		n1 false (test_time = 2.80094)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0404501)
+	variant   719/ 2261 = a(278,221)      (23 tests, cond 0)
+		n1 false (test_time = 2.13888)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.025826)
+	variant   720/ 2261 = a(278,220)      (23 tests, cond 0)
+		n1 false (test_time = 2.12592)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0255761)
+	variant   721/ 2261 = a(278,219)      (23 tests, cond 0)
+		n1 false (test_time = 1.79536)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0443161)
+	variant   722/ 2261 = a(278,217)      (23 tests, cond 0)
+		n1 false (test_time = 1.7034)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03211)
+	variant   723/ 2261 = a(278,216)      (23 tests, cond 0)
+		n1 false (test_time = 2.05977)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0374959)
+	variant   724/ 2261 = a(278,215)      (23 tests, cond 0)
+		n1 false (test_time = 1.51978)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029284)
+	variant   725/ 2261 = a(278,214)      (23 tests, cond 0)
+		n1 false (test_time = 1.89297)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0339499)
+	variant   726/ 2261 = a(278,213)      (23 tests, cond 0)
+		n1 false (test_time = 2.32219)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042547)
+	variant   727/ 2261 = a(278,212)      (23 tests, cond 0)
+		n1 false (test_time = 2.28465)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0382061)
+	variant   728/ 2261 = a(278,211)      (23 tests, cond 0)
+		n1 false (test_time = 2.29952)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0418019)
+	variant   729/ 2261 = a(278,210)      (23 tests, cond 0)
+		n1 false (test_time = 1.9914)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0389309)
+	variant   730/ 2261 = a(278,209)      (23 tests, cond 0)
+		n1 false (test_time = 2.04881)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.04637)
+	variant   731/ 2261 = a(278,208)      (23 tests, cond 0)
+		n1 false (test_time = 2.04539)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0398271)
+	variant   732/ 2261 = a(278,204)      (23 tests, cond 0)
+		n1 false (test_time = 2.12013)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0282261)
+	variant   733/ 2261 = a(278,203)      (23 tests, cond 0)
+		n1 false (test_time = 2.26825)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0444951)
+	variant   734/ 2261 = a(278,202)      (23 tests, cond 0)
+		n1 false (test_time = 2.15791)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.031615)
+	variant   735/ 2261 = a(278,200)      (23 tests, cond 0)
+		n1 false (test_time = 1.93912)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023267)
+	variant   736/ 2261 = a(278,199)      (23 tests, cond 0)
+		n1 false (test_time = 1.52956)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.024823)
+	variant   737/ 2261 = a(278,197)      (23 tests, cond 0)
+		n1 false (test_time = 2.25227)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0351129)
+	variant   738/ 2261 = a(278,194)      (23 tests, cond 0)
+		n1 false (test_time = 1.86295)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0436912)
+	variant   739/ 2261 = a(277,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.8625)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043999)
+	variant   740/ 2261 = a(277,551)      (23 tests, cond 0)
+		n1 false (test_time = 2.1442)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0513151)
+	variant   741/ 2261 = a(277,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.61058)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0313799)
+	variant   742/ 2261 = a(277,549)      (23 tests, cond 0)
+		n1 false (test_time = 2.04202)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0348589)
+	variant   743/ 2261 = a(277,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.87364)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0404341)
+	variant   744/ 2261 = a(277,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.81807)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0390809)
+	variant   745/ 2261 = a(277,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.54734)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0426569)
+	variant   746/ 2261 = a(277,278)      (23 tests, cond 0)
+		n1 false (test_time = 1.68795)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0383761)
+	variant   747/ 2261 = a(277,232)      (23 tests, cond 0)
+		n1 false (test_time = 2.00502)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.036057)
+	variant   748/ 2261 = a(277,229)      (23 tests, cond 0)
+		n1 false (test_time = 2.18294)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039916)
+	variant   749/ 2261 = a(277,223)      (23 tests, cond 0)
+		n1 false (test_time = 1.55782)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0370579)
+	variant   750/ 2261 = a(277,222)      (23 tests, cond 0)
+		n1 false (test_time = 1.7859)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0401671)
+	variant   751/ 2261 = a(277,220)      (23 tests, cond 0)
+		n1 false (test_time = 1.92886)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0416319)
+	variant   752/ 2261 = a(277,219)      (23 tests, cond 0)
+		n1 false (test_time = 1.93606)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0407531)
+	variant   753/ 2261 = a(277,216)      (23 tests, cond 0)
+		n1 false (test_time = 2.28541)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026897)
+	variant   754/ 2261 = a(277,215)      (23 tests, cond 0)
+		n1 false (test_time = 1.54366)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0411141)
+	variant   755/ 2261 = a(277,213)      (23 tests, cond 0)
+		n1 false (test_time = 1.48775)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026319)
+	variant   756/ 2261 = a(277,210)      (23 tests, cond 0)
+		n1 false (test_time = 1.98311)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0363722)
+	variant   757/ 2261 = a(277,209)      (23 tests, cond 0)
+		n1 false (test_time = 1.66104)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0391409)
+	variant   758/ 2261 = a(277,208)      (23 tests, cond 0)
+		n1 false (test_time = 1.81455)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0426559)
+	variant   759/ 2261 = a(277,204)      (23 tests, cond 0)
+		n1 false (test_time = 2.52893)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.034725)
+	variant   760/ 2261 = a(277,202)      (23 tests, cond 0)
+		n1 false (test_time = 1.53647)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0410991)
+	variant   761/ 2261 = a(276,561)      (23 tests, cond 0)
+		n1 false (test_time = 2.09466)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043067)
+	variant   762/ 2261 = a(276,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.72985)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0400231)
+	variant   763/ 2261 = a(276,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.60571)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0379059)
+	variant   764/ 2261 = a(276,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.37023)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.041842)
+	variant   765/ 2261 = a(276,509)      (23 tests, cond 0)
+		n1 false (test_time = 2.00496)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029273)
+	variant   766/ 2261 = a(276,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.99425)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0473051)
+	variant   767/ 2261 = a(276,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.86007)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0484302)
+	variant   768/ 2261 = a(276,277)      (23 tests, cond 0)
+		n1 false (test_time = 2.25904)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026243)
+	variant   769/ 2261 = a(276,232)      (23 tests, cond 0)
+		n1 false (test_time = 2.25337)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0456879)
+	variant   770/ 2261 = a(276,229)      (23 tests, cond 0)
+		n1 false (test_time = 2.05068)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043344)
+	variant   771/ 2261 = a(276,223)      (23 tests, cond 0)
+		n1 false (test_time = 2.35954)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0408771)
+	variant   772/ 2261 = a(276,222)      (23 tests, cond 0)
+		n1 false (test_time = 2.51567)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.047487)
+	variant   773/ 2261 = a(276,216)      (23 tests, cond 0)
+		n1 false (test_time = 1.95674)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0474291)
+	variant   774/ 2261 = a(276,215)      (23 tests, cond 0)
+		n1 false (test_time = 2.07393)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0390561)
+	variant   775/ 2261 = a(276,213)      (23 tests, cond 0)
+		n1 false (test_time = 2.21032)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0392821)
+	variant   776/ 2261 = a(276,210)      (23 tests, cond 0)
+		n1 false (test_time = 2.14597)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0404739)
+	variant   777/ 2261 = a(276,209)      (23 tests, cond 0)
+		n1 false (test_time = 2.05983)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0390449)
+	variant   778/ 2261 = a(276,208)      (23 tests, cond 0)
+		n1 false (test_time = 2.21222)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.04199)
+	variant   779/ 2261 = a(276,204)      (23 tests, cond 0)
+		n1 false (test_time = 2.23385)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0437088)
+	variant   780/ 2261 = a(276,202)      (23 tests, cond 0)
+		n1 false (test_time = 1.93195)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0401669)
+	variant   781/ 2261 = a(275,561)      (23 tests, cond 0)
+		n1 false (test_time = 2.12452)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03039)
+	variant   782/ 2261 = a(275,551)      (23 tests, cond 0)
+		n1 false (test_time = 2.03969)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.052475)
+	variant   783/ 2261 = a(275,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.77488)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.044785)
+	variant   784/ 2261 = a(275,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.73045)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029758)
+	variant   785/ 2261 = a(275,509)      (23 tests, cond 0)
+		n1 false (test_time = 2.28011)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022234)
+	variant   786/ 2261 = a(275,508)      (23 tests, cond 0)
+		n1 false (test_time = 2.57215)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0229111)
+	variant   787/ 2261 = a(275,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.95181)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0247672)
+	variant   788/ 2261 = a(275,276)      (23 tests, cond 0)
+		n1 false (test_time = 2.29937)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0329101)
+	variant   789/ 2261 = a(275,229)      (23 tests, cond 0)
+		n1 false (test_time = 2.50539)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0473759)
+	variant   790/ 2261 = a(275,223)      (23 tests, cond 0)
+		n1 false (test_time = 2.30496)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.024713)
+	variant   791/ 2261 = a(275,216)      (23 tests, cond 0)
+		n1 false (test_time = 2.49417)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040797)
+	variant   792/ 2261 = a(275,215)      (23 tests, cond 0)
+		n1 false (test_time = 1.9845)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.027086)
+	variant   793/ 2261 = a(275,213)      (23 tests, cond 0)
+		n1 false (test_time = 2.23747)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037174)
+	variant   794/ 2261 = a(275,210)      (23 tests, cond 0)
+		n1 false (test_time = 2.32482)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0347979)
+	variant   795/ 2261 = a(275,209)      (23 tests, cond 0)
+		n1 false (test_time = 1.94322)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0238678)
+	variant   796/ 2261 = a(275,208)      (23 tests, cond 0)
+		n1 false (test_time = 2.07196)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0429242)
+	variant   797/ 2261 = a(274,561)      (23 tests, cond 0)
+		n1 false (test_time = 2.05637)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0370281)
+	variant   798/ 2261 = a(274,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.99969)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023881)
+	variant   799/ 2261 = a(274,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.17496)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0344939)
+	variant   800/ 2261 = a(274,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.72364)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0425789)
+	variant   801/ 2261 = a(274,509)      (23 tests, cond 0)
+		n1 false (test_time = 2.21255)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0408762)
+	variant   802/ 2261 = a(274,508)      (23 tests, cond 0)
+		n1 false (test_time = 2.03391)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042712)
+	variant   803/ 2261 = a(274,478)      (23 tests, cond 0)
+		n1 false (test_time = 2.25355)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0301149)
+	variant   804/ 2261 = a(274,275)      (23 tests, cond 0)
+		n1 false (test_time = 1.7996)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0420601)
+	variant   805/ 2261 = a(274,229)      (23 tests, cond 0)
+		n1 false (test_time = 2.13972)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0437741)
+	variant   806/ 2261 = a(274,223)      (23 tests, cond 0)
+		n1 false (test_time = 2.19341)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0358529)
+	variant   807/ 2261 = a(274,216)      (23 tests, cond 0)
+		n1 false (test_time = 2.53737)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0233591)
+	variant   808/ 2261 = a(274,215)      (23 tests, cond 0)
+		n1 false (test_time = 1.95203)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0393679)
+	variant   809/ 2261 = a(274,213)      (23 tests, cond 0)
+		n1 false (test_time = 2.37645)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03947)
+	variant   810/ 2261 = a(274,210)      (23 tests, cond 0)
+		n1 false (test_time = 2.25658)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0356019)
+	variant   811/ 2261 = a(274,209)      (23 tests, cond 0)
+		n1 false (test_time = 2.00526)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040206)
+	variant   812/ 2261 = a(274,208)      (23 tests, cond 0)
+		n1 false (test_time = 1.83826)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0399818)
+	variant   813/ 2261 = a(273,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.9056)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023257)
+	variant   814/ 2261 = a(273,551)      (23 tests, cond 0)
+		n1 false (test_time = 2.0204)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0392768)
+	variant   815/ 2261 = a(273,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.81982)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0423272)
+	variant   816/ 2261 = a(273,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.84838)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0409508)
+	variant   817/ 2261 = a(273,509)      (23 tests, cond 0)
+		n1 false (test_time = 2.1126)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0447788)
+	variant   818/ 2261 = a(273,508)      (23 tests, cond 0)
+		n1 false (test_time = 2.10125)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0266769)
+	variant   819/ 2261 = a(273,478)      (23 tests, cond 0)
+		n1 false (test_time = 2.03526)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0243781)
+	variant   820/ 2261 = a(273,274)      (23 tests, cond 0)
+		n1 false (test_time = 1.86861)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0424571)
+	variant   821/ 2261 = a(273,229)      (23 tests, cond 0)
+		n1 false (test_time = 2.2684)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0392098)
+	variant   822/ 2261 = a(273,223)      (23 tests, cond 0)
+		n1 false (test_time = 2.08385)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.043216)
+	variant   823/ 2261 = a(273,216)      (23 tests, cond 0)
+		n1 false (test_time = 2.20024)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0366931)
+	variant   824/ 2261 = a(273,215)      (23 tests, cond 0)
+		n1 false (test_time = 2.29725)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0397081)
+	variant   825/ 2261 = a(273,213)      (23 tests, cond 0)
+		n1 false (test_time = 2.42771)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0217228)
+	variant   826/ 2261 = a(273,210)      (23 tests, cond 0)
+		n1 false (test_time = 1.80559)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023252)
+	variant   827/ 2261 = a(273,209)      (23 tests, cond 0)
+		n1 false (test_time = 2.0261)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0261981)
+	variant   828/ 2261 = a(273,208)      (23 tests, cond 0)
+		n1 false (test_time = 2.36899)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0400488)
+	variant   829/ 2261 = a(272,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.58511)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0468352)
+	variant   830/ 2261 = a(272,551)      (23 tests, cond 0)
+		n1 false (test_time = 2.0897)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0201049)
+	variant   831/ 2261 = a(272,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.03179)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0253041)
+	variant   832/ 2261 = a(272,549)      (23 tests, cond 0)
+		n1 false (test_time = 2.19155)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219271)
+	variant   833/ 2261 = a(272,509)      (23 tests, cond 0)
+		n1 false (test_time = 2.00594)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0335081)
+	variant   834/ 2261 = a(272,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.70015)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033921)
+	variant   835/ 2261 = a(272,478)      (23 tests, cond 0)
+		n1 false (test_time = 2.04972)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023823)
+	variant   836/ 2261 = a(272,273)      (23 tests, cond 0)
+		n1 false (test_time = 2.16755)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0426381)
+	variant   837/ 2261 = a(272,232)      (23 tests, cond 0)
+		n1 false (test_time = 2.26985)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0454869)
+	variant   838/ 2261 = a(272,229)      (23 tests, cond 0)
+		n1 false (test_time = 1.60159)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033668)
+	variant   839/ 2261 = a(272,223)      (23 tests, cond 0)
+		n1 false (test_time = 2.43648)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035207)
+	variant   840/ 2261 = a(272,222)      (23 tests, cond 0)
+		n1 false (test_time = 2.39872)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022598)
+	variant   841/ 2261 = a(272,221)      (23 tests, cond 0)
+		n1 false (test_time = 1.5829)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0359149)
+	variant   842/ 2261 = a(272,216)      (23 tests, cond 0)
+		n1 false (test_time = 1.88821)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0383141)
+	variant   843/ 2261 = a(272,215)      (23 tests, cond 0)
+		n1 false (test_time = 1.9692)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0408921)
+	variant   844/ 2261 = a(272,213)      (23 tests, cond 0)
+		n1 false (test_time = 1.86246)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040143)
+	variant   845/ 2261 = a(272,210)      (23 tests, cond 0)
+		n1 false (test_time = 1.89492)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0352252)
+	variant   846/ 2261 = a(272,209)      (23 tests, cond 0)
+		n1 false (test_time = 1.73171)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0365992)
+	variant   847/ 2261 = a(272,208)      (23 tests, cond 0)
+		n1 false (test_time = 2.29541)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.049787)
+	variant   848/ 2261 = a(272,204)      (23 tests, cond 0)
+		n1 false (test_time = 2.36938)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038069)
+	variant   849/ 2261 = a(272,202)      (23 tests, cond 0)
+		n1 false (test_time = 1.89062)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0383148)
+	variant   850/ 2261 = a(271,561)      (23 tests, cond 0)
+		n1 false (test_time = 2.11104)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035671)
+	variant   851/ 2261 = a(271,551)      (23 tests, cond 0)
+		n1 false (test_time = 2.60749)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0416121)
+	variant   852/ 2261 = a(271,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.22256)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0366921)
+	variant   853/ 2261 = a(271,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.92175)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037672)
+	variant   854/ 2261 = a(271,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.8989)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0422819)
+	variant   855/ 2261 = a(271,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.96139)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.030375)
+	variant   856/ 2261 = a(271,478)      (23 tests, cond 0)
+		n1 false (test_time = 2.23347)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0412669)
+	variant   857/ 2261 = a(271,272)      (23 tests, cond 0)
+		n1 false (test_time = 1.73891)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03791)
+	variant   858/ 2261 = a(271,232)      (23 tests, cond 0)
+		n1 false (test_time = 1.87097)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02349)
+	variant   859/ 2261 = a(271,229)      (23 tests, cond 0)
+		n1 false (test_time = 2.1221)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0327511)
+	variant   860/ 2261 = a(271,223)      (23 tests, cond 0)
+		n1 false (test_time = 2.0327)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0355499)
+	variant   861/ 2261 = a(271,222)      (23 tests, cond 0)
+		n1 false (test_time = 2.08461)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.034564)
+	variant   862/ 2261 = a(271,221)      (23 tests, cond 0)
+		n1 false (test_time = 2.53498)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03947)
+	variant   863/ 2261 = a(271,216)      (23 tests, cond 0)
+		n1 false (test_time = 1.75319)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03916)
+	variant   864/ 2261 = a(271,215)      (23 tests, cond 0)
+		n1 false (test_time = 2.50288)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0343599)
+	variant   865/ 2261 = a(271,213)      (23 tests, cond 0)
+		n1 false (test_time = 2.30253)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0307059)
+	variant   866/ 2261 = a(271,210)      (23 tests, cond 0)
+		n1 false (test_time = 2.48374)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0214119)
+	variant   867/ 2261 = a(271,209)      (23 tests, cond 0)
+		n1 false (test_time = 1.83741)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.025475)
+	variant   868/ 2261 = a(271,208)      (23 tests, cond 0)
+		n1 false (test_time = 2.04793)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.028322)
+	variant   869/ 2261 = a(271,204)      (23 tests, cond 0)
+		n1 false (test_time = 1.96159)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.030246)
+	variant   870/ 2261 = a(271,202)      (23 tests, cond 0)
+		n1 false (test_time = 1.74309)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0358341)
+	variant   871/ 2261 = a(270,561)      (23 tests, cond 0)
+		n1 false (test_time = 1.90806)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.040915)
+	variant   872/ 2261 = a(270,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.93061)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0352359)
+	variant   873/ 2261 = a(270,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.06207)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0338111)
+	variant   874/ 2261 = a(270,549)      (23 tests, cond 0)
+		n1 false (test_time = 2.2837)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0267479)
+	variant   875/ 2261 = a(270,509)      (23 tests, cond 0)
+		n1 false (test_time = 2.03164)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0448611)
+	variant   876/ 2261 = a(270,508)      (23 tests, cond 0)
+		n1 false (test_time = 2.36237)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0382621)
+	variant   877/ 2261 = a(270,478)      (23 tests, cond 0)
+		n1 false (test_time = 2.0174)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020884)
+	variant   878/ 2261 = a(270,271)      (23 tests, cond 0)
+		n1 false (test_time = 2.02517)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.039782)
+	variant   879/ 2261 = a(270,232)      (23 tests, cond 0)
+		n1 false (test_time = 2.13884)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020571)
+	variant   880/ 2261 = a(270,229)      (23 tests, cond 0)
+		n1 false (test_time = 2.26664)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0392959)
+	variant   881/ 2261 = a(270,223)      (23 tests, cond 0)
+		n1 false (test_time = 2.46389)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.028672)
+	variant   882/ 2261 = a(270,222)      (23 tests, cond 0)
+		n1 false (test_time = 2.34953)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0423539)
+	variant   883/ 2261 = a(270,221)      (23 tests, cond 0)
+		n1 false (test_time = 2.36846)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0398431)
+	variant   884/ 2261 = a(270,216)      (23 tests, cond 0)
+		n1 false (test_time = 2.16809)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0350728)
+	variant   885/ 2261 = a(270,215)      (23 tests, cond 0)
+		n1 false (test_time = 2.28424)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037935)
+	variant   886/ 2261 = a(270,213)      (23 tests, cond 0)
+		n1 false (test_time = 2.16526)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0334599)
+	variant   887/ 2261 = a(270,210)      (23 tests, cond 0)
+		n1 false (test_time = 2.16201)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0353799)
+	variant   888/ 2261 = a(270,209)      (23 tests, cond 0)
+		n1 false (test_time = 2.12157)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.041137)
+	variant   889/ 2261 = a(270,208)      (23 tests, cond 0)
+		n1 false (test_time = 1.84607)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0197079)
+	variant   890/ 2261 = a(270,204)      (23 tests, cond 0)
+		n1 false (test_time = 2.15341)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0347631)
+	variant   891/ 2261 = a(270,202)      (23 tests, cond 0)
+		n1 false (test_time = 2.17548)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0394251)
+	variant   892/ 2261 = a(270,199)      (23 tests, cond 0)
+		n1 false (test_time = 2.19615)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0458379)
+	variant   893/ 2261 = a(269,561)      (23 tests, cond 0)
+		n1 false (test_time = 2.01622)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022974)
+	variant   894/ 2261 = a(269,551)      (23 tests, cond 0)
+		n1 false (test_time = 2.19964)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.030417)
+	variant   895/ 2261 = a(269,550)      (23 tests, cond 0)
+		n1 false (test_time = 2.23559)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0238969)
+	variant   896/ 2261 = a(269,549)      (23 tests, cond 0)
+		n1 false (test_time = 2.00122)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.035147)
+	variant   897/ 2261 = a(269,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.40271)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.034354)
+	variant   898/ 2261 = a(269,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.89704)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0395961)
+	variant   899/ 2261 = a(269,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.99259)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0395632)
+	variant   900/ 2261 = a(269,270)      (23 tests, cond 0)
+		n1 false (test_time = 2.31586)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0400631)
+	variant   901/ 2261 = a(269,229)      (23 tests, cond 0)
+		n1 false (test_time = 1.87116)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0259271)
+	variant   902/ 2261 = a(269,223)      (23 tests, cond 0)
+		n1 false (test_time = 2.31145)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0280819)
+	variant   903/ 2261 = a(269,222)      (23 tests, cond 0)
+		n1 false (test_time = 2.32143)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0302072)
+	variant   904/ 2261 = a(269,216)      (23 tests, cond 0)
+		n1 false (test_time = 1.87739)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021378)
+	variant   905/ 2261 = a(269,215)      (23 tests, cond 0)
+		n1 false (test_time = 1.63274)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0227911)
+	variant   906/ 2261 = a(269,213)      (23 tests, cond 0)
+		n1 false (test_time = 2.16826)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0231261)
+	variant   907/ 2261 = a(269,210)      (23 tests, cond 0)
+		n1 false (test_time = 2.78505)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0317531)
+	variant   908/ 2261 = a(269,209)      (23 tests, cond 0)
+		n1 false (test_time = 3.0376)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0322731)
+	variant   909/ 2261 = a(269,208)      (23 tests, cond 0)
+		n1 false (test_time = 1.81047)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0229199)
+	variant   910/ 2261 = a(269,204)      (23 tests, cond 0)
+		n1 false (test_time = 2.06648)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0387149)
+	variant   911/ 2261 = a(269,202)      (23 tests, cond 0)
+		n1 false (test_time = 1.98283)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0214479)
+	variant   912/ 2261 = a(235,561)      (23 tests, cond 0)
+		n1 false (test_time = 2.00242)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0337231)
+	variant   913/ 2261 = a(235,556)      (23 tests, cond 0)
+		n1 false (test_time = 2.17664)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0356789)
+	variant   914/ 2261 = a(235,555)      (23 tests, cond 0)
+		n1 false (test_time = 1.98356)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.024863)
+	variant   915/ 2261 = a(235,554)      (23 tests, cond 0)
+		n1 false (test_time = 1.68553)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0273869)
+	variant   916/ 2261 = a(235,553)      (23 tests, cond 0)
+		n1 false (test_time = 1.65445)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0289102)
+	variant   917/ 2261 = a(235,552)      (23 tests, cond 0)
+		n1 false (test_time = 1.74559)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0223019)
+	variant   918/ 2261 = a(235,551)      (23 tests, cond 0)
+		n1 false (test_time = 1.92963)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.034178)
+	variant   919/ 2261 = a(235,550)      (23 tests, cond 0)
+		n1 false (test_time = 1.56396)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0342789)
+	variant   920/ 2261 = a(235,549)      (23 tests, cond 0)
+		n1 false (test_time = 1.81345)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0319791)
+	variant   921/ 2261 = a(235,509)      (23 tests, cond 0)
+		n1 false (test_time = 1.89086)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0318449)
+	variant   922/ 2261 = a(235,508)      (23 tests, cond 0)
+		n1 false (test_time = 1.92549)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.032634)
+	variant   923/ 2261 = a(235,491)      (23 tests, cond 0)
+		n1 false (test_time = 1.9621)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033222)
+	variant   924/ 2261 = a(235,478)      (23 tests, cond 0)
+		n1 false (test_time = 1.91921)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0325229)
+	variant   925/ 2261 = a(235,471)      (23 tests, cond 0)
+		n1 false (test_time = 1.87682)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0328929)
+	variant   926/ 2261 = a(235,278)      (23 tests, cond 0)
+		n1 false (test_time = 1.65682)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0321019)
+	variant   927/ 2261 = a(235,277)      (23 tests, cond 0)
+		n1 false (test_time = 1.70907)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.028019)
+	variant   928/ 2261 = a(235,276)      (23 tests, cond 0)
+		n1 false (test_time = 1.82732)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0213878)
+	variant   929/ 2261 = a(235,275)      (23 tests, cond 0)
+		n1 false (test_time = 1.96833)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.037432)
+	variant   930/ 2261 = a(235,274)      (23 tests, cond 0)
+		n1 false (test_time = 2.38006)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033396)
+	variant   931/ 2261 = a(235,273)      (23 tests, cond 0)
+		n1 false (test_time = 3.09583)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03459)
+	variant   932/ 2261 = a(235,272)      (23 tests, cond 0)
+		n1 false (test_time = 3.13072)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.038512)
+	variant   933/ 2261 = a(235,271)      (23 tests, cond 0)
+		n1 false (test_time = 3.15164)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.042556)
+	variant   934/ 2261 = a(235,270)      (23 tests, cond 0)
+		n1 true (test_time = 3.12439)
+		p1 true (test_time = 1.03153)
+		p2 true (test_time = 0.647506)
+		p3 true (test_time = 0.483756)
+		p4 true (test_time = 0.520057)
+		p5 true (test_time = 0.42855)
+		p6 true (test_time = 0.383998)
+		p7 true (test_time = 0.367935)
+		p8 true (test_time = 0.490673)
+		p9 true (test_time = 0.485342)
+		p10 true (test_time = 0.925104)
+		p11 true (test_time = 0.475481)
+		p12 true (test_time = 0.460989)
+		p13 true (test_time = 0.417666)
+		p14 true (test_time = 0.378375)
+		p15 true (test_time = 0.457709)
+		p16 true (test_time = 0.885937)
+		p17 true (test_time = 0.55595)
+		p18 true (test_time = 0.601306)
+		p19 true (test_time = 0.519956)
+		p20 true (test_time = 0.415718)
+		p21 true (test_time = 0.548456)
+		p22 true (test_time = 0.412011)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: a(235,270)
+Repair Name: a(235,270) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454603301.652853
+
+Variant Test Case Queries: 956
+"Test Suite Evaluations": 41.5652
+
+Compile Failures: 88
+Wall-Clock Seconds Elapsed: 1896.81
+  Activity Name                     Count Seconds = Percent of Total Time
+  progeq partition                     69   0.860 = 0.0457738%
+  append_sources                       76   2.063 = 0.109852%
+  find_best_edit                      934  38.333 = 2.04102%
+  test                                891 183.855 = 9.78919%
+  compile                             935 1653.013 = 88.0132%
+  TOTAL                                   1878.143 = 99.0156% (avg CPU usage)

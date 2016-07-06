@@ -1,0 +1,3269 @@
+--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete true
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 20
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Sun Feb 14 22:13:55 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmpe0deed.c /tmp/tmpe963ce.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/expr.c: parsing
+cilRep: src/expr.c: parsed (0.0453491 MB)
+cilRep: computing liveness
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 461
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/coreutils/coreutils-case-7eff5901-6fc0ccf7/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+coverage positive:
+	test: 1
+	test: 2
+	test: 3
+	test: 4
+	test: 5
+	test: 6
+	test: 7
+	test: 8
+	test: 9
+	test: 10
+	test: 11
+	test: 12
+	test: 13
+	test: 14
+	test: 15
+	test: 16
+	test: 17
+	test: 18
+	test: 19
+	test: 20
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 461
+cilRep: stmts in weighted_path = 164
+cilRep: total weight = 164
+cilRep: stmts in weighted_path with weight >= 1.0 = 164
+cilRep: src/expr.c (code bank/base file; atoms [1,461])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1455459237.507874)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 0
+cilRep: fix-space quotient by string: 164 -> 142
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: gettext
+progeq: WARNING: cannot resolve call: putchar_unlocked
+progeq: WARNING: cannot resolve call: fputs_unlocked
+progeq: WARNING: cannot resolve call: error
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: parse_long_options
+progeq: WARNING: cannot resolve call: xmalloc
+progeq: WARNING: cannot resolve call: xstrdup
+progeq: WARNING: cannot resolve call: imaxtostr
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: memset
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: re_compile_pattern
+progeq: WARNING: cannot resolve call: re_match
+progeq: WARNING: cannot resolve call: quotearg_colon
+progeq: WARNING: cannot resolve call: strncpy
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: quotearg_n_style
+search: fix space reduced (time_taken = 0.909754)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 164 deletes
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:139:after0
+REMOVED?false
+CARDINAL?before:139:after0
+REMOVED?false
+CARDINAL?before:139:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:139:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:3:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:2:after0
+REMOVED?false
+CARDINAL?before:2:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:1:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:26:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:6:after0
+REMOVED?false
+CARDINAL?before:139:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:139:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:10:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:12:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:9:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:142:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:18:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:17:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 0 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 2733 appends
+search: ww_adaptive: 2733 possible edits
+search: ready to start (time_taken = 0.429139)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.0227671)
+	variant     1/ 2733 = a(461,461)      (21 tests, cond 0)
+		n1 false (test_time = 0.648864)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023936)
+	variant     2/ 2733 = a(461,460)      (21 tests, cond 0)
+		n1 false (test_time = 0.647978)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02384)
+	variant     3/ 2733 = a(461,459)      (21 tests, cond 0)
+		n1 false (test_time = 0.64217)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0227761)
+	variant     4/ 2733 = a(461,458)      (21 tests, cond 0)
+		n1 false (test_time = 0.646457)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023051)
+	variant     5/ 2733 = a(461,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.634601)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0232911)
+	variant     6/ 2733 = a(461,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.667689)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0231919)
+	variant     7/ 2733 = a(461,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.637859)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0229931)
+	variant     8/ 2733 = a(461,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.657709)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022887)
+	variant     9/ 2733 = a(461,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.635379)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023643)
+	variant    10/ 2733 = a(461,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.654558)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023001)
+	variant    11/ 2733 = a(461,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.636556)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.034215)
+	variant    12/ 2733 = a(461,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.649992)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0239801)
+	variant    13/ 2733 = a(461,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.638087)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0237808)
+	variant    14/ 2733 = a(461,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.649479)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0244489)
+	variant    15/ 2733 = a(460,461)      (21 tests, cond 0)
+		n1 false (test_time = 0.63833)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022686)
+	variant    16/ 2733 = a(460,460)      (21 tests, cond 0)
+		n1 false (test_time = 0.647462)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.024303)
+	variant    17/ 2733 = a(460,459)      (21 tests, cond 0)
+		n1 false (test_time = 0.658514)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0231879)
+	variant    18/ 2733 = a(460,458)      (21 tests, cond 0)
+		n1 false (test_time = 0.646189)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.024009)
+	variant    19/ 2733 = a(460,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.639664)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0225179)
+	variant    20/ 2733 = a(460,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.656299)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0234179)
+	variant    21/ 2733 = a(460,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.637612)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022599)
+	variant    22/ 2733 = a(460,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.647113)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0236931)
+	variant    23/ 2733 = a(460,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.645833)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023298)
+	variant    24/ 2733 = a(460,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.645641)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0232201)
+	variant    25/ 2733 = a(459,461)      (21 tests, cond 0)
+		n1 false (test_time = 0.638764)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0225)
+	variant    26/ 2733 = a(459,460)      (21 tests, cond 0)
+		n1 false (test_time = 0.647302)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0224001)
+	variant    27/ 2733 = a(459,459)      (21 tests, cond 0)
+		n1 false (test_time = 0.641062)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022398)
+	variant    28/ 2733 = a(459,458)      (21 tests, cond 0)
+		n1 false (test_time = 0.645486)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0223908)
+	variant    29/ 2733 = a(459,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.63907)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0358191)
+	variant    30/ 2733 = a(459,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.647173)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022418)
+	variant    31/ 2733 = a(459,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.639542)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0223341)
+	variant    32/ 2733 = a(459,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.643797)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0228419)
+	variant    33/ 2733 = a(459,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.640482)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0230341)
+	variant    34/ 2733 = a(459,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.645739)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.024847)
+	variant    35/ 2733 = a(459,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.639167)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02332)
+	variant    36/ 2733 = a(459,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.644226)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0237861)
+	variant    37/ 2733 = a(459,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.646692)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022573)
+	variant    38/ 2733 = a(459,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.651375)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0223019)
+	variant    39/ 2733 = a(458,461)      (21 tests, cond 0)
+		n1 false (test_time = 0.646414)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022367)
+	variant    40/ 2733 = a(458,460)      (21 tests, cond 0)
+		n1 false (test_time = 0.642873)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0232182)
+	variant    41/ 2733 = a(458,459)      (21 tests, cond 0)
+		n1 false (test_time = 0.64111)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0222509)
+	variant    42/ 2733 = a(458,458)      (21 tests, cond 0)
+		n1 false (test_time = 0.641016)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.024055)
+	variant    43/ 2733 = a(458,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.642472)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0223951)
+	variant    44/ 2733 = a(458,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.638952)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023509)
+	variant    45/ 2733 = a(458,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.666806)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0246091)
+	variant    46/ 2733 = a(458,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.657915)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0228479)
+	variant    47/ 2733 = a(458,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.64872)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022752)
+	variant    48/ 2733 = a(458,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.642367)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0227408)
+	variant    49/ 2733 = a(444,444)      (21 tests, cond 0)
+		n1 false (test_time = 0.646403)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022135)
+	variant    50/ 2733 = a(444,443)      (21 tests, cond 0)
+		n1 false (test_time = 0.640845)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0221212)
+	variant    51/ 2733 = a(444,442)      (21 tests, cond 0)
+		n1 false (test_time = 0.645301)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022387)
+	variant    52/ 2733 = a(444,441)      (21 tests, cond 0)
+		n1 false (test_time = 0.64195)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022264)
+	variant    53/ 2733 = a(444,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.633078)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022135)
+	variant    54/ 2733 = a(444,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.627403)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0225191)
+	variant    55/ 2733 = a(444,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.626939)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022927)
+	variant    56/ 2733 = a(444,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.631969)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022336)
+	variant    57/ 2733 = a(444,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.629759)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022578)
+	variant    58/ 2733 = a(444,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.630212)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022269)
+	variant    59/ 2733 = a(444,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.628704)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0220461)
+	variant    60/ 2733 = a(444,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.628502)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021992)
+	variant    61/ 2733 = a(444,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.629697)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0218511)
+	variant    62/ 2733 = a(444,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.629059)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0220919)
+	variant    63/ 2733 = a(443,444)      (21 tests, cond 0)
+		n1 false (test_time = 0.628882)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022155)
+	variant    64/ 2733 = a(443,443)      (21 tests, cond 0)
+		n1 false (test_time = 0.628752)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0221641)
+	variant    65/ 2733 = a(443,442)      (21 tests, cond 0)
+		n1 false (test_time = 0.627904)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0222361)
+	variant    66/ 2733 = a(443,441)      (21 tests, cond 0)
+		n1 false (test_time = 0.63052)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0222311)
+	variant    67/ 2733 = a(443,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.631578)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0229361)
+	variant    68/ 2733 = a(443,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.631907)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0221281)
+	variant    69/ 2733 = a(443,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.630341)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022217)
+	variant    70/ 2733 = a(443,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.629613)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021992)
+	variant    71/ 2733 = a(443,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.628221)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022083)
+	variant    72/ 2733 = a(443,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.628377)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0220649)
+	variant    73/ 2733 = a(442,444)      (21 tests, cond 0)
+		n1 false (test_time = 0.630103)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0220342)
+	variant    74/ 2733 = a(442,443)      (21 tests, cond 0)
+		n1 false (test_time = 0.630826)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219729)
+	variant    75/ 2733 = a(442,442)      (21 tests, cond 0)
+		n1 false (test_time = 0.631038)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022162)
+	variant    76/ 2733 = a(442,441)      (21 tests, cond 0)
+		n1 false (test_time = 0.632089)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0221059)
+	variant    77/ 2733 = a(442,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.632294)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0229619)
+	variant    78/ 2733 = a(442,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.630991)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219762)
+	variant    79/ 2733 = a(442,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.631035)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0229161)
+	variant    80/ 2733 = a(442,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.631696)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0220761)
+	variant    81/ 2733 = a(442,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.629105)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0218298)
+	variant    82/ 2733 = a(442,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.629233)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0220101)
+	variant    83/ 2733 = a(442,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.631727)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219128)
+	variant    84/ 2733 = a(442,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.630399)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0218458)
+	variant    85/ 2733 = a(442,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.632415)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219479)
+	variant    86/ 2733 = a(442,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.633993)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0220351)
+	variant    87/ 2733 = a(441,444)      (21 tests, cond 0)
+		n1 false (test_time = 0.631874)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219362)
+	variant    88/ 2733 = a(441,443)      (21 tests, cond 0)
+		n1 false (test_time = 0.630371)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022481)
+	variant    89/ 2733 = a(441,442)      (21 tests, cond 0)
+		n1 false (test_time = 0.630381)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0228422)
+	variant    90/ 2733 = a(441,441)      (21 tests, cond 0)
+		n1 false (test_time = 0.630611)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0226381)
+	variant    91/ 2733 = a(441,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.63109)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219121)
+	variant    92/ 2733 = a(441,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.630275)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0220611)
+	variant    93/ 2733 = a(441,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.630173)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219622)
+	variant    94/ 2733 = a(441,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.627769)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0216022)
+	variant    95/ 2733 = a(441,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.629684)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219512)
+	variant    96/ 2733 = a(441,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.628259)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021718)
+	variant    97/ 2733 = a(426,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.628748)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0216479)
+	variant    98/ 2733 = a(426,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.629222)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022202)
+	variant    99/ 2733 = a(426,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.640327)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.032872)
+	variant   100/ 2733 = a(426,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.644843)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0232439)
+	variant   101/ 2733 = a(426,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.642525)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0226929)
+	variant   102/ 2733 = a(426,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.646499)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0235341)
+	variant   103/ 2733 = a(426,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.641922)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0221241)
+	variant   104/ 2733 = a(426,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.642801)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022027)
+	variant   105/ 2733 = a(426,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.646941)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021852)
+	variant   106/ 2733 = a(426,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.64798)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.031975)
+	variant   107/ 2733 = a(426,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.648438)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0217111)
+	variant   108/ 2733 = a(426,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.642531)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219619)
+	variant   109/ 2733 = a(426,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.653233)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0220671)
+	variant   110/ 2733 = a(426,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.644073)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0223999)
+	variant   111/ 2733 = a(426,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.647953)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0231941)
+	variant   112/ 2733 = a(426,369)      (21 tests, cond 0)
+		n1 false (test_time = 0.643938)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0223811)
+	variant   113/ 2733 = a(426,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.653791)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0227778)
+	variant   114/ 2733 = a(426,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.644825)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0221961)
+	variant   115/ 2733 = a(426,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.65429)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219321)
+	variant   116/ 2733 = a(426,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.641298)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022825)
+	variant   117/ 2733 = a(426,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.64598)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021735)
+	variant   118/ 2733 = a(426,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.641309)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0226099)
+	variant   119/ 2733 = a(426,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.660586)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023236)
+	variant   120/ 2733 = a(426,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.652502)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0228131)
+	variant   121/ 2733 = a(426,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.656158)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0229971)
+	variant   122/ 2733 = a(426,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.665329)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022891)
+	variant   123/ 2733 = a(425,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.652886)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022202)
+	variant   124/ 2733 = a(425,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.639196)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0226209)
+	variant   125/ 2733 = a(425,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.65075)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0218351)
+	variant   126/ 2733 = a(425,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.641001)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0216999)
+	variant   127/ 2733 = a(425,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.651406)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0216398)
+	variant   128/ 2733 = a(425,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.652741)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0215268)
+	variant   129/ 2733 = a(425,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.640218)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0223131)
+	variant   130/ 2733 = a(425,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.65093)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021677)
+	variant   131/ 2733 = a(425,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.639472)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02196)
+	variant   132/ 2733 = a(425,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.654227)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0345991)
+	variant   133/ 2733 = a(425,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.64624)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0228789)
+	variant   134/ 2733 = a(425,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.656361)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022789)
+	variant   135/ 2733 = a(425,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.6377)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0225708)
+	variant   136/ 2733 = a(425,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.660409)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022788)
+	variant   137/ 2733 = a(425,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.652064)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021904)
+	variant   138/ 2733 = a(425,369)      (21 tests, cond 0)
+		n1 false (test_time = 0.649556)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0217769)
+	variant   139/ 2733 = a(425,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.635352)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0215721)
+	variant   140/ 2733 = a(425,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.65038)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0347731)
+	variant   141/ 2733 = a(425,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.635539)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021935)
+	variant   142/ 2733 = a(425,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.654743)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0210462)
+	variant   143/ 2733 = a(425,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.665777)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02248)
+	variant   144/ 2733 = a(425,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.662924)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0241761)
+	variant   145/ 2733 = a(407,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.66645)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0230961)
+	variant   146/ 2733 = a(407,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.65239)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022701)
+	variant   147/ 2733 = a(407,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.638104)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0215752)
+	variant   148/ 2733 = a(407,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.650958)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0233719)
+	variant   149/ 2733 = a(407,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.637867)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021472)
+	variant   150/ 2733 = a(407,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.648928)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0245249)
+	variant   151/ 2733 = a(407,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.645536)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0216348)
+	variant   152/ 2733 = a(407,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.65196)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0231228)
+	variant   153/ 2733 = a(407,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.641373)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0215728)
+	variant   154/ 2733 = a(407,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.646572)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0218859)
+	variant   155/ 2733 = a(407,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.638892)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0227699)
+	variant   156/ 2733 = a(407,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.64856)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0217979)
+	variant   157/ 2733 = a(407,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.643452)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0215859)
+	variant   158/ 2733 = a(407,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.653025)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0214548)
+	variant   159/ 2733 = a(407,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.641347)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021404)
+	variant   160/ 2733 = a(407,369)      (21 tests, cond 0)
+		n1 false (test_time = 0.652144)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021383)
+	variant   161/ 2733 = a(407,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.637061)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021101)
+	variant   162/ 2733 = a(407,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.647401)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0214288)
+	variant   163/ 2733 = a(407,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.649048)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0215008)
+	variant   164/ 2733 = a(407,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.644509)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021132)
+	variant   165/ 2733 = a(407,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.645896)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0223861)
+	variant   166/ 2733 = a(407,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.652062)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0251601)
+	variant   167/ 2733 = a(407,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.659391)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021579)
+	variant   168/ 2733 = a(407,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.642261)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023735)
+	variant   169/ 2733 = a(407,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.643661)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021589)
+	variant   170/ 2733 = a(407,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.642414)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02162)
+	variant   171/ 2733 = a(406,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.6436)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0212989)
+	variant   172/ 2733 = a(406,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.645949)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0224729)
+	variant   173/ 2733 = a(406,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.64365)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0210781)
+	variant   174/ 2733 = a(406,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.644952)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022918)
+	variant   175/ 2733 = a(406,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.64696)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0215499)
+	variant   176/ 2733 = a(406,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.642588)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0210631)
+	variant   177/ 2733 = a(406,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.648717)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021663)
+	variant   178/ 2733 = a(406,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.641719)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0226352)
+	variant   179/ 2733 = a(406,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.64825)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0214851)
+	variant   180/ 2733 = a(406,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.645364)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022028)
+	variant   181/ 2733 = a(406,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.64683)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021955)
+	variant   182/ 2733 = a(406,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.638757)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0211639)
+	variant   183/ 2733 = a(406,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.663981)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022871)
+	variant   184/ 2733 = a(406,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.651011)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021296)
+	variant   185/ 2733 = a(406,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.646739)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0212581)
+	variant   186/ 2733 = a(406,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.647339)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033601)
+	variant   187/ 2733 = a(406,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.65523)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021275)
+	variant   188/ 2733 = a(406,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.640614)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0213239)
+	variant   189/ 2733 = a(406,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.644941)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.030266)
+	variant   190/ 2733 = a(406,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.638231)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0223608)
+	variant   191/ 2733 = a(406,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.651135)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0215352)
+	variant   192/ 2733 = a(406,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.638675)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0226581)
+	variant   193/ 2733 = a(406,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.648656)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0212641)
+	variant   194/ 2733 = a(406,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.633717)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021518)
+	variant   195/ 2733 = a(381,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.646396)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021215)
+	variant   196/ 2733 = a(381,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.637853)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021265)
+	variant   197/ 2733 = a(381,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.650888)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0343549)
+	variant   198/ 2733 = a(381,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.64243)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0209241)
+	variant   199/ 2733 = a(381,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.649442)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0221391)
+	variant   200/ 2733 = a(381,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.64934)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0212901)
+	variant   201/ 2733 = a(381,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.64653)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0212102)
+	variant   202/ 2733 = a(381,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.643483)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021138)
+	variant   203/ 2733 = a(381,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.662151)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021601)
+	variant   204/ 2733 = a(381,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.63673)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0217268)
+	variant   205/ 2733 = a(381,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.652736)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0212851)
+	variant   206/ 2733 = a(381,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.638272)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0213349)
+	variant   207/ 2733 = a(381,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.649294)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0206311)
+	variant   208/ 2733 = a(381,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.637513)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021107)
+	variant   209/ 2733 = a(381,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.652338)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0208619)
+	variant   210/ 2733 = a(381,369)      (21 tests, cond 0)
+		n1 false (test_time = 0.635711)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0212638)
+	variant   211/ 2733 = a(381,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.648857)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0224459)
+	variant   212/ 2733 = a(381,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.637824)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0210671)
+	variant   213/ 2733 = a(381,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.650063)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022136)
+	variant   214/ 2733 = a(381,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.636624)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0217981)
+	variant   215/ 2733 = a(381,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.649562)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0215919)
+	variant   216/ 2733 = a(381,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.638854)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0213399)
+	variant   217/ 2733 = a(381,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.646519)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0211639)
+	variant   218/ 2733 = a(381,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.643544)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0210209)
+	variant   219/ 2733 = a(381,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.648373)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0209391)
+	variant   220/ 2733 = a(381,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.642627)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0208368)
+	variant   221/ 2733 = a(380,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.646615)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020611)
+	variant   222/ 2733 = a(380,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.638431)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02075)
+	variant   223/ 2733 = a(380,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.644987)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020879)
+	variant   224/ 2733 = a(380,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.637937)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0209382)
+	variant   225/ 2733 = a(380,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.642957)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0213509)
+	variant   226/ 2733 = a(380,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.63981)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0218899)
+	variant   227/ 2733 = a(380,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.649399)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0235069)
+	variant   228/ 2733 = a(380,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.646717)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0220592)
+	variant   229/ 2733 = a(380,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.643939)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022049)
+	variant   230/ 2733 = a(380,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.645653)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0209529)
+	variant   231/ 2733 = a(380,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.643527)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0209858)
+	variant   232/ 2733 = a(380,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.648828)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020684)
+	variant   233/ 2733 = a(380,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.640498)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022125)
+	variant   234/ 2733 = a(380,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.648649)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0208778)
+	variant   235/ 2733 = a(380,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.640703)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0206921)
+	variant   236/ 2733 = a(380,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.646283)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0208788)
+	variant   237/ 2733 = a(380,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.639751)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0209401)
+	variant   238/ 2733 = a(380,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.643805)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021389)
+	variant   239/ 2733 = a(380,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.637917)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219059)
+	variant   240/ 2733 = a(380,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.643088)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021791)
+	variant   241/ 2733 = a(379,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.639247)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0211768)
+	variant   242/ 2733 = a(379,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.64478)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021472)
+	variant   243/ 2733 = a(379,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.640404)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0216761)
+	variant   244/ 2733 = a(379,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.640763)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020602)
+	variant   245/ 2733 = a(379,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.639111)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0221391)
+	variant   246/ 2733 = a(379,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.644352)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0206251)
+	variant   247/ 2733 = a(379,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.635112)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021311)
+	variant   248/ 2733 = a(379,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.655506)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02072)
+	variant   249/ 2733 = a(379,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.635147)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0211511)
+	variant   250/ 2733 = a(379,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.649604)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0205052)
+	variant   251/ 2733 = a(379,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.638397)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020829)
+	variant   252/ 2733 = a(379,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.651302)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02071)
+	variant   253/ 2733 = a(379,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.646807)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0211709)
+	variant   254/ 2733 = a(379,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.649295)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0204592)
+	variant   255/ 2733 = a(379,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.638791)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020858)
+	variant   256/ 2733 = a(379,369)      (21 tests, cond 0)
+		n1 false (test_time = 0.651344)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0208759)
+	variant   257/ 2733 = a(379,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.637532)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0206299)
+	variant   258/ 2733 = a(379,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.650941)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020859)
+	variant   259/ 2733 = a(379,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.638371)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020689)
+	variant   260/ 2733 = a(379,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.649681)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0206659)
+	variant   261/ 2733 = a(379,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.640315)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0211091)
+	variant   262/ 2733 = a(379,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.650619)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0204401)
+	variant   263/ 2733 = a(379,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.636255)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0220561)
+	variant   264/ 2733 = a(379,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.649888)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0215061)
+	variant   265/ 2733 = a(379,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.63569)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0212231)
+	variant   266/ 2733 = a(379,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.647284)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020509)
+	variant   267/ 2733 = a(378,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.647731)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020834)
+	variant   268/ 2733 = a(378,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.649476)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0204239)
+	variant   269/ 2733 = a(378,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.63624)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0205851)
+	variant   270/ 2733 = a(378,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.647529)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022332)
+	variant   271/ 2733 = a(378,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.634391)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0206978)
+	variant   272/ 2733 = a(378,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.648805)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021045)
+	variant   273/ 2733 = a(378,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.638841)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0205278)
+	variant   274/ 2733 = a(378,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.655816)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0224888)
+	variant   275/ 2733 = a(378,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.666176)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0213559)
+	variant   276/ 2733 = a(378,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.65048)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0214291)
+	variant   277/ 2733 = a(378,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.641845)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0210769)
+	variant   278/ 2733 = a(378,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.646922)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020474)
+	variant   279/ 2733 = a(378,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.640645)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0202811)
+	variant   280/ 2733 = a(378,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.64819)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0202541)
+	variant   281/ 2733 = a(378,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.653567)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0200498)
+	variant   282/ 2733 = a(378,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.646265)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020442)
+	variant   283/ 2733 = a(378,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.662881)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0214939)
+	variant   284/ 2733 = a(378,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.647799)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0204051)
+	variant   285/ 2733 = a(378,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.638897)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0203581)
+	variant   286/ 2733 = a(378,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.646336)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0201941)
+	variant   287/ 2733 = a(377,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.639924)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020503)
+	variant   288/ 2733 = a(377,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.649684)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021698)
+	variant   289/ 2733 = a(377,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.641572)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.033567)
+	variant   290/ 2733 = a(377,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.656694)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0226951)
+	variant   291/ 2733 = a(377,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.638641)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0203512)
+	variant   292/ 2733 = a(377,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.647637)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0229778)
+	variant   293/ 2733 = a(377,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.666144)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0203872)
+	variant   294/ 2733 = a(377,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.64895)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0206399)
+	variant   295/ 2733 = a(377,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.64388)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020416)
+	variant   296/ 2733 = a(377,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.647034)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0205541)
+	variant   297/ 2733 = a(377,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.642862)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020153)
+	variant   298/ 2733 = a(377,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.646286)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0211759)
+	variant   299/ 2733 = a(377,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.646885)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0204971)
+	variant   300/ 2733 = a(377,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.644203)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020221)
+	variant   301/ 2733 = a(377,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.647231)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021549)
+	variant   302/ 2733 = a(377,369)      (21 tests, cond 0)
+		n1 false (test_time = 0.642363)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0205591)
+	variant   303/ 2733 = a(377,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.644387)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0209918)
+	variant   304/ 2733 = a(377,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.639551)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020123)
+	variant   305/ 2733 = a(377,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.647545)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020448)
+	variant   306/ 2733 = a(377,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.639645)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0209751)
+	variant   307/ 2733 = a(377,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.645095)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0201421)
+	variant   308/ 2733 = a(377,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.638905)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020416)
+	variant   309/ 2733 = a(377,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.656417)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0202501)
+	variant   310/ 2733 = a(377,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.638273)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0213399)
+	variant   311/ 2733 = a(377,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.644366)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.031816)
+	variant   312/ 2733 = a(377,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.63684)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0215399)
+	variant   313/ 2733 = a(376,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.654323)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0215039)
+	variant   314/ 2733 = a(376,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.649109)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0212669)
+	variant   315/ 2733 = a(376,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.651957)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0208168)
+	variant   316/ 2733 = a(376,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.639861)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021657)
+	variant   317/ 2733 = a(376,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.649839)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0204451)
+	variant   318/ 2733 = a(376,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.640143)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0203118)
+	variant   319/ 2733 = a(376,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.651253)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0200801)
+	variant   320/ 2733 = a(376,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.637591)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020062)
+	variant   321/ 2733 = a(376,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.646672)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019846)
+	variant   322/ 2733 = a(376,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.632992)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0201809)
+	variant   323/ 2733 = a(376,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.64551)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0198922)
+	variant   324/ 2733 = a(376,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.635567)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020252)
+	variant   325/ 2733 = a(376,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.652656)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0203409)
+	variant   326/ 2733 = a(376,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.63621)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0202141)
+	variant   327/ 2733 = a(376,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.649161)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0210719)
+	variant   328/ 2733 = a(376,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.638001)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0232739)
+	variant   329/ 2733 = a(376,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.648652)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0217888)
+	variant   330/ 2733 = a(376,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.637458)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0200691)
+	variant   331/ 2733 = a(376,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.647578)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0235631)
+	variant   332/ 2733 = a(376,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.642631)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0207942)
+	variant   333/ 2733 = a(375,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.652731)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02143)
+	variant   334/ 2733 = a(375,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.642484)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0201399)
+	variant   335/ 2733 = a(375,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.64451)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0202129)
+	variant   336/ 2733 = a(375,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.637969)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0197871)
+	variant   337/ 2733 = a(375,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.64701)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0198059)
+	variant   338/ 2733 = a(375,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.639847)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0199411)
+	variant   339/ 2733 = a(375,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.644406)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019906)
+	variant   340/ 2733 = a(375,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.640146)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0203571)
+	variant   341/ 2733 = a(375,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.653438)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0209401)
+	variant   342/ 2733 = a(375,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.658616)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0204771)
+	variant   343/ 2733 = a(375,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.644269)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0199831)
+	variant   344/ 2733 = a(375,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.650172)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019985)
+	variant   345/ 2733 = a(375,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.64888)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019706)
+	variant   346/ 2733 = a(375,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.640518)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0198388)
+	variant   347/ 2733 = a(375,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.644116)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019803)
+	variant   348/ 2733 = a(375,369)      (21 tests, cond 0)
+		n1 false (test_time = 0.65194)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0200481)
+	variant   349/ 2733 = a(375,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.645778)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021498)
+	variant   350/ 2733 = a(375,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.642038)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0198228)
+	variant   351/ 2733 = a(375,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.648106)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0216041)
+	variant   352/ 2733 = a(375,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.644489)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019943)
+	variant   353/ 2733 = a(375,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.645427)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0207639)
+	variant   354/ 2733 = a(375,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.639909)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0202899)
+	variant   355/ 2733 = a(375,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.644211)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021754)
+	variant   356/ 2733 = a(375,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.650179)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020025)
+	variant   357/ 2733 = a(375,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.645452)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020184)
+	variant   358/ 2733 = a(375,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.645003)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0199599)
+	variant   359/ 2733 = a(374,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.641793)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019851)
+	variant   360/ 2733 = a(374,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.649613)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0205801)
+	variant   361/ 2733 = a(374,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.641097)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019906)
+	variant   362/ 2733 = a(374,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.651373)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0201111)
+	variant   363/ 2733 = a(374,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.640529)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019948)
+	variant   364/ 2733 = a(374,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.650664)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0198789)
+	variant   365/ 2733 = a(374,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.641988)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0207679)
+	variant   366/ 2733 = a(374,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.643553)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0209639)
+	variant   367/ 2733 = a(374,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.640245)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0198801)
+	variant   368/ 2733 = a(374,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.648519)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0206361)
+	variant   369/ 2733 = a(374,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.639326)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021035)
+	variant   370/ 2733 = a(374,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.644456)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019767)
+	variant   371/ 2733 = a(374,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.636061)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019623)
+	variant   372/ 2733 = a(374,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.662655)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0197859)
+	variant   373/ 2733 = a(374,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.637529)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01998)
+	variant   374/ 2733 = a(374,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.646108)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0195501)
+	variant   375/ 2733 = a(374,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.638771)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020164)
+	variant   376/ 2733 = a(374,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.647733)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019779)
+	variant   377/ 2733 = a(374,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.634914)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019835)
+	variant   378/ 2733 = a(374,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.649004)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0202019)
+	variant   379/ 2733 = a(373,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.639919)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020997)
+	variant   380/ 2733 = a(373,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.652506)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020292)
+	variant   381/ 2733 = a(373,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.634831)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0205641)
+	variant   382/ 2733 = a(373,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.652001)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019583)
+	variant   383/ 2733 = a(373,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.635988)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0198021)
+	variant   384/ 2733 = a(373,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.648131)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0195031)
+	variant   385/ 2733 = a(373,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.63388)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019681)
+	variant   386/ 2733 = a(373,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.652599)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0192831)
+	variant   387/ 2733 = a(373,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.632344)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0197971)
+	variant   388/ 2733 = a(373,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.645572)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0208671)
+	variant   389/ 2733 = a(373,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.650337)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020879)
+	variant   390/ 2733 = a(373,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.661201)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020967)
+	variant   391/ 2733 = a(373,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.632536)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0195651)
+	variant   392/ 2733 = a(373,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.650111)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020705)
+	variant   393/ 2733 = a(373,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.635533)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019573)
+	variant   394/ 2733 = a(373,369)      (21 tests, cond 0)
+		n1 false (test_time = 0.645747)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019799)
+	variant   395/ 2733 = a(373,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.636939)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0196278)
+	variant   396/ 2733 = a(373,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.6459)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0192108)
+	variant   397/ 2733 = a(373,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.640234)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0196109)
+	variant   398/ 2733 = a(373,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.643779)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0194058)
+	variant   399/ 2733 = a(373,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.636219)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0193241)
+	variant   400/ 2733 = a(373,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.640761)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0193391)
+	variant   401/ 2733 = a(373,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.636608)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019187)
+	variant   402/ 2733 = a(373,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.644011)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019882)
+	variant   403/ 2733 = a(373,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.637285)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01934)
+	variant   404/ 2733 = a(373,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.643021)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0218921)
+	variant   405/ 2733 = a(372,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.649284)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020339)
+	variant   406/ 2733 = a(372,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.653797)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0222101)
+	variant   407/ 2733 = a(372,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.644481)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019984)
+	variant   408/ 2733 = a(372,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.645845)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019793)
+	variant   409/ 2733 = a(372,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.649914)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019531)
+	variant   410/ 2733 = a(372,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.648858)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020891)
+	variant   411/ 2733 = a(372,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.6513)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019249)
+	variant   412/ 2733 = a(372,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.638196)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019594)
+	variant   413/ 2733 = a(372,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.646629)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0193932)
+	variant   414/ 2733 = a(372,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.638411)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0196371)
+	variant   415/ 2733 = a(372,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.644001)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019624)
+	variant   416/ 2733 = a(372,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.644036)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0189822)
+	variant   417/ 2733 = a(372,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.644054)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01982)
+	variant   418/ 2733 = a(372,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.639398)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0205362)
+	variant   419/ 2733 = a(372,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.644068)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020102)
+	variant   420/ 2733 = a(372,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.638557)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0199189)
+	variant   421/ 2733 = a(372,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.643848)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0194089)
+	variant   422/ 2733 = a(372,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.639959)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020108)
+	variant   423/ 2733 = a(372,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.64676)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019341)
+	variant   424/ 2733 = a(372,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.640151)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02005)
+	variant   425/ 2733 = a(371,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.63569)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0192859)
+	variant   426/ 2733 = a(371,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.628321)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0193708)
+	variant   427/ 2733 = a(371,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.626663)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019285)
+	variant   428/ 2733 = a(371,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.630177)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0191331)
+	variant   429/ 2733 = a(371,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.628565)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0192261)
+	variant   430/ 2733 = a(371,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.629504)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.02018)
+	variant   431/ 2733 = a(371,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.629663)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018945)
+	variant   432/ 2733 = a(371,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.630084)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0197601)
+	variant   433/ 2733 = a(371,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.629624)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019242)
+	variant   434/ 2733 = a(371,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.629043)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0192962)
+	variant   435/ 2733 = a(371,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.629846)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019218)
+	variant   436/ 2733 = a(371,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.627535)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018924)
+	variant   437/ 2733 = a(371,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.624761)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0190239)
+	variant   438/ 2733 = a(371,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.62978)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0192549)
+	variant   439/ 2733 = a(371,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.630226)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0190589)
+	variant   440/ 2733 = a(371,369)      (21 tests, cond 0)
+		n1 false (test_time = 0.62672)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0190699)
+	variant   441/ 2733 = a(371,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.627721)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0188811)
+	variant   442/ 2733 = a(371,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.627668)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019022)
+	variant   443/ 2733 = a(371,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.627194)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0194678)
+	variant   444/ 2733 = a(371,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.629117)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0202301)
+	variant   445/ 2733 = a(371,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.62811)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0198569)
+	variant   446/ 2733 = a(371,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.631441)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019027)
+	variant   447/ 2733 = a(371,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.628064)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0189862)
+	variant   448/ 2733 = a(371,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.628308)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0190501)
+	variant   449/ 2733 = a(371,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.62797)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0189948)
+	variant   450/ 2733 = a(371,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.626649)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0190079)
+	variant   451/ 2733 = a(370,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.628087)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0190511)
+	variant   452/ 2733 = a(370,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.628418)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0190079)
+	variant   453/ 2733 = a(370,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.62696)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018851)
+	variant   454/ 2733 = a(370,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.625861)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0188911)
+	variant   455/ 2733 = a(370,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.626173)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018846)
+	variant   456/ 2733 = a(370,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.629295)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01899)
+	variant   457/ 2733 = a(370,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.627741)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019891)
+	variant   458/ 2733 = a(370,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.628832)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01987)
+	variant   459/ 2733 = a(370,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.628898)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0199499)
+	variant   460/ 2733 = a(370,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.627771)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0186322)
+	variant   461/ 2733 = a(370,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.626613)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018918)
+	variant   462/ 2733 = a(370,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.627901)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018805)
+	variant   463/ 2733 = a(370,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.626522)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0188169)
+	variant   464/ 2733 = a(370,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.628604)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0188971)
+	variant   465/ 2733 = a(370,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.627079)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0189211)
+	variant   466/ 2733 = a(370,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.627218)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018841)
+	variant   467/ 2733 = a(370,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.626887)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018894)
+	variant   468/ 2733 = a(370,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.628934)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018836)
+	variant   469/ 2733 = a(370,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.62272)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018856)
+	variant   470/ 2733 = a(369,425)      (21 tests, cond 0)
+		n1 false (test_time = 0.625339)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019721)
+	variant   471/ 2733 = a(369,407)      (21 tests, cond 0)
+		n1 false (test_time = 0.637963)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0185409)
+	variant   472/ 2733 = a(369,406)      (21 tests, cond 0)
+		n1 false (test_time = 0.636544)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019315)
+	variant   473/ 2733 = a(369,381)      (21 tests, cond 0)
+		n1 false (test_time = 0.653174)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019031)
+	variant   474/ 2733 = a(369,380)      (21 tests, cond 0)
+		n1 false (test_time = 0.634386)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018755)
+	variant   475/ 2733 = a(369,379)      (21 tests, cond 0)
+		n1 false (test_time = 0.65831)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0187099)
+	variant   476/ 2733 = a(369,378)      (21 tests, cond 0)
+		n1 false (test_time = 0.63987)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0189588)
+	variant   477/ 2733 = a(369,377)      (21 tests, cond 0)
+		n1 false (test_time = 0.650044)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0189149)
+	variant   478/ 2733 = a(369,376)      (21 tests, cond 0)
+		n1 false (test_time = 0.634384)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0187998)
+	variant   479/ 2733 = a(369,375)      (21 tests, cond 0)
+		n1 false (test_time = 0.645412)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0197361)
+	variant   480/ 2733 = a(369,374)      (21 tests, cond 0)
+		n1 false (test_time = 0.658016)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0188749)
+	variant   481/ 2733 = a(369,373)      (21 tests, cond 0)
+		n1 false (test_time = 0.648184)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0191431)
+	variant   482/ 2733 = a(369,372)      (21 tests, cond 0)
+		n1 false (test_time = 0.63773)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0189109)
+	variant   483/ 2733 = a(369,371)      (21 tests, cond 0)
+		n1 false (test_time = 0.650824)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019547)
+	variant   484/ 2733 = a(369,370)      (21 tests, cond 0)
+		n1 false (test_time = 0.637228)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0196722)
+	variant   485/ 2733 = a(369,369)      (21 tests, cond 0)
+		n1 false (test_time = 0.651263)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019799)
+	variant   486/ 2733 = a(369,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.637618)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0188351)
+	variant   487/ 2733 = a(369,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.645277)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018847)
+	variant   488/ 2733 = a(369,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.63687)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0186598)
+	variant   489/ 2733 = a(369,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.645348)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018662)
+	variant   490/ 2733 = a(369,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.646581)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01861)
+	variant   491/ 2733 = a(369,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.642752)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0185931)
+	variant   492/ 2733 = a(369,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.65528)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0197401)
+	variant   493/ 2733 = a(369,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.664331)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0211198)
+	variant   494/ 2733 = a(369,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.645438)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0186372)
+	variant   495/ 2733 = a(369,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.643415)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019454)
+	variant   496/ 2733 = a(361,361)      (21 tests, cond 0)
+		n1 false (test_time = 0.644814)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0188792)
+	variant   497/ 2733 = a(361,360)      (21 tests, cond 0)
+		n1 false (test_time = 0.64414)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020035)
+	variant   498/ 2733 = a(361,358)      (21 tests, cond 0)
+		n1 false (test_time = 0.645404)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0192339)
+	variant   499/ 2733 = a(361,357)      (21 tests, cond 0)
+		n1 false (test_time = 0.639625)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0191739)
+	variant   500/ 2733 = a(361,356)      (21 tests, cond 0)
+		n1 false (test_time = 0.659681)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0186729)
+	variant   501/ 2733 = a(361,355)      (21 tests, cond 0)
+		n1 false (test_time = 0.645962)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0186651)
+	variant   502/ 2733 = a(361,354)      (21 tests, cond 0)
+		n1 false (test_time = 0.640929)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01825)
+	variant   503/ 2733 = a(361,353)      (21 tests, cond 0)
+		n1 false (test_time = 0.645575)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0189178)
+	variant   504/ 2733 = a(361,352)      (21 tests, cond 0)
+		n1 false (test_time = 0.645226)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0188968)
+	variant   505/ 2733 = a(361,350)      (21 tests, cond 0)
+		n1 false (test_time = 0.643724)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0185568)
+	variant   506/ 2733 = a(361,349)      (21 tests, cond 0)
+		n1 false (test_time = 0.641856)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0186241)
+	variant   507/ 2733 = a(361,348)      (21 tests, cond 0)
+		n1 false (test_time = 0.645709)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019016)
+	variant   508/ 2733 = a(361,346)      (21 tests, cond 0)
+		n1 false (test_time = 0.641498)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0186779)
+	variant   509/ 2733 = a(361,343)      (21 tests, cond 0)
+		n1 false (test_time = 0.648067)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0188138)
+	variant   510/ 2733 = a(361,342)      (21 tests, cond 0)
+		n1 false (test_time = 0.643934)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0192602)
+	variant   511/ 2733 = a(361,338)      (21 tests, cond 0)
+		n1 false (test_time = 0.672474)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01893)
+	variant   512/ 2733 = a(361,337)      (21 tests, cond 0)
+		n1 false (test_time = 0.644446)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0198021)
+	variant   513/ 2733 = a(361,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.646701)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0241618)
+	variant   514/ 2733 = a(361,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.640047)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018748)
+	variant   515/ 2733 = a(361,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.650905)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0187819)
+	variant   516/ 2733 = a(361,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.643176)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0192859)
+	variant   517/ 2733 = a(361,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.646266)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.029345)
+	variant   518/ 2733 = a(361,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.641744)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0193281)
+	variant   519/ 2733 = a(361,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.650703)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0183041)
+	variant   520/ 2733 = a(361,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.638887)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0187361)
+	variant   521/ 2733 = a(361,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.655097)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0185399)
+	variant   522/ 2733 = a(361,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.638465)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0194809)
+	variant   523/ 2733 = a(360,361)      (21 tests, cond 0)
+		n1 false (test_time = 0.646763)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0291421)
+	variant   524/ 2733 = a(360,360)      (21 tests, cond 0)
+		n1 false (test_time = 0.6374)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019032)
+	variant   525/ 2733 = a(360,358)      (21 tests, cond 0)
+		n1 false (test_time = 0.651702)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.030169)
+	variant   526/ 2733 = a(360,357)      (21 tests, cond 0)
+		n1 false (test_time = 0.640151)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019268)
+	variant   527/ 2733 = a(360,356)      (21 tests, cond 0)
+		n1 false (test_time = 0.652821)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018723)
+	variant   528/ 2733 = a(360,355)      (21 tests, cond 0)
+		n1 false (test_time = 0.634349)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0185959)
+	variant   529/ 2733 = a(360,354)      (21 tests, cond 0)
+		n1 false (test_time = 0.646098)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0182519)
+	variant   530/ 2733 = a(360,353)      (21 tests, cond 0)
+		n1 false (test_time = 0.632308)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0199871)
+	variant   531/ 2733 = a(360,352)      (21 tests, cond 0)
+		n1 false (test_time = 0.646845)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0182898)
+	variant   532/ 2733 = a(360,350)      (21 tests, cond 0)
+		n1 false (test_time = 0.634007)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0183709)
+	variant   533/ 2733 = a(360,349)      (21 tests, cond 0)
+		n1 false (test_time = 0.651405)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0192299)
+	variant   534/ 2733 = a(360,348)      (21 tests, cond 0)
+		n1 false (test_time = 0.63461)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0183539)
+	variant   535/ 2733 = a(360,346)      (21 tests, cond 0)
+		n1 false (test_time = 0.646607)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0199139)
+	variant   536/ 2733 = a(360,343)      (21 tests, cond 0)
+		n1 false (test_time = 0.634988)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018321)
+	variant   537/ 2733 = a(360,342)      (21 tests, cond 0)
+		n1 false (test_time = 0.642627)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0189538)
+	variant   538/ 2733 = a(360,338)      (21 tests, cond 0)
+		n1 false (test_time = 0.639655)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0193739)
+	variant   539/ 2733 = a(360,337)      (21 tests, cond 0)
+		n1 false (test_time = 0.646854)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0201149)
+	variant   540/ 2733 = a(360,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.638753)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018914)
+	variant   541/ 2733 = a(360,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.648064)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0184069)
+	variant   542/ 2733 = a(360,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.636663)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0183768)
+	variant   543/ 2733 = a(360,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.646308)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0183132)
+	variant   544/ 2733 = a(360,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.639262)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0183249)
+	variant   545/ 2733 = a(360,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.647243)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0181201)
+	variant   546/ 2733 = a(359,361)      (21 tests, cond 0)
+		n1 false (test_time = 0.642047)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018424)
+	variant   547/ 2733 = a(359,360)      (21 tests, cond 0)
+		n1 false (test_time = 0.645176)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0182431)
+	variant   548/ 2733 = a(359,358)      (21 tests, cond 0)
+		n1 false (test_time = 0.645405)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0183291)
+	variant   549/ 2733 = a(359,357)      (21 tests, cond 0)
+		n1 false (test_time = 0.647369)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018194)
+	variant   550/ 2733 = a(359,356)      (21 tests, cond 0)
+		n1 false (test_time = 0.657478)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018188)
+	variant   551/ 2733 = a(359,355)      (21 tests, cond 0)
+		n1 false (test_time = 0.648123)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0197611)
+	variant   552/ 2733 = a(359,354)      (21 tests, cond 0)
+		n1 false (test_time = 0.652722)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0190542)
+	variant   553/ 2733 = a(359,353)      (21 tests, cond 0)
+		n1 false (test_time = 0.647811)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0187609)
+	variant   554/ 2733 = a(359,352)      (21 tests, cond 0)
+		n1 false (test_time = 0.654551)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0195599)
+	variant   555/ 2733 = a(359,350)      (21 tests, cond 0)
+		n1 false (test_time = 0.680104)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020381)
+	variant   556/ 2733 = a(359,349)      (21 tests, cond 0)
+		n1 false (test_time = 0.73837)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0202)
+	variant   557/ 2733 = a(359,348)      (21 tests, cond 0)
+		n1 false (test_time = 0.738355)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0218101)
+	variant   558/ 2733 = a(359,346)      (21 tests, cond 0)
+		n1 false (test_time = 0.738832)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0215681)
+	variant   559/ 2733 = a(359,343)      (21 tests, cond 0)
+		n1 false (test_time = 0.71848)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0188611)
+	variant   560/ 2733 = a(359,342)      (21 tests, cond 0)
+		n1 false (test_time = 0.728459)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018903)
+	variant   561/ 2733 = a(359,338)      (21 tests, cond 0)
+		n1 false (test_time = 0.708103)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0199058)
+	variant   562/ 2733 = a(359,337)      (21 tests, cond 0)
+		n1 false (test_time = 0.716088)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0208478)
+	variant   563/ 2733 = a(359,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.741876)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0206659)
+	variant   564/ 2733 = a(359,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.773381)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021585)
+	variant   565/ 2733 = a(359,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.753789)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219848)
+	variant   566/ 2733 = a(359,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.772384)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0227709)
+	variant   567/ 2733 = a(359,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.758451)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.023011)
+	variant   568/ 2733 = a(359,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.766434)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0218859)
+	variant   569/ 2733 = a(358,361)      (21 tests, cond 0)
+		n1 false (test_time = 0.739529)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0205081)
+	variant   570/ 2733 = a(358,360)      (21 tests, cond 0)
+		n1 false (test_time = 0.728281)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0218918)
+	variant   571/ 2733 = a(358,358)      (21 tests, cond 0)
+		n1 false (test_time = 0.742919)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021256)
+	variant   572/ 2733 = a(358,357)      (21 tests, cond 0)
+		n1 false (test_time = 0.743309)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0183342)
+	variant   573/ 2733 = a(358,356)      (21 tests, cond 0)
+		n1 false (test_time = 0.744679)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0210228)
+	variant   574/ 2733 = a(358,355)      (21 tests, cond 0)
+		n1 false (test_time = 0.733543)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.021066)
+	variant   575/ 2733 = a(358,354)      (21 tests, cond 0)
+		n1 false (test_time = 0.696741)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020968)
+	variant   576/ 2733 = a(358,353)      (21 tests, cond 0)
+		n1 false (test_time = 0.686282)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018955)
+	variant   577/ 2733 = a(358,352)      (21 tests, cond 0)
+		n1 false (test_time = 0.698407)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019495)
+	variant   578/ 2733 = a(358,350)      (21 tests, cond 0)
+		n1 false (test_time = 0.685826)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0182211)
+	variant   579/ 2733 = a(358,349)      (21 tests, cond 0)
+		n1 false (test_time = 0.648344)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0194712)
+	variant   580/ 2733 = a(358,348)      (21 tests, cond 0)
+		n1 false (test_time = 0.665966)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019057)
+	variant   581/ 2733 = a(358,343)      (21 tests, cond 0)
+		n1 false (test_time = 0.638523)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0185812)
+	variant   582/ 2733 = a(358,342)      (21 tests, cond 0)
+		n1 false (test_time = 0.653896)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017894)
+	variant   583/ 2733 = a(358,338)      (21 tests, cond 0)
+		n1 false (test_time = 0.635729)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018522)
+	variant   584/ 2733 = a(358,337)      (21 tests, cond 0)
+		n1 false (test_time = 0.656281)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0180209)
+	variant   585/ 2733 = a(358,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.634433)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0180728)
+	variant   586/ 2733 = a(358,150)      (21 tests, cond 0)
+		n1 false (test_time = 0.650676)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0177591)
+	variant   587/ 2733 = a(358,148)      (21 tests, cond 0)
+		n1 false (test_time = 0.635451)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0180941)
+	variant   588/ 2733 = a(358,108)      (21 tests, cond 0)
+		n1 false (test_time = 0.656361)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018821)
+	variant   589/ 2733 = a(358,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.636022)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018225)
+	variant   590/ 2733 = a(358,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.653067)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0191839)
+	variant   591/ 2733 = a(358,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.63903)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0179801)
+	variant   592/ 2733 = a(358,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.649814)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018364)
+	variant   593/ 2733 = a(358,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.638112)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018157)
+	variant   594/ 2733 = a(358,4)        (21 tests, cond 0)
+		n1 false (test_time = 0.647684)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019213)
+	variant   595/ 2733 = a(357,361)      (21 tests, cond 0)
+		n1 false (test_time = 0.643334)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0183501)
+	variant   596/ 2733 = a(357,360)      (21 tests, cond 0)
+		n1 false (test_time = 0.643446)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0189071)
+	variant   597/ 2733 = a(357,358)      (21 tests, cond 0)
+		n1 false (test_time = 0.659194)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0284719)
+	variant   598/ 2733 = a(357,357)      (21 tests, cond 0)
+		n1 false (test_time = 0.648999)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0180168)
+	variant   599/ 2733 = a(357,356)      (21 tests, cond 0)
+		n1 false (test_time = 0.639221)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01774)
+	variant   600/ 2733 = a(357,355)      (21 tests, cond 0)
+		n1 false (test_time = 0.647511)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017648)
+	variant   601/ 2733 = a(357,354)      (21 tests, cond 0)
+		n1 false (test_time = 0.642713)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0177081)
+	variant   602/ 2733 = a(357,353)      (21 tests, cond 0)
+		n1 false (test_time = 0.648134)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0175261)
+	variant   603/ 2733 = a(357,352)      (21 tests, cond 0)
+		n1 false (test_time = 0.638601)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0177441)
+	variant   604/ 2733 = a(357,350)      (21 tests, cond 0)
+		n1 false (test_time = 0.647517)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017962)
+	variant   605/ 2733 = a(357,349)      (21 tests, cond 0)
+		n1 false (test_time = 0.642655)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017725)
+	variant   606/ 2733 = a(357,348)      (21 tests, cond 0)
+		n1 false (test_time = 0.644413)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019532)
+	variant   607/ 2733 = a(357,343)      (21 tests, cond 0)
+		n1 false (test_time = 0.640342)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017884)
+	variant   608/ 2733 = a(357,342)      (21 tests, cond 0)
+		n1 false (test_time = 0.642331)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019196)
+	variant   609/ 2733 = a(357,338)      (21 tests, cond 0)
+		n1 false (test_time = 0.646243)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0183618)
+	variant   610/ 2733 = a(357,337)      (21 tests, cond 0)
+		n1 false (test_time = 0.641364)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0187681)
+	variant   611/ 2733 = a(357,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.659698)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0187171)
+	variant   612/ 2733 = a(357,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.661491)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0190489)
+	variant   613/ 2733 = a(357,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.655353)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0180931)
+	variant   614/ 2733 = a(357,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.646739)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0178511)
+	variant   615/ 2733 = a(357,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.645037)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017745)
+	variant   616/ 2733 = a(357,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.649646)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0178411)
+	variant   617/ 2733 = a(356,361)      (21 tests, cond 0)
+		n1 false (test_time = 0.669282)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0176311)
+	variant   618/ 2733 = a(356,360)      (21 tests, cond 0)
+		n1 false (test_time = 0.646085)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018683)
+	variant   619/ 2733 = a(356,358)      (21 tests, cond 0)
+		n1 false (test_time = 0.644904)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0178428)
+	variant   620/ 2733 = a(356,357)      (21 tests, cond 0)
+		n1 false (test_time = 0.64249)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0183909)
+	variant   621/ 2733 = a(356,356)      (21 tests, cond 0)
+		n1 false (test_time = 0.645423)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0177691)
+	variant   622/ 2733 = a(356,355)      (21 tests, cond 0)
+		n1 false (test_time = 0.677307)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019326)
+	variant   623/ 2733 = a(356,354)      (21 tests, cond 0)
+		n1 false (test_time = 0.642285)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0187409)
+	variant   624/ 2733 = a(356,353)      (21 tests, cond 0)
+		n1 false (test_time = 0.642604)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019031)
+	variant   625/ 2733 = a(356,352)      (21 tests, cond 0)
+		n1 false (test_time = 0.644868)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0185201)
+	variant   626/ 2733 = a(356,350)      (21 tests, cond 0)
+		n1 false (test_time = 0.635732)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0179431)
+	variant   627/ 2733 = a(356,349)      (21 tests, cond 0)
+		n1 false (test_time = 0.647555)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017714)
+	variant   628/ 2733 = a(356,348)      (21 tests, cond 0)
+		n1 false (test_time = 0.63472)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017822)
+	variant   629/ 2733 = a(356,343)      (21 tests, cond 0)
+		n1 false (test_time = 0.654537)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017514)
+	variant   630/ 2733 = a(356,342)      (21 tests, cond 0)
+		n1 false (test_time = 0.640733)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0179231)
+	variant   631/ 2733 = a(356,338)      (21 tests, cond 0)
+		n1 false (test_time = 0.648954)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0172501)
+	variant   632/ 2733 = a(356,337)      (21 tests, cond 0)
+		n1 false (test_time = 0.642629)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0178778)
+	variant   633/ 2733 = a(356,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.652969)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0178149)
+	variant   634/ 2733 = a(356,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.639947)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0172951)
+	variant   635/ 2733 = a(356,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.637737)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017889)
+	variant   636/ 2733 = a(356,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.666667)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0185621)
+	variant   637/ 2733 = a(356,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.659678)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018249)
+	variant   638/ 2733 = a(356,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.651262)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018985)
+	variant   639/ 2733 = a(355,361)      (21 tests, cond 0)
+		n1 false (test_time = 0.6407)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0178139)
+	variant   640/ 2733 = a(355,360)      (21 tests, cond 0)
+		n1 false (test_time = 0.651599)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020541)
+	variant   641/ 2733 = a(355,358)      (21 tests, cond 0)
+		n1 false (test_time = 0.637419)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018131)
+	variant   642/ 2733 = a(355,357)      (21 tests, cond 0)
+		n1 false (test_time = 0.65067)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.019017)
+	variant   643/ 2733 = a(355,356)      (21 tests, cond 0)
+		n1 false (test_time = 0.639665)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017493)
+	variant   644/ 2733 = a(355,355)      (21 tests, cond 0)
+		n1 false (test_time = 0.653095)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017529)
+	variant   645/ 2733 = a(355,354)      (21 tests, cond 0)
+		n1 false (test_time = 0.642196)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0171671)
+	variant   646/ 2733 = a(355,353)      (21 tests, cond 0)
+		n1 false (test_time = 0.646958)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017422)
+	variant   647/ 2733 = a(355,352)      (21 tests, cond 0)
+		n1 false (test_time = 0.639438)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0174589)
+	variant   648/ 2733 = a(355,350)      (21 tests, cond 0)
+		n1 false (test_time = 0.647877)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017421)
+	variant   649/ 2733 = a(355,349)      (21 tests, cond 0)
+		n1 false (test_time = 0.639621)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017344)
+	variant   650/ 2733 = a(355,348)      (21 tests, cond 0)
+		n1 false (test_time = 0.667753)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0193272)
+	variant   651/ 2733 = a(355,343)      (21 tests, cond 0)
+		n1 false (test_time = 0.65384)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0186081)
+	variant   652/ 2733 = a(355,342)      (21 tests, cond 0)
+		n1 false (test_time = 0.64422)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0179451)
+	variant   653/ 2733 = a(355,338)      (21 tests, cond 0)
+		n1 false (test_time = 0.642125)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0175791)
+	variant   654/ 2733 = a(355,337)      (21 tests, cond 0)
+		n1 false (test_time = 0.648219)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0176301)
+	variant   655/ 2733 = a(355,156)      (21 tests, cond 0)
+		n1 false (test_time = 0.641826)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0171421)
+	variant   656/ 2733 = a(355,54)       (21 tests, cond 0)
+		n1 false (test_time = 0.643889)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0173199)
+	variant   657/ 2733 = a(355,53)       (21 tests, cond 0)
+		n1 false (test_time = 0.645562)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0174701)
+	variant   658/ 2733 = a(355,52)       (21 tests, cond 0)
+		n1 false (test_time = 0.642359)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0173759)
+	variant   659/ 2733 = a(355,51)       (21 tests, cond 0)
+		n1 false (test_time = 0.645121)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017175)
+	variant   660/ 2733 = a(355,50)       (21 tests, cond 0)
+		n1 false (test_time = 0.64349)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0173011)
+	variant   661/ 2733 = a(354,361)      (21 tests, cond 0)
+		n1 false (test_time = 0.648988)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0173812)
+	variant   662/ 2733 = a(354,360)      (21 tests, cond 0)
+		n1 false (test_time = 0.641377)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0174701)
+	variant   663/ 2733 = a(354,358)      (21 tests, cond 0)
+		n1 false (test_time = 0.646862)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018055)
+	variant   664/ 2733 = a(354,357)      (21 tests, cond 0)
+		n1 false (test_time = 0.641949)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0178301)
+	variant   665/ 2733 = a(354,356)      (21 tests, cond 0)
+		n1 false (test_time = 0.647678)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0185621)
+	variant   666/ 2733 = a(354,355)      (21 tests, cond 0)
+		n1 false (test_time = 0.647262)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0199711)
+	variant   667/ 2733 = a(354,354)      (21 tests, cond 0)
+		n1 false (test_time = 0.645711)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0178571)
+	variant   668/ 2733 = a(354,353)      (21 tests, cond 0)
+		n1 false (test_time = 0.64953)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0173581)
+	variant   669/ 2733 = a(354,352)      (21 tests, cond 0)
+		n1 false (test_time = 0.645764)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0174639)
+	variant   670/ 2733 = a(354,350)      (21 tests, cond 0)
+		n1 false (test_time = 0.647123)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0191019)
+	variant   671/ 2733 = a(354,349)      (21 tests, cond 0)
+		n1 false (test_time = 0.645652)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0170729)
+	variant   672/ 2733 = a(354,348)      (21 tests, cond 0)
+		n1 false (test_time = 0.64661)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0170929)
+	variant   673/ 2733 = a(354,343)      (21 tests, cond 0)
+		n1 false (test_time = 0.653956)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0176599)
+	variant   674/ 2733 = a(354,342)      (21 tests, cond 0)
+		n1 false (test_time = 0.646039)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0218072)
+	variant   675/ 2733 = a(354,338)      (21 tests, cond 0)
+		n1 true (test_time = 0.660449)
+		p1 true (test_time = 0.00254011)
+		p2 true (test_time = 0.00267005)
+		p3 true (test_time = 0.00222397)
+		p4 true (test_time = 0.00223207)
+		p5 true (test_time = 0.00218391)
+		p6 true (test_time = 0.00229979)
+		p7 true (test_time = 0.00223207)
+		p8 true (test_time = 0.00220585)
+		p9 true (test_time = 0.00227308)
+		p10 true (test_time = 0.00224996)
+		p11 true (test_time = 0.00225711)
+		p12 true (test_time = 0.0969801)
+		p13 true (test_time = 0.080842)
+		p14 true (test_time = 0.103751)
+		p15 true (test_time = 0.0831711)
+		p16 true (test_time = 0.132419)
+		p17 true (test_time = 0.0881579)
+		p18 true (test_time = 0.0898209)
+		p19 true (test_time = 0.0841429)
+		p20 true (test_time = 0.085093)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: a(354,338)
+Repair Name: a(354,338) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1455459691.364784
+
+Variant Test Case Queries: 695
+"Test Suite Evaluations": 33.0952
+
+Compile Failures: 0
+Wall-Clock Seconds Elapsed: 455.511
+  Activity Name                     Count Seconds = Percent of Total Time
+  append_sources                      164   0.395 = 0.0871765%
+  progeq partition                    142   0.812 = 0.179381%
+  find_best_edit                      675  14.005 = 3.09416%
+  test                                716  27.943 = 6.17332%
+  compile                             676 409.452 = 90.4585%
+  TOTAL                                   452.641 = 99.3691% (avg CPU usage)

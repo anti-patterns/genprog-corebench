@@ -1,0 +1,3514 @@
+WARNING: the argument --multi-file is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --suffix-extension is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --mutp is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete true
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 12
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Wed Feb  3 14:28:11 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat: /etc/redhat-release: No such file or directory
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmpd4fdfa.c /tmp/tmp4e9597.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/du.c: parsing
+cilRep: src/du.c: parsed (0.0650434 MB)
+cilRep: computing liveness
+Bug: BF(Liveness): stmtStartData is not initialized for -1: _L___0: 
+#line 450 "du.c"
+tmp___6 = hash_ins((unsigned long )sb->st_ino, (unsigned long )sb->st_dev);
+Liveness failed on function:
+ static _Bool process_file(FTS *fts , FTSENT *ent ) 
+{ _Bool ok ;
+  struct duinfo dui ;
+  struct duinfo dui_to_print ;
+  size_t level ;
+  char const   *file ;
+  struct stat  const  *sb ;
+  int info ;
+  char const   *tmp ;
+  char *tmp___0 ;
+  _Bool excluded ;
+  _Bool tmp___1 ;
+  FTSENT const   *e ;
+  FTSENT *tmp___2 ;
+  char const   *tmp___3 ;
+  char *tmp___4 ;
+  FTSENT const   *e___0 ;
+  FTSENT *tmp___5 ;
+  _Bool tmp___6 ;
+  char const   *tmp___7 ;
+  char const   *tmp___8 ;
+  char *tmp___9 ;
+  _Bool tmp___10 ;
+  struct timespec tmp___11 ;
+  struct timespec tmp___12 ;
+  struct timespec tmp___13 ;
+  struct timespec tmp___14 ;
+  struct timespec tmp___15 ;
+  unsigned long tmp___16 ;
+  void *tmp___17 ;
+  size_t i ;
+  void *tmp___18 ;
+
+  {
+   244: /* CIL Label */ 
+#line 400
+  ok = (_Bool)1;
+   245: /* CIL Label */ 
+#line 415
+  file = (char const   *)ent->fts_path;
+   246: /* CIL Label */ 
+#line 416
+  sb = (struct stat  const  *)(ent->fts_statp);
+   247: /* CIL Label */ 
+#line 417
+  info = (int )ent->fts_info;
+   248: /* CIL Label */ 
+#line 419
+  if (info == 4) {
+#line 422
+    tmp = quote(file);
+#line 422
+    tmp___0 = gettext("cannot read directory %s");
+#line 422
+    error(0, ent->fts_errno, (char const   *)tmp___0, tmp);
+#line 423
+    ok = (_Bool)0;
+  } else {
+#line 425
+    if (info != 6) {
+#line 427
+      tmp___1 = excluded_file_name((struct exclude  const  *)exclude, file);
+#line 427
+      excluded = tmp___1;
+#line 428
+      if (! excluded) {
+#line 432
+        if (info == 11) {
+#line 434
+          fts_set(fts, ent, 1);
+#line 435
+          tmp___2 = fts_read(fts);
+#line 435
+          e = (FTSENT const   *)tmp___2;
+#line 436
+          if (! ((unsigned long )e == (unsigned long )ent)) {
+#line 436
+            __assert_fail("e == ent", "du.c", 436U, "process_file");
+          } else {
+
+          }
+#line 437
+          info = (int )ent->fts_info;
+        } else {
+
+        }
+#line 440
+        if (info == 10) {
+#line 442
+          tmp___3 = quote(file);
+#line 442
+          tmp___4 = gettext("cannot access %s");
+#line 442
+          error(0, ent->fts_errno, (char const   *)tmp___4, tmp___3);
+#line 443
+          return ((_Bool)0);
+        } else {
+#line 440
+          if (info == 13) {
+#line 442
+            tmp___3 = quote(file);
+#line 442
+            tmp___4 = gettext("cannot access %s");
+#line 442
+            error(0, ent->fts_errno, (char const   *)tmp___4, tmp___3);
+#line 443
+            return ((_Bool)0);
+          } else {
+
+          }
+        }
+#line 446
+        if (fts->fts_options & 64) {
+#line 446
+          if (fts->fts_dev != (unsigned long )sb->st_dev) {
+#line 447
+            excluded = (_Bool)1;
+          } else {
+
+          }
+        } else {
+
+        }
+      } else {
+
+      }
+#line 450
+      if (excluded) {
+        goto _L;
+      } else {
+#line 450
+        if (! opt_count_all) {
+#line 450
+          if (hash_all) {
+            goto _L___0;
+          } else {
+#line 450
+            if (! ((sb->st_mode & 61440U) == 16384U)) {
+#line 450
+              if (1UL < (unsigned long )sb->st_nlink) {
+                _L___0: 
+#line 450
+                tmp___6 = hash_ins((unsigned long )sb->st_ino,
+                                   (unsigned long )sb->st_dev);
+#line 450
+                if (! tmp___6) {
+                  _L: 
+#line 458
+                  if (info == 1) {
+#line 460
+                    fts_set(fts, ent, 4);
+#line 461
+                    tmp___5 = fts_read(fts);
+#line 461
+                    e___0 = (FTSENT const   *)tmp___5;
+#line 462
+                    if (! ((unsigned long )e___0 == (unsigned long )ent)) {
+#line 462
+                      __assert_fail("e == ent", "du.c", 462U, "process_file");
+                    } else {
+
+                    }
+                  } else {
+
+                  }
+#line 465
+                  return ((_Bool)1);
+                } else {
+
+                }
+              } else {
+
+              }
+            } else {
+
+            }
+          }
+        } else {
+
+        }
+      }
+#line 468
+      switch (info) {
+      case 1: 
+#line 471
+      return ((_Bool)1);
+      case 7: 
+#line 475
+      tmp___7 = quote(file);
+#line 475
+      error(0, ent->fts_errno, "%s", tmp___7);
+#line 476
+      ok = (_Bool)0;
+#line 477
+      break;
+      case 2: 
+#line 480
+      tmp___10 = cycle_warning_required((FTS const   *)fts,
+                                        (FTSENT const   *)ent);
+#line 480
+      if (tmp___10) {
+#line 482
+        while (1) {
+#line 482
+          tmp___8 = quote(file);
+#line 482
+          tmp___9 = gettext("WARNING: Circular directory structure.\nThis almost certainly means that you have a corrupted file system.\nNOTIFY YOUR SYSTEM MANAGER.\nThe following directory is part of the cycle:\n  %s\n");
+#line 482
+          error(0, 0, (char const   *)tmp___9, tmp___8);
+#line 482
+          break;
+        }
+#line 483
+        return ((_Bool)0);
+      } else {
+
+      }
+#line 485
+      return ((_Bool)1);
+      }
+    } else {
+
+    }
+  }
+   249: /* CIL Label */ 
+#line 489
+  if ((unsigned int )time_type == 0U) {
+#line 489
+    tmp___11 = get_stat_mtime(sb);
+#line 489
+    tmp___15 = tmp___11;
+  } else {
+#line 489
+    if ((unsigned int )time_type == 2U) {
+#line 489
+      tmp___12 = get_stat_atime(sb);
+#line 489
+      tmp___14 = tmp___12;
+    } else {
+#line 489
+      tmp___13 = get_stat_ctime(sb);
+#line 489
+      tmp___14 = tmp___13;
+    }
+#line 489
+    tmp___15 = tmp___14;
+  }
+   250: /* CIL Label */ 
+#line 489
+  if (apparent_size) {
+#line 489
+    tmp___16 = (unsigned long )sb->st_size;
+  } else {
+#line 489
+    tmp___16 = (unsigned long )sb->st_blocks * 512UL;
+  }
+   251: /* CIL Label */ 
+#line 489
+  duinfo_set(& dui, tmp___16, tmp___15);
+   252: /* CIL Label */ 
+#line 497
+  level = (unsigned long )ent->fts_level;
+   253: /* CIL Label */ 
+#line 498
+  dui_to_print = dui;
+   254: /* CIL Label */ 
+#line 500
+  if (n_alloc == 0UL) {
+#line 502
+    n_alloc = level + 10UL;
+#line 503
+    tmp___17 = xcalloc(n_alloc, sizeof(*dulvl));
+#line 503
+    dulvl = (struct dulevel *)tmp___17;
+  } else {
+#line 507
+    if (! (level == prev_level)) {
+#line 511
+      if (level > prev_level) {
+#line 519
+        if (n_alloc <= level) {
+#line 521
+          tmp___18 = xnrealloc((void *)dulvl, level, 2UL * sizeof(*dulvl));
+#line 521
+          dulvl = (struct dulevel *)tmp___18;
+#line 522
+          n_alloc = level * 2UL;
+        } else {
+
+        }
+#line 525
+        i = prev_level + 1UL;
+#line 525
+        while (i <= level) {
+#line 527
+          duinfo_init(& (dulvl + i)->ent);
+#line 528
+          duinfo_init(& (dulvl + i)->subdir);
+#line 525
+          i ++;
+        }
+      } else {
+#line 539
+        if (! (level == prev_level - 1UL)) {
+#line 539
+          __assert_fail("level == prev_level - 1", "du.c", 539U, "process_file");
+        } else {
+
+        }
+#line 540
+        duinfo_add(& dui_to_print,
+                   (struct duinfo  const  *)(& (dulvl + prev_level)->ent));
+#line 541
+        if (! opt_separate_dirs) {
+#line 542
+          duinfo_add(& dui_to_print,
+                     (struct duinfo  const  *)(& (dulvl + prev_level)->subdir));
+        } else {
+
+        }
+#line 543
+        duinfo_add(& (dulvl + level)->subdir,
+                   (struct duinfo  const  *)(& (dulvl + prev_level)->ent));
+#line 544
+        duinfo_add(& (dulvl + level)->subdir,
+                   (struct duinfo  const  *)(& (dulvl + prev_level)->subdir));
+      }
+    } else {
+
+    }
+  }
+   255: /* CIL Label */ 
+#line 548
+  prev_level = level;
+   256: /* CIL Label */ 
+#line 552
+  if (opt_separate_dirs) {
+#line 552
+    if (! (info == 6)) {
+#line 552
+      if (! (info == 4)) {
+#line 553
+        duinfo_add(& (dulvl + level)->ent, (struct duinfo  const  *)(& dui));
+      } else {
+
+      }
+    } else {
+
+    }
+  } else {
+#line 553
+    duinfo_add(& (dulvl + level)->ent, (struct duinfo  const  *)(& dui));
+  }
+   257: /* CIL Label */ 
+#line 557
+  duinfo_add(& tot_dui, (struct duinfo  const  *)(& dui));
+   258: /* CIL Label */ 
+#line 559
+  if (info == 6) {
+    goto _L___3;
+  } else {
+#line 559
+    if (info == 4) {
+      _L___3: 
+#line 559
+      if (level <= max_depth) {
+#line 561
+        print_size((struct duinfo  const  *)(& dui_to_print), file);
+      } else {
+        goto _L___2;
+      }
+    } else {
+      _L___2: 
+#line 559
+      if (opt_all) {
+#line 559
+        if (level <= max_depth) {
+#line 561
+          print_size((struct duinfo  const  *)(& dui_to_print), file);
+        } else {
+          goto _L___1;
+        }
+      } else {
+        _L___1: 
+#line 559
+        if (level == 0UL) {
+#line 561
+          print_size((struct duinfo  const  *)(& dui_to_print), file);
+        } else {
+
+        }
+      }
+    }
+  }
+   259: /* CIL Label */ 
+#line 563
+  return (ok);
+}
+}
+
+cilRep: liveness failure for process_file: Errormsg.Error
+Bug: BF(Liveness): stmtStartData is not initialized for -1: argv_iter_done: 
+#line 992
+argv_iter_free(ai);
+#line 993
+di_set_free(di_set);
+Liveness failed on function:
+ int main(int argc , char **argv ) 
+{ char *cwd_only[2] ;
+  _Bool max_depth_specified ;
+  _Bool ok ;
+  char *files_from ;
+  int bit_flags ;
+  int symlink_deref_bits ;
+  _Bool opt_summarize_only ;
+  char *tmp ;
+  int oi ;
+  int c ;
+  int tmp___0 ;
+  unsigned long tmp_ulong ;
+  char const   *tmp___1 ;
+  char *tmp___2 ;
+  strtol_error tmp___3 ;
+  enum strtol_error e ;
+  enum strtol_error tmp___4 ;
+  char *tmp___5 ;
+  int *tmp___6 ;
+  int tmp___7 ;
+  ptrdiff_t tmp___8 ;
+  char const   *tmp___9 ;
+  char *tmp___10 ;
+  char *tmp___11 ;
+  unsigned long d ;
+  char *tmp___12 ;
+  char *tmp___13 ;
+  char *p ;
+  char *tmp___14 ;
+  int tmp___15 ;
+  int tmp___16 ;
+  ptrdiff_t tmp___17 ;
+  struct argv_iterator *ai ;
+  char const   *tmp___18 ;
+  char *tmp___19 ;
+  char *tmp___20 ;
+  char const   *tmp___21 ;
+  char *tmp___22 ;
+  int *tmp___23 ;
+  int tmp___24 ;
+  FILE *tmp___25 ;
+  char **files ;
+  char **tmp___26 ;
+  int tmp___27 ;
+  _Bool skip_file ;
+  enum argv_iter_err ai_err ;
+  char *file_name ;
+  char *tmp___28 ;
+  char *tmp___29 ;
+  char *tmp___30 ;
+  int *tmp___31 ;
+  char const   *tmp___32 ;
+  char *tmp___33 ;
+  int tmp___34 ;
+  int tmp___35 ;
+  char *tmp___36 ;
+  unsigned long file_number ;
+  size_t tmp___37 ;
+  char *tmp___38 ;
+  char *tmp___39 ;
+  _Bool tmp___40 ;
+  char const   *tmp___41 ;
+  char *tmp___42 ;
+  int tmp___43 ;
+  int tmp___44 ;
+  char *tmp___45 ;
+  int tmp___46 ;
+
+  {
+   504: /* CIL Label */ 
+#line 619
+  max_depth_specified = (_Bool)0;
+   505: /* CIL Label */ 
+#line 620
+  ok = (_Bool)1;
+   506: /* CIL Label */ 
+#line 621
+  files_from = (char *)((void *)0);
+   507: /* CIL Label */ 
+#line 624
+  bit_flags = 8;
+   508: /* CIL Label */ 
+#line 628
+  symlink_deref_bits = 16;
+   509: /* CIL Label */ 
+#line 631
+  opt_summarize_only = (_Bool)0;
+   510: /* CIL Label */ 
+#line 633
+  cwd_only[0] = bad_cast(".");
+   511: /* CIL Label */ 
+#line 634
+  cwd_only[1] = (char *)((void *)0);
+   512: /* CIL Label */ 
+#line 637
+  set_program_name((char const   *)*(argv + 0));
+   513: /* CIL Label */ 
+#line 638
+  setlocale(6, "");
+   514: /* CIL Label */ 
+#line 639
+  bindtextdomain("coreutils", "/usr/local/share/locale");
+   515: /* CIL Label */ 
+#line 640
+  textdomain("coreutils");
+   516: /* CIL Label */ 
+#line 642
+  atexit(& close_stdout);
+   517: /* CIL Label */ 
+#line 644
+  exclude = new_exclude();
+   518: /* CIL Label */ 
+#line 646
+  tmp = getenv("DU_BLOCK_SIZE");
+   519: /* CIL Label */ 
+#line 646
+  human_options((char const   *)tmp, & human_output_opts, & output_block_size);
+   520: /* CIL Label */ 
+#line 649
+  while (1) {
+#line 651
+    oi = -1;
+#line 652
+    tmp___0 = getopt_long(argc, (char * const  *)argv, "0abd:chHklmsxB:DLPSX:",
+                          long_options, & oi);
+#line 652
+    c = tmp___0;
+#line 654
+    if (c == -1) {
+#line 655
+      break;
+    } else {
+
+    }
+#line 657
+    switch (c) {
+    case 48: 
+#line 666
+    opt_nul_terminate_output = (_Bool)1;
+#line 667
+    break;
+    case 97: 
+#line 670
+    opt_all = (_Bool)1;
+#line 671
+    break;
+    case 128: 
+#line 674
+    apparent_size = (_Bool)1;
+#line 675
+    break;
+    case 98: 
+#line 678
+    apparent_size = (_Bool)1;
+#line 679
+    human_output_opts = 0;
+#line 680
+    output_block_size = 1UL;
+#line 681
+    break;
+    case 99: 
+#line 684
+    print_grand_total = (_Bool)1;
+#line 685
+    break;
+    case 104: 
+#line 688
+    human_output_opts = 176;
+#line 689
+    output_block_size = 1UL;
+#line 690
+    break;
+    case 131: 
+#line 693
+    human_output_opts = 144;
+#line 694
+    output_block_size = 1UL;
+#line 695
+    break;
+    case 107: 
+#line 698
+    human_output_opts = 0;
+#line 699
+    output_block_size = 1024UL;
+#line 700
+    break;
+    case 100: 
+#line 705
+    tmp___3 = xstrtoul((char const   *)optarg, (char **)((void *)0), 0,
+                       & tmp_ulong, (char const   *)((void *)0));
+#line 705
+    if ((unsigned int )tmp___3 == 0U) {
+#line 705
+      if (tmp_ulong <= ((1UL << 63) - 1UL) * 2UL + 1UL) {
+#line 708
+        max_depth_specified = (_Bool)1;
+#line 709
+        max_depth = tmp_ulong;
+      } else {
+#line 713
+        tmp___1 = quote((char const   *)optarg);
+#line 713
+        tmp___2 = gettext("invalid maximum depth %s");
+#line 713
+        error(0, 0, (char const   *)tmp___2, tmp___1);
+#line 715
+        ok = (_Bool)0;
+      }
+    } else {
+#line 713
+      tmp___1 = quote((char const   *)optarg);
+#line 713
+      tmp___2 = gettext("invalid maximum depth %s");
+#line 713
+      error(0, 0, (char const   *)tmp___2, tmp___1);
+#line 715
+      ok = (_Bool)0;
+    }
+#line 718
+    break;
+    case 109: 
+#line 721
+    human_output_opts = 0;
+#line 722
+    output_block_size = 1048576UL;
+#line 723
+    break;
+    case 108: 
+#line 726
+    opt_count_all = (_Bool)1;
+#line 727
+    break;
+    case 115: 
+#line 730
+    opt_summarize_only = (_Bool)1;
+#line 731
+    break;
+    case 120: 
+#line 734
+    bit_flags |= 64;
+#line 735
+    break;
+    case 66: 
+#line 739
+    tmp___4 = human_options((char const   *)optarg, & human_output_opts,
+                            & output_block_size);
+#line 739
+    e = tmp___4;
+#line 741
+    if ((unsigned int )e != 0U) {
+#line 742
+      xstrtol_fatal(e, oi, (char )c, long_options, (char const   *)optarg);
+    } else {
+
+    }
+#line 744
+    break;
+    case 72: 
+    case 68: 
+#line 748
+    symlink_deref_bits = 17;
+#line 749
+    break;
+    case 76: 
+#line 752
+    symlink_deref_bits = 2;
+#line 753
+    break;
+    case 80: 
+#line 756
+    symlink_deref_bits = 16;
+#line 757
+    break;
+    case 83: 
+#line 760
+    opt_separate_dirs = (_Bool)1;
+#line 761
+    break;
+    case 88: 
+#line 764
+    tmp___7 = add_exclude_file(& add_exclude, exclude, (char const   *)optarg,
+                               1 << 28, (char )'\n');
+#line 764
+    if (tmp___7) {
+#line 767
+      tmp___5 = quotearg_colon((char const   *)optarg);
+#line 767
+      tmp___6 = __errno_location();
+#line 767
+      error(0, *tmp___6, "%s", tmp___5);
+#line 768
+      ok = (_Bool)0;
+    } else {
+
+    }
+#line 770
+    break;
+    case 130: 
+#line 773
+    files_from = optarg;
+#line 774
+    break;
+    case 129: 
+#line 777
+    add_exclude(exclude, (char const   *)optarg, 1 << 28);
+#line 778
+    break;
+    case 133: 
+#line 781
+    opt_time = (_Bool)1;
+#line 782
+    if (optarg) {
+#line 782
+      tmp___8 = __xargmatch_internal("--time", (char const   *)optarg,
+                                     time_args, (char const   *)(time_types),
+                                     sizeof(time_types[0]), argmatch_die);
+#line 782
+      time_type = (enum time_type )time_types[tmp___8];
+    } else {
+#line 782
+      time_type = (enum time_type )0;
+    }
+#line 786
+    break;
+    case 134: 
+#line 789
+    time_style = (char const   *)optarg;
+#line 790
+    break;
+    case -130: 
+#line 792
+    usage(0);
+#line 792
+    break;
+    case -131: 
+#line 794
+    tmp___9 = proper_name_utf8("Torbjorn Granlund", "Torbj\303\266rn Granlund");
+#line 794
+    version_etc(stdout, "du", "GNU coreutils", Version, tmp___9,
+                "David MacKenzie", "Paul Eggert", "Jim Meyering",
+                (char *)((void *)0));
+#line 794
+    exit(0);
+#line 794
+    break;
+    default: 
+#line 797
+    ok = (_Bool)0;
+    }
+  }
+   521: /* CIL Label */ 
+#line 801
+  if (! ok) {
+#line 802
+    usage(1);
+  } else {
+
+  }
+   522: /* CIL Label */ 
+#line 804
+  if (opt_all) {
+#line 804
+    if (opt_summarize_only) {
+#line 806
+      tmp___10 = gettext("cannot both summarize and show all entries");
+#line 806
+      error(0, 0, (char const   *)tmp___10);
+#line 807
+      usage(1);
+    } else {
+
+    }
+  } else {
+
+  }
+   523: /* CIL Label */ 
+#line 810
+  if (opt_summarize_only) {
+#line 810
+    if (max_depth_specified) {
+#line 810
+      if (max_depth == 0UL) {
+#line 812
+        tmp___11 = gettext("warning: summarizing is the same as using --max-depth=0");
+#line 812
+        error(0, 0, (char const   *)tmp___11);
+      } else {
+
+      }
+    } else {
+
+    }
+  } else {
+
+  }
+   524: /* CIL Label */ 
+#line 816
+  if (opt_summarize_only) {
+#line 816
+    if (max_depth_specified) {
+#line 816
+      if (max_depth != 0UL) {
+#line 818
+        d = max_depth;
+#line 819
+        tmp___12 = gettext("warning: summarizing conflicts with --max-depth=%lu");
+#line 819
+        error(0, 0, (char const   *)tmp___12, d);
+#line 820
+        usage(1);
+      } else {
+
+      }
+    } else {
+
+    }
+  } else {
+
+  }
+   525: /* CIL Label */ 
+#line 823
+  if (opt_summarize_only) {
+#line 824
+    max_depth = 0UL;
+  } else {
+
+  }
+   526: /* CIL Label */ 
+#line 827
+  if (opt_time) {
+#line 829
+    if (! time_style) {
+#line 831
+      tmp___13 = getenv("TIME_STYLE");
+#line 831
+      time_style = (char const   *)tmp___13;
+#line 834
+      if (! time_style) {
+#line 835
+        time_style = "long-iso";
+      } else {
+#line 834
+        tmp___16 = strcmp(time_style, "locale");
+#line 834
+        if (tmp___16 == 0) {
+#line 835
+          time_style = "long-iso";
+        } else {
+#line 836
+          if ((int const   )*time_style == 43) {
+#line 840
+            tmp___14 = strchr(time_style, '\n');
+#line 840
+            p = tmp___14;
+#line 841
+            if (p) {
+#line 842
+              *p = (char )'\000';
+            } else {
+
+            }
+          } else {
+#line 848
+            while (1) {
+#line 848
+              tmp___15 = strncmp(time_style, posix_prefix,
+                                 sizeof(posix_prefix) - 1UL);
+#line 848
+              if (! (tmp___15 == 0)) {
+#line 848
+                break;
+              } else {
+
+              }
+#line 850
+              time_style += sizeof(posix_prefix) - 1UL;
+            }
+          }
+        }
+      }
+    } else {
+
+    }
+#line 854
+    if ((int const   )*time_style == 43) {
+#line 855
+      time_format = time_style + 1;
+    } else {
+#line 858
+      tmp___17 = __xargmatch_internal("time style", time_style, time_style_args,
+                                      (char const   *)(time_style_types),
+                                      sizeof(time_style_types[0]), argmatch_die);
+#line 858
+      switch ((int )time_style_types[tmp___17]) {
+      case 0: 
+#line 862
+      time_format = "%Y-%m-%d %H:%M:%S.%N %z";
+#line 863
+      break;
+      case 1: 
+#line 866
+      time_format = "%Y-%m-%d %H:%M";
+#line 867
+      break;
+      case 2: 
+#line 870
+      time_format = "%Y-%m-%d";
+#line 871
+      break;
+      }
+    }
+  } else {
+
+  }
+   527: /* CIL Label */ 
+#line 877
+  if (files_from) {
+#line 881
+    if (optind < argc) {
+#line 883
+      tmp___18 = quote((char const   *)*(argv + optind));
+#line 883
+      tmp___19 = gettext("extra operand %s");
+#line 883
+      error(0, 0, (char const   *)tmp___19, tmp___18);
+#line 884
+      tmp___20 = gettext("file operands cannot be combined with --files0-from");
+#line 884
+      fprintf((FILE */* __restrict  */)stderr,
+              (char const   */* __restrict  */)"%s\n", tmp___20);
+#line 886
+      usage(1);
+    } else {
+
+    }
+#line 889
+    tmp___24 = strcmp((char const   *)files_from, "-");
+#line 889
+    if (! (tmp___24 == 0)) {
+#line 889
+      tmp___25 = freopen_safer((char const   *)files_from, "r", stdin);
+#line 889
+      if (! tmp___25) {
+#line 890
+        tmp___21 = quote((char const   *)files_from);
+#line 890
+        tmp___22 = gettext("cannot open %s for reading");
+#line 890
+        tmp___23 = __errno_location();
+#line 890
+        error(1, *tmp___23, (char const   *)tmp___22, tmp___21);
+      } else {
+
+      }
+    } else {
+
+    }
+#line 893
+    ai = argv_iter_init_stream(stdin);
+#line 897
+    hash_all = (_Bool)1;
+  } else {
+#line 901
+    if (optind < argc) {
+#line 901
+      tmp___26 = argv + optind;
+    } else {
+#line 901
+      tmp___26 = cwd_only;
+    }
+#line 901
+    files = tmp___26;
+#line 902
+    ai = argv_iter_init_argv(files);
+#line 907
+    if (optind + 1 < argc) {
+#line 907
+      tmp___27 = 1;
+    } else {
+#line 907
+      if (symlink_deref_bits == 2) {
+#line 907
+        tmp___27 = 1;
+      } else {
+#line 907
+        tmp___27 = 0;
+      }
+    }
+#line 907
+    hash_all = (_Bool )tmp___27;
+  }
+   528: /* CIL Label */ 
+#line 910
+  if (! ai) {
+#line 911
+    xalloc_die();
+  } else {
+
+  }
+   529: /* CIL Label */ 
+#line 914
+  di_set = di_set_alloc();
+   530: /* CIL Label */ 
+#line 915
+  if (! di_set) {
+#line 916
+    xalloc_die();
+  } else {
+
+  }
+   531: /* CIL Label */ 
+#line 920
+  if (opt_count_all) {
+#line 921
+    bit_flags |= 256;
+  } else {
+#line 920
+    if (! hash_all) {
+#line 921
+      bit_flags |= 256;
+    } else {
+
+    }
+  }
+   532: /* CIL Label */ 
+#line 923
+  bit_flags |= symlink_deref_bits;
+   533: /* CIL Label */ 
+#line 926
+  while (1) {
+#line 928
+    skip_file = (_Bool)0;
+#line 930
+    tmp___28 = argv_iter(ai, & ai_err);
+#line 930
+    file_name = tmp___28;
+#line 931
+    if (! file_name) {
+#line 933
+      switch ((int )ai_err) {
+      case 2: 
+      goto argv_iter_done;
+      case 4: 
+#line 938
+      tmp___29 = quotearg_colon((char const   *)files_from);
+#line 938
+      tmp___30 = gettext("%s: read error");
+#line 938
+      tmp___31 = __errno_location();
+#line 938
+      error(0, *tmp___31, (char const   *)tmp___30, tmp___29);
+#line 940
+      ok = (_Bool)0;
+      goto argv_iter_done;
+      case 3: 
+#line 943
+      xalloc_die();
+      default: 
+#line 945
+      __assert_fail("!\"unexpected error code from argv_iter\"", "du.c", 945U,
+                    "main");
+      }
+    } else {
+
+    }
+#line 948
+    if (files_from) {
+#line 948
+      tmp___34 = strcmp((char const   *)files_from, "-");
+#line 948
+      if (tmp___34 == 0) {
+#line 948
+        tmp___35 = strcmp((char const   *)file_name, "-");
+#line 948
+        if (tmp___35 == 0) {
+#line 952
+          tmp___32 = quote((char const   *)file_name);
+#line 952
+          tmp___33 = gettext("when reading file names from stdin, no file name of %s allowed");
+#line 952
+          error(0, 0, (char const   *)tmp___33, tmp___32);
+#line 955
+          skip_file = (_Bool)1;
+        } else {
+
+        }
+      } else {
+
+      }
+    } else {
+
+    }
+#line 962
+    if (! *(file_name + 0)) {
+#line 968
+      if ((unsigned long )files_from == (unsigned long )((void *)0)) {
+#line 969
+        tmp___36 = gettext("invalid zero-length file name");
+#line 969
+        error(0, 0, "%s", tmp___36);
+      } else {
+#line 975
+        tmp___37 = argv_iter_n_args((struct argv_iterator  const  *)ai);
+#line 975
+        file_number = tmp___37;
+#line 976
+        tmp___38 = gettext("invalid zero-length file name");
+#line 976
+        tmp___39 = quotearg_colon((char const   *)files_from);
+#line 976
+        error(0, 0, "%s:%lu: %s", tmp___39, file_number, tmp___38);
+      }
+#line 979
+      skip_file = (_Bool)1;
+    } else {
+
+    }
+#line 982
+    if (skip_file) {
+#line 983
+      ok = (_Bool)0;
+    } else {
+#line 986
+      temp_argv[0] = file_name;
+#line 987
+      tmp___40 = du_files(temp_argv, bit_flags);
+#line 987
+      ok = (_Bool )((int )ok & (int )tmp___40);
+    }
+  }
+   534: /* CIL Label */ 
+  argv_iter_done: 
+#line 992
+  argv_iter_free(ai);
+   535: /* CIL Label */ 
+#line 993
+  di_set_free(di_set);
+   536: /* CIL Label */ 
+#line 995
+  if (files_from) {
+#line 995
+    tmp___43 = ferror_unlocked(stdin);
+#line 995
+    if (tmp___43) {
+      goto _L;
+    } else {
+#line 995
+      tmp___44 = rpl_fclose(stdin);
+#line 995
+      if (tmp___44 != 0) {
+        _L: 
+#line 995
+        if (ok) {
+#line 996
+          tmp___41 = quote((char const   *)files_from);
+#line 996
+          tmp___42 = gettext("error reading %s");
+#line 996
+          error(1, 0, (char const   *)tmp___42, tmp___41);
+        } else {
+
+        }
+      } else {
+
+      }
+    }
+  } else {
+
+  }
+   537: /* CIL Label */ 
+#line 998
+  if (print_grand_total) {
+#line 999
+    tmp___45 = gettext("total");
+#line 999
+    print_size((struct duinfo  const  *)(& tot_dui), (char const   *)tmp___45);
+  } else {
+
+  }
+   538: /* CIL Label */ 
+#line 1001
+  if (ok) {
+#line 1001
+    tmp___46 = 0;
+  } else {
+#line 1001
+    tmp___46 = 1;
+  }
+   539: /* CIL Label */ 
+#line 1001
+  exit(tmp___46);
+}
+}
+
+cilRep: liveness failure for main: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 539
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: done instrumenting for fault localization
+Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp coverage/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+coverage negative:
+	test: 1
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+coverage positive:
+	test: 1
+PASS: 86
+	test: 2
+PASS: 89
+	test: 3
+PASS: 91
+	test: 4
+PASS: 92
+	test: 5
+PASS: 93
+	test: 6
+PASS: 94
+	test: 7
+PASS: 96
+	test: 8
+PASS: 97
+	test: 9
+PASS: 99
+	test: 10
+PASS: 100
+	test: 11
+PASS: 101
+	test: 12
+PASS: 105
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 539
+cilRep: stmts in weighted_path = 116
+cilRep: total weight = 13.4
+cilRep: stmts in weighted_path with weight >= 1.0 = 2
+cilRep: src/du.c (code bank/base file; atoms [1,539])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454480909.055838)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 0
+cilRep: fix-space quotient by string: 220 -> 175
+progeq: WARNING: cannot resolve call: human_readable
+progeq: WARNING: cannot resolve call: fputs_unlocked
+progeq: WARNING: cannot resolve call: putchar_unlocked
+progeq: WARNING: cannot resolve call: imaxtostr
+progeq: WARNING: cannot resolve call: gettext
+progeq: WARNING: cannot resolve call: error
+progeq: WARNING: cannot resolve call: fprintftime
+progeq: WARNING: cannot resolve call: fflush_unlocked
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: last_component
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: di_set_insert
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: quote
+progeq: WARNING: cannot resolve call: excluded_file_name
+progeq: WARNING: cannot resolve call: fts_set
+progeq: WARNING: cannot resolve call: fts_read
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: cycle_warning_required
+progeq: WARNING: cannot resolve call: xcalloc
+progeq: WARNING: cannot resolve call: xnrealloc
+progeq: WARNING: cannot resolve call: xfts_open
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: quotearg_colon
+progeq: WARNING: cannot resolve call: fts_close
+progeq: WARNING: cannot resolve call: set_program_name
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: new_exclude
+progeq: WARNING: cannot resolve call: human_options
+progeq: WARNING: cannot resolve call: getopt_long
+progeq: WARNING: cannot resolve call: xstrtoul
+progeq: WARNING: cannot resolve call: xstrtol_fatal
+progeq: WARNING: cannot resolve call: add_exclude_file
+progeq: WARNING: cannot resolve call: add_exclude
+progeq: WARNING: cannot resolve call: __xargmatch_internal
+progeq: WARNING: cannot resolve call: proper_name_utf8
+progeq: WARNING: cannot resolve call: version_etc
+progeq: WARNING: cannot resolve call: freopen_safer
+progeq: WARNING: cannot resolve call: argv_iter_init_stream
+progeq: WARNING: cannot resolve call: argv_iter_init_argv
+progeq: WARNING: cannot resolve call: di_set_alloc
+progeq: WARNING: cannot resolve call: argv_iter
+progeq: WARNING: cannot resolve call: argv_iter_n_args
+progeq: WARNING: cannot resolve call: argv_iter_free
+progeq: WARNING: cannot resolve call: di_set_free
+progeq: WARNING: cannot resolve call: ferror_unlocked
+progeq: WARNING: cannot resolve call: rpl_fclose
+search: fix space reduced (time_taken = 1.56592)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 116 deletes
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:1:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:67:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:14:after0
+REMOVED?false
+CARDINAL?before:14:after0
+REMOVED?false
+CARDINAL?before:166:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:14:after0
+REMOVED?false
+CARDINAL?before:14:after0
+REMOVED?false
+CARDINAL?before:14:after0
+REMOVED?false
+CARDINAL?before:14:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:14:after0
+REMOVED?false
+CARDINAL?before:14:after0
+REMOVED?false
+CARDINAL?before:14:after0
+REMOVED?false
+CARDINAL?before:14:after0
+REMOVED?false
+CARDINAL?before:14:after0
+REMOVED?false
+CARDINAL?before:14:after0
+REMOVED?false
+CARDINAL?before:14:after0
+REMOVED?false
+CARDINAL?before:14:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:159:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:175:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:168:after0
+REMOVED?false
+CARDINAL?before:168:after0
+REMOVED?false
+CARDINAL?before:168:after0
+REMOVED?false
+CARDINAL?before:168:after0
+REMOVED?false
+CARDINAL?before:159:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:166:after0
+REMOVED?false
+CARDINAL?before:166:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:166:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+CARDINAL?before:70:after0
+REMOVED?false
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 0 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 6676 appends
+search: ww_adaptive: 6676 possible edits
+search: ready to start (time_taken = 3.13052)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.00887299)
+	variant     1/ 6676 = a(157,535)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000000/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.66749)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00945997)
+	variant     2/ 6676 = a(157,530)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000001/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.6129)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00848889)
+	variant     3/ 6676 = a(157,529)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000002/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.58869)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00837493)
+	variant     4/ 6676 = a(157,517)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000003/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.5963)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0101449)
+	variant     5/ 6676 = a(157,516)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000004/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.73137)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0210042)
+	variant     6/ 6676 = a(157,515)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000005/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.84364)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00814199)
+	variant     7/ 6676 = a(157,514)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000006/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.57746)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00818396)
+	variant     8/ 6676 = a(157,513)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000007/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.53681)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016237)
+	variant     9/ 6676 = a(157,377)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000008/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.43517)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014055)
+	variant    10/ 6676 = a(157,376)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000009/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.61154)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00875616)
+	variant    11/ 6676 = a(157,315)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000010/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.65927)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00814605)
+	variant    12/ 6676 = a(157,314)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000011/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.45577)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00787282)
+	variant    13/ 6676 = a(157,268)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000012/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.6906)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00846601)
+	variant    14/ 6676 = a(157,259)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000013/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.64253)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00996614)
+	variant    15/ 6676 = a(157,257)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000014/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.606)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01003)
+	variant    16/ 6676 = a(157,256)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000015/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.73727)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00785398)
+	variant    17/ 6676 = a(157,255)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000016/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.63285)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0120211)
+	variant    18/ 6676 = a(157,254)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000017/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.47483)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00911498)
+	variant    19/ 6676 = a(157,253)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000018/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.53698)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014137)
+	variant    20/ 6676 = a(157,252)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000019/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.72455)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00765705)
+	variant    21/ 6676 = a(157,251)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000020/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.8315)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01794)
+	variant    22/ 6676 = a(157,250)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000021/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.53433)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0138741)
+	variant    23/ 6676 = a(157,249)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000022/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.54304)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00793099)
+	variant    24/ 6676 = a(157,246)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000023/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 3.16185)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0118909)
+	variant    25/ 6676 = a(157,245)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000024/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.72352)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00887609)
+	variant    26/ 6676 = a(157,241)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000025/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+FAILED: 0
+ false (test_time = 2.6493)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017437)
+	variant    27/ 6676 = a(157,239)      (13 tests, cond 0)
+		n1Coverage only: 
+Repair files: src/du.c
+Allfiles: src/du.c
+COPY: cp 000026/src/du.c src/du.c
+Command 'pkill du' failed: make  all-recursive
+make[1]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+Making all in lib
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/lib'
+Making all in src
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make  all-am
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+  CCLD     [
+gcc -D_GNUCC -o a.out -std=c99 -std=c99 -Wno-error lbracket.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+  CC       du.o
+gcc -D_GNUCC -E -MT du.o -MD -MP -MF .deps/du.Tpo -I. -I../lib -I../lib -std=c99 -DCIL=1 du.c -o ./du.i
+/home/ubuntu/genprog-anti-source/cil-1.3.7/obj/x86_LINUX/cilly.asm.exe --out ./du.cil.c ./du.i
+gcc -D_GNUCC -E -I. -I../lib -I../lib -std=c99 ./du.cil.c -o ./du.cil.i
+gcc -D_GNUCC -c -I. -I../lib -I../lib -std=c99 -std=c99 -Wno-error -o du.o ./du.cil.i
+  CCLD     du
+gcc -D_GNUCC -o du -std=c99 -std=c99 -Wno-error du.o libver.a ../lib/libcoreutils.a ../lib/libcoreutils.a -std=c99 -z ignore
+/usr/bin/ld: warning: -z ignore ignored.
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/src'
+Making all in doc
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/doc'
+Making all in man
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+  GEN      du.1
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/man'
+Making all in po
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/po'
+Making all in tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/tests'
+Making all in gnulib-tests
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make  all-recursive
+make[3]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+Making all in .
+make[4]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[4]: Nothing to be done for `all-am'.
+make[4]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[3]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1/gnulib-tests'
+make[2]: Entering directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[2]: Nothing to be done for `all-am'.
+make[2]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+make[1]: Leaving directory `/home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1'
+calling: timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/cfe1040c_f7f398a1/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-cfe1040c-f7f398a1
+PASS: 0
+ true (test_time = 2.65414)
+		p1PASS: 86
+ true (test_time = 1.25962)
+		p2PASS: 89
+ true (test_time = 1.08022)
+		p3PASS: 91
+ true (test_time = 1.07688)
+		p4PASS: 92
+ true (test_time = 1.21439)
+		p5PASS: 93
+ true (test_time = 1.21625)
+		p6PASS: 94
+ true (test_time = 1.25061)
+		p7PASS: 96
+ true (test_time = 1.16875)
+		p8PASS: 97
+ true (test_time = 1.31197)
+		p9PASS: 99
+ true (test_time = 1.43191)
+		p10PASS: 100
+ true (test_time = 1.12032)
+		p11PASS: 101
+ true (test_time = 0.970021)
+		p12PASS: 105
+ true (test_time = 1.18936)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: a(157,239)
+Repair Name: a(157,239) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454481000.195359
+
+Variant Test Case Queries: 39
+"Test Suite Evaluations": 3
+
+Compile Failures: 0
+Wall-Clock Seconds Elapsed: 108.482
+  Activity Name                     Count Seconds = Percent of Total Time
+  delete_sources                      116   0.049 = 0.045874%
+  find_best_edit                       27   0.295 = 0.275541%
+  progeq partition                    175   1.204 = 1.12479%
+  append_sources                      116   3.077 = 2.87566%
+  test                                 52  35.283 = 32.973%
+  compile                              28  67.098 = 62.7052%
+  TOTAL                                   107.005 = 98.6249% (avg CPU usage)

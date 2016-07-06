@@ -1,0 +1,2464 @@
+WARNING: the argument --multi-file is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --suffix-extension is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --mutp is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 6
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Tue Feb  2 12:16:44 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat: /etc/redhat-release: No such file or directory
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp1cbfde.c /tmp/tmp9c0ad0.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/tail.c: parsing
+cilRep: src/tail.c: parsed (0.132221 MB)
+cilRep: computing liveness
+Bug: BF(Liveness): stmtStartData is not initialized for -1: _L___1: 
+#line 1014 "src/tail.c"
+new_file = (_Bool)1;
+Liveness failed on function:
+ static void recheck(struct File_spec *f , _Bool blocking ) 
+{ struct stat new_stats ;
+  _Bool ok ;
+  _Bool is_stdin ;
+  int tmp ;
+  _Bool was_tailable ;
+  int prev_errnum ;
+  _Bool new_file ;
+  int fd ;
+  int tmp___0 ;
+  int tmp___1 ;
+  int tmp___2 ;
+  _Bool tmp___3 ;
+  int tmp___4 ;
+  int *tmp___5 ;
+  char const   *tmp___6 ;
+  char const   *tmp___7 ;
+  char *tmp___8 ;
+  char const   *tmp___9 ;
+  int *tmp___10 ;
+  int *tmp___11 ;
+  char const   *tmp___12 ;
+  char const   *tmp___13 ;
+  char *tmp___14 ;
+  char const   *tmp___15 ;
+  char const   *tmp___16 ;
+  char *tmp___17 ;
+  char const   *tmp___18 ;
+  _Bool tmp___19 ;
+  int tmp___20 ;
+  char const   *tmp___21 ;
+  char const   *tmp___22 ;
+  char const   *tmp___23 ;
+  char const   *tmp___24 ;
+  char *tmp___25 ;
+  char const   *tmp___26 ;
+  char const   *tmp___27 ;
+  char *tmp___28 ;
+  char const   *tmp___29 ;
+  char const   *tmp___30 ;
+  char const   *tmp___31 ;
+  char *tmp___32 ;
+  char const   *tmp___33 ;
+  int tmp___34 ;
+  char const   *tmp___35 ;
+
+  {
+   714: /* CIL Label */ 
+#line 936
+  ok = (_Bool)1;
+   715: /* CIL Label */ 
+#line 937
+  tmp = strcmp((char const   *)f->name, "-");
+   716: /* CIL Label */ 
+#line 937
+  is_stdin = (_Bool )(tmp == 0);
+   717: /* CIL Label */ 
+#line 938
+  was_tailable = f->tailable;
+   718: /* CIL Label */ 
+#line 939
+  prev_errnum = f->errnum;
+   719: /* CIL Label */ 
+#line 941
+  if (is_stdin) {
+#line 941
+    tmp___2 = 0;
+  } else {
+#line 941
+    if (blocking) {
+#line 941
+      tmp___0 = 0;
+    } else {
+#line 941
+      tmp___0 = 2048;
+    }
+#line 941
+    tmp___1 = open_safer((char const   *)f->name, tmp___0);
+#line 941
+    tmp___2 = tmp___1;
+  }
+   720: /* CIL Label */ 
+#line 941
+  fd = tmp___2;
+   721: /* CIL Label */ 
+#line 945
+  tmp___3 = valid_file_spec((struct File_spec  const  *)f);
+   722: /* CIL Label */ 
+#line 945
+  if (! tmp___3) {
+#line 945
+    __assert_fail("valid_file_spec (f)", "src/tail.c", 945U, "recheck");
+  } else {
+
+  }
+   723: /* CIL Label */ 
+#line 949
+  if (reopen_inaccessible_files) {
+#line 949
+    if (fd == -1) {
+#line 949
+      tmp___4 = 0;
+    } else {
+#line 949
+      tmp___4 = 1;
+    }
+  } else {
+#line 949
+    tmp___4 = 1;
+  }
+   724: /* CIL Label */ 
+#line 949
+  f->tailable = (_Bool )tmp___4;
+   725: /* CIL Label */ 
+#line 951
+  if (fd == -1) {
+    goto _L___0;
+  } else {
+#line 951
+    tmp___20 = fstat(fd, & new_stats);
+#line 951
+    if (tmp___20 < 0) {
+      _L___0: 
+#line 953
+      ok = (_Bool)0;
+#line 954
+      tmp___5 = __errno_location();
+#line 954
+      f->errnum = *tmp___5;
+#line 955
+      if (! f->tailable) {
+#line 957
+        if (was_tailable) {
+#line 963
+          tmp___6 = pretty_name((struct File_spec  const  *)f);
+#line 963
+          tmp___7 = quote(tmp___6);
+#line 963
+          tmp___8 = gettext("%s has become inaccessible");
+#line 963
+          error(0, f->errnum, (char const   *)tmp___8, tmp___7);
+        } else {
+
+        }
+      } else {
+#line 971
+        tmp___11 = __errno_location();
+#line 971
+        if (prev_errnum != *tmp___11) {
+#line 973
+          tmp___9 = pretty_name((struct File_spec  const  *)f);
+#line 973
+          tmp___10 = __errno_location();
+#line 973
+          error(0, *tmp___10, "%s", tmp___9);
+        } else {
+
+        }
+      }
+    } else {
+#line 976
+      if ((new_stats.st_mode & 61440U) == 32768U) {
+        goto _L;
+      } else {
+#line 976
+        if ((new_stats.st_mode & 61440U) == 4096U) {
+          goto _L;
+        } else {
+#line 976
+          if ((new_stats.st_mode & 61440U) == 49152U) {
+            goto _L;
+          } else {
+#line 976
+            if ((new_stats.st_mode & 61440U) == 8192U) {
+              _L: 
+#line 985
+              if (! disable_inotify) {
+#line 985
+                tmp___18 = pretty_name((struct File_spec  const  *)f);
+#line 985
+                tmp___19 = fremote(fd, tmp___18);
+#line 985
+                if (tmp___19) {
+#line 987
+                  ok = (_Bool)0;
+#line 988
+                  f->errnum = -1;
+#line 989
+                  tmp___15 = pretty_name((struct File_spec  const  *)f);
+#line 989
+                  tmp___16 = quote(tmp___15);
+#line 989
+                  tmp___17 = gettext("%s has been replaced with a remote file. giving up on this name");
+#line 989
+                  error(0, 0, (char const   *)tmp___17, tmp___16);
+#line 991
+                  f->ignore = (_Bool)1;
+#line 992
+                  f->remote = (_Bool)1;
+                } else {
+#line 996
+                  f->errnum = 0;
+                }
+              } else {
+#line 996
+                f->errnum = 0;
+              }
+            } else {
+#line 978
+              ok = (_Bool)0;
+#line 979
+              f->errnum = -1;
+#line 980
+              tmp___12 = pretty_name((struct File_spec  const  *)f);
+#line 980
+              tmp___13 = quote(tmp___12);
+#line 980
+              tmp___14 = gettext("%s has been replaced with an untailable file; giving up on this name");
+#line 980
+              error(0, 0, (char const   *)tmp___14, tmp___13);
+#line 983
+              f->ignore = (_Bool)1;
+            }
+          }
+        }
+      }
+    }
+  }
+   726: /* CIL Label */ 
+#line 999
+  new_file = (_Bool)0;
+   727: /* CIL Label */ 
+#line 1000
+  if (! ok) {
+#line 1002
+    tmp___21 = pretty_name((struct File_spec  const  *)f);
+#line 1002
+    close_fd(fd, tmp___21);
+#line 1003
+    tmp___22 = pretty_name((struct File_spec  const  *)f);
+#line 1003
+    close_fd(f->fd, tmp___22);
+#line 1004
+    f->fd = -1;
+  } else {
+#line 1006
+    if (prev_errnum) {
+#line 1006
+      if (prev_errnum != 2) {
+#line 1008
+        new_file = (_Bool)1;
+#line 1009
+        if (! (f->fd == -1)) {
+#line 1009
+          __assert_fail("f->fd == -1", "src/tail.c", 1009U, "recheck");
+        } else {
+
+        }
+#line 1010
+        tmp___23 = pretty_name((struct File_spec  const  *)f);
+#line 1010
+        tmp___24 = quote(tmp___23);
+#line 1010
+        tmp___25 = gettext("%s has become accessible");
+#line 1010
+        error(0, 0, (char const   *)tmp___25, tmp___24);
+      } else {
+        goto _L___2;
+      }
+    } else {
+      _L___2: 
+#line 1012
+      if (f->ino != new_stats.st_ino) {
+        goto _L___1;
+      } else {
+#line 1012
+        if (f->dev != new_stats.st_dev) {
+          _L___1: 
+#line 1014
+          new_file = (_Bool)1;
+#line 1015
+          if (f->fd == -1) {
+#line 1017
+            tmp___26 = pretty_name((struct File_spec  const  *)f);
+#line 1017
+            tmp___27 = quote(tmp___26);
+#line 1017
+            tmp___28 = gettext("%s has appeared;  following end of new file");
+#line 1017
+            error(0, 0, (char const   *)tmp___28, tmp___27);
+          } else {
+#line 1024
+            tmp___29 = pretty_name((struct File_spec  const  *)f);
+#line 1024
+            close_fd(f->fd, tmp___29);
+#line 1028
+            tmp___30 = pretty_name((struct File_spec  const  *)f);
+#line 1028
+            tmp___31 = quote(tmp___30);
+#line 1028
+            tmp___32 = gettext("%s has been replaced;  following end of new file");
+#line 1028
+            error(0, 0, (char const   *)tmp___32, tmp___31);
+          }
+        } else {
+#line 1035
+          if (f->fd == -1) {
+#line 1040
+            new_file = (_Bool)1;
+          } else {
+#line 1044
+            tmp___33 = pretty_name((struct File_spec  const  *)f);
+#line 1044
+            close_fd(fd, tmp___33);
+          }
+        }
+      }
+    }
+  }
+   728: /* CIL Label */ 
+#line 1048
+  if (new_file) {
+#line 1051
+    if (is_stdin) {
+#line 1051
+      tmp___34 = -1;
+    } else {
+#line 1051
+      tmp___34 = (int )blocking;
+    }
+#line 1051
+    record_open_fd(f, fd, 0L, (struct stat  const  *)(& new_stats), tmp___34);
+#line 1052
+    tmp___35 = pretty_name((struct File_spec  const  *)f);
+#line 1052
+    xlseek(fd, 0L, 0, tmp___35);
+  } else {
+
+  }
+   729: /* CIL Label */ 
+#line 1054
+  return;
+}
+}
+
+cilRep: liveness failure for recheck: Errormsg.Error
+Bug: BF(Liveness): stmtStartData is not initialized for -1: _L___1: 
+#line 1200
+tmp___19 = fflush_unlocked(stdout);
+Liveness failed on function:
+ static void tail_forever(struct File_spec *f , size_t n_files ,
+                          double sleep_interval ) 
+{ _Bool blocking ;
+  int tmp ;
+  size_t last ;
+  _Bool writer_is_dead ;
+  size_t i ;
+  _Bool any_input ;
+  int fd ;
+  char const   *name ;
+  mode_t mode ;
+  struct stat stats ;
+  uintmax_t bytes_read ;
+  int old_flags ;
+  int tmp___0 ;
+  int new_flags ;
+  int tmp___1 ;
+  char *tmp___2 ;
+  int *tmp___3 ;
+  int *tmp___4 ;
+  int tmp___5 ;
+  int *tmp___6 ;
+  int *tmp___7 ;
+  int tmp___8 ;
+  uintmax_t tmp___9 ;
+  struct timespec  __attribute__((__gnu_inline__)) tmp___10 ;
+  int __attribute__((__gnu_inline__))  tmp___11 ;
+  struct timespec  __attribute__((__gnu_inline__)) tmp___12 ;
+  char *tmp___13 ;
+  int tmp___14 ;
+  char *tmp___15 ;
+  _Bool tmp___16 ;
+  char *tmp___17 ;
+  int *tmp___18 ;
+  int tmp___19 ;
+  int tmp___20 ;
+  int *tmp___21 ;
+  int tmp___22 ;
+  char *tmp___23 ;
+  int *tmp___24 ;
+  int tmp___25 ;
+
+  {
+   884: /* CIL Label */ 
+#line 1081
+  if (pid == 0) {
+#line 1081
+    if ((unsigned int )follow_mode == 2U) {
+#line 1081
+      if (n_files == 1UL) {
+#line 1081
+        if (! (((f + 0)->mode & 61440U) == 32768U)) {
+#line 1081
+          tmp = 1;
+        } else {
+#line 1081
+          tmp = 0;
+        }
+      } else {
+#line 1081
+        tmp = 0;
+      }
+    } else {
+#line 1081
+      tmp = 0;
+    }
+  } else {
+#line 1081
+    tmp = 0;
+  }
+   885: /* CIL Label */ 
+#line 1081
+  blocking = (_Bool )tmp;
+   886: /* CIL Label */ 
+#line 1084
+  writer_is_dead = (_Bool)0;
+   887: /* CIL Label */ 
+#line 1086
+  last = n_files - 1UL;
+   888: /* CIL Label */ 
+#line 1088
+  while (1) {
+#line 1091
+    any_input = (_Bool)0;
+#line 1093
+    i = 0UL;
+#line 1093
+    while (i < n_files) {
+#line 1101
+      if ((f + i)->ignore) {
+        goto __Cont;
+      } else {
+
+      }
+#line 1104
+      if ((f + i)->fd < 0) {
+#line 1106
+        recheck(f + i, blocking);
+        goto __Cont;
+      } else {
+
+      }
+#line 1110
+      fd = (f + i)->fd;
+#line 1111
+      name = pretty_name((struct File_spec  const  *)(f + i));
+#line 1112
+      mode = (f + i)->mode;
+#line 1114
+      if ((f + i)->blocking != (int )blocking) {
+#line 1116
+        tmp___0 = rpl_fcntl(fd, 3);
+#line 1116
+        old_flags = tmp___0;
+#line 1117
+        if (blocking) {
+#line 1117
+          tmp___1 = 0;
+        } else {
+#line 1117
+          tmp___1 = 2048;
+        }
+#line 1117
+        new_flags = old_flags | tmp___1;
+#line 1118
+        if (old_flags < 0) {
+          goto _L;
+        } else {
+#line 1118
+          if (new_flags != old_flags) {
+#line 1118
+            tmp___5 = rpl_fcntl(fd, 4, new_flags);
+#line 1118
+            if (tmp___5 == -1) {
+              _L: 
+#line 1123
+              if (((f + i)->mode & 61440U) == 32768U) {
+#line 1123
+                tmp___4 = __errno_location();
+#line 1123
+                if (! (*tmp___4 == 1)) {
+#line 1129
+                  tmp___2 = gettext("%s: cannot change nonblocking mode");
+#line 1129
+                  tmp___3 = __errno_location();
+#line 1129
+                  error(1, *tmp___3, (char const   *)tmp___2, name);
+                } else {
+
+                }
+              } else {
+#line 1129
+                tmp___2 = gettext("%s: cannot change nonblocking mode");
+#line 1129
+                tmp___3 = __errno_location();
+#line 1129
+                error(1, *tmp___3, (char const   *)tmp___2, name);
+              }
+            } else {
+#line 1133
+              (f + i)->blocking = (int )blocking;
+            }
+          } else {
+#line 1133
+            (f + i)->blocking = (int )blocking;
+          }
+        }
+      } else {
+
+      }
+#line 1136
+      if (! (f + i)->blocking) {
+#line 1138
+        tmp___8 = fstat(fd, & stats);
+#line 1138
+        if (tmp___8 != 0) {
+#line 1140
+          (f + i)->fd = -1;
+#line 1141
+          tmp___6 = __errno_location();
+#line 1141
+          (f + i)->errnum = *tmp___6;
+#line 1142
+          tmp___7 = __errno_location();
+#line 1142
+          error(0, *tmp___7, "%s", name);
+#line 1143
+          close(fd);
+          goto __Cont;
+        } else {
+
+        }
+#line 1147
+        if ((f + i)->mode == stats.st_mode) {
+#line 1147
+          if (! ((stats.st_mode & 61440U) == 32768U)) {
+            goto _L___0;
+          } else {
+#line 1147
+            if ((f + i)->size == stats.st_size) {
+              _L___0: 
+#line 1147
+              tmp___10 = get_stat_mtime((struct stat  const  *)(& stats));
+#line 1147
+              tmp___11 = timespec_cmp((f + i)->mtime, (struct timespec )tmp___10);
+#line 1147
+              if (tmp___11 == (int __attribute__((__gnu_inline__))  )0) {
+#line 1151
+                tmp___9 = (f + i)->n_unchanged_stats;
+#line 1151
+                ((f + i)->n_unchanged_stats) ++;
+#line 1151
+                if (max_n_unchanged_stats_between_opens <= tmp___9) {
+#line 1151
+                  if ((unsigned int )follow_mode == 1U) {
+#line 1155
+                    recheck(f + i, (_Bool )(f + i)->blocking);
+#line 1156
+                    (f + i)->n_unchanged_stats = 0UL;
+                  } else {
+
+                  }
+                } else {
+
+                }
+                goto __Cont;
+              } else {
+
+              }
+            } else {
+
+            }
+          }
+        } else {
+
+        }
+#line 1164
+        tmp___12 = get_stat_mtime((struct stat  const  *)(& stats));
+#line 1164
+        (f + i)->mtime = (struct timespec )tmp___12;
+#line 1165
+        (f + i)->mode = stats.st_mode;
+#line 1168
+        (f + i)->n_unchanged_stats = 0UL;
+#line 1170
+        if ((mode & 61440U) == 32768U) {
+#line 1170
+          if (stats.st_size < (f + i)->size) {
+#line 1172
+            tmp___13 = gettext("%s: file truncated");
+#line 1172
+            error(0, 0, (char const   *)tmp___13, name);
+#line 1173
+            last = i;
+#line 1174
+            xlseek(fd, stats.st_size, 0, name);
+#line 1175
+            (f + i)->size = stats.st_size;
+            goto __Cont;
+          } else {
+
+          }
+        } else {
+
+        }
+#line 1179
+        if (i != last) {
+#line 1181
+          if (print_headers) {
+#line 1182
+            write_header(name);
+          } else {
+
+          }
+#line 1183
+          last = i;
+        } else {
+
+        }
+      } else {
+
+      }
+#line 1187
+      if ((f + i)->blocking) {
+#line 1187
+        tmp___14 = -1;
+      } else {
+#line 1187
+        tmp___14 = 0;
+      }
+#line 1187
+      bytes_read = dump_remainder(name, fd, (unsigned long )tmp___14);
+#line 1190
+      any_input = (_Bool )((int )any_input | (bytes_read != 0UL));
+#line 1191
+      (f + i)->size = (long )((unsigned long )(f + i)->size + bytes_read);
+      __Cont: 
+#line 1093
+      i ++;
+    }
+#line 1194
+    tmp___16 = any_live_files((struct File_spec  const  *)f, n_files);
+#line 1194
+    if (! tmp___16) {
+#line 1194
+      if (! reopen_inaccessible_files) {
+#line 1196
+        tmp___15 = gettext("no files remaining");
+#line 1196
+        error(0, 0, (char const   *)tmp___15);
+#line 1197
+        break;
+      } else {
+
+      }
+    } else {
+
+    }
+#line 1200
+    if (! any_input) {
+      goto _L___1;
+    } else {
+#line 1200
+      if (blocking) {
+        _L___1: 
+#line 1200
+        tmp___19 = fflush_unlocked(stdout);
+#line 1200
+        if (tmp___19 != 0) {
+#line 1201
+          tmp___17 = gettext("write error");
+#line 1201
+          tmp___18 = __errno_location();
+#line 1201
+          error(1, *tmp___18, (char const   *)tmp___17);
+        } else {
+
+        }
+      } else {
+
+      }
+    }
+#line 1204
+    if (! any_input) {
+#line 1206
+      if (writer_is_dead) {
+#line 1207
+        break;
+      } else {
+
+      }
+#line 1211
+      if (pid != 0) {
+#line 1211
+        tmp___20 = kill(pid, 0);
+#line 1211
+        if (tmp___20 != 0) {
+#line 1211
+          tmp___21 = __errno_location();
+#line 1211
+          if (*tmp___21 != 1) {
+#line 1211
+            tmp___22 = 1;
+          } else {
+#line 1211
+            tmp___22 = 0;
+          }
+        } else {
+#line 1211
+          tmp___22 = 0;
+        }
+      } else {
+#line 1211
+        tmp___22 = 0;
+      }
+#line 1211
+      writer_is_dead = (_Bool )tmp___22;
+#line 1218
+      if (! writer_is_dead) {
+#line 1218
+        tmp___25 = xnanosleep(sleep_interval);
+#line 1218
+        if (tmp___25) {
+#line 1219
+          tmp___23 = gettext("cannot read realtime clock");
+#line 1219
+          tmp___24 = __errno_location();
+#line 1219
+          error(1, *tmp___24, (char const   *)tmp___23);
+        } else {
+
+        }
+      } else {
+
+      }
+    } else {
+
+    }
+  }
+   889: /* CIL Label */ 
+#line 1223
+  return;
+}
+}
+
+cilRep: liveness failure for tail_forever: Errormsg.Error
+Bug: BF(Liveness): stmtStartData is not initialized for -1: _L: 
+#line 1483
+tmp___27 = max_realloc;
+#line 1483
+max_realloc --;
+Liveness failed on function:
+ static _Bool tail_forever_inotify(int wd , struct File_spec *f ,
+                                   size_t n_files , double sleep_interval ) 
+{ unsigned int max_realloc ;
+  Hash_table *wd_to_name ;
+  _Bool found_watchable_file ;
+  _Bool found_unwatchable_dir ;
+  _Bool no_inotify_resources ;
+  _Bool writer_is_dead ;
+  int prev_wd ;
+  size_t evlen ;
+  char *evbuf ;
+  size_t evbuf_off ;
+  size_t len ;
+  size_t i ;
+  size_t fnlen ;
+  size_t tmp ;
+  size_t dirlen ;
+  size_t tmp___0 ;
+  char prev ;
+  char *tmp___1 ;
+  char const   *tmp___2 ;
+  char const   *tmp___3 ;
+  char *tmp___4 ;
+  int *tmp___5 ;
+  char *tmp___6 ;
+  int *tmp___7 ;
+  char *tmp___8 ;
+  char const   *tmp___9 ;
+  char *tmp___10 ;
+  int *tmp___11 ;
+  int *tmp___12 ;
+  int *tmp___13 ;
+  void *tmp___14 ;
+  int *tmp___15 ;
+  void *tmp___16 ;
+  struct File_spec *fspec ;
+  struct inotify_event *ev ;
+  char *tmp___17 ;
+  size_t tmp___18 ;
+  int tmp___19 ;
+  int *tmp___20 ;
+  int tmp___21 ;
+  struct timeval delay ;
+  fd_set rfd ;
+  int __d0 ;
+  int __d1 ;
+  int file_change ;
+  int tmp___22 ;
+  char *tmp___23 ;
+  int *tmp___24 ;
+  void *tmp___25 ;
+  int *tmp___26 ;
+  unsigned int tmp___27 ;
+  char *tmp___28 ;
+  int *tmp___29 ;
+  size_t j ;
+  int tmp___30 ;
+  int new_wd ;
+  int tmp___31 ;
+  char const   *tmp___32 ;
+  char *tmp___33 ;
+  int *tmp___34 ;
+  struct File_spec *prev___0 ;
+  void *tmp___35 ;
+  char const   *tmp___36 ;
+  void *tmp___37 ;
+  struct File_spec key ;
+  void *tmp___38 ;
+
+  {
+   1169: /* CIL Label */ 
+#line 1317
+  max_realloc = 3U;
+   1170: /* CIL Label */ 
+#line 1322
+  found_watchable_file = (_Bool)0;
+   1171: /* CIL Label */ 
+#line 1323
+  found_unwatchable_dir = (_Bool)0;
+   1172: /* CIL Label */ 
+#line 1324
+  no_inotify_resources = (_Bool)0;
+   1173: /* CIL Label */ 
+#line 1325
+  writer_is_dead = (_Bool)0;
+   1174: /* CIL Label */ 
+#line 1327
+  evlen = 0UL;
+   1175: /* CIL Label */ 
+#line 1329
+  evbuf_off = 0UL;
+   1176: /* CIL Label */ 
+#line 1330
+  len = 0UL;
+   1177: /* CIL Label */ 
+#line 1332
+  wd_to_name = hash_initialize(n_files, (Hash_tuning const   *)((void *)0),
+                               & wd_hasher, & wd_comparator,
+                               (void (*)(void * ))((void *)0));
+   1178: /* CIL Label */ 
+#line 1333
+  if (! wd_to_name) {
+#line 1334
+    xalloc_die();
+  } else {
+
+  }
+   1179: /* CIL Label */ 
+#line 1340
+  i = 0UL;
+   1180: /* CIL Label */ 
+#line 1340
+  while (i < n_files) {
+#line 1342
+    if (! (f + i)->ignore) {
+#line 1344
+      tmp = strlen((char const   *)(f + i)->name);
+#line 1344
+      fnlen = tmp;
+#line 1345
+      if (evlen < fnlen) {
+#line 1346
+        evlen = fnlen;
+      } else {
+
+      }
+#line 1348
+      (f + i)->wd = -1;
+#line 1350
+      if ((unsigned int )follow_mode == 1U) {
+#line 1352
+        tmp___0 = dir_len((char const   *)(f + i)->name);
+#line 1352
+        dirlen = tmp___0;
+#line 1353
+        prev = *((f + i)->name + dirlen);
+#line 1354
+        tmp___1 = last_component((char const   *)(f + i)->name);
+#line 1354
+        (f + i)->basename_start = (unsigned long )(tmp___1 - (f + i)->name);
+#line 1356
+        *((f + i)->name + dirlen) = (char )'\000';
+#line 1360
+        if (dirlen) {
+#line 1360
+          tmp___2 = (char const   *)(f + i)->name;
+        } else {
+#line 1360
+          tmp___2 = ".";
+        }
+#line 1360
+        (f + i)->parent_wd = inotify_add_watch(wd, tmp___2, 388U);
+#line 1364
+        *((f + i)->name + dirlen) = prev;
+#line 1366
+        if ((f + i)->parent_wd < 0) {
+#line 1368
+          tmp___7 = __errno_location();
+#line 1368
+          if (*tmp___7 != 28) {
+#line 1369
+            tmp___3 = quote((char const   *)(f + i)->name);
+#line 1369
+            tmp___4 = gettext("cannot watch parent directory of %s");
+#line 1369
+            tmp___5 = __errno_location();
+#line 1369
+            error(0, *tmp___5, (char const   *)tmp___4, tmp___3);
+          } else {
+#line 1372
+            tmp___6 = gettext("inotify resources exhausted");
+#line 1372
+            error(0, 0, (char const   *)tmp___6);
+          }
+#line 1373
+          found_unwatchable_dir = (_Bool)1;
+#line 1376
+          break;
+        } else {
+
+        }
+      } else {
+
+      }
+#line 1380
+      (f + i)->wd = inotify_add_watch(wd, (char const   *)(f + i)->name,
+                                      (unsigned int )inotify_wd_mask);
+#line 1382
+      if ((f + i)->wd < 0) {
+#line 1384
+        tmp___13 = __errno_location();
+#line 1384
+        if (*tmp___13 == 28) {
+#line 1386
+          no_inotify_resources = (_Bool)1;
+#line 1387
+          tmp___8 = gettext("inotify resources exhausted");
+#line 1387
+          error(0, 0, (char const   *)tmp___8);
+        } else {
+#line 1389
+          tmp___12 = __errno_location();
+#line 1389
+          if (*tmp___12 != (f + i)->errnum) {
+#line 1390
+            tmp___9 = quote((char const   *)(f + i)->name);
+#line 1390
+            tmp___10 = gettext("cannot watch %s");
+#line 1390
+            tmp___11 = __errno_location();
+#line 1390
+            error(0, *tmp___11, (char const   *)tmp___10, tmp___9);
+          } else {
+
+          }
+        }
+        goto __Cont;
+      } else {
+
+      }
+#line 1394
+      tmp___14 = hash_insert(wd_to_name, (void const   *)(f + i));
+#line 1394
+      if ((unsigned long )tmp___14 == (unsigned long )((void *)0)) {
+#line 1395
+        xalloc_die();
+      } else {
+
+      }
+#line 1397
+      found_watchable_file = (_Bool)1;
+    } else {
+
+    }
+    __Cont: 
+#line 1340
+    i ++;
+  }
+   1181: /* CIL Label */ 
+#line 1405
+  if (no_inotify_resources) {
+#line 1408
+    tmp___15 = __errno_location();
+#line 1408
+    *tmp___15 = 0;
+#line 1409
+    return ((_Bool)1);
+  } else {
+#line 1405
+    if (found_unwatchable_dir) {
+#line 1408
+      tmp___15 = __errno_location();
+#line 1408
+      *tmp___15 = 0;
+#line 1409
+      return ((_Bool)1);
+    } else {
+
+    }
+  }
+   1182: /* CIL Label */ 
+#line 1411
+  if ((unsigned int )follow_mode == 2U) {
+#line 1411
+    if (! found_watchable_file) {
+#line 1412
+      return ((_Bool)0);
+    } else {
+
+    }
+  } else {
+
+  }
+   1183: /* CIL Label */ 
+#line 1414
+  prev_wd = (f + (n_files - 1UL))->wd;
+   1184: /* CIL Label */ 
+#line 1418
+  i = 0UL;
+   1185: /* CIL Label */ 
+#line 1418
+  while (i < n_files) {
+#line 1420
+    if (! (f + i)->ignore) {
+#line 1421
+      check_fspec(f + i, (f + i)->wd, & prev_wd);
+    } else {
+
+    }
+#line 1418
+    i ++;
+  }
+   1186: /* CIL Label */ 
+#line 1424
+  evlen += sizeof(struct inotify_event ) + 1UL;
+   1187: /* CIL Label */ 
+#line 1425
+  tmp___16 = xmalloc(evlen);
+   1188: /* CIL Label */ 
+#line 1425
+  evbuf = (char *)tmp___16;
+   1189: /* CIL Label */ 
+#line 1431
+  while (1) {
+#line 1438
+    if ((unsigned int )follow_mode == 1U) {
+#line 1438
+      if (! reopen_inaccessible_files) {
+#line 1438
+        tmp___18 = hash_get_n_entries((Hash_table const   *)wd_to_name);
+#line 1438
+        if (tmp___18 == 0UL) {
+#line 1442
+          tmp___17 = gettext("no files remaining");
+#line 1442
+          error(0, 0, (char const   *)tmp___17);
+#line 1443
+          return ((_Bool)0);
+        } else {
+
+        }
+      } else {
+
+      }
+    } else {
+
+    }
+#line 1448
+    if (pid) {
+#line 1450
+      if (writer_is_dead) {
+#line 1451
+        exit(0);
+      } else {
+
+      }
+#line 1453
+      tmp___19 = kill(pid, 0);
+#line 1453
+      if (tmp___19 != 0) {
+#line 1453
+        tmp___20 = __errno_location();
+#line 1453
+        if (*tmp___20 != 1) {
+#line 1453
+          tmp___21 = 1;
+        } else {
+#line 1453
+          tmp___21 = 0;
+        }
+      } else {
+#line 1453
+        tmp___21 = 0;
+      }
+#line 1453
+      writer_is_dead = (_Bool )tmp___21;
+#line 1456
+      if (writer_is_dead) {
+#line 1457
+        delay.tv_usec = 0L;
+#line 1457
+        delay.tv_sec = delay.tv_usec;
+      } else {
+#line 1460
+        delay.tv_sec = (long )sleep_interval;
+#line 1461
+        delay.tv_usec = (long )((double )1000000 * (sleep_interval - (double )delay.tv_sec));
+      }
+#line 1465
+      while (1) {
+#line 1465
+        __asm__  volatile   ("cld; rep; "
+                             "stosq": "=c" (__d0), "=D" (__d1): "a" (0),
+                             "0" (sizeof(fd_set ) / sizeof(__fd_mask )),
+                             "1" (& rfd.fds_bits[0]): "memory");
+#line 1465
+        break;
+      }
+#line 1466
+      rfd.fds_bits[wd / (8 * (int )sizeof(__fd_mask ))] |= 1L << wd % (8 * (int )sizeof(__fd_mask ));
+#line 1468
+      tmp___22 = select(wd + 1, (fd_set */* __restrict  */)(& rfd),
+                        (fd_set */* __restrict  */)((void *)0),
+                        (fd_set */* __restrict  */)((void *)0),
+                        (struct timeval */* __restrict  */)(& delay));
+#line 1468
+      file_change = tmp___22;
+#line 1470
+      if (file_change == 0) {
+#line 1471
+        continue;
+      } else {
+#line 1472
+        if (file_change == -1) {
+#line 1473
+          tmp___23 = gettext("error monitoring inotify event");
+#line 1473
+          tmp___24 = __errno_location();
+#line 1473
+          error(1, *tmp___24, (char const   *)tmp___23);
+        } else {
+
+        }
+      }
+    } else {
+
+    }
+#line 1476
+    if (len <= evbuf_off) {
+#line 1478
+      len = safe_read(wd, (void *)evbuf, evlen);
+#line 1479
+      evbuf_off = 0UL;
+#line 1483
+      if (len == 0UL) {
+        goto _L;
+      } else {
+#line 1483
+        if (len == 4294967295UL) {
+#line 1483
+          tmp___26 = __errno_location();
+#line 1483
+          if (*tmp___26 == 22) {
+            _L: 
+#line 1483
+            tmp___27 = max_realloc;
+#line 1483
+            max_realloc --;
+#line 1483
+            if (tmp___27) {
+#line 1486
+              len = 0UL;
+#line 1487
+              evlen *= 2UL;
+#line 1488
+              tmp___25 = xrealloc((void *)evbuf, evlen);
+#line 1488
+              evbuf = (char *)tmp___25;
+#line 1489
+              continue;
+            } else {
+
+            }
+          } else {
+
+          }
+        } else {
+
+        }
+      }
+#line 1492
+      if (len == 0UL) {
+#line 1493
+        tmp___28 = gettext("error reading inotify event");
+#line 1493
+        tmp___29 = __errno_location();
+#line 1493
+        error(1, *tmp___29, (char const   *)tmp___28);
+      } else {
+#line 1492
+        if (len == 4294967295UL) {
+#line 1493
+          tmp___28 = gettext("error reading inotify event");
+#line 1493
+          tmp___29 = __errno_location();
+#line 1493
+          error(1, *tmp___29, (char const   *)tmp___28);
+        } else {
+
+        }
+      }
+    } else {
+
+    }
+#line 1496
+    ev = (struct inotify_event *)(evbuf + evbuf_off);
+#line 1497
+    evbuf_off += sizeof(*ev) + (unsigned long )ev->len;
+#line 1499
+    if (ev->len) {
+#line 1502
+      j = 0UL;
+#line 1502
+      while (j < n_files) {
+#line 1506
+        if ((f + j)->parent_wd == ev->wd) {
+#line 1506
+          tmp___30 = strcmp((char const   *)(ev->name),
+                            (char const   *)((f + j)->name + (f + j)->basename_start));
+#line 1506
+          if (tmp___30 == 0) {
+#line 1508
+            break;
+          } else {
+
+          }
+        } else {
+
+        }
+#line 1502
+        j ++;
+      }
+#line 1512
+      if (j == n_files) {
+#line 1513
+        continue;
+      } else {
+
+      }
+#line 1516
+      tmp___31 = inotify_add_watch(wd, (char const   *)(f + j)->name,
+                                   (unsigned int )inotify_wd_mask);
+#line 1516
+      new_wd = tmp___31;
+#line 1517
+      if (new_wd < 0) {
+#line 1519
+        tmp___32 = quote((char const   *)(f + j)->name);
+#line 1519
+        tmp___33 = gettext("cannot watch %s");
+#line 1519
+        tmp___34 = __errno_location();
+#line 1519
+        error(0, *tmp___34, (char const   *)tmp___33, tmp___32);
+#line 1520
+        continue;
+      } else {
+
+      }
+#line 1523
+      fspec = f + j;
+#line 1526
+      hash_delete(wd_to_name, (void const   *)fspec);
+#line 1527
+      fspec->wd = new_wd;
+#line 1532
+      tmp___35 = hash_delete(wd_to_name, (void const   *)fspec);
+#line 1532
+      prev___0 = (struct File_spec *)tmp___35;
+#line 1533
+      if (prev___0) {
+#line 1533
+        if ((unsigned long )prev___0 != (unsigned long )fspec) {
+#line 1535
+          if ((unsigned int )follow_mode == 1U) {
+#line 1536
+            recheck(prev___0, (_Bool)0);
+          } else {
+
+          }
+#line 1537
+          prev___0->wd = -1;
+#line 1538
+          tmp___36 = pretty_name((struct File_spec  const  *)prev___0);
+#line 1538
+          close_fd(prev___0->fd, tmp___36);
+        } else {
+
+        }
+      } else {
+
+      }
+#line 1541
+      tmp___37 = hash_insert(wd_to_name, (void const   *)fspec);
+#line 1541
+      if ((unsigned long )tmp___37 == (unsigned long )((void *)0)) {
+#line 1542
+        xalloc_die();
+      } else {
+
+      }
+#line 1544
+      if ((unsigned int )follow_mode == 1U) {
+#line 1545
+        recheck(fspec, (_Bool)0);
+      } else {
+
+      }
+    } else {
+#line 1550
+      key.wd = ev->wd;
+#line 1551
+      tmp___38 = hash_lookup((Hash_table const   *)wd_to_name,
+                             (void const   *)(& key));
+#line 1551
+      fspec = (struct File_spec *)tmp___38;
+    }
+#line 1554
+    if (! fspec) {
+#line 1555
+      continue;
+    } else {
+
+    }
+#line 1557
+    if (ev->mask & 3076U) {
+#line 1564
+      if (ev->mask & 1024U) {
+#line 1568
+        inotify_rm_watch(wd, fspec->wd);
+#line 1569
+        hash_delete(wd_to_name, (void const   *)fspec);
+      } else {
+#line 1564
+        if (ev->mask & 2048U) {
+#line 1564
+          if ((unsigned int )follow_mode == 2U) {
+#line 1568
+            inotify_rm_watch(wd, fspec->wd);
+#line 1569
+            hash_delete(wd_to_name, (void const   *)fspec);
+          } else {
+
+          }
+        } else {
+
+        }
+      }
+#line 1571
+      if ((unsigned int )follow_mode == 1U) {
+#line 1572
+        recheck(fspec, (_Bool)0);
+      } else {
+
+      }
+#line 1574
+      continue;
+    } else {
+
+    }
+#line 1576
+    check_fspec(fspec, ev->wd, & prev_wd);
+  }
+}
+}
+
+cilRep: liveness failure for tail_forever_inotify: Errormsg.Error
+Bug: BF(Liveness): stmtStartData is not initialized for -1: _L___0: 
+#line 1606
+tmp___3 = start_bytes(pretty_filename, fd, n_bytes, read_pos);
+#line 1606
+t = tmp___3;
+Liveness failed on function:
+ static _Bool tail_bytes(char const   *pretty_filename , int fd ,
+                         uintmax_t n_bytes , uintmax_t *read_pos ) 
+{ struct stat stats ;
+  char const   *tmp ;
+  char *tmp___0 ;
+  int *tmp___1 ;
+  int tmp___2 ;
+  int t ;
+  int tmp___3 ;
+  uintmax_t tmp___4 ;
+  off_t current_pos ;
+  off_t tmp___5 ;
+  off_t end_pos ;
+  off_t tmp___6 ;
+  off_t diff ;
+  off_t bytes_remaining ;
+  off_t tmp___7 ;
+  off_t nb ;
+  off_t tmp___8 ;
+  off_t tmp___9 ;
+  uintmax_t tmp___10 ;
+  _Bool tmp___11 ;
+
+  {
+   1236: /* CIL Label */ 
+#line 1590
+  tmp___2 = fstat(fd, & stats);
+   1237: /* CIL Label */ 
+#line 1590
+  if (tmp___2) {
+#line 1592
+    tmp = quote(pretty_filename);
+#line 1592
+    tmp___0 = gettext("cannot fstat %s");
+#line 1592
+    tmp___1 = __errno_location();
+#line 1592
+    error(0, *tmp___1, (char const   *)tmp___0, tmp);
+#line 1593
+    return ((_Bool)0);
+  } else {
+
+  }
+   1238: /* CIL Label */ 
+#line 1596
+  if (from_start) {
+#line 1598
+    if (! presume_input_pipe) {
+#line 1598
+      if ((stats.st_mode & 61440U) == 32768U) {
+#line 1598
+        if (n_bytes <= (unsigned long )(((1L << (sizeof(off_t ) * 8UL - 2UL)) - 1L) * 2L + 1L)) {
+#line 1601
+          xlseek(fd, (long )n_bytes, 1, pretty_filename);
+#line 1602
+          *read_pos += n_bytes;
+        } else {
+          goto _L___0;
+        }
+      } else {
+        goto _L___0;
+      }
+    } else {
+      _L___0: 
+#line 1606
+      tmp___3 = start_bytes(pretty_filename, fd, n_bytes, read_pos);
+#line 1606
+      t = tmp___3;
+#line 1607
+      if (t) {
+#line 1608
+        return ((_Bool )(t < 0));
+      } else {
+
+      }
+    }
+#line 1610
+    tmp___4 = dump_remainder(pretty_filename, fd, 0UL);
+#line 1610
+    *read_pos += tmp___4;
+  } else {
+#line 1614
+    if (! presume_input_pipe) {
+#line 1614
+      if ((stats.st_mode & 61440U) == 32768U) {
+#line 1614
+        if (n_bytes <= (unsigned long )(((1L << (sizeof(off_t ) * 8UL - 2UL)) - 1L) * 2L + 1L)) {
+#line 1617
+          tmp___5 = xlseek(fd, 0L, 1, pretty_filename);
+#line 1617
+          current_pos = tmp___5;
+#line 1618
+          tmp___6 = xlseek(fd, 0L, 2, pretty_filename);
+#line 1618
+          end_pos = tmp___6;
+#line 1619
+          diff = end_pos - current_pos;
+#line 1622
+          if (diff < 0L) {
+#line 1622
+            tmp___7 = 0L;
+          } else {
+#line 1622
+            tmp___7 = diff;
+          }
+#line 1622
+          bytes_remaining = tmp___7;
+#line 1623
+          nb = (long )n_bytes;
+#line 1625
+          if (bytes_remaining <= nb) {
+#line 1631
+            tmp___8 = xlseek(fd, current_pos, 0, pretty_filename);
+#line 1631
+            *read_pos = (unsigned long )tmp___8;
+          } else {
+#line 1637
+            tmp___9 = xlseek(fd, - nb, 2, pretty_filename);
+#line 1637
+            *read_pos = (unsigned long )tmp___9;
+          }
+#line 1639
+          tmp___10 = dump_remainder(pretty_filename, fd, n_bytes);
+#line 1639
+          *read_pos += tmp___10;
+        } else {
+#line 1642
+          tmp___11 = pipe_bytes(pretty_filename, fd, n_bytes, read_pos);
+#line 1642
+          return (tmp___11);
+        }
+      } else {
+#line 1642
+        tmp___11 = pipe_bytes(pretty_filename, fd, n_bytes, read_pos);
+#line 1642
+        return (tmp___11);
+      }
+    } else {
+#line 1642
+      tmp___11 = pipe_bytes(pretty_filename, fd, n_bytes, read_pos);
+#line 1642
+      return (tmp___11);
+    }
+  }
+   1239: /* CIL Label */ 
+#line 1644
+  return ((_Bool)1);
+}
+}
+
+cilRep: liveness failure for tail_bytes: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 1663
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+coverage positive:
+	test: 1
+PASS:79
+	test: 2
+PASS:80
+	test: 3
+PASS:81
+	test: 4
+PASS:82
+	test: 5
+PASS:83
+	test: 6
+PASS:84
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 1663
+cilRep: stmts in weighted_path = 199
+cilRep: total weight = 46.9
+cilRep: stmts in weighted_path with weight >= 1.0 = 30
+cilRep: src/tail.c (code bank/base file; atoms [1,1663])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454386636.235177)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 0
+cilRep: fix-space quotient by string: 409 -> 317
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: xmalloc
+progeq: WARNING: cannot resolve call: xrealloc
+progeq: WARNING: cannot resolve call: fchownat
+progeq: WARNING: cannot resolve call: fchmodat
+progeq: WARNING: cannot resolve call: fstatat
+progeq: WARNING: cannot resolve call: gettext
+progeq: WARNING: cannot resolve call: fputs_unlocked
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: last_component
+progeq: WARNING: cannot resolve call: fwrite_unlocked
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: error
+progeq: WARNING: cannot resolve call: close
+progeq: WARNING: cannot resolve call: safe_read
+progeq: WARNING: cannot resolve call: quote
+progeq: WARNING: cannot resolve call: lseek
+progeq: WARNING: cannot resolve call: offtostr
+progeq: WARNING: cannot resolve call: memcpy
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: fstatfs
+progeq: WARNING: cannot resolve call: open_safer
+progeq: WARNING: cannot resolve call: fstat
+progeq: WARNING: cannot resolve call: rpl_fcntl
+progeq: WARNING: cannot resolve call: fflush_unlocked
+progeq: WARNING: cannot resolve call: kill
+progeq: WARNING: cannot resolve call: xnanosleep
+progeq: WARNING: cannot resolve call: hash_initialize
+progeq: WARNING: cannot resolve call: dir_len
+progeq: WARNING: cannot resolve call: inotify_add_watch
+progeq: WARNING: cannot resolve call: hash_insert
+progeq: WARNING: cannot resolve call: hash_get_n_entries
+progeq: WARNING: cannot resolve call: select
+progeq: WARNING: cannot resolve call: hash_delete
+progeq: WARNING: cannot resolve call: hash_lookup
+progeq: WARNING: cannot resolve call: inotify_rm_watch
+progeq: WARNING: cannot resolve call: posix2_version
+progeq: WARNING: cannot resolve call: getopt_long
+progeq: WARNING: cannot resolve call: xstrtoumax
+progeq: WARNING: cannot resolve call: __xargmatch_internal
+progeq: WARNING: cannot resolve call: xstrtoul
+progeq: WARNING: cannot resolve call: xstrtod
+progeq: WARNING: cannot resolve call: version_etc
+progeq: WARNING: cannot resolve call: set_program_name
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: isatty
+progeq: WARNING: cannot resolve call: inotify_init
+search: fix space reduced (time_taken = 15.3047)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 199 deletes
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:45:after45
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:40:after40
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:20:after20
+REMOVED?true
+CARDINAL?before:20:after20
+REMOVED?true
+CARDINAL?before:20:after20
+REMOVED?true
+CARDINAL?before:20:after20
+REMOVED?true
+CARDINAL?before:20:after20
+REMOVED?true
+CARDINAL?before:20:after20
+REMOVED?true
+CARDINAL?before:20:after20
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:21:after21
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:317:after317
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+CARDINAL?before:69:after69
+REMOVED?true
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 19447 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 7588 appends
+search: ww_adaptive: 27035 possible edits
+search: ready to start (time_taken = 36.3063)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.0867591)
+	variant     1/27035 = d(1663)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 18.8269)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.107091)
+	variant     2/27035 = d(1662)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 18.3817)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.130243)
+	variant     3/27035 = d(1661)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 18.2727)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0987358)
+	variant     4/27035 = d(1660)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 19.352)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.089998)
+	variant     5/27035 = d(1659)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 13.506)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0914681)
+	variant     6/27035 = d(1657)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 17.6658)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0870571)
+	variant     7/27035 = d(1656)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 20.2047)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0958362)
+	variant     8/27035 = d(1654)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 20.4605)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0872691)
+	variant     9/27035 = d(1653)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 25.0429)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.093436)
+	variant    10/27035 = d(1652)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 19.2248)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0887668)
+	variant    11/27035 = d(1651)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 13.7772)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0851901)
+	variant    12/27035 = d(1650)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 16.4472)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0933681)
+	variant    13/27035 = d(1649)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 17.9956)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0987401)
+	variant    14/27035 = d(1647)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 20.5186)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.105503)
+	variant    15/27035 = d(1646)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 25.2309)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0964081)
+	variant    16/27035 = d(1645)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 18.7552)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0842068)
+	variant    17/27035 = d(1644)         (7 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2/000016/src/tail.c  d(1644)  fails to compile
+ false (test_time = 6.62494)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0879071)
+	variant    18/27035 = d(1643)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 16.9793)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.093838)
+	variant    19/27035 = d(1642)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 13.9466)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0920899)
+	variant    20/27035 = d(1641)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 14.2855)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.138409)
+	variant    21/27035 = d(1640)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 17.326)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0817678)
+	variant    22/27035 = d(1639)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 18.5434)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0846591)
+	variant    23/27035 = d(1638)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 18.0287)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.085381)
+	variant    24/27035 = d(1637)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 18.5608)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0812402)
+	variant    25/27035 = d(1636)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 18.6327)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0876889)
+	variant    26/27035 = d(1635)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 17.8935)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0969799)
+	variant    27/27035 = d(1634)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 18.9212)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.149243)
+	variant    28/27035 = d(1633)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 18.5396)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.083514)
+	variant    29/27035 = d(1632)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 13.6049)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0926859)
+	variant    30/27035 = d(1631)         (7 tests, cond 0)
+		n1	/home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2/000029/src/tail.c  d(1631)  fails to compile
+ false (test_time = 10.555)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0811439)
+	variant    31/27035 = d(1630)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 18.7409)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.161324)
+	variant    32/27035 = d(1629)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 19.1155)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.117529)
+	variant    33/27035 = d(1628)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 18.5205)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.089155)
+	variant    34/27035 = d(1627)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 17.6511)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.081044)
+	variant    35/27035 = d(1625)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 13.022)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.087872)
+	variant    36/27035 = d(1623)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 13.408)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0832949)
+	variant    37/27035 = d(1622)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 19.1375)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.078573)
+	variant    38/27035 = d(1617)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 15.4855)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.081455)
+	variant    39/27035 = d(1616)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+FAILED:0
+ false (test_time = 18.5326)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0879099)
+	variant    40/27035 = d(1612)         (7 tests, cond 0)
+		n1calling:timeout -k 60s 50 /home/ubuntu/corebench/subjects/coreutils/tests/ae494d4b_d461bfd2/regression.sh /home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2
+line:'/home/ubuntu/corebench/coreutils/coreutils-case-ae494d4b-d461bfd2/src/tail: cannot open \xe2\x80\x98missing1\xe2\x80\x99 for reading: No such file or directory'
+PASS:0
+ true (test_time = 12.8155)
+		p1PASS:79
+ true (test_time = 3.43336)
+		p2PASS:80
+ true (test_time = 1.71317)
+		p3PASS:81
+ true (test_time = 1.67774)
+		p4PASS:82
+ true (test_time = 1.73103)
+		p5PASS:83
+ true (test_time = 1.70362)
+		p6PASS:84
+ true (test_time = 1.85488)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: d(1612)
+Repair Name: d(1612) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454387397.451754
+
+Variant Test Case Queries: 46
+"Test Suite Evaluations": 6.57143
+
+Compile Failures: 2
+Wall-Clock Seconds Elapsed: 793.102
+  Activity Name                     Count Seconds = Percent of Total Time
+  find_best_edit                       40   3.825 = 0.484615%
+  progeq partition                    317  13.868 = 1.7572%
+  delete_sources                      199  16.361 = 2.0731%
+  append_sources                      199  19.896 = 2.52107%
+  test                                 51 299.836 = 37.9928%
+  compile                              41 435.407 = 55.1713%
+  TOTAL                                   789.192 = 99.506% (avg CPU usage)
