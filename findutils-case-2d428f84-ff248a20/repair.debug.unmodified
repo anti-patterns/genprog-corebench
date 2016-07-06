@@ -1,0 +1,1350 @@
+--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 78
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Mon Feb  1 18:22:17 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp847d67.c /tmp/tmpe26989.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: find/find.c: parsing
+cilRep: find/find.c: parsed (0.180097 MB)
+cilRep: computing liveness
+cilRep: liveness failure for safely_chdir_lstat: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 1708
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/findutils/findutils-case-2d428f84-ff248a20/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/stdio2.h:94
+	cannot instrument for coverage (would be recursive)
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/string3.h:75
+	cannot instrument for coverage (would be recursive)
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+coverage positive:
+	test: 1
+	test: 2
+	test: 3
+	test: 4
+	test: 5
+	test: 6
+	test: 7
+	test: 8
+	test: 9
+	test: 10
+	test: 11
+	test: 12
+	test: 13
+	test: 14
+	test: 15
+	test: 16
+	test: 17
+	test: 18
+	test: 19
+	test: 20
+	test: 21
+	test: 22
+	test: 23
+	test: 24
+	test: 25
+	test: 26
+	test: 27
+	test: 28
+	test: 29
+	test: 30
+	test: 31
+	test: 32
+	test: 33
+	test: 34
+	test: 35
+	test: 36
+	test: 37
+	test: 38
+	test: 39
+	test: 40
+	test: 41
+	test: 42
+	test: 43
+	test: 44
+	test: 45
+	test: 46
+	test: 47
+	test: 48
+	test: 49
+	test: 50
+	test: 51
+	test: 52
+	test: 53
+	test: 54
+	test: 55
+	test: 56
+	test: 57
+	test: 58
+	test: 59
+	test: 60
+	test: 61
+	test: 62
+	test: 63
+	test: 64
+	test: 65
+	test: 66
+	test: 67
+	test: 68
+	test: 69
+	test: 70
+	test: 71
+	test: 72
+	test: 73
+	test: 74
+	test: 75
+	test: 76
+	test: 77
+	test: 78
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 1708
+cilRep: stmts in weighted_path = 307
+cilRep: total weight = 307
+cilRep: stmts in weighted_path with weight >= 1.0 = 307
+cilRep: find/find.c (code bank/base file; atoms [1,1708])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454322221.509913)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 671
+cilRep: fix-space quotient by string: 295 -> 246
+progeq: WARNING: cannot resolve call: *(options.xstat)
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: error
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: __fxstat
+progeq: WARNING: cannot resolve call: __fxstatat
+progeq: WARNING: cannot resolve call: __xmknod
+progeq: WARNING: cannot resolve call: __xmknodat
+progeq: WARNING: cannot resolve call: __xstat64
+progeq: WARNING: cannot resolve call: __lxstat64
+progeq: WARNING: cannot resolve call: __fxstat64
+progeq: WARNING: cannot resolve call: __fxstatat64
+progeq: WARNING: cannot resolve call: __builtin_expect
+progeq: WARNING: cannot resolve call: __uflow
+progeq: WARNING: cannot resolve call: __overflow
+progeq: WARNING: cannot resolve call: __getdelim
+progeq: WARNING: cannot resolve call: __builtin_object_size
+progeq: WARNING: cannot resolve call: __builtin___sprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___snprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsnprintf_chk
+progeq: WARNING: cannot resolve call: __fprintf_chk
+progeq: WARNING: cannot resolve call: __printf_chk
+progeq: WARNING: cannot resolve call: __vfprintf_chk
+progeq: WARNING: cannot resolve call: __dprintf_chk
+progeq: WARNING: cannot resolve call: __vdprintf_chk
+progeq: WARNING: cannot resolve call: __asprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_printf_chk
+progeq: WARNING: cannot resolve call: __vasprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_vprintf_chk
+progeq: WARNING: cannot resolve call: __fgets_chk
+progeq: WARNING: cannot resolve call: __fgets_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_alias
+progeq: WARNING: cannot resolve call: __fread_chk
+progeq: WARNING: cannot resolve call: __fread_chk_warn
+progeq: WARNING: cannot resolve call: __fread_alias
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_unlocked_alias
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fread_unlocked_alias
+progeq: WARNING: cannot resolve call: __builtin_strchr
+progeq: WARNING: cannot resolve call: __builtin___memcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memmove_chk
+progeq: WARNING: cannot resolve call: __builtin___mempcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memset_chk
+progeq: WARNING: cannot resolve call: __builtin___strcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___stpcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___strncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_alias
+progeq: WARNING: cannot resolve call: __builtin___strcat_chk
+progeq: WARNING: cannot resolve call: __builtin___strncat_chk
+progeq: WARNING: cannot resolve call: *__compar
+progeq: WARNING: cannot resolve call: __realpath_chk
+progeq: WARNING: cannot resolve call: __realpath_alias
+progeq: WARNING: cannot resolve call: __ptsname_r_chk
+progeq: WARNING: cannot resolve call: __ptsname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ptsname_r_alias
+progeq: WARNING: cannot resolve call: __wctomb_chk
+progeq: WARNING: cannot resolve call: __wctomb_alias
+progeq: WARNING: cannot resolve call: __mbstowcs_chk
+progeq: WARNING: cannot resolve call: __mbstowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbstowcs_alias
+progeq: WARNING: cannot resolve call: __wcstombs_chk
+progeq: WARNING: cannot resolve call: __wcstombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcstombs_alias
+progeq: WARNING: cannot resolve call: __read_chk
+progeq: WARNING: cannot resolve call: __read_chk_warn
+progeq: WARNING: cannot resolve call: __read_alias
+progeq: WARNING: cannot resolve call: __pread_chk
+progeq: WARNING: cannot resolve call: __pread_chk_warn
+progeq: WARNING: cannot resolve call: __pread_alias
+progeq: WARNING: cannot resolve call: __pread64_chk
+progeq: WARNING: cannot resolve call: __pread64_chk_warn
+progeq: WARNING: cannot resolve call: __pread64_alias
+progeq: WARNING: cannot resolve call: __readlink_chk
+progeq: WARNING: cannot resolve call: __readlink_chk_warn
+progeq: WARNING: cannot resolve call: __readlink_alias
+progeq: WARNING: cannot resolve call: __readlinkat_chk
+progeq: WARNING: cannot resolve call: __readlinkat_chk_warn
+progeq: WARNING: cannot resolve call: __readlinkat_alias
+progeq: WARNING: cannot resolve call: __getcwd_chk
+progeq: WARNING: cannot resolve call: __getcwd_chk_warn
+progeq: WARNING: cannot resolve call: __getcwd_alias
+progeq: WARNING: cannot resolve call: __getwd_chk
+progeq: WARNING: cannot resolve call: __getwd_warn
+progeq: WARNING: cannot resolve call: __confstr_chk
+progeq: WARNING: cannot resolve call: __confstr_chk_warn
+progeq: WARNING: cannot resolve call: __confstr_alias
+progeq: WARNING: cannot resolve call: __getgroups_chk
+progeq: WARNING: cannot resolve call: __getgroups_chk_warn
+progeq: WARNING: cannot resolve call: __getgroups_alias
+progeq: WARNING: cannot resolve call: __ttyname_r_chk
+progeq: WARNING: cannot resolve call: __ttyname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ttyname_r_alias
+progeq: WARNING: cannot resolve call: __getlogin_r_chk
+progeq: WARNING: cannot resolve call: __getlogin_r_chk_warn
+progeq: WARNING: cannot resolve call: __getlogin_r_alias
+progeq: WARNING: cannot resolve call: __gethostname_chk
+progeq: WARNING: cannot resolve call: __gethostname_chk_warn
+progeq: WARNING: cannot resolve call: __gethostname_alias
+progeq: WARNING: cannot resolve call: __getdomainname_chk
+progeq: WARNING: cannot resolve call: __getdomainname_chk_warn
+progeq: WARNING: cannot resolve call: __getdomainname_alias
+progeq: WARNING: cannot resolve call: __strtol_internal
+progeq: WARNING: cannot resolve call: __strtoul_internal
+progeq: WARNING: cannot resolve call: __wcstol_internal
+progeq: WARNING: cannot resolve call: __wcstoul_internal
+progeq: WARNING: cannot resolve call: __builtin_va_arg_pack_len
+progeq: WARNING: cannot resolve call: __open_too_many_args
+progeq: WARNING: cannot resolve call: __open_2
+progeq: WARNING: cannot resolve call: __open_alias
+progeq: WARNING: cannot resolve call: __open64_too_many_args
+progeq: WARNING: cannot resolve call: __open64_2
+progeq: WARNING: cannot resolve call: __open64_alias
+progeq: WARNING: cannot resolve call: __openat_too_many_args
+progeq: WARNING: cannot resolve call: __openat_2
+progeq: WARNING: cannot resolve call: __openat_alias
+progeq: WARNING: cannot resolve call: __openat64_too_many_args
+progeq: WARNING: cannot resolve call: __openat64_2
+progeq: WARNING: cannot resolve call: __openat64_alias
+progeq: WARNING: cannot resolve call: stat
+progeq: WARNING: cannot resolve call: lstat
+progeq: WARNING: cannot resolve call: launch
+progeq: WARNING: cannot resolve call: uname
+progeq: WARNING: cannot resolve call: __builtin_strlen
+progeq: WARNING: cannot resolve call: __builtin_strcmp
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: isatty
+progeq: WARNING: cannot resolve call: dcgettext
+progeq: WARNING: cannot resolve call: parse_open
+progeq: WARNING: cannot resolve call: usage
+progeq: WARNING: cannot resolve call: find_parser
+progeq: WARNING: cannot resolve call: *parse_function
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: parse_print
+progeq: WARNING: cannot resolve call: parse_close
+progeq: WARNING: cannot resolve call: get_expr
+progeq: WARNING: cannot resolve call: opt_expr
+progeq: WARNING: cannot resolve call: mark_stat
+progeq: WARNING: cannot resolve call: mark_type
+progeq: WARNING: cannot resolve call: fchdir
+progeq: WARNING: cannot resolve call: close
+progeq: WARNING: cannot resolve call: xgetcwd
+progeq: WARNING: cannot resolve call: dir_name
+progeq: WARNING: cannot resolve call: base_name
+progeq: WARNING: cannot resolve call: chdir
+progeq: WARNING: cannot resolve call: __strdup
+progeq: WARNING: cannot resolve call: canonicalize_filename_mode
+progeq: WARNING: cannot resolve call: filesystem_type
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: *action
+progeq: WARNING: cannot resolve call: *(eval_tree->pred_func)
+progeq: WARNING: cannot resolve call: xrealloc
+progeq: WARNING: cannot resolve call: xsavedir
+progeq: WARNING: cannot resolve call: xmalloc
+progeq: WARNING: cannot resolve call: free_dirinfo
+search: fix space reduced (time_taken = 15.1363)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 295 deletes
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:232:after232
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:1:after1
+REMOVED?true
+CARDINAL?before:1:after1
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 29345 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 10734 appends
+search: ww_adaptive: 40079 possible edits
+search: ready to start (time_taken = 156.377)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 2.00793)
+	variant     1/40079 = d(1699)         (79 tests, cond 0)
+		n1 false (test_time = 0.811523)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.79265)
+	variant     2/40079 = d(1698)         (79 tests, cond 0)
+		n1 false (test_time = 0.978748)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.77579)
+	variant     3/40079 = d(1697)         (79 tests, cond 0)
+		n1 false (test_time = 7.13299)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 2.03187)
+	variant     4/40079 = d(1696)         (79 tests, cond 0)
+		n1 false (test_time = 1.167)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 2.00054)
+	variant     5/40079 = d(1695)         (79 tests, cond 0)
+		n1 false (test_time = 5.74059)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.97199)
+	variant     6/40079 = d(1689)         (79 tests, cond 0)
+		n1 false (test_time = 1.09205)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.91211)
+	variant     7/40079 = d(1688)         (79 tests, cond 0)
+		n1 false (test_time = 5.90544)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.91663)
+	variant     8/40079 = d(1687)         (79 tests, cond 0)
+		n1 false (test_time = 1.26922)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.90336)
+	variant     9/40079 = d(1686)         (79 tests, cond 0)
+		n1 false (test_time = 1.21258)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.9448)
+	variant    10/40079 = d(1684)         (79 tests, cond 0)
+		n1 false (test_time = 1.0346)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.76595)
+	variant    11/40079 = d(1683)         (79 tests, cond 0)
+		n1 false (test_time = 0.790019)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.8027)
+	variant    12/40079 = d(1682)         (79 tests, cond 0)
+		n1 false (test_time = 1.00038)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.88474)
+	variant    13/40079 = d(1634)         (79 tests, cond 0)
+		n1 false (test_time = 1.09525)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.81534)
+	variant    14/40079 = d(1633)         (79 tests, cond 0)
+		n1 false (test_time = 6.40507)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 2.14748)
+	variant    15/40079 = d(1632)         (79 tests, cond 0)
+		n1 false (test_time = 1.05981)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.87536)
+	variant    16/40079 = d(1631)         (79 tests, cond 0)
+		n1 false (test_time = 1.0306)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.90047)
+	variant    17/40079 = d(1630)         (79 tests, cond 0)
+		n1 false (test_time = 1.1462)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.98111)
+	variant    18/40079 = d(1629)         (79 tests, cond 0)
+		n1 false (test_time = 1.17287)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.85186)
+	variant    19/40079 = d(1628)         (79 tests, cond 0)
+		n1 false (test_time = 6.76592)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.82609)
+	variant    20/40079 = d(1627)         (79 tests, cond 0)
+		n1 false (test_time = 0.908686)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.85361)
+	variant    21/40079 = d(1626)         (79 tests, cond 0)
+		n1 false (test_time = 6.13942)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.83108)
+	variant    22/40079 = d(1625)         (79 tests, cond 0)
+		n1 false (test_time = 6.22989)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.77311)
+	variant    23/40079 = d(1624)         (79 tests, cond 0)
+		n1 false (test_time = 5.48438)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.88475)
+	variant    24/40079 = d(1623)         (79 tests, cond 0)
+		n1 false (test_time = 0.910699)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.8012)
+	variant    25/40079 = d(1608)         (79 tests, cond 0)
+		n1 false (test_time = 1.65564)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.82918)
+	variant    26/40079 = d(1607)         (79 tests, cond 0)
+		n1 false (test_time = 2.45743)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.79399)
+	variant    27/40079 = d(1606)         (79 tests, cond 0)
+		n1 false (test_time = 0.810822)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.78405)
+	variant    28/40079 = d(1605)         (79 tests, cond 0)
+		n1 false (test_time = 0.898744)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.809)
+	variant    29/40079 = d(1604)         (79 tests, cond 0)
+		n1 false (test_time = 6.63366)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.65307)
+	variant    30/40079 = d(1603)         (79 tests, cond 0)
+		n1 false (test_time = 1.16311)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.65315)
+	variant    31/40079 = d(1600)         (79 tests, cond 0)
+		n1 false (test_time = 30.8586)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.61536)
+	variant    32/40079 = d(1599)         (79 tests, cond 0)
+		n1 false (test_time = 0.0446072)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.59846)
+	variant    33/40079 = d(1596)         (79 tests, cond 0)
+		n1 false (test_time = 6.72557)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.64664)
+	variant    34/40079 = d(1593)         (79 tests, cond 0)
+		n1 false (test_time = 5.88199)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.79196)
+	variant    35/40079 = d(1592)         (79 tests, cond 0)
+		n1 false (test_time = 1.13085)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.75505)
+	variant    36/40079 = d(1584)         (79 tests, cond 0)
+		n1 false (test_time = 5.7786)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.61621)
+	variant    37/40079 = d(1582)         (79 tests, cond 0)
+		n1 false (test_time = 0.947182)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.76196)
+	variant    38/40079 = d(1581)         (79 tests, cond 0)
+		n1 false (test_time = 0.82389)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.74401)
+	variant    39/40079 = d(1564)         (79 tests, cond 0)
+		n1 false (test_time = 1.33007)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.7659)
+	variant    40/40079 = d(1541)         (79 tests, cond 0)
+		n1 false (test_time = 5.93738)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.75193)
+	variant    41/40079 = d(1540)         (79 tests, cond 0)
+		n1 false (test_time = 6.82413)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.7749)
+	variant    42/40079 = d(1539)         (79 tests, cond 0)
+		n1 false (test_time = 6.83965)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.55453)
+	variant    43/40079 = d(1538)         (79 tests, cond 0)
+		n1 false (test_time = 5.96728)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.57072)
+	variant    44/40079 = d(1537)         (79 tests, cond 0)
+		n1 false (test_time = 1.0005)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.66011)
+	variant    45/40079 = d(1536)         (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-2d428f84-ff248a20/000043/find/find.c  d(1536)  fails to compile
+ false (test_time = 0.508035)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.5791)
+	variant    46/40079 = d(1522)         (79 tests, cond 0)
+		n1 false (test_time = 1.18283)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.70006)
+	variant    47/40079 = d(1521)         (79 tests, cond 0)
+		n1 false (test_time = 5.54759)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.62113)
+	variant    48/40079 = d(1520)         (79 tests, cond 0)
+		n1 false (test_time = 6.7505)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.69228)
+	variant    49/40079 = d(1519)         (79 tests, cond 0)
+		n1 false (test_time = 6.07861)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.79612)
+	variant    50/40079 = d(1517)         (79 tests, cond 0)
+		n1 false (test_time = 1.11965)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.647)
+	variant    51/40079 = d(1516)         (79 tests, cond 0)
+		n1 false (test_time = 0.839352)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.6326)
+	variant    52/40079 = d(1515)         (79 tests, cond 0)
+		n1 false (test_time = 5.63737)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.78079)
+	variant    53/40079 = d(1514)         (79 tests, cond 0)
+		n1 false (test_time = 5.60413)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.56684)
+	variant    54/40079 = d(1513)         (79 tests, cond 0)
+		n1 false (test_time = 6.25245)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.97912)
+	variant    55/40079 = d(1512)         (79 tests, cond 0)
+		n1 false (test_time = 5.56918)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 2.2057)
+	variant    56/40079 = d(1511)         (79 tests, cond 0)
+		n1 false (test_time = 5.53058)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.49819)
+	variant    57/40079 = d(1510)         (79 tests, cond 0)
+		n1 false (test_time = 6.23617)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.73735)
+	variant    58/40079 = d(1508)         (79 tests, cond 0)
+		n1 false (test_time = 5.83748)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.8299)
+	variant    59/40079 = d(1507)         (79 tests, cond 0)
+		n1 false (test_time = 6.36128)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.62427)
+	variant    60/40079 = d(1506)         (79 tests, cond 0)
+		n1 false (test_time = 7.57858)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.49528)
+	variant    61/40079 = d(1505)         (79 tests, cond 0)
+		n1 false (test_time = 6.44671)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.70255)
+	variant    62/40079 = d(1504)         (79 tests, cond 0)
+		n1 false (test_time = 1.57596)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.54925)
+	variant    63/40079 = d(1503)         (79 tests, cond 0)
+		n1 false (test_time = 6.91349)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.57982)
+	variant    64/40079 = d(1502)         (79 tests, cond 0)
+		n1 true (test_time = 1.29111)
+		p1 true (test_time = 0.255411)
+		p2 true (test_time = 0.318436)
+		p3 true (test_time = 0.174873)
+		p4 true (test_time = 0.203135)
+		p5 true (test_time = 0.254519)
+		p6 true (test_time = 0.29871)
+		p7 true (test_time = 0.211268)
+		p8 true (test_time = 0.139251)
+		p9 true (test_time = 0.153176)
+		p10 true (test_time = 0.123901)
+		p11 true (test_time = 0.119052)
+		p12 true (test_time = 0.148437)
+		p13 true (test_time = 0.116057)
+		p14 true (test_time = 0.143347)
+		p15 true (test_time = 0.122844)
+		p16 true (test_time = 0.18104)
+		p17 true (test_time = 0.120688)
+		p18 true (test_time = 0.131227)
+		p19 true (test_time = 0.132521)
+		p20 true (test_time = 0.117533)
+		p21 true (test_time = 0.126539)
+		p22 true (test_time = 0.115583)
+		p23 true (test_time = 0.151979)
+		p24 true (test_time = 0.118274)
+		p25 true (test_time = 0.0993631)
+		p26 true (test_time = 0.155561)
+		p27 true (test_time = 0.117372)
+		p28 true (test_time = 0.152739)
+		p29 true (test_time = 0.138243)
+		p30 true (test_time = 0.146247)
+		p31 true (test_time = 0.118833)
+		p32 true (test_time = 0.124789)
+		p33 true (test_time = 0.106773)
+		p34 true (test_time = 0.114894)
+		p35 true (test_time = 0.11739)
+		p36 true (test_time = 0.115072)
+		p37 true (test_time = 0.115773)
+		p38 true (test_time = 0.105379)
+		p39 true (test_time = 0.0957081)
+		p40 true (test_time = 0.092659)
+		p41 true (test_time = 0.0927889)
+		p42 true (test_time = 0.094816)
+		p43 true (test_time = 0.0934849)
+		p44 true (test_time = 0.0924129)
+		p45 true (test_time = 0.105193)
+		p46 true (test_time = 0.0908742)
+		p47 true (test_time = 0.0918572)
+		p48 true (test_time = 0.089494)
+		p49 true (test_time = 0.087754)
+		p50 true (test_time = 0.104434)
+		p51 true (test_time = 0.113471)
+		p52 true (test_time = 0.149922)
+		p53 true (test_time = 0.124748)
+		p54 true (test_time = 0.117982)
+		p55 true (test_time = 0.103853)
+		p56 true (test_time = 0.0996752)
+		p57 true (test_time = 0.118309)
+		p58 true (test_time = 0.219973)
+		p59 true (test_time = 0.198404)
+		p60 true (test_time = 0.157725)
+		p61 true (test_time = 0.193279)
+		p62 true (test_time = 0.142347)
+		p63 true (test_time = 0.105926)
+		p64 true (test_time = 0.105089)
+		p65 true (test_time = 0.121633)
+		p66 true (test_time = 0.116385)
+		p67 true (test_time = 0.125563)
+		p68 true (test_time = 0.140119)
+		p69 true (test_time = 0.105092)
+		p70 true (test_time = 0.103063)
+		p71 true (test_time = 0.102453)
+		p72 true (test_time = 0.103979)
+		p73 true (test_time = 0.104063)
+		p74 true (test_time = 0.0970471)
+		p75 true (test_time = 0.0982301)
+		p76 true (test_time = 0.116458)
+		p77 true (test_time = 0.10277)
+		p78 true (test_time = 0.0940518)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: d(1502)
+Repair Name: d(1502) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454322772.409808
+
+Variant Test Case Queries: 141
+"Test Suite Evaluations": 1.78481
+
+Compile Failures: 1
+Wall-Clock Seconds Elapsed: 635.016
+  Activity Name                     Count Seconds = Percent of Total Time
+  progeq partition                    246  12.493 = 2.13312%
+  compile                              64  60.359 = 10.3059%
+  delete_sources                      295  64.562 = 11.0235%
+  append_sources                      295  91.734 = 15.6631%
+  find_best_edit                       64 113.599 = 19.3964%
+  test                                219 242.924 = 41.4779%
+  TOTAL                                   585.670 = 92.2278% (avg CPU usage)

@@ -1,0 +1,2605 @@
+WARNING: the argument --multi-file is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --suffix-extension is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --mutp is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 78
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Mon Feb  1 18:22:17 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat: /etc/redhat-release: No such file or directory
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp847d67.c /tmp/tmpe26989.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: find/find.c: parsing
+cilRep: find/find.c: parsed (0.180097 MB)
+cilRep: computing liveness
+Bug: BF(Liveness): stmtStartData is not initialized for -1: retry: 
+#line 986 "find.c"
+tries ++;
+Liveness failed on function:
+ static enum SafeChdirStatus safely_chdir_lstat(char const   *dest ,
+                                                enum TraversalDirection direction ,
+                                                struct stat *statbuf_dest ,
+                                                enum ChdirSymlinkHandling symlink_follow_option ) 
+{ struct stat statbuf_arrived ;
+  int rv ;
+  int dotfd ;
+  int saved_errno ;
+  boolean rv_set ;
+  int tries ;
+  enum WdSanityCheckFatality isfatal ;
+  int *tmp ;
+  int tmp___0 ;
+  int __attribute__((__gnu_inline__, __artificial__))  tmp___1 ;
+  int *tmp___2 ;
+  int __attribute__((__leaf__, __gnu_inline__))  tmp___3 ;
+  int tmp___4 ;
+  boolean changed ;
+  int *tmp___5 ;
+  int tmp___6 ;
+  boolean tmp___7 ;
+  int *tmp___8 ;
+  int *tmp___9 ;
+  int tmp___10 ;
+  int *tmp___11 ;
+  int tmp___12 ;
+  int *tmp___13 ;
+
+  {
+   1234: /* CIL Label */ 
+#line 972
+  dotfd = -1;
+   1235: /* CIL Label */ 
+#line 974
+  rv_set = (_Bool)0;
+   1236: /* CIL Label */ 
+#line 975
+  tries = 0;
+   1237: /* CIL Label */ 
+#line 976
+  isfatal = (enum WdSanityCheckFatality )1;
+   1238: /* CIL Label */ 
+#line 978
+  tmp = __errno_location();
+   1239: /* CIL Label */ 
+#line 978
+  tmp___0 = 0;
+   1240: /* CIL Label */ 
+#line 978
+  *tmp = tmp___0;
+   1241: /* CIL Label */ 
+#line 978
+  saved_errno = tmp___0;
+   1242: /* CIL Label */ 
+#line 980
+  tmp___1 = open(".", 0);
+   1243: /* CIL Label */ 
+#line 980
+  dotfd = (int )tmp___1;
+   1244: /* CIL Label */ 
+  retry: 
+#line 986
+  tries ++;
+   1245: /* CIL Label */ 
+#line 988
+  if (dotfd >= 0) {
+#line 991
+    tmp___12 = (*(options.xstat))(dest, statbuf_dest);
+#line 991
+    if (0 == tmp___12) {
+#line 1004
+      tmp___4 = following_links();
+#line 1004
+      if (! tmp___4) {
+#line 1004
+        if ((statbuf_dest->st_mode & 61440U) == 40960U) {
+#line 1010
+          if ((unsigned int )symlink_follow_option == 1U) {
+#line 1015
+            tmp___3 = stat((char const   */* __restrict  */)dest,
+                           (struct stat */* __restrict  */)statbuf_dest);
+#line 1015
+            if (0 != (int )tmp___3) {
+#line 1017
+              rv = 6;
+#line 1018
+              rv_set = (_Bool)1;
+#line 1019
+              tmp___2 = __errno_location();
+#line 1019
+              saved_errno = *tmp___2;
+              goto  1247;
+            } else {
+
+            }
+          } else {
+#line 1028
+            rv = 1;
+#line 1029
+            rv_set = (_Bool)1;
+#line 1030
+            saved_errno = 0;
+            goto  1247;
+          }
+        } else {
+
+        }
+      } else {
+
+      }
+#line 1042
+      if (! ((statbuf_dest->st_mode & 61440U) == 16384U)) {
+#line 1044
+        rv = 2;
+#line 1045
+        rv_set = (_Bool)1;
+#line 1046
+        saved_errno = 0;
+        goto  1247;
+      } else {
+
+      }
+#line 1053
+      tmp___10 = chdir(dest);
+#line 1053
+      if (0 == tmp___10) {
+#line 1056
+        changed = (_Bool)0;
+#line 1057
+        tmp___7 = wd_sanity_check(".", (char const   *)program_name, ".",
+                                  statbuf_dest->st_dev, statbuf_dest->st_ino,
+                                  & statbuf_arrived, 0, 1061, direction,
+                                  isfatal, & changed);
+#line 1057
+        if (! tmp___7) {
+#line 1066
+          if (1U == (unsigned int )isfatal) {
+#line 1068
+            tmp___6 = fchdir(dotfd);
+#line 1068
+            if (0 == tmp___6) {
+#line 1070
+              isfatal = (enum WdSanityCheckFatality )0;
+              goto retry;
+            } else {
+#line 1082
+              tmp___5 = __errno_location();
+#line 1082
+              error(1, *tmp___5, (char *)"failed to return to parent directory");
+            }
+          } else {
+#line 1089
+            rv = 6;
+#line 1090
+            rv_set = (_Bool)1;
+#line 1091
+            saved_errno = 0;
+            goto  1247;
+          }
+        } else {
+
+        }
+#line 1096
+        close(dotfd);
+#line 1097
+        return ((enum SafeChdirStatus )0);
+      } else {
+#line 1101
+        tmp___8 = __errno_location();
+#line 1101
+        saved_errno = *tmp___8;
+#line 1102
+        if (2 == saved_errno) {
+#line 1104
+          rv = 6;
+#line 1105
+          rv_set = (_Bool)1;
+#line 1106
+          if (options.ignore_readdir_race) {
+#line 1107
+            tmp___9 = __errno_location();
+#line 1107
+            *tmp___9 = 0;
+          } else {
+
+          }
+        } else {
+#line 1109
+          if (20 == saved_errno) {
+#line 1115
+            saved_errno = 0;
+#line 1116
+            rv = 2;
+#line 1117
+            rv_set = (_Bool)1;
+          } else {
+#line 1121
+            rv = 5;
+#line 1122
+            rv_set = (_Bool)1;
+          }
+        }
+        goto  1247;
+      }
+    } else {
+#line 1129
+      tmp___11 = __errno_location();
+#line 1129
+      saved_errno = *tmp___11;
+#line 1130
+      rv = 3;
+#line 1131
+      rv_set = (_Bool)1;
+#line 1133
+      if (2 == saved_errno) {
+#line 1134
+        saved_errno = 0;
+      } else {
+#line 1133
+        if (0 == state.curdepth) {
+#line 1134
+          saved_errno = 0;
+        } else {
+
+        }
+      }
+      goto  1247;
+    }
+  } else {
+#line 1141
+    rv = 4;
+#line 1142
+    rv_set = (_Bool)1;
+    goto  1247;
+  }
+   1246: /* CIL Label */ 
+#line 1149
+  saved_errno = 0;
+   1247: /* CIL Label */ 
+  fail: 
+#line 1158
+  if (saved_errno) {
+#line 1159
+    tmp___13 = __errno_location();
+#line 1159
+    *tmp___13 = saved_errno;
+  } else {
+
+  }
+   1248: /* CIL Label */ 
+#line 1161
+  if (dotfd >= 0) {
+#line 1163
+    close(dotfd);
+#line 1164
+    dotfd = -1;
+  } else {
+
+  }
+   1249: /* CIL Label */ 
+#line 1166
+  if (! rv_set) {
+#line 1166
+    __assert_fail("rv_set", "find.c", 1166U, "safely_chdir_lstat");
+  } else {
+
+  }
+   1250: /* CIL Label */ 
+#line 1167
+  return ((enum SafeChdirStatus )rv);
+}
+}
+
+cilRep: liveness failure for safely_chdir_lstat: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 1708
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/findutils/findutils-case-2d428f84-ff248a20/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/stdio2.h:94
+	cannot instrument for coverage (would be recursive)
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/string3.h:75
+	cannot instrument for coverage (would be recursive)
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+coverage positive:
+	test: 1
+id:1
+PASS:1
+	test: 2
+id:2
+PASS:2
+	test: 3
+id:3
+PASS:3
+	test: 4
+id:4
+PASS:4
+	test: 5
+id:5
+PASS:5
+	test: 6
+id:6
+PASS:6
+	test: 7
+id:7
+PASS:7
+	test: 8
+id:8
+PASS:8
+	test: 9
+id:9
+PASS:9
+	test: 10
+id:10
+PASS:10
+	test: 11
+id:11
+PASS:11
+	test: 12
+id:12
+PASS:12
+	test: 13
+id:13
+PASS:13
+	test: 14
+id:14
+PASS:14
+	test: 15
+id:15
+PASS:15
+	test: 16
+id:16
+PASS:16
+	test: 17
+id:17
+PASS:17
+	test: 18
+id:18
+PASS:18
+	test: 19
+id:19
+PASS:19
+	test: 20
+id:20
+PASS:20
+	test: 21
+id:21
+PASS:21
+	test: 22
+id:22
+PASS:22
+	test: 23
+id:23
+PASS:23
+	test: 24
+id:24
+PASS:24
+	test: 25
+id:25
+PASS:25
+	test: 26
+id:26
+PASS:26
+	test: 27
+id:27
+PASS:27
+	test: 28
+id:28
+PASS:28
+	test: 29
+id:29
+PASS:29
+	test: 30
+id:30
+PASS:30
+	test: 31
+id:31
+PASS:31
+	test: 32
+id:32
+PASS:32
+	test: 33
+id:33
+PASS:33
+	test: 34
+id:34
+PASS:34
+	test: 35
+id:35
+PASS:35
+	test: 36
+id:36
+PASS:36
+	test: 37
+id:37
+PASS:37
+	test: 38
+id:38
+PASS:38
+	test: 39
+id:39
+PASS:39
+	test: 40
+id:40
+PASS:40
+	test: 41
+id:41
+PASS:41
+	test: 42
+id:42
+PASS:42
+	test: 43
+id:43
+PASS:43
+	test: 44
+id:44
+PASS:44
+	test: 45
+id:45
+PASS:45
+	test: 46
+id:46
+PASS:46
+	test: 47
+id:47
+PASS:47
+	test: 48
+id:48
+PASS:48
+	test: 49
+id:49
+PASS:49
+	test: 50
+id:50
+PASS:50
+	test: 51
+id:51
+PASS:51
+	test: 52
+id:52
+PASS:52
+	test: 53
+id:53
+PASS:53
+	test: 54
+id:54
+PASS:54
+	test: 55
+id:55
+PASS:55
+	test: 56
+id:56
+PASS:56
+	test: 57
+id:57
+PASS:57
+	test: 58
+id:58
+PASS:58
+	test: 59
+id:59
+PASS:59
+	test: 60
+id:60
+PASS:60
+	test: 61
+id:61
+PASS:61
+	test: 62
+id:62
+PASS:62
+	test: 63
+id:63
+PASS:63
+	test: 64
+id:64
+PASS:64
+	test: 65
+id:65
+PASS:65
+	test: 66
+id:66
+PASS:66
+	test: 67
+id:67
+PASS:67
+	test: 68
+id:68
+PASS:68
+	test: 69
+id:69
+PASS:69
+	test: 70
+id:70
+PASS:70
+	test: 71
+id:71
+PASS:71
+	test: 72
+id:72
+PASS:72
+	test: 73
+id:73
+PASS:73
+	test: 74
+id:74
+PASS:74
+	test: 75
+id:75
+PASS:75
+	test: 76
+id:76
+PASS:76
+	test: 77
+id:77
+PASS:77
+	test: 78
+id:78
+PASS:78
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 1708
+cilRep: stmts in weighted_path = 307
+cilRep: total weight = 307
+cilRep: stmts in weighted_path with weight >= 1.0 = 307
+cilRep: find/find.c (code bank/base file; atoms [1,1708])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454322221.509913)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 671
+cilRep: fix-space quotient by string: 295 -> 246
+progeq: WARNING: cannot resolve call: *(options.xstat)
+progeq: WARNING: cannot resolve call: __errno_location
+progeq: WARNING: cannot resolve call: error
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: __fxstat
+progeq: WARNING: cannot resolve call: __fxstatat
+progeq: WARNING: cannot resolve call: __xmknod
+progeq: WARNING: cannot resolve call: __xmknodat
+progeq: WARNING: cannot resolve call: __xstat64
+progeq: WARNING: cannot resolve call: __lxstat64
+progeq: WARNING: cannot resolve call: __fxstat64
+progeq: WARNING: cannot resolve call: __fxstatat64
+progeq: WARNING: cannot resolve call: __builtin_expect
+progeq: WARNING: cannot resolve call: __uflow
+progeq: WARNING: cannot resolve call: __overflow
+progeq: WARNING: cannot resolve call: __getdelim
+progeq: WARNING: cannot resolve call: __builtin_object_size
+progeq: WARNING: cannot resolve call: __builtin___sprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___snprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsnprintf_chk
+progeq: WARNING: cannot resolve call: __fprintf_chk
+progeq: WARNING: cannot resolve call: __printf_chk
+progeq: WARNING: cannot resolve call: __vfprintf_chk
+progeq: WARNING: cannot resolve call: __dprintf_chk
+progeq: WARNING: cannot resolve call: __vdprintf_chk
+progeq: WARNING: cannot resolve call: __asprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_printf_chk
+progeq: WARNING: cannot resolve call: __vasprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_vprintf_chk
+progeq: WARNING: cannot resolve call: __fgets_chk
+progeq: WARNING: cannot resolve call: __fgets_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_alias
+progeq: WARNING: cannot resolve call: __fread_chk
+progeq: WARNING: cannot resolve call: __fread_chk_warn
+progeq: WARNING: cannot resolve call: __fread_alias
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_unlocked_alias
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fread_unlocked_alias
+progeq: WARNING: cannot resolve call: __builtin_strchr
+progeq: WARNING: cannot resolve call: __builtin___memcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memmove_chk
+progeq: WARNING: cannot resolve call: __builtin___mempcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memset_chk
+progeq: WARNING: cannot resolve call: __builtin___strcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___stpcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___strncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_alias
+progeq: WARNING: cannot resolve call: __builtin___strcat_chk
+progeq: WARNING: cannot resolve call: __builtin___strncat_chk
+progeq: WARNING: cannot resolve call: *__compar
+progeq: WARNING: cannot resolve call: __realpath_chk
+progeq: WARNING: cannot resolve call: __realpath_alias
+progeq: WARNING: cannot resolve call: __ptsname_r_chk
+progeq: WARNING: cannot resolve call: __ptsname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ptsname_r_alias
+progeq: WARNING: cannot resolve call: __wctomb_chk
+progeq: WARNING: cannot resolve call: __wctomb_alias
+progeq: WARNING: cannot resolve call: __mbstowcs_chk
+progeq: WARNING: cannot resolve call: __mbstowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbstowcs_alias
+progeq: WARNING: cannot resolve call: __wcstombs_chk
+progeq: WARNING: cannot resolve call: __wcstombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcstombs_alias
+progeq: WARNING: cannot resolve call: __read_chk
+progeq: WARNING: cannot resolve call: __read_chk_warn
+progeq: WARNING: cannot resolve call: __read_alias
+progeq: WARNING: cannot resolve call: __pread_chk
+progeq: WARNING: cannot resolve call: __pread_chk_warn
+progeq: WARNING: cannot resolve call: __pread_alias
+progeq: WARNING: cannot resolve call: __pread64_chk
+progeq: WARNING: cannot resolve call: __pread64_chk_warn
+progeq: WARNING: cannot resolve call: __pread64_alias
+progeq: WARNING: cannot resolve call: __readlink_chk
+progeq: WARNING: cannot resolve call: __readlink_chk_warn
+progeq: WARNING: cannot resolve call: __readlink_alias
+progeq: WARNING: cannot resolve call: __readlinkat_chk
+progeq: WARNING: cannot resolve call: __readlinkat_chk_warn
+progeq: WARNING: cannot resolve call: __readlinkat_alias
+progeq: WARNING: cannot resolve call: __getcwd_chk
+progeq: WARNING: cannot resolve call: __getcwd_chk_warn
+progeq: WARNING: cannot resolve call: __getcwd_alias
+progeq: WARNING: cannot resolve call: __getwd_chk
+progeq: WARNING: cannot resolve call: __getwd_warn
+progeq: WARNING: cannot resolve call: __confstr_chk
+progeq: WARNING: cannot resolve call: __confstr_chk_warn
+progeq: WARNING: cannot resolve call: __confstr_alias
+progeq: WARNING: cannot resolve call: __getgroups_chk
+progeq: WARNING: cannot resolve call: __getgroups_chk_warn
+progeq: WARNING: cannot resolve call: __getgroups_alias
+progeq: WARNING: cannot resolve call: __ttyname_r_chk
+progeq: WARNING: cannot resolve call: __ttyname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ttyname_r_alias
+progeq: WARNING: cannot resolve call: __getlogin_r_chk
+progeq: WARNING: cannot resolve call: __getlogin_r_chk_warn
+progeq: WARNING: cannot resolve call: __getlogin_r_alias
+progeq: WARNING: cannot resolve call: __gethostname_chk
+progeq: WARNING: cannot resolve call: __gethostname_chk_warn
+progeq: WARNING: cannot resolve call: __gethostname_alias
+progeq: WARNING: cannot resolve call: __getdomainname_chk
+progeq: WARNING: cannot resolve call: __getdomainname_chk_warn
+progeq: WARNING: cannot resolve call: __getdomainname_alias
+progeq: WARNING: cannot resolve call: __strtol_internal
+progeq: WARNING: cannot resolve call: __strtoul_internal
+progeq: WARNING: cannot resolve call: __wcstol_internal
+progeq: WARNING: cannot resolve call: __wcstoul_internal
+progeq: WARNING: cannot resolve call: __builtin_va_arg_pack_len
+progeq: WARNING: cannot resolve call: __open_too_many_args
+progeq: WARNING: cannot resolve call: __open_2
+progeq: WARNING: cannot resolve call: __open_alias
+progeq: WARNING: cannot resolve call: __open64_too_many_args
+progeq: WARNING: cannot resolve call: __open64_2
+progeq: WARNING: cannot resolve call: __open64_alias
+progeq: WARNING: cannot resolve call: __openat_too_many_args
+progeq: WARNING: cannot resolve call: __openat_2
+progeq: WARNING: cannot resolve call: __openat_alias
+progeq: WARNING: cannot resolve call: __openat64_too_many_args
+progeq: WARNING: cannot resolve call: __openat64_2
+progeq: WARNING: cannot resolve call: __openat64_alias
+progeq: WARNING: cannot resolve call: stat
+progeq: WARNING: cannot resolve call: lstat
+progeq: WARNING: cannot resolve call: launch
+progeq: WARNING: cannot resolve call: uname
+progeq: WARNING: cannot resolve call: __builtin_strlen
+progeq: WARNING: cannot resolve call: __builtin_strcmp
+progeq: WARNING: cannot resolve call: setlocale
+progeq: WARNING: cannot resolve call: bindtextdomain
+progeq: WARNING: cannot resolve call: textdomain
+progeq: WARNING: cannot resolve call: isatty
+progeq: WARNING: cannot resolve call: dcgettext
+progeq: WARNING: cannot resolve call: parse_open
+progeq: WARNING: cannot resolve call: usage
+progeq: WARNING: cannot resolve call: find_parser
+progeq: WARNING: cannot resolve call: *parse_function
+progeq: WARNING: cannot resolve call: free
+progeq: WARNING: cannot resolve call: parse_print
+progeq: WARNING: cannot resolve call: parse_close
+progeq: WARNING: cannot resolve call: get_expr
+progeq: WARNING: cannot resolve call: opt_expr
+progeq: WARNING: cannot resolve call: mark_stat
+progeq: WARNING: cannot resolve call: mark_type
+progeq: WARNING: cannot resolve call: fchdir
+progeq: WARNING: cannot resolve call: close
+progeq: WARNING: cannot resolve call: xgetcwd
+progeq: WARNING: cannot resolve call: dir_name
+progeq: WARNING: cannot resolve call: base_name
+progeq: WARNING: cannot resolve call: chdir
+progeq: WARNING: cannot resolve call: __strdup
+progeq: WARNING: cannot resolve call: canonicalize_filename_mode
+progeq: WARNING: cannot resolve call: filesystem_type
+progeq: WARNING: cannot resolve call: __assert_fail
+progeq: WARNING: cannot resolve call: *action
+progeq: WARNING: cannot resolve call: *(eval_tree->pred_func)
+progeq: WARNING: cannot resolve call: xrealloc
+progeq: WARNING: cannot resolve call: xsavedir
+progeq: WARNING: cannot resolve call: xmalloc
+progeq: WARNING: cannot resolve call: free_dirinfo
+search: fix space reduced (time_taken = 15.1363)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 295 deletes
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:2:after2
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:5:after5
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:3:after3
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:9:after9
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:232:after232
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:13:after13
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:4:after4
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:26:after26
+REMOVED?true
+CARDINAL?before:1:after1
+REMOVED?true
+CARDINAL?before:1:after1
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:12:after12
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:89:after89
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:32:after32
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:6:after6
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:246:after246
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+CARDINAL?before:39:after39
+REMOVED?true
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 29345 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 10734 appends
+search: ww_adaptive: 40079 possible edits
+search: ready to start (time_taken = 156.377)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 2.00793)
+	variant     1/40079 = d(1699)         (79 tests, cond 0)
+		n1--- exp	2016-02-01 18:26:35.808373391 +0800
++++ out	2016-02-01 18:26:35.812373391 +0800
+@@ -1,2 +1 @@
+ /tmp/tmp.lK1P4h7q51
+-/tmp/tmp.lK1P4h7q51/symlink
+id:0
+FAILED:0
+ false (test_time = 0.811523)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.79265)
+	variant     2/40079 = d(1698)         (79 tests, cond 0)
+		n1find: find.c:1779: process_dir: Assertion `(*__errno_location ()) != 0' failed.
+Aborted
+--- exp	2016-02-01 18:26:38.608373465 +0800
++++ out	2016-02-01 18:26:38.612373465 +0800
+@@ -1,2 +1 @@
+ /tmp/tmp.dtCKTE3AEK
+-/tmp/tmp.dtCKTE3AEK/symlink
+id:0
+FAILED:0
+ false (test_time = 0.978748)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.77579)
+	variant     3/40079 = d(1697)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:26:41.496373541 +0800
++++ out	2016-02-01 18:26:41.504373541 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.LMcDFJGAU6
+ /tmp/tmp.LMcDFJGAU6/symlink
++/tmp/tmp.LMcDFJGAU6/symlink/symlink
++/tmp/tmp.LMcDFJGAU6/symlink/symlink/symlink
++/tmp/tmp.LMcDFJGAU6/symlink/symlink/symlink/symlink
++/tmp/tmp.LMcDFJGAU6/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 7.13299)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 2.03187)
+	variant     4/40079 = d(1696)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:26:50.764373785 +0800
++++ out	2016-02-01 18:26:50.768373785 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.BIhxx8FEBQ
+-/tmp/tmp.BIhxx8FEBQ/symlink
+id:0
+FAILED:0
+ false (test_time = 1.167)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 2.00054)
+	variant     5/40079 = d(1695)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:26:53.868373867 +0800
++++ out	2016-02-01 18:26:53.868373867 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.8kGttytfu0
+ /tmp/tmp.8kGttytfu0/symlink
++/tmp/tmp.8kGttytfu0/symlink/symlink
++/tmp/tmp.8kGttytfu0/symlink/symlink/symlink
++/tmp/tmp.8kGttytfu0/symlink/symlink/symlink/symlink
++/tmp/tmp.8kGttytfu0/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 5.74059)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.97199)
+	variant     6/40079 = d(1689)         (79 tests, cond 0)
+		n1--- exp	2016-02-01 18:27:01.672374072 +0800
++++ out	2016-02-01 18:27:01.672374072 +0800
+@@ -1,2 +1 @@
+ /tmp/tmp.e9YbOyYoy0
+-/tmp/tmp.e9YbOyYoy0/symlink
+id:0
+FAILED:0
+ false (test_time = 1.09205)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.91211)
+	variant     7/40079 = d(1688)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:27:04.788374154 +0800
++++ out	2016-02-01 18:27:04.792374154 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.XQ3NuSoeHT
+ /tmp/tmp.XQ3NuSoeHT/symlink
++/tmp/tmp.XQ3NuSoeHT/symlink/symlink
++/tmp/tmp.XQ3NuSoeHT/symlink/symlink/symlink
++/tmp/tmp.XQ3NuSoeHT/symlink/symlink/symlink/symlink
++/tmp/tmp.XQ3NuSoeHT/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 5.90544)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.91663)
+	variant     8/40079 = d(1687)         (79 tests, cond 0)
+		n1/home/ubuntu/corebench/findutils/findutils-case-2d428f84-ff248a20/find/find: /tmp/tmp.n9p5uP4Um9/symlink: No such file or directory
+--- exp	2016-02-01 18:27:12.712374363 +0800
++++ out	2016-02-01 18:27:12.716374363 +0800
+@@ -1,2 +1 @@
+ /tmp/tmp.n9p5uP4Um9
+-/tmp/tmp.n9p5uP4Um9/symlink
+id:0
+FAILED:0
+ false (test_time = 1.26922)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.90336)
+	variant     9/40079 = d(1686)         (79 tests, cond 0)
+		n1/home/ubuntu/corebench/findutils/findutils-case-2d428f84-ff248a20/find/find: /tmp/tmp.hQiSt5IOys/symlink: No such file or directory
+--- exp	2016-02-01 18:27:15.868374446 +0800
++++ out	2016-02-01 18:27:15.872374446 +0800
+@@ -1,2 +1 @@
+ /tmp/tmp.hQiSt5IOys
+-/tmp/tmp.hQiSt5IOys/symlink
+id:0
+FAILED:0
+ false (test_time = 1.21258)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.9448)
+	variant    10/40079 = d(1684)         (79 tests, cond 0)
+		n1Aborted
+--- exp	2016-02-01 18:27:18.904374526 +0800
++++ out	2016-02-01 18:27:18.908374526 +0800
+@@ -1,2 +1 @@
+ /tmp/tmp.KXyx0msurD
+-/tmp/tmp.KXyx0msurD/symlink
+id:0
+FAILED:0
+ false (test_time = 1.0346)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.76595)
+	variant    11/40079 = d(1683)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:27:21.528374595 +0800
++++ out	2016-02-01 18:27:21.528374595 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.5putismA4P
+-/tmp/tmp.5putismA4P/symlink
+id:0
+FAILED:0
+ false (test_time = 0.790019)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.8027)
+	variant    12/40079 = d(1682)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:27:24.332374669 +0800
++++ out	2016-02-01 18:27:24.332374669 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.gvvXfrTK1r
+-/tmp/tmp.gvvXfrTK1r/symlink
+id:0
+FAILED:0
+ false (test_time = 1.00038)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.88474)
+	variant    13/40079 = d(1634)         (79 tests, cond 0)
+		n1--- exp	2016-02-01 18:27:27.352374748 +0800
++++ out	2016-02-01 18:27:27.360374748 +0800
+@@ -1,2 +1 @@
+ /tmp/tmp.dmVu6X72bo
+-/tmp/tmp.dmVu6X72bo/symlink
+id:0
+FAILED:0
+ false (test_time = 1.09525)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.81534)
+	variant    14/40079 = d(1633)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:27:30.184374823 +0800
++++ out	2016-02-01 18:27:30.188374823 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.qqF9bk28Oa
+ /tmp/tmp.qqF9bk28Oa/symlink
++/tmp/tmp.qqF9bk28Oa/symlink/symlink
++/tmp/tmp.qqF9bk28Oa/symlink/symlink/symlink
++/tmp/tmp.qqF9bk28Oa/symlink/symlink/symlink/symlink
++/tmp/tmp.qqF9bk28Oa/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.40507)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 2.14748)
+	variant    15/40079 = d(1632)         (79 tests, cond 0)
+		n1/home/ubuntu/corebench/findutils/findutils-case-2d428f84-ff248a20/find/find: /tmp/tmp.jwL8RgNXeE/: No such file or directory
+--- exp	2016-02-01 18:27:38.876375051 +0800
++++ out	2016-02-01 18:27:38.880375052 +0800
+@@ -1,2 +1 @@
+ /tmp/tmp.jwL8RgNXeE
+-/tmp/tmp.jwL8RgNXeE/symlink
+id:0
+FAILED:0
+ false (test_time = 1.05981)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.87536)
+	variant    16/40079 = d(1631)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:27:41.804375129 +0800
++++ out	2016-02-01 18:27:41.804375129 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.vVjioEP4Zy
+-/tmp/tmp.vVjioEP4Zy/symlink
+id:0
+FAILED:0
+ false (test_time = 1.0306)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.90047)
+	variant    17/40079 = d(1630)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:27:44.932375211 +0800
++++ out	2016-02-01 18:27:44.932375211 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.BYRvXwHlaf
+-/tmp/tmp.BYRvXwHlaf/symlink
+id:0
+FAILED:0
+ false (test_time = 1.1462)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.98111)
+	variant    18/40079 = d(1629)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:27:48.116375295 +0800
++++ out	2016-02-01 18:27:48.116375295 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.DoCscNsK5k
+-/tmp/tmp.DoCscNsK5k/symlink
+id:0
+FAILED:0
+ false (test_time = 1.17287)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.85186)
+	variant    19/40079 = d(1628)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:27:50.932375369 +0800
++++ out	2016-02-01 18:27:50.936375369 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.0N42rGtgH6
+ /tmp/tmp.0N42rGtgH6/symlink
++/tmp/tmp.0N42rGtgH6/symlink/symlink
++/tmp/tmp.0N42rGtgH6/symlink/symlink/symlink
++/tmp/tmp.0N42rGtgH6/symlink/symlink/symlink/symlink
++/tmp/tmp.0N42rGtgH6/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.76592)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.82609)
+	variant    20/40079 = d(1627)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:27:59.520375595 +0800
++++ out	2016-02-01 18:27:59.524375595 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.08HTpDtioi
+-/tmp/tmp.08HTpDtioi/symlink
+id:0
+FAILED:0
+ false (test_time = 0.908686)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.85361)
+	variant    21/40079 = d(1626)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:28:02.548375675 +0800
++++ out	2016-02-01 18:28:02.552375675 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.1GlGn7iZqE
+ /tmp/tmp.1GlGn7iZqE/symlink
++/tmp/tmp.1GlGn7iZqE/symlink/symlink
++/tmp/tmp.1GlGn7iZqE/symlink/symlink/symlink
++/tmp/tmp.1GlGn7iZqE/symlink/symlink/symlink/symlink
++/tmp/tmp.1GlGn7iZqE/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.13942)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.83108)
+	variant    22/40079 = d(1625)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:28:10.624375887 +0800
++++ out	2016-02-01 18:28:10.628375887 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.b13yfBA5V8
+ /tmp/tmp.b13yfBA5V8/symlink
++/tmp/tmp.b13yfBA5V8/symlink/symlink
++/tmp/tmp.b13yfBA5V8/symlink/symlink/symlink
++/tmp/tmp.b13yfBA5V8/symlink/symlink/symlink/symlink
++/tmp/tmp.b13yfBA5V8/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.22989)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.77311)
+	variant    23/40079 = d(1624)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:28:18.328376090 +0800
++++ out	2016-02-01 18:28:18.328376090 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.VUErF7lIZy
+ /tmp/tmp.VUErF7lIZy/symlink
++/tmp/tmp.VUErF7lIZy/symlink/symlink
++/tmp/tmp.VUErF7lIZy/symlink/symlink/symlink
++/tmp/tmp.VUErF7lIZy/symlink/symlink/symlink/symlink
++/tmp/tmp.VUErF7lIZy/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 5.48438)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.88475)
+	variant    24/40079 = d(1623)         (79 tests, cond 0)
+		n1--- exp	2016-02-01 18:28:25.796376287 +0800
++++ out	2016-02-01 18:28:25.796376287 +0800
+@@ -1,2 +1 @@
+ /tmp/tmp.sd4jkdY2L7
+-/tmp/tmp.sd4jkdY2L7/symlink
+id:0
+FAILED:0
+ false (test_time = 0.910699)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.8012)
+	variant    25/40079 = d(1608)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:28:28.564376359 +0800
++++ out	2016-02-01 18:28:28.568376360 +0800
+@@ -1,2 +1,10 @@
+ /tmp/tmp.r9zaa3oqNB
+-/tmp/tmp.r9zaa3oqNB/symlink
++/tmp/tmp.r9zaa3oqNB
++/tmp/tmp.r9zaa3oqNB
++/tmp/tmp.r9zaa3oqNB
++/tmp/tmp.r9zaa3oqNB
++/tmp/tmp.r9zaa3oqNB
++/tmp/tmp.r9zaa3oqNB
++/tmp/tmp.r9zaa3oqNB
++/tmp/tmp.r9zaa3oqNB
++/tmp/tmp.r9zaa3oqNB
+id:0
+FAILED:0
+ false (test_time = 1.65564)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.82918)
+	variant    26/40079 = d(1607)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:28:32.156376454 +0800
++++ out	2016-02-01 18:28:32.168376454 +0800
+@@ -1,2 +1,18 @@
+ /tmp/tmp.K3WS4ZUEkr
+-/tmp/tmp.K3WS4ZUEkr/symlink
++8пи
++Ь~8пи/symlink
++Ь~8пи
++Ь~8пи/symlink
++Х~8пи
++Х~8пи/symlink
++Х~8пи
++Х~8пи/symlink
++ь~8пи
++ь~8пи/symlink
++ь~8пи
++х~8пи/symlink
++х~8пи
++х~8пи/symlink
++х~8пи
++╦~8пи/symlink
++╦~8п
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 2.45743)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.79399)
+	variant    27/40079 = d(1606)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:28:36.276376563 +0800
++++ out	2016-02-01 18:28:36.276376563 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.8goPph50YI
+-/tmp/tmp.8goPph50YI/symlink
+id:0
+FAILED:0
+ false (test_time = 0.810822)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.78405)
+	variant    28/40079 = d(1605)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:28:38.960376633 +0800
++++ out	2016-02-01 18:28:38.960376633 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.JK3FvpkUT1
+-/tmp/tmp.JK3FvpkUT1/symlink
+id:0
+FAILED:0
+ false (test_time = 0.898744)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.809)
+	variant    29/40079 = d(1604)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:28:41.872376710 +0800
++++ out	2016-02-01 18:28:41.876376710 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.m5Iuz4TfKx
+ /tmp/tmp.m5Iuz4TfKx/symlink
++/tmp/tmp.m5Iuz4TfKx/symlink/symlink
++/tmp/tmp.m5Iuz4TfKx/symlink/symlink/symlink
++/tmp/tmp.m5Iuz4TfKx/symlink/symlink/symlink/symlink
++/tmp/tmp.m5Iuz4TfKx/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.63366)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.65307)
+	variant    30/40079 = d(1603)         (79 tests, cond 0)
+		n1/home/ubuntu/corebench/findutils/findutils-case-2d428f84-ff248a20/find/find: /tmp/tmp.qbNyMyGFfD/symlink/symlink/symlink/symlink/syml!: No such file or directory
+Aborted
+--- exp	2016-02-01 18:28:50.308376932 +0800
++++ out	2016-02-01 18:28:50.312376932 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.qbNyMyGFfD
+ /tmp/tmp.qbNyMyGFfD/symlink
++/tmp/tmp.qbNyMyGFfD/symlink/symlink
++/tmp/tmp.qbNyMyGFfD/symlink/symlink/symlink
++/tmp/tmp.qbNyMyGFfD/symlink/symlink/symlink/symlink
++/tmp/tmp.qbNyMyGFfD/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.16311)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.65315)
+	variant    31/40079 = d(1600)         (79 tests, cond 0)
+		n1 false (test_time = 30.8586)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.61536)
+	variant    32/40079 = d(1599)         (79 tests, cond 0)
+		n1 false (test_time = 0.0446072)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.59846)
+	variant    33/40079 = d(1596)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:29:27.652377915 +0800
++++ out	2016-02-01 18:29:27.652377915 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.HtRptr3xOU
+ /tmp/tmp.HtRptr3xOU/symlink
++/tmp/tmp.HtRptr3xOU/symlink/symlink
++/tmp/tmp.HtRptr3xOU/symlink/symlink/symlink
++/tmp/tmp.HtRptr3xOU/symlink/symlink/symlink/symlink
++/tmp/tmp.HtRptr3xOU/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.72557)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.64664)
+	variant    34/40079 = d(1593)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:29:35.544378123 +0800
++++ out	2016-02-01 18:29:35.548378123 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.gePdbY22QG
+ /tmp/tmp.gePdbY22QG/symlink
++/tmp/tmp.gePdbY22QG/symlink/symlink
++/tmp/tmp.gePdbY22QG/symlink/symlink/symlink
++/tmp/tmp.gePdbY22QG/symlink/symlink/symlink/symlink
++/tmp/tmp.gePdbY22QG/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 5.88199)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.79196)
+	variant    35/40079 = d(1592)         (79 tests, cond 0)
+		n1/home/ubuntu/corebench/findutils/findutils-case-2d428f84-ff248a20/find/find: /tmp/tmp.Qy2QY7wqiO/symlink: No such file or directory
+--- exp	2016-02-01 18:29:43.416378330 +0800
++++ out	2016-02-01 18:29:43.420378330 +0800
+@@ -1,2 +1 @@
+ /tmp/tmp.Qy2QY7wqiO
+-/tmp/tmp.Qy2QY7wqiO/symlink
+id:0
+FAILED:0
+ false (test_time = 1.13085)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.75505)
+	variant    36/40079 = d(1584)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:29:46.136378402 +0800
++++ out	2016-02-01 18:29:46.136378402 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.EkaSqBr6JK
+ /tmp/tmp.EkaSqBr6JK/symlink
++/tmp/tmp.EkaSqBr6JK/symlink/symlink
++/tmp/tmp.EkaSqBr6JK/symlink/symlink/symlink
++/tmp/tmp.EkaSqBr6JK/symlink/symlink/symlink/symlink
++/tmp/tmp.EkaSqBr6JK/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 5.7786)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.61621)
+	variant    37/40079 = d(1582)         (79 tests, cond 0)
+		n1/home/ubuntu/corebench/findutils/findutils-case-2d428f84-ff248a20/find/find: /tmp/tmp.W3uKjFwxgH/symlink: No such file or directory
+--- exp	2016-02-01 18:29:53.620378599 +0800
++++ out	2016-02-01 18:29:53.624378599 +0800
+@@ -1,2 +1 @@
+ /tmp/tmp.W3uKjFwxgH
+-/tmp/tmp.W3uKjFwxgH/symlink
+id:0
+FAILED:0
+ false (test_time = 0.947182)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.76196)
+	variant    38/40079 = d(1581)         (79 tests, cond 0)
+		n1/home/ubuntu/corebench/findutils/findutils-case-2d428f84-ff248a20/find/find: /tmp/tmp.MKWtDZuSPQ/symlink: No such file or directory
+--- exp	2016-02-01 18:29:56.240378668 +0800
++++ out	2016-02-01 18:29:56.240378668 +0800
+@@ -1,2 +1 @@
+ /tmp/tmp.MKWtDZuSPQ
+-/tmp/tmp.MKWtDZuSPQ/symlink
+id:0
+FAILED:0
+ false (test_time = 0.82389)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.74401)
+	variant    39/40079 = d(1564)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:29:59.344378749 +0800
++++ out	2016-02-01 18:29:59.344378749 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.sZqK5ouKtL
+-/tmp/tmp.sZqK5ouKtL/symlink
+id:0
+FAILED:0
+ false (test_time = 1.33007)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.7659)
+	variant    40/40079 = d(1541)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:30:02.192378824 +0800
++++ out	2016-02-01 18:30:02.200378824 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.FohT7XtmBN
+ /tmp/tmp.FohT7XtmBN/symlink
++/tmp/tmp.FohT7XtmBN/symlink/symlink
++/tmp/tmp.FohT7XtmBN/symlink/symlink/symlink
++/tmp/tmp.FohT7XtmBN/symlink/symlink/symlink/symlink
++/tmp/tmp.FohT7XtmBN/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 5.93738)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.75193)
+	variant    41/40079 = d(1540)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:30:10.456379042 +0800
++++ out	2016-02-01 18:30:10.464379042 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.o0k5YWZvBq
+ /tmp/tmp.o0k5YWZvBq/symlink
++/tmp/tmp.o0k5YWZvBq/symlink/symlink
++/tmp/tmp.o0k5YWZvBq/symlink/symlink/symlink
++/tmp/tmp.o0k5YWZvBq/symlink/symlink/symlink/symlink
++/tmp/tmp.o0k5YWZvBq/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.82413)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.7749)
+	variant    42/40079 = d(1539)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:30:18.864379263 +0800
++++ out	2016-02-01 18:30:18.872379263 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.i4ADWFTAd6
+ /tmp/tmp.i4ADWFTAd6/symlink
++/tmp/tmp.i4ADWFTAd6/symlink/symlink
++/tmp/tmp.i4ADWFTAd6/symlink/symlink/symlink
++/tmp/tmp.i4ADWFTAd6/symlink/symlink/symlink/symlink
++/tmp/tmp.i4ADWFTAd6/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.83965)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.55453)
+	variant    43/40079 = d(1538)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:30:26.964379476 +0800
++++ out	2016-02-01 18:30:26.968379476 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.353eT2NNxP
+ /tmp/tmp.353eT2NNxP/symlink
++/tmp/tmp.353eT2NNxP/symlink/symlink
++/tmp/tmp.353eT2NNxP/symlink/symlink/symlink
++/tmp/tmp.353eT2NNxP/symlink/symlink/symlink/symlink
++/tmp/tmp.353eT2NNxP/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 5.96728)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.57072)
+	variant    44/40079 = d(1537)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:30:34.496379675 +0800
++++ out	2016-02-01 18:30:34.504379675 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.4y5gGICduK
+-/tmp/tmp.4y5gGICduK/symlink
+id:0
+FAILED:0
+ false (test_time = 1.0005)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.66011)
+	variant    45/40079 = d(1536)         (79 tests, cond 0)
+		n1	/home/ubuntu/corebench/findutils/findutils-case-2d428f84-ff248a20/000043/find/find.c  d(1536)  fails to compile
+ false (test_time = 0.508035)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.5791)
+	variant    46/40079 = d(1522)         (79 tests, cond 0)
+		n1--- exp	2016-02-01 18:30:39.496379806 +0800
++++ out	2016-02-01 18:30:39.500379806 +0800
+@@ -1,2 +1 @@
+ /tmp/tmp.Uxz9hqRzd3
+-/tmp/tmp.Uxz9hqRzd3/symlink
+id:0
+FAILED:0
+ false (test_time = 1.18283)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.70006)
+	variant    47/40079 = d(1521)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:30:42.860379895 +0800
++++ out	2016-02-01 18:30:42.864379895 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.uJySxpFegk
+-/tmp/tmp.uJySxpFegk/symlink
+id:0
+FAILED:0
+ false (test_time = 5.54759)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.62113)
+	variant    48/40079 = d(1520)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:30:49.560380071 +0800
++++ out	2016-02-01 18:30:49.564380071 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.KZgfKoEVv5
+ /tmp/tmp.KZgfKoEVv5/symlink
++/tmp/tmp.KZgfKoEVv5/symlink/symlink
++/tmp/tmp.KZgfKoEVv5/symlink/symlink/symlink
++/tmp/tmp.KZgfKoEVv5/symlink/symlink/symlink/symlink
++/tmp/tmp.KZgfKoEVv5/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.7505)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.69228)
+	variant    49/40079 = d(1519)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:30:58.148380297 +0800
++++ out	2016-02-01 18:30:58.148380297 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.nFffkJULM9
+ /tmp/tmp.nFffkJULM9/symlink
++/tmp/tmp.nFffkJULM9/symlink/symlink
++/tmp/tmp.nFffkJULM9/symlink/symlink/symlink
++/tmp/tmp.nFffkJULM9/symlink/symlink/symlink/symlink
++/tmp/tmp.nFffkJULM9/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.07861)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.79612)
+	variant    50/40079 = d(1517)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:31:05.960380503 +0800
++++ out	2016-02-01 18:31:05.960380503 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.eSvhZhhtWT
+-/tmp/tmp.eSvhZhhtWT/symlink
+id:0
+FAILED:0
+ false (test_time = 1.11965)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.647)
+	variant    51/40079 = d(1516)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:31:08.500380570 +0800
++++ out	2016-02-01 18:31:08.500380570 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.WxeSxBQvnP
+-/tmp/tmp.WxeSxBQvnP/symlink
+id:0
+FAILED:0
+ false (test_time = 0.839352)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.6326)
+	variant    52/40079 = d(1515)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:31:11.248380642 +0800
++++ out	2016-02-01 18:31:11.252380642 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.7ryxA6Ib19
+ /tmp/tmp.7ryxA6Ib19/symlink
++/tmp/tmp.7ryxA6Ib19/symlink/symlink
++/tmp/tmp.7ryxA6Ib19/symlink/symlink/symlink
++/tmp/tmp.7ryxA6Ib19/symlink/symlink/symlink/symlink
++/tmp/tmp.7ryxA6Ib19/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 5.63737)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.78079)
+	variant    53/40079 = d(1514)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:31:18.604380836 +0800
++++ out	2016-02-01 18:31:18.604380836 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.s713ESwoDY
+ /tmp/tmp.s713ESwoDY/symlink
++/tmp/tmp.s713ESwoDY/symlink/symlink
++/tmp/tmp.s713ESwoDY/symlink/symlink/symlink
++/tmp/tmp.s713ESwoDY/symlink/symlink/symlink/symlink
++/tmp/tmp.s713ESwoDY/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 5.60413)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.56684)
+	variant    54/40079 = d(1513)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:31:25.760381024 +0800
++++ out	2016-02-01 18:31:25.764381024 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.vCWIJeLiLv
+ /tmp/tmp.vCWIJeLiLv/symlink
++/tmp/tmp.vCWIJeLiLv/symlink/symlink
++/tmp/tmp.vCWIJeLiLv/symlink/symlink/symlink
++/tmp/tmp.vCWIJeLiLv/symlink/symlink/symlink/symlink
++/tmp/tmp.vCWIJeLiLv/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.25245)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.97912)
+	variant    55/40079 = d(1512)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:31:34.072381243 +0800
++++ out	2016-02-01 18:31:34.072381243 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.LzJrzmxWaI
+ /tmp/tmp.LzJrzmxWaI/symlink
++/tmp/tmp.LzJrzmxWaI/symlink/symlink
++/tmp/tmp.LzJrzmxWaI/symlink/symlink/symlink
++/tmp/tmp.LzJrzmxWaI/symlink/symlink/symlink/symlink
++/tmp/tmp.LzJrzmxWaI/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 5.56918)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 2.2057)
+	variant    56/40079 = d(1511)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:31:41.952381450 +0800
++++ out	2016-02-01 18:31:41.952381450 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.ADHCqPNaUT
+ /tmp/tmp.ADHCqPNaUT/symlink
++/tmp/tmp.ADHCqPNaUT/symlink/symlink
++/tmp/tmp.ADHCqPNaUT/symlink/symlink/symlink
++/tmp/tmp.ADHCqPNaUT/symlink/symlink/symlink/symlink
++/tmp/tmp.ADHCqPNaUT/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 5.53058)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.49819)
+	variant    57/40079 = d(1510)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:31:48.916381634 +0800
++++ out	2016-02-01 18:31:48.920381634 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.96wPhR5NM2
+ /tmp/tmp.96wPhR5NM2/symlink
++/tmp/tmp.96wPhR5NM2/symlink/symlink
++/tmp/tmp.96wPhR5NM2/symlink/symlink/symlink
++/tmp/tmp.96wPhR5NM2/symlink/symlink/symlink/symlink
++/tmp/tmp.96wPhR5NM2/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.23617)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.73735)
+	variant    58/40079 = d(1508)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:31:57.240381853 +0800
++++ out	2016-02-01 18:31:57.244381853 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.ic8TsYZyay
+ /tmp/tmp.ic8TsYZyay/symlink
++/tmp/tmp.ic8TsYZyay/symlink/symlink
++/tmp/tmp.ic8TsYZyay/symlink/symlink/symlink
++/tmp/tmp.ic8TsYZyay/symlink/symlink/symlink/symlink
++/tmp/tmp.ic8TsYZyay/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 5.83748)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.8299)
+	variant    59/40079 = d(1507)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:32:05.304382065 +0800
++++ out	2016-02-01 18:32:05.308382065 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.Ml1IYNj4Dv
+ /tmp/tmp.Ml1IYNj4Dv/symlink
++/tmp/tmp.Ml1IYNj4Dv/symlink/symlink
++/tmp/tmp.Ml1IYNj4Dv/symlink/symlink/symlink
++/tmp/tmp.Ml1IYNj4Dv/symlink/symlink/symlink/symlink
++/tmp/tmp.Ml1IYNj4Dv/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.36128)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.62427)
+	variant    60/40079 = d(1506)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:32:12.912382265 +0800
++++ out	2016-02-01 18:32:12.916382265 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.O0iwhOySOY
+ /tmp/tmp.O0iwhOySOY/symlink
++/tmp/tmp.O0iwhOySOY/symlink/symlink
++/tmp/tmp.O0iwhOySOY/symlink/symlink/symlink
++/tmp/tmp.O0iwhOySOY/symlink/symlink/symlink/symlink
++/tmp/tmp.O0iwhOySOY/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 7.57858)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.49528)
+	variant    61/40079 = d(1505)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:32:21.764382498 +0800
++++ out	2016-02-01 18:32:21.764382498 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.nLac0Bgsv9
+ /tmp/tmp.nLac0Bgsv9/symlink
++/tmp/tmp.nLac0Bgsv9/symlink/symlink
++/tmp/tmp.nLac0Bgsv9/symlink/symlink/symlink
++/tmp/tmp.nLac0Bgsv9/symlink/symlink/symlink/symlink
++/tmp/tmp.nLac0Bgsv9/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.44671)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.70255)
+	variant    62/40079 = d(1504)         (79 tests, cond 0)
+		n1--- exp	2016-02-01 18:32:30.500382728 +0800
++++ out	2016-02-01 18:32:30.500382728 +0800
+@@ -1,2 +0,0 @@
+-/tmp/tmp.fGDxFFU46Y
+-/tmp/tmp.fGDxFFU46Y/symlink
+id:0
+FAILED:0
+ false (test_time = 1.57596)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.54925)
+	variant    63/40079 = d(1503)         (79 tests, cond 0)
+		n1Segmentation fault
+--- exp	2016-02-01 18:32:33.652382811 +0800
++++ out	2016-02-01 18:32:33.656382811 +0800
+@@ -1,2 +1,6 @@
+ /tmp/tmp.jZpzqHUQIS
+ /tmp/tmp.jZpzqHUQIS/symlink
++/tmp/tmp.jZpzqHUQIS/symlink/symlink
++/tmp/tmp.jZpzqHUQIS/symlink/symlink/symlink
++/tmp/tmp.jZpzqHUQIS/symlink/symlink/symlink/symlink
++/tmp/tmp.jZpzqHUQIS/
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 6.91349)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 1.57982)
+	variant    64/40079 = d(1502)         (79 tests, cond 0)
+		n1id:0
+line:''
+PASS:0
+ true (test_time = 1.29111)
+		p1id:1
+PASS:1
+ true (test_time = 0.255411)
+		p2id:2
+PASS:2
+ true (test_time = 0.318436)
+		p3id:3
+PASS:3
+ true (test_time = 0.174873)
+		p4id:4
+PASS:4
+ true (test_time = 0.203135)
+		p5id:5
+PASS:5
+ true (test_time = 0.254519)
+		p6id:6
+PASS:6
+ true (test_time = 0.29871)
+		p7id:7
+PASS:7
+ true (test_time = 0.211268)
+		p8id:8
+PASS:8
+ true (test_time = 0.139251)
+		p9id:9
+PASS:9
+ true (test_time = 0.153176)
+		p10id:10
+PASS:10
+ true (test_time = 0.123901)
+		p11id:11
+PASS:11
+ true (test_time = 0.119052)
+		p12id:12
+PASS:12
+ true (test_time = 0.148437)
+		p13id:13
+PASS:13
+ true (test_time = 0.116057)
+		p14id:14
+PASS:14
+ true (test_time = 0.143347)
+		p15id:15
+PASS:15
+ true (test_time = 0.122844)
+		p16id:16
+PASS:16
+ true (test_time = 0.18104)
+		p17id:17
+PASS:17
+ true (test_time = 0.120688)
+		p18id:18
+PASS:18
+ true (test_time = 0.131227)
+		p19id:19
+PASS:19
+ true (test_time = 0.132521)
+		p20id:20
+PASS:20
+ true (test_time = 0.117533)
+		p21id:21
+PASS:21
+ true (test_time = 0.126539)
+		p22id:22
+PASS:22
+ true (test_time = 0.115583)
+		p23id:23
+PASS:23
+ true (test_time = 0.151979)
+		p24id:24
+PASS:24
+ true (test_time = 0.118274)
+		p25id:25
+PASS:25
+ true (test_time = 0.0993631)
+		p26id:26
+PASS:26
+ true (test_time = 0.155561)
+		p27id:27
+PASS:27
+ true (test_time = 0.117372)
+		p28id:28
+PASS:28
+ true (test_time = 0.152739)
+		p29id:29
+PASS:29
+ true (test_time = 0.138243)
+		p30id:30
+PASS:30
+ true (test_time = 0.146247)
+		p31id:31
+PASS:31
+ true (test_time = 0.118833)
+		p32id:32
+PASS:32
+ true (test_time = 0.124789)
+		p33id:33
+PASS:33
+ true (test_time = 0.106773)
+		p34id:34
+PASS:34
+ true (test_time = 0.114894)
+		p35id:35
+PASS:35
+ true (test_time = 0.11739)
+		p36id:36
+PASS:36
+ true (test_time = 0.115072)
+		p37id:37
+PASS:37
+ true (test_time = 0.115773)
+		p38id:38
+PASS:38
+ true (test_time = 0.105379)
+		p39id:39
+PASS:39
+ true (test_time = 0.0957081)
+		p40id:40
+PASS:40
+ true (test_time = 0.092659)
+		p41id:41
+PASS:41
+ true (test_time = 0.0927889)
+		p42id:42
+PASS:42
+ true (test_time = 0.094816)
+		p43id:43
+PASS:43
+ true (test_time = 0.0934849)
+		p44id:44
+PASS:44
+ true (test_time = 0.0924129)
+		p45id:45
+PASS:45
+ true (test_time = 0.105193)
+		p46id:46
+PASS:46
+ true (test_time = 0.0908742)
+		p47id:47
+PASS:47
+ true (test_time = 0.0918572)
+		p48id:48
+PASS:48
+ true (test_time = 0.089494)
+		p49id:49
+PASS:49
+ true (test_time = 0.087754)
+		p50id:50
+PASS:50
+ true (test_time = 0.104434)
+		p51id:51
+PASS:51
+ true (test_time = 0.113471)
+		p52id:52
+PASS:52
+ true (test_time = 0.149922)
+		p53id:53
+PASS:53
+ true (test_time = 0.124748)
+		p54id:54
+PASS:54
+ true (test_time = 0.117982)
+		p55id:55
+PASS:55
+ true (test_time = 0.103853)
+		p56id:56
+PASS:56
+ true (test_time = 0.0996752)
+		p57id:57
+PASS:57
+ true (test_time = 0.118309)
+		p58id:58
+PASS:58
+ true (test_time = 0.219973)
+		p59id:59
+PASS:59
+ true (test_time = 0.198404)
+		p60id:60
+PASS:60
+ true (test_time = 0.157725)
+		p61id:61
+PASS:61
+ true (test_time = 0.193279)
+		p62id:62
+PASS:62
+ true (test_time = 0.142347)
+		p63id:63
+PASS:63
+ true (test_time = 0.105926)
+		p64id:64
+PASS:64
+ true (test_time = 0.105089)
+		p65id:65
+PASS:65
+ true (test_time = 0.121633)
+		p66id:66
+PASS:66
+ true (test_time = 0.116385)
+		p67id:67
+PASS:67
+ true (test_time = 0.125563)
+		p68id:68
+PASS:68
+ true (test_time = 0.140119)
+		p69id:69
+PASS:69
+ true (test_time = 0.105092)
+		p70id:70
+PASS:70
+ true (test_time = 0.103063)
+		p71id:71
+PASS:71
+ true (test_time = 0.102453)
+		p72id:72
+PASS:72
+ true (test_time = 0.103979)
+		p73id:73
+PASS:73
+ true (test_time = 0.104063)
+		p74id:74
+PASS:74
+ true (test_time = 0.0970471)
+		p75id:75
+PASS:75
+ true (test_time = 0.0982301)
+		p76id:76
+PASS:76
+ true (test_time = 0.116458)
+		p77id:77
+PASS:77
+ true (test_time = 0.10277)
+		p78id:78
+PASS:78
+ true (test_time = 0.0940518)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: d(1502)
+Repair Name: d(1502) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454322772.409808
+
+Variant Test Case Queries: 141
+"Test Suite Evaluations": 1.78481
+
+Compile Failures: 1
+Wall-Clock Seconds Elapsed: 635.016
+  Activity Name                     Count Seconds = Percent of Total Time
+  progeq partition                    246  12.493 = 2.13312%
+  compile                              64  60.359 = 10.3059%
+  delete_sources                      295  64.562 = 11.0235%
+  append_sources                      295  91.734 = 15.6631%
+  find_best_edit                       64 113.599 = 19.3964%
+  test                                219 242.924 = 41.4779%
+  TOTAL                                   585.670 = 92.2278% (avg CPU usage)
