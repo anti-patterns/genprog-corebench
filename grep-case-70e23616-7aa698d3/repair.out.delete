@@ -1,0 +1,1292 @@
+WARNING: the argument --multi-file is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --suffix-extension is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --mutp is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete true
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 3
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Mon Feb  1 12:44:07 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat: /etc/redhat-release: No such file or directory
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmpa3083c.c /tmp/tmp91aee6.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/searchutils.c: parsing
+cilRep: src/searchutils.c: parsed (0.142809 MB)
+cilRep: computing liveness
+Bug: BF(Liveness): stmtStartData is not initialized for -1: _L___0: 
+#line 99 "searchutils.c"
+tmp___2 = p;
+#line 99
+p ++;
+#line 99
+tmp___3 = beg;
+#line 99
+beg ++;
+#line 99
+*tmp___2 = (char )*tmp___3;
+#line 100
+outlen ++;
+#line 101
+memset((void *)(& is), 0, sizeof(is));
+#line 102
+memset((void *)(& os), 0, sizeof(os));
+Liveness failed on function:
+ char *mbtolower(char const   *beg , size_t *n ) 
+{ size_t outlen ;
+  size_t mb_cur_max ;
+  mbstate_t is ;
+  mbstate_t os ;
+  char const   *end ;
+  char *p ;
+  void *tmp ;
+  wchar_t wc ;
+  size_t mbclen ;
+  size_t tmp___0 ;
+  void *tmp___1 ;
+  char *tmp___2 ;
+  char const   *tmp___3 ;
+  wint_t tmp___4 ;
+  size_t __attribute__((__leaf__, __gnu_inline__, __artificial__))  tmp___5 ;
+  size_t __attribute__((__leaf__, __gnu_inline__, __artificial__))  tmp___6 ;
+
+  {
+   1000: /* CIL Label */ 
+#line 67
+  if (*n > outalloc) {
+    goto _L;
+  } else {
+#line 67
+    if (outalloc == 0UL) {
+      _L: 
+#line 69
+      if (1UL > *n) {
+#line 69
+        outalloc = 1UL;
+      } else {
+#line 69
+        outalloc = *n;
+      }
+#line 70
+      tmp = xrealloc((void *)out, outalloc);
+#line 70
+      out = (char *)tmp;
+    } else {
+
+    }
+  }
+   1001: /* CIL Label */ 
+#line 74
+  if (! out) {
+#line 74
+    __assert_fail("out", "searchutils.c", 74U, "mbtolower");
+  } else {
+
+  }
+   1002: /* CIL Label */ 
+#line 75
+  if (*n == 0UL) {
+#line 76
+    return (out);
+  } else {
+
+  }
+   1003: /* CIL Label */ 
+#line 78
+  memset((void *)(& is), 0, sizeof(is));
+   1004: /* CIL Label */ 
+#line 79
+  memset((void *)(& os), 0, sizeof(os));
+   1005: /* CIL Label */ 
+#line 80
+  end = beg + *n;
+   1006: /* CIL Label */ 
+#line 82
+  mb_cur_max = __ctype_get_mb_cur_max();
+   1007: /* CIL Label */ 
+#line 83
+  p = out;
+   1008: /* CIL Label */ 
+#line 84
+  outlen = 0UL;
+   1009: /* CIL Label */ 
+#line 85
+  while ((unsigned long )beg < (unsigned long )end) {
+#line 88
+    tmp___0 = mbrtowc((wchar_t */* __restrict  */)(& wc),
+                      (char const   */* __restrict  */)beg,
+                      (unsigned long )(end - beg),
+                      (mbstate_t */* __restrict  */)(& is));
+#line 88
+    mbclen = tmp___0;
+#line 89
+    if (outlen + mb_cur_max >= outalloc) {
+#line 91
+      tmp___1 = x2nrealloc((void *)out, & outalloc, 1UL);
+#line 91
+      out = (char *)tmp___1;
+#line 92
+      p = out + outlen;
+    } else {
+
+    }
+#line 95
+    if (mbclen == 4294967295UL) {
+      goto _L___0;
+    } else {
+#line 95
+      if (mbclen == 4294967294UL) {
+        goto _L___0;
+      } else {
+#line 95
+        if (mbclen == 0UL) {
+          _L___0: 
+#line 99
+          tmp___2 = p;
+#line 99
+          p ++;
+#line 99
+          tmp___3 = beg;
+#line 99
+          beg ++;
+#line 99
+          *tmp___2 = (char )*tmp___3;
+#line 100
+          outlen ++;
+#line 101
+          memset((void *)(& is), 0, sizeof(is));
+#line 102
+          memset((void *)(& os), 0, sizeof(os));
+        } else {
+#line 106
+          beg += mbclen;
+#line 107
+          tmp___4 = towlower((unsigned int )wc);
+#line 107
+          tmp___6 = (size_t __attribute__((__leaf__, __gnu_inline__,
+          __artificial__))  )wcrtomb((char */* __restrict  */)p, (int )tmp___4,
+                                     (mbstate_t */* __restrict  */)(& os));
+#line 107
+          tmp___5 = tmp___6;
+#line 107
+          mbclen = (unsigned long )tmp___5;
+#line 108
+          p += mbclen;
+#line 109
+          outlen += mbclen;
+        }
+      }
+    }
+  }
+   1010: /* CIL Label */ 
+#line 113
+  *n = (unsigned long )(p - out);
+   1011: /* CIL Label */ 
+#line 114
+  *p = (char)0;
+   1012: /* CIL Label */ 
+#line 115
+  return (out);
+}
+}
+
+cilRep: liveness failure for mbtolower: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 1045
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/grep/grep-case-70e23616-7aa698d3/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/stdio2.h:94
+	cannot instrument for coverage (would be recursive)
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/string3.h:75
+	cannot instrument for coverage (would be recursive)
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:10.499832547 +0800
++++ out	2016-02-01 12:44:10.511832548 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+coverage positive:
+	test: 1
+id:26
+in directory:/home/ubuntu/corebench/grep/grep-case-70e23616-7aa698d3/tests
+calling:make check-TESTS TESTS=epipe
+PASS:26
+	test: 2
+id:31
+in directory:/home/ubuntu/corebench/grep/grep-case-70e23616-7aa698d3/tests
+calling:make check-TESTS TESTS=repetition-overflow
+PASS:31
+	test: 3
+id:32
+in directory:/home/ubuntu/corebench/grep/grep-case-70e23616-7aa698d3/tests
+calling:make check-TESTS TESTS=reversed-range-endpoints
+PASS:32
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 1045
+cilRep: stmts in weighted_path = 44
+cilRep: total weight = 44
+cilRep: stmts in weighted_path with weight >= 1.0 = 44
+cilRep: src/searchutils.c (code bank/base file; atoms [1,1045])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454301852.982534)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 924
+cilRep: fix-space quotient by string: 42 -> 37
+progeq: WARNING: cannot resolve call: __builtin_object_size
+progeq: WARNING: cannot resolve call: __builtin___memset_chk
+progeq: WARNING: cannot resolve call: __wcrtomb_chk
+progeq: WARNING: cannot resolve call: __wcrtomb_alias
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: *__compar
+progeq: WARNING: cannot resolve call: __realpath_chk
+progeq: WARNING: cannot resolve call: __realpath_alias
+progeq: WARNING: cannot resolve call: __ptsname_r_chk
+progeq: WARNING: cannot resolve call: __ptsname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ptsname_r_alias
+progeq: WARNING: cannot resolve call: __wctomb_chk
+progeq: WARNING: cannot resolve call: __wctomb_alias
+progeq: WARNING: cannot resolve call: __mbstowcs_chk
+progeq: WARNING: cannot resolve call: __mbstowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbstowcs_alias
+progeq: WARNING: cannot resolve call: __wcstombs_chk
+progeq: WARNING: cannot resolve call: __wcstombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcstombs_alias
+progeq: WARNING: cannot resolve call: __btowc_alias
+progeq: WARNING: cannot resolve call: __wctob_alias
+progeq: WARNING: cannot resolve call: mbrtowc
+progeq: WARNING: cannot resolve call: __mbrlen
+progeq: WARNING: cannot resolve call: __wmemcpy_chk
+progeq: WARNING: cannot resolve call: __wmemcpy_chk_warn
+progeq: WARNING: cannot resolve call: __wmemcpy_alias
+progeq: WARNING: cannot resolve call: __wmemmove_chk
+progeq: WARNING: cannot resolve call: __wmemmove_chk_warn
+progeq: WARNING: cannot resolve call: __wmemmove_alias
+progeq: WARNING: cannot resolve call: __wmempcpy_chk
+progeq: WARNING: cannot resolve call: __wmempcpy_chk_warn
+progeq: WARNING: cannot resolve call: __wmempcpy_alias
+progeq: WARNING: cannot resolve call: __wmemset_chk
+progeq: WARNING: cannot resolve call: __wmemset_chk_warn
+progeq: WARNING: cannot resolve call: __wmemset_alias
+progeq: WARNING: cannot resolve call: __wcscpy_chk
+progeq: WARNING: cannot resolve call: __wcscpy_alias
+progeq: WARNING: cannot resolve call: __wcpcpy_chk
+progeq: WARNING: cannot resolve call: __wcpcpy_alias
+progeq: WARNING: cannot resolve call: __wcsncpy_chk
+progeq: WARNING: cannot resolve call: __wcsncpy_chk_warn
+progeq: WARNING: cannot resolve call: __wcsncpy_alias
+progeq: WARNING: cannot resolve call: __wcpncpy_chk
+progeq: WARNING: cannot resolve call: __wcpncpy_chk_warn
+progeq: WARNING: cannot resolve call: __wcpncpy_alias
+progeq: WARNING: cannot resolve call: __wcscat_chk
+progeq: WARNING: cannot resolve call: __wcscat_alias
+progeq: WARNING: cannot resolve call: __wcsncat_chk
+progeq: WARNING: cannot resolve call: __wcsncat_alias
+progeq: WARNING: cannot resolve call: __swprintf_chk
+progeq: WARNING: cannot resolve call: __swprintf_alias
+progeq: WARNING: cannot resolve call: __vswprintf_chk
+progeq: WARNING: cannot resolve call: __vswprintf_alias
+progeq: WARNING: cannot resolve call: __wprintf_chk
+progeq: WARNING: cannot resolve call: __fwprintf_chk
+progeq: WARNING: cannot resolve call: __vwprintf_chk
+progeq: WARNING: cannot resolve call: __vfwprintf_chk
+progeq: WARNING: cannot resolve call: __fgetws_chk
+progeq: WARNING: cannot resolve call: __fgetws_chk_warn
+progeq: WARNING: cannot resolve call: __fgetws_alias
+progeq: WARNING: cannot resolve call: __fgetws_unlocked_chk
+progeq: WARNING: cannot resolve call: __fgetws_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fgetws_unlocked_alias
+progeq: WARNING: cannot resolve call: __mbsrtowcs_chk
+progeq: WARNING: cannot resolve call: __mbsrtowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbsrtowcs_alias
+progeq: WARNING: cannot resolve call: __wcsrtombs_chk
+progeq: WARNING: cannot resolve call: __wcsrtombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcsrtombs_alias
+progeq: WARNING: cannot resolve call: __mbsnrtowcs_chk
+progeq: WARNING: cannot resolve call: __mbsnrtowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbsnrtowcs_alias
+progeq: WARNING: cannot resolve call: __wcsnrtombs_chk
+progeq: WARNING: cannot resolve call: __wcsnrtombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcsnrtombs_alias
+progeq: WARNING: cannot resolve call: __builtin_expect
+progeq: WARNING: cannot resolve call: __uflow
+progeq: WARNING: cannot resolve call: __overflow
+progeq: WARNING: cannot resolve call: __getdelim
+progeq: WARNING: cannot resolve call: __builtin___sprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___snprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsnprintf_chk
+progeq: WARNING: cannot resolve call: __fprintf_chk
+progeq: WARNING: cannot resolve call: __printf_chk
+progeq: WARNING: cannot resolve call: __vfprintf_chk
+progeq: WARNING: cannot resolve call: __dprintf_chk
+progeq: WARNING: cannot resolve call: __vdprintf_chk
+progeq: WARNING: cannot resolve call: __asprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_printf_chk
+progeq: WARNING: cannot resolve call: __vasprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_vprintf_chk
+progeq: WARNING: cannot resolve call: __fgets_chk
+progeq: WARNING: cannot resolve call: __fgets_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_alias
+progeq: WARNING: cannot resolve call: __fread_chk
+progeq: WARNING: cannot resolve call: __fread_chk_warn
+progeq: WARNING: cannot resolve call: __fread_alias
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_unlocked_alias
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fread_unlocked_alias
+progeq: WARNING: cannot resolve call: __builtin_va_arg_pack_len
+progeq: WARNING: cannot resolve call: __open_too_many_args
+progeq: WARNING: cannot resolve call: __open_2
+progeq: WARNING: cannot resolve call: __open_alias
+progeq: WARNING: cannot resolve call: __open64_too_many_args
+progeq: WARNING: cannot resolve call: __open64_2
+progeq: WARNING: cannot resolve call: __open64_alias
+progeq: WARNING: cannot resolve call: __openat_too_many_args
+progeq: WARNING: cannot resolve call: __openat_2
+progeq: WARNING: cannot resolve call: __openat_alias
+progeq: WARNING: cannot resolve call: __openat64_too_many_args
+progeq: WARNING: cannot resolve call: __openat64_2
+progeq: WARNING: cannot resolve call: __openat64_alias
+progeq: WARNING: cannot resolve call: __read_chk
+progeq: WARNING: cannot resolve call: __read_chk_warn
+progeq: WARNING: cannot resolve call: __read_alias
+progeq: WARNING: cannot resolve call: __pread_chk
+progeq: WARNING: cannot resolve call: __pread_chk_warn
+progeq: WARNING: cannot resolve call: __pread_alias
+progeq: WARNING: cannot resolve call: __pread64_chk
+progeq: WARNING: cannot resolve call: __pread64_chk_warn
+progeq: WARNING: cannot resolve call: __pread64_alias
+progeq: WARNING: cannot resolve call: __readlink_chk
+progeq: WARNING: cannot resolve call: __readlink_chk_warn
+progeq: WARNING: cannot resolve call: __readlink_alias
+progeq: WARNING: cannot resolve call: __readlinkat_chk
+progeq: WARNING: cannot resolve call: __readlinkat_chk_warn
+progeq: WARNING: cannot resolve call: __readlinkat_alias
+progeq: WARNING: cannot resolve call: __getcwd_chk
+progeq: WARNING: cannot resolve call: __getcwd_chk_warn
+progeq: WARNING: cannot resolve call: __getcwd_alias
+progeq: WARNING: cannot resolve call: __getwd_chk
+progeq: WARNING: cannot resolve call: __getwd_warn
+progeq: WARNING: cannot resolve call: __confstr_chk
+progeq: WARNING: cannot resolve call: __confstr_chk_warn
+progeq: WARNING: cannot resolve call: __confstr_alias
+progeq: WARNING: cannot resolve call: __getgroups_chk
+progeq: WARNING: cannot resolve call: __getgroups_chk_warn
+progeq: WARNING: cannot resolve call: __getgroups_alias
+progeq: WARNING: cannot resolve call: __ttyname_r_chk
+progeq: WARNING: cannot resolve call: __ttyname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ttyname_r_alias
+progeq: WARNING: cannot resolve call: __getlogin_r_chk
+progeq: WARNING: cannot resolve call: __getlogin_r_chk_warn
+progeq: WARNING: cannot resolve call: __getlogin_r_alias
+progeq: WARNING: cannot resolve call: __gethostname_chk
+progeq: WARNING: cannot resolve call: __gethostname_chk_warn
+progeq: WARNING: cannot resolve call: __gethostname_alias
+progeq: WARNING: cannot resolve call: __getdomainname_chk
+progeq: WARNING: cannot resolve call: __getdomainname_chk_warn
+progeq: WARNING: cannot resolve call: __getdomainname_alias
+progeq: WARNING: cannot resolve call: __builtin_strchr
+progeq: WARNING: cannot resolve call: __builtin___memcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memmove_chk
+progeq: WARNING: cannot resolve call: __builtin___mempcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___strcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___stpcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___strncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_alias
+progeq: WARNING: cannot resolve call: __builtin___strcat_chk
+progeq: WARNING: cannot resolve call: __builtin___strncat_chk
+progeq: WARNING: cannot resolve call: __ctype_tolower_loc
+progeq: WARNING: cannot resolve call: __ctype_toupper_loc
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: xrealloc
+progeq: WARNING: cannot resolve call: __ctype_get_mb_cur_max
+progeq: WARNING: cannot resolve call: kwsalloc
+progeq: WARNING: cannot resolve call: __assert_fail
+search: fix space reduced (time_taken = 1.98876)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 37 deletes
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 0 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 784 appends
+search: ww_adaptive: 784 possible edits
+search: ready to start (time_taken = 7.45691)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.00722218)
+	variant     1/  784 = a(1011,1012)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:23.995832903 +0800
++++ out	2016-02-01 12:44:24.003832903 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.6321)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0178168)
+	variant     2/  784 = a(1011,1011)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:26.379832965 +0800
++++ out	2016-02-01 12:44:26.391832966 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 2.38572)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014997)
+	variant     3/  784 = a(1011,1010)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:28.579833023 +0800
++++ out	2016-02-01 12:44:28.587833023 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 2.15239)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.015636)
+	variant     4/  784 = a(1011,1008)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:30.651833078 +0800
++++ out	2016-02-01 12:44:30.655833078 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.99568)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026437)
+	variant     5/  784 = a(1011,1007)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:32.987833139 +0800
++++ out	2016-02-01 12:44:32.999833140 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 2.30461)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016444)
+	variant     6/  784 = a(1011,1006)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:35.299833200 +0800
++++ out	2016-02-01 12:44:35.311833200 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 2.2876)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010669)
+	variant     7/  784 = a(1011,1005)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:37.299833253 +0800
++++ out	2016-02-01 12:44:37.311833253 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.95689)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0183249)
+	variant     8/  784 = a(1011,1004)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:39.487833310 +0800
++++ out	2016-02-01 12:44:39.495833311 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 2.15709)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0153298)
+	variant     9/  784 = a(1011,1003)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:41.907833374 +0800
++++ out	2016-02-01 12:44:41.915833374 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 2.34799)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0234699)
+	variant    10/  784 = a(1011,1002)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:44.087833431 +0800
++++ out	2016-02-01 12:44:44.099833432 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 2.14114)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0184679)
+	variant    11/  784 = a(1011,1001)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:45.667833473 +0800
++++ out	2016-02-01 12:44:45.675833473 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.53686)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010417)
+	variant    12/  784 = a(1011,998)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:47.487833521 +0800
++++ out	2016-02-01 12:44:47.491833521 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.74914)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018302)
+	variant    13/  784 = a(1011,997)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:49.371833571 +0800
++++ out	2016-02-01 12:44:49.375833571 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.83773)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010848)
+	variant    14/  784 = a(1011,996)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:51.175833618 +0800
++++ out	2016-02-01 12:44:51.187833618 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.86517)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014863)
+	variant    15/  784 = a(1011,992)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:53.011833666 +0800
++++ out	2016-02-01 12:44:53.019833667 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.74737)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017282)
+	variant    16/  784 = a(1011,991)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:54.831833714 +0800
++++ out	2016-02-01 12:44:54.839833715 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.8069)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0238552)
+	variant    17/  784 = a(1011,990)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:56.835833767 +0800
++++ out	2016-02-01 12:44:56.839833767 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.95092)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013263)
+	variant    18/  784 = a(1011,989)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:44:58.855833820 +0800
++++ out	2016-02-01 12:44:58.855833820 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.96336)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0175881)
+	variant    19/  784 = a(1011,988)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:00.711833869 +0800
++++ out	2016-02-01 12:45:00.711833869 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.81228)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0188022)
+	variant    20/  784 = a(1011,987)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:02.439833915 +0800
++++ out	2016-02-01 12:45:02.463833915 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.76517)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0118492)
+	variant    21/  784 = a(1011,986)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:03.699833948 +0800
++++ out	2016-02-01 12:45:03.707833948 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.15271)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026731)
+	variant    22/  784 = a(1011,965)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:05.367833992 +0800
++++ out	2016-02-01 12:45:05.379833992 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.66058)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017421)
+	variant    23/  784 = a(1011,964)     (4 tests, cond 0)
+		n1Segmentation fault
+id:0
+FAILED:0
+ false (test_time = 1.65174)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0138192)
+	variant    24/  784 = a(1011,963)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:08.659834078 +0800
++++ out	2016-02-01 12:45:08.659834078 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.54733)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017086)
+	variant    25/  784 = a(1011,961)     (4 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-70e23616-7aa698d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.98267)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011425)
+	variant    26/  784 = a(1011,959)     (4 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-70e23616-7aa698d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 2.03823)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016629)
+	variant    27/  784 = a(1011,958)     (4 tests, cond 0)
+		n1Segmentation fault
+id:0
+FAILED:0
+ false (test_time = 1.71489)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0204909)
+	variant    28/  784 = a(1010,1007)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:16.179834276 +0800
++++ out	2016-02-01 12:45:16.191834277 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.66075)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0186489)
+	variant    29/  784 = a(1010,1006)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:17.911834322 +0800
++++ out	2016-02-01 12:45:17.923834322 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.681)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0155499)
+	variant    30/  784 = a(1010,1004)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:19.239834357 +0800
++++ out	2016-02-01 12:45:19.243834357 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.27502)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0120809)
+	variant    31/  784 = a(1010,1003)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:20.347834386 +0800
++++ out	2016-02-01 12:45:20.351834386 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.05135)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0119259)
+	variant    32/  784 = a(1010,1001)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:22.007834430 +0800
++++ out	2016-02-01 12:45:22.011834430 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.62987)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0155351)
+	variant    33/  784 = a(1010,998)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:23.471834468 +0800
++++ out	2016-02-01 12:45:23.479834468 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.48287)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010361)
+	variant    34/  784 = a(1010,996)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:24.695834500 +0800
++++ out	2016-02-01 12:45:24.703834501 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.18426)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016366)
+	variant    35/  784 = a(1010,991)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:26.499834548 +0800
++++ out	2016-02-01 12:45:26.503834548 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.73632)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014127)
+	variant    36/  784 = a(1010,988)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:27.375834571 +0800
++++ out	2016-02-01 12:45:27.379834571 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 0.853858)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00950694)
+	variant    37/  784 = a(1010,987)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:29.003834614 +0800
++++ out	2016-02-01 12:45:29.007834614 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.6571)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014467)
+	variant    38/  784 = a(1010,963)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:30.803834661 +0800
++++ out	2016-02-01 12:45:30.807834661 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.77811)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0223799)
+	variant    39/  784 = a(1010,959)     (4 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-70e23616-7aa698d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.62601)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0155489)
+	variant    40/  784 = a(1009,1007)    (4 tests, cond 0)
+		n1id:0
+FAILED:0
+ false (test_time = 1.76596)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014432)
+	variant    41/  784 = a(1009,1006)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:36.175834803 +0800
++++ out	2016-02-01 12:45:36.179834803 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.82927)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020052)
+	variant    42/  784 = a(1009,1004)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:37.827834846 +0800
++++ out	2016-02-01 12:45:37.831834846 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.62732)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0150671)
+	variant    43/  784 = a(1009,1003)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:39.435834888 +0800
++++ out	2016-02-01 12:45:39.439834889 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.56767)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01583)
+	variant    44/  784 = a(1009,1001)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:41.275834937 +0800
++++ out	2016-02-01 12:45:41.275834937 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.81252)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0116482)
+	variant    45/  784 = a(1009,998)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:42.919834980 +0800
++++ out	2016-02-01 12:45:42.923834980 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.63767)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0152149)
+	variant    46/  784 = a(1009,996)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:44.711835027 +0800
++++ out	2016-02-01 12:45:44.715835027 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.76162)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0165539)
+	variant    47/  784 = a(1009,991)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:46.803835082 +0800
++++ out	2016-02-01 12:45:46.807835083 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 2.04838)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0112891)
+	variant    48/  784 = a(1009,988)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:48.435835125 +0800
++++ out	2016-02-01 12:45:48.447835126 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.63298)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03391)
+	variant    49/  784 = a(1009,987)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:50.015835167 +0800
++++ out	2016-02-01 12:45:50.015835167 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.48787)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0111308)
+	variant    50/  784 = a(1009,964)     (4 tests, cond 0)
+		n1Segmentation fault
+id:0
+FAILED:0
+ false (test_time = 1.40151)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011225)
+	variant    51/  784 = a(1009,963)     (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİ--- in1	2016-02-01 12:45:52.871835242 +0800
++++ out	2016-02-01 12:45:52.879835242 +0800
+@@ -1 +1 @@
+-İİİİİİİ
++İİİİ
+\ No newline at end of file
+id:0
+FAILED:0
+ false (test_time = 1.41689)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0168049)
+	variant    52/  784 = a(1009,959)     (4 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-70e23616-7aa698d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.25345)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0145879)
+	variant    53/  784 = a(1008,1012)    (4 tests, cond 0)
+		n1İİİİİİİ
+İİİİİİİ
+id:0
+PASS:0
+ true (test_time = 1.4866)
+		p1id:26
+in directory:/home/ubuntu/corebench/grep/grep-case-70e23616-7aa698d3/tests
+calling:make check-TESTS TESTS=epipe
+PASS:26
+ true (test_time = 0.705207)
+		p2id:31
+in directory:/home/ubuntu/corebench/grep/grep-case-70e23616-7aa698d3/tests
+calling:make check-TESTS TESTS=repetition-overflow
+PASS:31
+ true (test_time = 0.510361)
+		p3id:32
+in directory:/home/ubuntu/corebench/grep/grep-case-70e23616-7aa698d3/tests
+calling:make check-TESTS TESTS=reversed-range-endpoints
+PASS:32
+ true (test_time = 0.439522)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: a(1008,1012)
+Repair Name: a(1008,1012) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454301957.367798
+
+Variant Test Case Queries: 56
+"Test Suite Evaluations": 14
+
+Compile Failures: 0
+Wall-Clock Seconds Elapsed: 110.269
+  Activity Name                     Count Seconds = Percent of Total Time
+  find_best_edit                       53   0.849 = 0.803643%
+  progeq partition                     37   1.478 = 1.3993%
+  append_sources                       37   7.447 = 7.05084%
+  test                                 60  13.136 = 12.4375%
+  compile                              54  82.698 = 78.3007%
+  TOTAL                                   105.616 = 95.7576% (avg CPU usage)

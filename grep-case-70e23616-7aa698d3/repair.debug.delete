@@ -1,0 +1,650 @@
+--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete true
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 3
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Mon Feb  1 12:44:07 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmpa3083c.c /tmp/tmp91aee6.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/searchutils.c: parsing
+cilRep: src/searchutils.c: parsed (0.142809 MB)
+cilRep: computing liveness
+cilRep: liveness failure for mbtolower: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 1045
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/grep/grep-case-70e23616-7aa698d3/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/stdio2.h:94
+	cannot instrument for coverage (would be recursive)
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/string3.h:75
+	cannot instrument for coverage (would be recursive)
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+coverage positive:
+	test: 1
+	test: 2
+	test: 3
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 1045
+cilRep: stmts in weighted_path = 44
+cilRep: total weight = 44
+cilRep: stmts in weighted_path with weight >= 1.0 = 44
+cilRep: src/searchutils.c (code bank/base file; atoms [1,1045])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454301852.982534)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 924
+cilRep: fix-space quotient by string: 42 -> 37
+progeq: WARNING: cannot resolve call: __builtin_object_size
+progeq: WARNING: cannot resolve call: __builtin___memset_chk
+progeq: WARNING: cannot resolve call: __wcrtomb_chk
+progeq: WARNING: cannot resolve call: __wcrtomb_alias
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: *__compar
+progeq: WARNING: cannot resolve call: __realpath_chk
+progeq: WARNING: cannot resolve call: __realpath_alias
+progeq: WARNING: cannot resolve call: __ptsname_r_chk
+progeq: WARNING: cannot resolve call: __ptsname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ptsname_r_alias
+progeq: WARNING: cannot resolve call: __wctomb_chk
+progeq: WARNING: cannot resolve call: __wctomb_alias
+progeq: WARNING: cannot resolve call: __mbstowcs_chk
+progeq: WARNING: cannot resolve call: __mbstowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbstowcs_alias
+progeq: WARNING: cannot resolve call: __wcstombs_chk
+progeq: WARNING: cannot resolve call: __wcstombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcstombs_alias
+progeq: WARNING: cannot resolve call: __btowc_alias
+progeq: WARNING: cannot resolve call: __wctob_alias
+progeq: WARNING: cannot resolve call: mbrtowc
+progeq: WARNING: cannot resolve call: __mbrlen
+progeq: WARNING: cannot resolve call: __wmemcpy_chk
+progeq: WARNING: cannot resolve call: __wmemcpy_chk_warn
+progeq: WARNING: cannot resolve call: __wmemcpy_alias
+progeq: WARNING: cannot resolve call: __wmemmove_chk
+progeq: WARNING: cannot resolve call: __wmemmove_chk_warn
+progeq: WARNING: cannot resolve call: __wmemmove_alias
+progeq: WARNING: cannot resolve call: __wmempcpy_chk
+progeq: WARNING: cannot resolve call: __wmempcpy_chk_warn
+progeq: WARNING: cannot resolve call: __wmempcpy_alias
+progeq: WARNING: cannot resolve call: __wmemset_chk
+progeq: WARNING: cannot resolve call: __wmemset_chk_warn
+progeq: WARNING: cannot resolve call: __wmemset_alias
+progeq: WARNING: cannot resolve call: __wcscpy_chk
+progeq: WARNING: cannot resolve call: __wcscpy_alias
+progeq: WARNING: cannot resolve call: __wcpcpy_chk
+progeq: WARNING: cannot resolve call: __wcpcpy_alias
+progeq: WARNING: cannot resolve call: __wcsncpy_chk
+progeq: WARNING: cannot resolve call: __wcsncpy_chk_warn
+progeq: WARNING: cannot resolve call: __wcsncpy_alias
+progeq: WARNING: cannot resolve call: __wcpncpy_chk
+progeq: WARNING: cannot resolve call: __wcpncpy_chk_warn
+progeq: WARNING: cannot resolve call: __wcpncpy_alias
+progeq: WARNING: cannot resolve call: __wcscat_chk
+progeq: WARNING: cannot resolve call: __wcscat_alias
+progeq: WARNING: cannot resolve call: __wcsncat_chk
+progeq: WARNING: cannot resolve call: __wcsncat_alias
+progeq: WARNING: cannot resolve call: __swprintf_chk
+progeq: WARNING: cannot resolve call: __swprintf_alias
+progeq: WARNING: cannot resolve call: __vswprintf_chk
+progeq: WARNING: cannot resolve call: __vswprintf_alias
+progeq: WARNING: cannot resolve call: __wprintf_chk
+progeq: WARNING: cannot resolve call: __fwprintf_chk
+progeq: WARNING: cannot resolve call: __vwprintf_chk
+progeq: WARNING: cannot resolve call: __vfwprintf_chk
+progeq: WARNING: cannot resolve call: __fgetws_chk
+progeq: WARNING: cannot resolve call: __fgetws_chk_warn
+progeq: WARNING: cannot resolve call: __fgetws_alias
+progeq: WARNING: cannot resolve call: __fgetws_unlocked_chk
+progeq: WARNING: cannot resolve call: __fgetws_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fgetws_unlocked_alias
+progeq: WARNING: cannot resolve call: __mbsrtowcs_chk
+progeq: WARNING: cannot resolve call: __mbsrtowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbsrtowcs_alias
+progeq: WARNING: cannot resolve call: __wcsrtombs_chk
+progeq: WARNING: cannot resolve call: __wcsrtombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcsrtombs_alias
+progeq: WARNING: cannot resolve call: __mbsnrtowcs_chk
+progeq: WARNING: cannot resolve call: __mbsnrtowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbsnrtowcs_alias
+progeq: WARNING: cannot resolve call: __wcsnrtombs_chk
+progeq: WARNING: cannot resolve call: __wcsnrtombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcsnrtombs_alias
+progeq: WARNING: cannot resolve call: __builtin_expect
+progeq: WARNING: cannot resolve call: __uflow
+progeq: WARNING: cannot resolve call: __overflow
+progeq: WARNING: cannot resolve call: __getdelim
+progeq: WARNING: cannot resolve call: __builtin___sprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___snprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsnprintf_chk
+progeq: WARNING: cannot resolve call: __fprintf_chk
+progeq: WARNING: cannot resolve call: __printf_chk
+progeq: WARNING: cannot resolve call: __vfprintf_chk
+progeq: WARNING: cannot resolve call: __dprintf_chk
+progeq: WARNING: cannot resolve call: __vdprintf_chk
+progeq: WARNING: cannot resolve call: __asprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_printf_chk
+progeq: WARNING: cannot resolve call: __vasprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_vprintf_chk
+progeq: WARNING: cannot resolve call: __fgets_chk
+progeq: WARNING: cannot resolve call: __fgets_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_alias
+progeq: WARNING: cannot resolve call: __fread_chk
+progeq: WARNING: cannot resolve call: __fread_chk_warn
+progeq: WARNING: cannot resolve call: __fread_alias
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_unlocked_alias
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fread_unlocked_alias
+progeq: WARNING: cannot resolve call: __builtin_va_arg_pack_len
+progeq: WARNING: cannot resolve call: __open_too_many_args
+progeq: WARNING: cannot resolve call: __open_2
+progeq: WARNING: cannot resolve call: __open_alias
+progeq: WARNING: cannot resolve call: __open64_too_many_args
+progeq: WARNING: cannot resolve call: __open64_2
+progeq: WARNING: cannot resolve call: __open64_alias
+progeq: WARNING: cannot resolve call: __openat_too_many_args
+progeq: WARNING: cannot resolve call: __openat_2
+progeq: WARNING: cannot resolve call: __openat_alias
+progeq: WARNING: cannot resolve call: __openat64_too_many_args
+progeq: WARNING: cannot resolve call: __openat64_2
+progeq: WARNING: cannot resolve call: __openat64_alias
+progeq: WARNING: cannot resolve call: __read_chk
+progeq: WARNING: cannot resolve call: __read_chk_warn
+progeq: WARNING: cannot resolve call: __read_alias
+progeq: WARNING: cannot resolve call: __pread_chk
+progeq: WARNING: cannot resolve call: __pread_chk_warn
+progeq: WARNING: cannot resolve call: __pread_alias
+progeq: WARNING: cannot resolve call: __pread64_chk
+progeq: WARNING: cannot resolve call: __pread64_chk_warn
+progeq: WARNING: cannot resolve call: __pread64_alias
+progeq: WARNING: cannot resolve call: __readlink_chk
+progeq: WARNING: cannot resolve call: __readlink_chk_warn
+progeq: WARNING: cannot resolve call: __readlink_alias
+progeq: WARNING: cannot resolve call: __readlinkat_chk
+progeq: WARNING: cannot resolve call: __readlinkat_chk_warn
+progeq: WARNING: cannot resolve call: __readlinkat_alias
+progeq: WARNING: cannot resolve call: __getcwd_chk
+progeq: WARNING: cannot resolve call: __getcwd_chk_warn
+progeq: WARNING: cannot resolve call: __getcwd_alias
+progeq: WARNING: cannot resolve call: __getwd_chk
+progeq: WARNING: cannot resolve call: __getwd_warn
+progeq: WARNING: cannot resolve call: __confstr_chk
+progeq: WARNING: cannot resolve call: __confstr_chk_warn
+progeq: WARNING: cannot resolve call: __confstr_alias
+progeq: WARNING: cannot resolve call: __getgroups_chk
+progeq: WARNING: cannot resolve call: __getgroups_chk_warn
+progeq: WARNING: cannot resolve call: __getgroups_alias
+progeq: WARNING: cannot resolve call: __ttyname_r_chk
+progeq: WARNING: cannot resolve call: __ttyname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ttyname_r_alias
+progeq: WARNING: cannot resolve call: __getlogin_r_chk
+progeq: WARNING: cannot resolve call: __getlogin_r_chk_warn
+progeq: WARNING: cannot resolve call: __getlogin_r_alias
+progeq: WARNING: cannot resolve call: __gethostname_chk
+progeq: WARNING: cannot resolve call: __gethostname_chk_warn
+progeq: WARNING: cannot resolve call: __gethostname_alias
+progeq: WARNING: cannot resolve call: __getdomainname_chk
+progeq: WARNING: cannot resolve call: __getdomainname_chk_warn
+progeq: WARNING: cannot resolve call: __getdomainname_alias
+progeq: WARNING: cannot resolve call: __builtin_strchr
+progeq: WARNING: cannot resolve call: __builtin___memcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memmove_chk
+progeq: WARNING: cannot resolve call: __builtin___mempcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___strcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___stpcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___strncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_alias
+progeq: WARNING: cannot resolve call: __builtin___strcat_chk
+progeq: WARNING: cannot resolve call: __builtin___strncat_chk
+progeq: WARNING: cannot resolve call: __ctype_tolower_loc
+progeq: WARNING: cannot resolve call: __ctype_toupper_loc
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: xrealloc
+progeq: WARNING: cannot resolve call: __ctype_get_mb_cur_max
+progeq: WARNING: cannot resolve call: kwsalloc
+progeq: WARNING: cannot resolve call: __assert_fail
+search: fix space reduced (time_taken = 1.98876)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 37 deletes
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:37:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+CARDINAL?before:33:after0
+REMOVED?false
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 0 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 784 appends
+search: ww_adaptive: 784 possible edits
+search: ready to start (time_taken = 7.45691)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.00722218)
+	variant     1/  784 = a(1011,1012)    (4 tests, cond 0)
+		n1 false (test_time = 1.6321)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0178168)
+	variant     2/  784 = a(1011,1011)    (4 tests, cond 0)
+		n1 false (test_time = 2.38572)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014997)
+	variant     3/  784 = a(1011,1010)    (4 tests, cond 0)
+		n1 false (test_time = 2.15239)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.015636)
+	variant     4/  784 = a(1011,1008)    (4 tests, cond 0)
+		n1 false (test_time = 1.99568)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026437)
+	variant     5/  784 = a(1011,1007)    (4 tests, cond 0)
+		n1 false (test_time = 2.30461)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016444)
+	variant     6/  784 = a(1011,1006)    (4 tests, cond 0)
+		n1 false (test_time = 2.2876)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010669)
+	variant     7/  784 = a(1011,1005)    (4 tests, cond 0)
+		n1 false (test_time = 1.95689)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0183249)
+	variant     8/  784 = a(1011,1004)    (4 tests, cond 0)
+		n1 false (test_time = 2.15709)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0153298)
+	variant     9/  784 = a(1011,1003)    (4 tests, cond 0)
+		n1 false (test_time = 2.34799)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0234699)
+	variant    10/  784 = a(1011,1002)    (4 tests, cond 0)
+		n1 false (test_time = 2.14114)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0184679)
+	variant    11/  784 = a(1011,1001)    (4 tests, cond 0)
+		n1 false (test_time = 1.53686)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010417)
+	variant    12/  784 = a(1011,998)     (4 tests, cond 0)
+		n1 false (test_time = 1.74914)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018302)
+	variant    13/  784 = a(1011,997)     (4 tests, cond 0)
+		n1 false (test_time = 1.83773)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010848)
+	variant    14/  784 = a(1011,996)     (4 tests, cond 0)
+		n1 false (test_time = 1.86517)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014863)
+	variant    15/  784 = a(1011,992)     (4 tests, cond 0)
+		n1 false (test_time = 1.74737)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017282)
+	variant    16/  784 = a(1011,991)     (4 tests, cond 0)
+		n1 false (test_time = 1.8069)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0238552)
+	variant    17/  784 = a(1011,990)     (4 tests, cond 0)
+		n1 false (test_time = 1.95092)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013263)
+	variant    18/  784 = a(1011,989)     (4 tests, cond 0)
+		n1 false (test_time = 1.96336)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0175881)
+	variant    19/  784 = a(1011,988)     (4 tests, cond 0)
+		n1 false (test_time = 1.81228)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0188022)
+	variant    20/  784 = a(1011,987)     (4 tests, cond 0)
+		n1 false (test_time = 1.76517)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0118492)
+	variant    21/  784 = a(1011,986)     (4 tests, cond 0)
+		n1 false (test_time = 1.15271)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026731)
+	variant    22/  784 = a(1011,965)     (4 tests, cond 0)
+		n1 false (test_time = 1.66058)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017421)
+	variant    23/  784 = a(1011,964)     (4 tests, cond 0)
+		n1 false (test_time = 1.65174)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0138192)
+	variant    24/  784 = a(1011,963)     (4 tests, cond 0)
+		n1 false (test_time = 1.54733)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017086)
+	variant    25/  784 = a(1011,961)     (4 tests, cond 0)
+		n1 false (test_time = 1.98267)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011425)
+	variant    26/  784 = a(1011,959)     (4 tests, cond 0)
+		n1 false (test_time = 2.03823)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016629)
+	variant    27/  784 = a(1011,958)     (4 tests, cond 0)
+		n1 false (test_time = 1.71489)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0204909)
+	variant    28/  784 = a(1010,1007)    (4 tests, cond 0)
+		n1 false (test_time = 1.66075)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0186489)
+	variant    29/  784 = a(1010,1006)    (4 tests, cond 0)
+		n1 false (test_time = 1.681)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0155499)
+	variant    30/  784 = a(1010,1004)    (4 tests, cond 0)
+		n1 false (test_time = 1.27502)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0120809)
+	variant    31/  784 = a(1010,1003)    (4 tests, cond 0)
+		n1 false (test_time = 1.05135)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0119259)
+	variant    32/  784 = a(1010,1001)    (4 tests, cond 0)
+		n1 false (test_time = 1.62987)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0155351)
+	variant    33/  784 = a(1010,998)     (4 tests, cond 0)
+		n1 false (test_time = 1.48287)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010361)
+	variant    34/  784 = a(1010,996)     (4 tests, cond 0)
+		n1 false (test_time = 1.18426)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016366)
+	variant    35/  784 = a(1010,991)     (4 tests, cond 0)
+		n1 false (test_time = 1.73632)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014127)
+	variant    36/  784 = a(1010,988)     (4 tests, cond 0)
+		n1 false (test_time = 0.853858)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00950694)
+	variant    37/  784 = a(1010,987)     (4 tests, cond 0)
+		n1 false (test_time = 1.6571)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014467)
+	variant    38/  784 = a(1010,963)     (4 tests, cond 0)
+		n1 false (test_time = 1.77811)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0223799)
+	variant    39/  784 = a(1010,959)     (4 tests, cond 0)
+		n1 false (test_time = 1.62601)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0155489)
+	variant    40/  784 = a(1009,1007)    (4 tests, cond 0)
+		n1 false (test_time = 1.76596)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014432)
+	variant    41/  784 = a(1009,1006)    (4 tests, cond 0)
+		n1 false (test_time = 1.82927)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.020052)
+	variant    42/  784 = a(1009,1004)    (4 tests, cond 0)
+		n1 false (test_time = 1.62732)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0150671)
+	variant    43/  784 = a(1009,1003)    (4 tests, cond 0)
+		n1 false (test_time = 1.56767)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01583)
+	variant    44/  784 = a(1009,1001)    (4 tests, cond 0)
+		n1 false (test_time = 1.81252)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0116482)
+	variant    45/  784 = a(1009,998)     (4 tests, cond 0)
+		n1 false (test_time = 1.63767)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0152149)
+	variant    46/  784 = a(1009,996)     (4 tests, cond 0)
+		n1 false (test_time = 1.76162)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0165539)
+	variant    47/  784 = a(1009,991)     (4 tests, cond 0)
+		n1 false (test_time = 2.04838)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0112891)
+	variant    48/  784 = a(1009,988)     (4 tests, cond 0)
+		n1 false (test_time = 1.63298)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.03391)
+	variant    49/  784 = a(1009,987)     (4 tests, cond 0)
+		n1 false (test_time = 1.48787)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0111308)
+	variant    50/  784 = a(1009,964)     (4 tests, cond 0)
+		n1 false (test_time = 1.40151)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011225)
+	variant    51/  784 = a(1009,963)     (4 tests, cond 0)
+		n1 false (test_time = 1.41689)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0168049)
+	variant    52/  784 = a(1009,959)     (4 tests, cond 0)
+		n1 false (test_time = 1.25345)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0145879)
+	variant    53/  784 = a(1008,1012)    (4 tests, cond 0)
+		n1 true (test_time = 1.4866)
+		p1 true (test_time = 0.705207)
+		p2 true (test_time = 0.510361)
+		p3 true (test_time = 0.439522)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: a(1008,1012)
+Repair Name: a(1008,1012) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454301957.367798
+
+Variant Test Case Queries: 56
+"Test Suite Evaluations": 14
+
+Compile Failures: 0
+Wall-Clock Seconds Elapsed: 110.269
+  Activity Name                     Count Seconds = Percent of Total Time
+  find_best_edit                       53   0.849 = 0.803643%
+  progeq partition                     37   1.478 = 1.3993%
+  append_sources                       37   7.447 = 7.05084%
+  test                                 60  13.136 = 12.4375%
+  compile                              54  82.698 = 78.3007%
+  TOTAL                                   105.616 = 95.7577% (avg CPU usage)

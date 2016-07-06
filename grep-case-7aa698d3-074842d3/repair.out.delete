@@ -1,0 +1,2836 @@
+WARNING: the argument --multi-file is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --suffix-extension is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --mutp is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.--allow-coverage-fail true
+--anti-append-returngoto false
+--anti-delete-cfgblock false
+--anti-delete-empty false
+--anti-delete-exit false
+--anti-delete-setbeforeif false
+--anti-delete-setinsideloop false
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete true
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 4
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Sun Jan 31 23:40:00 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat: /etc/redhat-release: No such file or directory
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp736278.c /tmp/tmp8fa033.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/searchutils.c: parsing
+cilRep: src/searchutils.c: parsed (0.143909 MB)
+cilRep: computing liveness
+Bug: BF(Liveness): stmtStartData is not initialized for -1: _L___0: 
+#line 116 "searchutils.c"
+tmp___4 = m;
+#line 116
+m ++;
+#line 116
+*tmp___4 = (unsigned char)0;
+#line 117
+tmp___5 = p;
+#line 117
+p ++;
+#line 117
+tmp___6 = beg;
+#line 117
+beg ++;
+#line 117
+*tmp___5 = (char )*tmp___6;
+#line 118
+outlen ++;
+#line 119
+memset((void *)(& is), 0, sizeof(is));
+#line 120
+memset((void *)(& os), 0, sizeof(os));
+Liveness failed on function:
+ char *mbtolower(char const   *beg , size_t *n , unsigned char **len_map_p ) 
+{ size_t outlen ;
+  size_t mb_cur_max ;
+  mbstate_t is ;
+  mbstate_t os ;
+  char const   *end ;
+  char *p ;
+  unsigned char *m ;
+  void *tmp ;
+  void *tmp___0 ;
+  wchar_t wc ;
+  size_t mbclen ;
+  size_t tmp___1 ;
+  size_t dm ;
+  void *tmp___2 ;
+  void *tmp___3 ;
+  unsigned char *tmp___4 ;
+  char *tmp___5 ;
+  char const   *tmp___6 ;
+  unsigned char *tmp___7 ;
+  wint_t tmp___8 ;
+  size_t __attribute__((__leaf__, __gnu_inline__, __artificial__))  tmp___9 ;
+  size_t __attribute__((__leaf__, __gnu_inline__, __artificial__))  tmp___10 ;
+
+  {
+   1016: /* CIL Label */ 
+#line 78
+  if (*n > outalloc) {
+    goto _L;
+  } else {
+#line 78
+    if (outalloc == 0UL) {
+      _L: 
+#line 80
+      if (1UL > *n) {
+#line 80
+        outalloc = 1UL;
+      } else {
+#line 80
+        outalloc = *n;
+      }
+#line 81
+      tmp = xrealloc((void *)out, outalloc);
+#line 81
+      out = (char *)tmp;
+#line 82
+      tmp___0 = xrealloc((void *)len_map, outalloc);
+#line 82
+      len_map = (unsigned char *)tmp___0;
+    } else {
+
+    }
+  }
+   1017: /* CIL Label */ 
+#line 86
+  if (! out) {
+#line 86
+    __assert_fail("out", "searchutils.c", 86U, "mbtolower");
+  } else {
+
+  }
+   1018: /* CIL Label */ 
+#line 87
+  if (! len_map) {
+#line 87
+    __assert_fail("len_map", "searchutils.c", 87U, "mbtolower");
+  } else {
+
+  }
+   1019: /* CIL Label */ 
+#line 88
+  if (*n == 0UL) {
+#line 89
+    return (out);
+  } else {
+
+  }
+   1020: /* CIL Label */ 
+#line 91
+  memset((void *)(& is), 0, sizeof(is));
+   1021: /* CIL Label */ 
+#line 92
+  memset((void *)(& os), 0, sizeof(os));
+   1022: /* CIL Label */ 
+#line 93
+  end = beg + *n;
+   1023: /* CIL Label */ 
+#line 95
+  mb_cur_max = __ctype_get_mb_cur_max();
+   1024: /* CIL Label */ 
+#line 96
+  p = out;
+   1025: /* CIL Label */ 
+#line 97
+  m = len_map;
+   1026: /* CIL Label */ 
+#line 98
+  outlen = 0UL;
+   1027: /* CIL Label */ 
+#line 99
+  while ((unsigned long )beg < (unsigned long )end) {
+#line 102
+    tmp___1 = mbrtowc((wchar_t */* __restrict  */)(& wc),
+                      (char const   */* __restrict  */)beg,
+                      (unsigned long )(end - beg),
+                      (mbstate_t */* __restrict  */)(& is));
+#line 102
+    mbclen = tmp___1;
+#line 103
+    if (outlen + mb_cur_max >= outalloc) {
+#line 105
+      dm = (unsigned long )(m - len_map);
+#line 106
+      tmp___2 = x2nrealloc((void *)out, & outalloc, 1UL);
+#line 106
+      out = (char *)tmp___2;
+#line 107
+      tmp___3 = xrealloc((void *)len_map, outalloc);
+#line 107
+      len_map = (unsigned char *)tmp___3;
+#line 108
+      p = out + outlen;
+#line 109
+      m = len_map + dm;
+    } else {
+
+    }
+#line 112
+    if (mbclen == 4294967295UL) {
+      goto _L___0;
+    } else {
+#line 112
+      if (mbclen == 4294967294UL) {
+        goto _L___0;
+      } else {
+#line 112
+        if (mbclen == 0UL) {
+          _L___0: 
+#line 116
+          tmp___4 = m;
+#line 116
+          m ++;
+#line 116
+          *tmp___4 = (unsigned char)0;
+#line 117
+          tmp___5 = p;
+#line 117
+          p ++;
+#line 117
+          tmp___6 = beg;
+#line 117
+          beg ++;
+#line 117
+          *tmp___5 = (char )*tmp___6;
+#line 118
+          outlen ++;
+#line 119
+          memset((void *)(& is), 0, sizeof(is));
+#line 120
+          memset((void *)(& os), 0, sizeof(os));
+        } else {
+#line 124
+          tmp___7 = m;
+#line 124
+          m ++;
+#line 124
+          *tmp___7 = (unsigned char )(mbclen - 1UL);
+#line 125
+          beg += mbclen;
+#line 126
+          tmp___8 = towlower((unsigned int )wc);
+#line 126
+          tmp___10 = (size_t __attribute__((__leaf__, __gnu_inline__,
+          __artificial__))  )wcrtomb((char */* __restrict  */)p, (int )tmp___8,
+                                     (mbstate_t */* __restrict  */)(& os));
+#line 126
+          tmp___9 = tmp___10;
+#line 126
+          mbclen = (unsigned long )tmp___9;
+#line 127
+          p += mbclen;
+#line 128
+          outlen += mbclen;
+        }
+      }
+    }
+  }
+   1028: /* CIL Label */ 
+#line 133
+  if ((unsigned long )(p - out) == *n) {
+#line 133
+    *len_map_p = (unsigned char *)((void *)0);
+  } else {
+#line 133
+    *len_map_p = len_map;
+  }
+   1029: /* CIL Label */ 
+#line 134
+  *n = (unsigned long )(p - out);
+   1030: /* CIL Label */ 
+#line 135
+  *p = (char)0;
+   1031: /* CIL Label */ 
+#line 136
+  return (out);
+}
+}
+
+cilRep: liveness failure for mbtolower: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 1064
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/stdio2.h:94
+	cannot instrument for coverage (would be recursive)
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/string3.h:75
+	cannot instrument for coverage (would be recursive)
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+coverage positive:
+	test: 1
+id:6
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=dfaexec-multibyte
+PASS:6
+	test: 2
+id:9
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=fedora
+PASS:9
+	test: 3
+id:13
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=help-version
+PASS:13
+	test: 4
+id:15
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=max-count-vs-context
+PASS:15
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 1064
+cilRep: stmts in weighted_path = 53
+cilRep: total weight = 53
+cilRep: stmts in weighted_path with weight >= 1.0 = 53
+cilRep: src/searchutils.c (code bank/base file; atoms [1,1064])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454254802.972971)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 924
+cilRep: fix-space quotient by string: 51 -> 46
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: *__compar
+progeq: WARNING: cannot resolve call: __builtin_object_size
+progeq: WARNING: cannot resolve call: __realpath_chk
+progeq: WARNING: cannot resolve call: __realpath_alias
+progeq: WARNING: cannot resolve call: __ptsname_r_chk
+progeq: WARNING: cannot resolve call: __ptsname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ptsname_r_alias
+progeq: WARNING: cannot resolve call: __wctomb_chk
+progeq: WARNING: cannot resolve call: __wctomb_alias
+progeq: WARNING: cannot resolve call: __mbstowcs_chk
+progeq: WARNING: cannot resolve call: __mbstowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbstowcs_alias
+progeq: WARNING: cannot resolve call: __wcstombs_chk
+progeq: WARNING: cannot resolve call: __wcstombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcstombs_alias
+progeq: WARNING: cannot resolve call: __btowc_alias
+progeq: WARNING: cannot resolve call: __wctob_alias
+progeq: WARNING: cannot resolve call: mbrtowc
+progeq: WARNING: cannot resolve call: __mbrlen
+progeq: WARNING: cannot resolve call: __wmemcpy_chk
+progeq: WARNING: cannot resolve call: __wmemcpy_chk_warn
+progeq: WARNING: cannot resolve call: __wmemcpy_alias
+progeq: WARNING: cannot resolve call: __wmemmove_chk
+progeq: WARNING: cannot resolve call: __wmemmove_chk_warn
+progeq: WARNING: cannot resolve call: __wmemmove_alias
+progeq: WARNING: cannot resolve call: __wmempcpy_chk
+progeq: WARNING: cannot resolve call: __wmempcpy_chk_warn
+progeq: WARNING: cannot resolve call: __wmempcpy_alias
+progeq: WARNING: cannot resolve call: __wmemset_chk
+progeq: WARNING: cannot resolve call: __wmemset_chk_warn
+progeq: WARNING: cannot resolve call: __wmemset_alias
+progeq: WARNING: cannot resolve call: __wcscpy_chk
+progeq: WARNING: cannot resolve call: __wcscpy_alias
+progeq: WARNING: cannot resolve call: __wcpcpy_chk
+progeq: WARNING: cannot resolve call: __wcpcpy_alias
+progeq: WARNING: cannot resolve call: __wcsncpy_chk
+progeq: WARNING: cannot resolve call: __wcsncpy_chk_warn
+progeq: WARNING: cannot resolve call: __wcsncpy_alias
+progeq: WARNING: cannot resolve call: __wcpncpy_chk
+progeq: WARNING: cannot resolve call: __wcpncpy_chk_warn
+progeq: WARNING: cannot resolve call: __wcpncpy_alias
+progeq: WARNING: cannot resolve call: __wcscat_chk
+progeq: WARNING: cannot resolve call: __wcscat_alias
+progeq: WARNING: cannot resolve call: __wcsncat_chk
+progeq: WARNING: cannot resolve call: __wcsncat_alias
+progeq: WARNING: cannot resolve call: __swprintf_chk
+progeq: WARNING: cannot resolve call: __swprintf_alias
+progeq: WARNING: cannot resolve call: __vswprintf_chk
+progeq: WARNING: cannot resolve call: __vswprintf_alias
+progeq: WARNING: cannot resolve call: __wprintf_chk
+progeq: WARNING: cannot resolve call: __fwprintf_chk
+progeq: WARNING: cannot resolve call: __vwprintf_chk
+progeq: WARNING: cannot resolve call: __vfwprintf_chk
+progeq: WARNING: cannot resolve call: __fgetws_chk
+progeq: WARNING: cannot resolve call: __fgetws_chk_warn
+progeq: WARNING: cannot resolve call: __fgetws_alias
+progeq: WARNING: cannot resolve call: __fgetws_unlocked_chk
+progeq: WARNING: cannot resolve call: __fgetws_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fgetws_unlocked_alias
+progeq: WARNING: cannot resolve call: __wcrtomb_chk
+progeq: WARNING: cannot resolve call: __wcrtomb_alias
+progeq: WARNING: cannot resolve call: __mbsrtowcs_chk
+progeq: WARNING: cannot resolve call: __mbsrtowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbsrtowcs_alias
+progeq: WARNING: cannot resolve call: __wcsrtombs_chk
+progeq: WARNING: cannot resolve call: __wcsrtombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcsrtombs_alias
+progeq: WARNING: cannot resolve call: __mbsnrtowcs_chk
+progeq: WARNING: cannot resolve call: __mbsnrtowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbsnrtowcs_alias
+progeq: WARNING: cannot resolve call: __wcsnrtombs_chk
+progeq: WARNING: cannot resolve call: __wcsnrtombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcsnrtombs_alias
+progeq: WARNING: cannot resolve call: __builtin_expect
+progeq: WARNING: cannot resolve call: __uflow
+progeq: WARNING: cannot resolve call: __overflow
+progeq: WARNING: cannot resolve call: __getdelim
+progeq: WARNING: cannot resolve call: __builtin___sprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___snprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsnprintf_chk
+progeq: WARNING: cannot resolve call: __fprintf_chk
+progeq: WARNING: cannot resolve call: __printf_chk
+progeq: WARNING: cannot resolve call: __vfprintf_chk
+progeq: WARNING: cannot resolve call: __dprintf_chk
+progeq: WARNING: cannot resolve call: __vdprintf_chk
+progeq: WARNING: cannot resolve call: __asprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_printf_chk
+progeq: WARNING: cannot resolve call: __vasprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_vprintf_chk
+progeq: WARNING: cannot resolve call: __fgets_chk
+progeq: WARNING: cannot resolve call: __fgets_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_alias
+progeq: WARNING: cannot resolve call: __fread_chk
+progeq: WARNING: cannot resolve call: __fread_chk_warn
+progeq: WARNING: cannot resolve call: __fread_alias
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_unlocked_alias
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fread_unlocked_alias
+progeq: WARNING: cannot resolve call: __builtin_va_arg_pack_len
+progeq: WARNING: cannot resolve call: __open_too_many_args
+progeq: WARNING: cannot resolve call: __open_2
+progeq: WARNING: cannot resolve call: __open_alias
+progeq: WARNING: cannot resolve call: __open64_too_many_args
+progeq: WARNING: cannot resolve call: __open64_2
+progeq: WARNING: cannot resolve call: __open64_alias
+progeq: WARNING: cannot resolve call: __openat_too_many_args
+progeq: WARNING: cannot resolve call: __openat_2
+progeq: WARNING: cannot resolve call: __openat_alias
+progeq: WARNING: cannot resolve call: __openat64_too_many_args
+progeq: WARNING: cannot resolve call: __openat64_2
+progeq: WARNING: cannot resolve call: __openat64_alias
+progeq: WARNING: cannot resolve call: __read_chk
+progeq: WARNING: cannot resolve call: __read_chk_warn
+progeq: WARNING: cannot resolve call: __read_alias
+progeq: WARNING: cannot resolve call: __pread_chk
+progeq: WARNING: cannot resolve call: __pread_chk_warn
+progeq: WARNING: cannot resolve call: __pread_alias
+progeq: WARNING: cannot resolve call: __pread64_chk
+progeq: WARNING: cannot resolve call: __pread64_chk_warn
+progeq: WARNING: cannot resolve call: __pread64_alias
+progeq: WARNING: cannot resolve call: __readlink_chk
+progeq: WARNING: cannot resolve call: __readlink_chk_warn
+progeq: WARNING: cannot resolve call: __readlink_alias
+progeq: WARNING: cannot resolve call: __readlinkat_chk
+progeq: WARNING: cannot resolve call: __readlinkat_chk_warn
+progeq: WARNING: cannot resolve call: __readlinkat_alias
+progeq: WARNING: cannot resolve call: __getcwd_chk
+progeq: WARNING: cannot resolve call: __getcwd_chk_warn
+progeq: WARNING: cannot resolve call: __getcwd_alias
+progeq: WARNING: cannot resolve call: __getwd_chk
+progeq: WARNING: cannot resolve call: __getwd_warn
+progeq: WARNING: cannot resolve call: __confstr_chk
+progeq: WARNING: cannot resolve call: __confstr_chk_warn
+progeq: WARNING: cannot resolve call: __confstr_alias
+progeq: WARNING: cannot resolve call: __getgroups_chk
+progeq: WARNING: cannot resolve call: __getgroups_chk_warn
+progeq: WARNING: cannot resolve call: __getgroups_alias
+progeq: WARNING: cannot resolve call: __ttyname_r_chk
+progeq: WARNING: cannot resolve call: __ttyname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ttyname_r_alias
+progeq: WARNING: cannot resolve call: __getlogin_r_chk
+progeq: WARNING: cannot resolve call: __getlogin_r_chk_warn
+progeq: WARNING: cannot resolve call: __getlogin_r_alias
+progeq: WARNING: cannot resolve call: __gethostname_chk
+progeq: WARNING: cannot resolve call: __gethostname_chk_warn
+progeq: WARNING: cannot resolve call: __gethostname_alias
+progeq: WARNING: cannot resolve call: __getdomainname_chk
+progeq: WARNING: cannot resolve call: __getdomainname_chk_warn
+progeq: WARNING: cannot resolve call: __getdomainname_alias
+progeq: WARNING: cannot resolve call: __builtin_strchr
+progeq: WARNING: cannot resolve call: __builtin___memcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memmove_chk
+progeq: WARNING: cannot resolve call: __builtin___mempcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memset_chk
+progeq: WARNING: cannot resolve call: __builtin___strcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___stpcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___strncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_alias
+progeq: WARNING: cannot resolve call: __builtin___strcat_chk
+progeq: WARNING: cannot resolve call: __builtin___strncat_chk
+progeq: WARNING: cannot resolve call: __ctype_tolower_loc
+progeq: WARNING: cannot resolve call: __ctype_toupper_loc
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: xrealloc
+progeq: WARNING: cannot resolve call: __ctype_get_mb_cur_max
+progeq: WARNING: cannot resolve call: kwsalloc
+progeq: WARNING: cannot resolve call: __assert_fail
+search: fix space reduced (time_taken = 0.977723)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 46 deletes
+CARDINAL?before:46:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:4:after0
+REMOVED?false
+CARDINAL?before:46:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:46:after0
+REMOVED?false
+CARDINAL?before:46:after0
+REMOVED?false
+CARDINAL?before:46:after0
+REMOVED?false
+CARDINAL?before:46:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:46:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+CARDINAL?before:38:after0
+REMOVED?false
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 0 appends
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 1169 appends
+search: ww_adaptive: 1169 possible edits
+search: ready to start (time_taken = 5.14347)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.00857711)
+	variant     1/ 1169 = a(1027,1026)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.861628)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0111561)
+	variant     2/ 1169 = a(1027,1025)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.82944)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0111539)
+	variant     3/ 1169 = a(1027,1024)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.916872)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00953603)
+	variant     4/ 1169 = a(1027,1023)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.835872)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00925779)
+	variant     5/ 1169 = a(1027,1022)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.786107)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0108838)
+	variant     6/ 1169 = a(1027,1021)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.870524)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011997)
+	variant     7/ 1169 = a(1027,1020)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.84729)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00934815)
+	variant     8/ 1169 = a(1027,1019)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.863354)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0100269)
+	variant     9/ 1169 = a(1027,1018)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.882849)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.012913)
+	variant    10/ 1169 = a(1027,1017)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.02936)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.015434)
+	variant    11/ 1169 = a(1027,1012)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.22751)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.026089)
+	variant    12/ 1169 = a(1027,1011)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.34055)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013773)
+	variant    13/ 1169 = a(1027,1010)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.42895)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013756)
+	variant    14/ 1169 = a(1027,1006)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.768147)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00949311)
+	variant    15/ 1169 = a(1027,1005)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.786982)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00952411)
+	variant    16/ 1169 = a(1027,1004)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.914271)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0113871)
+	variant    17/ 1169 = a(1027,1003)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.944939)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011498)
+	variant    18/ 1169 = a(1027,1002)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.897626)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013237)
+	variant    19/ 1169 = a(1027,1001)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.886889)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01492)
+	variant    20/ 1169 = a(1027,1000)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.11863)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0148761)
+	variant    21/ 1169 = a(1027,999)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.971394)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01331)
+	variant    22/ 1169 = a(1027,998)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.01952)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0108209)
+	variant    23/ 1169 = a(1027,997)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.845966)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0117769)
+	variant    24/ 1169 = a(1027,977)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.779088)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00972199)
+	variant    25/ 1169 = a(1027,976)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.889767)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0138001)
+	variant    26/ 1169 = a(1027,972)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.860022)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0110121)
+	variant    27/ 1169 = a(1027,966)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.749538)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0106261)
+	variant    28/ 1169 = a(1027,965)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.861502)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0110948)
+	variant    29/ 1169 = a(1027,964)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.11538)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0112331)
+	variant    30/ 1169 = a(1027,963)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.04889)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00856209)
+	variant    31/ 1169 = a(1027,961)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.00057)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011863)
+	variant    32/ 1169 = a(1027,959)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.858295)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0111411)
+	variant    33/ 1169 = a(1027,958)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.805499)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0112269)
+	variant    34/ 1169 = a(1027,929)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.824312)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00985599)
+	variant    35/ 1169 = a(1026,1026)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.978835)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00889206)
+	variant    36/ 1169 = a(1026,1025)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.772541)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0123918)
+	variant    37/ 1169 = a(1026,1024)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.775769)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0117152)
+	variant    38/ 1169 = a(1026,1023)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.767203)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011544)
+	variant    39/ 1169 = a(1026,1022)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.751083)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0195761)
+	variant    40/ 1169 = a(1026,1021)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.741498)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00866699)
+	variant    41/ 1169 = a(1026,1020)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.78199)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00788999)
+	variant    42/ 1169 = a(1026,1019)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.880022)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0112231)
+	variant    43/ 1169 = a(1026,1018)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.849955)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00851393)
+	variant    44/ 1169 = a(1026,1017)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.880971)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0103741)
+	variant    45/ 1169 = a(1026,1012)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.03189)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0165341)
+	variant    46/ 1169 = a(1026,1011)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.08798)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0114219)
+	variant    47/ 1169 = a(1026,1010)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.954897)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00985885)
+	variant    48/ 1169 = a(1026,1006)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.03748)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010639)
+	variant    49/ 1169 = a(1026,1005)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.06223)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011029)
+	variant    50/ 1169 = a(1026,1004)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.1094)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013588)
+	variant    51/ 1169 = a(1026,1003)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.806466)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010273)
+	variant    52/ 1169 = a(1026,1002)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.973953)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0212951)
+	variant    53/ 1169 = a(1026,1001)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.984617)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00981808)
+	variant    54/ 1169 = a(1026,1000)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.777837)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00919104)
+	variant    55/ 1169 = a(1026,999)     (5 tests, cond 0)
+		n1Segmentation fault
+id:0
+FAILED:0
+ false (test_time = 0.763884)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0125561)
+	variant    56/ 1169 = a(1026,998)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.846734)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00950408)
+	variant    57/ 1169 = a(1026,997)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.82165)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00894213)
+	variant    58/ 1169 = a(1026,977)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.807728)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00899005)
+	variant    59/ 1169 = a(1026,976)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.802995)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013582)
+	variant    60/ 1169 = a(1026,966)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.879015)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00801611)
+	variant    61/ 1169 = a(1026,965)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.977934)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0143042)
+	variant    62/ 1169 = a(1026,964)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.07421)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011657)
+	variant    63/ 1169 = a(1026,963)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.15338)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0115559)
+	variant    64/ 1169 = a(1026,961)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.05412)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0131631)
+	variant    65/ 1169 = a(1026,959)     (5 tests, cond 0)
+		n1 false (test_time = 31.2301)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00983906)
+	variant    66/ 1169 = a(1026,929)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.793966)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0175519)
+	variant    67/ 1169 = a(1025,1026)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.795269)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013499)
+	variant    68/ 1169 = a(1025,1023)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.849346)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00828409)
+	variant    69/ 1169 = a(1025,1021)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.805395)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00884414)
+	variant    70/ 1169 = a(1025,1020)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.791384)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00908709)
+	variant    71/ 1169 = a(1025,1018)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.746059)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011153)
+	variant    72/ 1169 = a(1025,1017)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.742702)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0088191)
+	variant    73/ 1169 = a(1025,1012)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.875535)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0134389)
+	variant    74/ 1169 = a(1025,1010)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.90286)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0141771)
+	variant    75/ 1169 = a(1025,1006)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.75124)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00813794)
+	variant    76/ 1169 = a(1025,1002)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.752533)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00949287)
+	variant    77/ 1169 = a(1025,977)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.735575)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0116701)
+	variant    78/ 1169 = a(1025,965)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.793347)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.01127)
+	variant    79/ 1169 = a(1025,963)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.853793)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0098381)
+	variant    80/ 1169 = a(1025,959)     (5 tests, cond 0)
+		n1 false (test_time = 30.6835)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0145419)
+	variant    81/ 1169 = a(1025,929)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.856876)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0121739)
+	variant    82/ 1169 = a(1024,1025)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.10037)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0112441)
+	variant    83/ 1169 = a(1024,1023)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.777967)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00800896)
+	variant    84/ 1169 = a(1024,1021)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.785942)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00924611)
+	variant    85/ 1169 = a(1024,1020)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.781464)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0088129)
+	variant    86/ 1169 = a(1024,1018)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.912514)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.015837)
+	variant    87/ 1169 = a(1024,1017)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.804661)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0105212)
+	variant    88/ 1169 = a(1024,1012)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.762328)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00923395)
+	variant    89/ 1169 = a(1024,1010)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.772122)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00864911)
+	variant    90/ 1169 = a(1024,1002)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.806467)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0108361)
+	variant    91/ 1169 = a(1024,998)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.886941)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00906587)
+	variant    92/ 1169 = a(1024,997)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.867898)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0112891)
+	variant    93/ 1169 = a(1024,977)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.787388)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00920296)
+	variant    94/ 1169 = a(1024,976)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.752525)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00979614)
+	variant    95/ 1169 = a(1024,966)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.82957)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.022702)
+	variant    96/ 1169 = a(1024,965)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.908311)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0102851)
+	variant    97/ 1169 = a(1024,963)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.78839)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00931811)
+	variant    98/ 1169 = a(1024,959)     (5 tests, cond 0)
+		n1 false (test_time = 30.7059)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0176752)
+	variant    99/ 1169 = a(1024,929)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.845351)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011086)
+	variant   100/ 1169 = a(1023,1024)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.874232)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.017575)
+	variant   101/ 1169 = a(1023,1023)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.03064)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.012583)
+	variant   102/ 1169 = a(1023,1021)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.954223)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0139201)
+	variant   103/ 1169 = a(1023,1020)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.786521)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00962901)
+	variant   104/ 1169 = a(1023,1018)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.876224)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0096221)
+	variant   105/ 1169 = a(1023,1017)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.853857)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00877905)
+	variant   106/ 1169 = a(1023,1012)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.08529)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0118949)
+	variant   107/ 1169 = a(1023,1010)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.03635)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0104442)
+	variant   108/ 1169 = a(1023,1005)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.845748)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010536)
+	variant   109/ 1169 = a(1023,1002)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.894034)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0131071)
+	variant   110/ 1169 = a(1023,977)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.77096)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0109768)
+	variant   111/ 1169 = a(1023,965)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.781271)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018539)
+	variant   112/ 1169 = a(1023,964)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.919679)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0140421)
+	variant   113/ 1169 = a(1023,963)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.954965)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0123692)
+	variant   114/ 1169 = a(1023,959)     (5 tests, cond 0)
+		n1 false (test_time = 30.7672)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00908017)
+	variant   115/ 1169 = a(1023,929)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.779398)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0136549)
+	variant   116/ 1169 = a(1022,1026)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.862121)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0086751)
+	variant   117/ 1169 = a(1022,1025)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.893928)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0134869)
+	variant   118/ 1169 = a(1022,1024)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.830297)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0103781)
+	variant   119/ 1169 = a(1022,1023)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.14282)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0138278)
+	variant   120/ 1169 = a(1022,1022)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.816134)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00883794)
+	variant   121/ 1169 = a(1022,1021)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.93505)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00991106)
+	variant   122/ 1169 = a(1022,1020)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.07217)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0100131)
+	variant   123/ 1169 = a(1022,1019)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.13874)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011909)
+	variant   124/ 1169 = a(1022,1018)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.04166)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.015496)
+	variant   125/ 1169 = a(1022,1017)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.886135)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00858188)
+	variant   126/ 1169 = a(1022,1012)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.799514)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013329)
+	variant   127/ 1169 = a(1022,1011)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.893172)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00919509)
+	variant   128/ 1169 = a(1022,1010)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.895234)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00958109)
+	variant   129/ 1169 = a(1022,1006)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.06994)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00923705)
+	variant   130/ 1169 = a(1022,1005)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.849905)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0105128)
+	variant   131/ 1169 = a(1022,1004)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.81439)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0124531)
+	variant   132/ 1169 = a(1022,1003)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.806336)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0114501)
+	variant   133/ 1169 = a(1022,1002)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.776385)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0131879)
+	variant   134/ 1169 = a(1022,1001)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.871334)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00866795)
+	variant   135/ 1169 = a(1022,1000)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.821357)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0125649)
+	variant   136/ 1169 = a(1022,999)     (5 tests, cond 0)
+		n1Segmentation fault
+id:0
+FAILED:0
+ false (test_time = 0.899398)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010355)
+	variant   137/ 1169 = a(1022,998)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.89547)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00833511)
+	variant   138/ 1169 = a(1022,997)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.0647)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0144079)
+	variant   139/ 1169 = a(1022,977)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.04551)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0115001)
+	variant   140/ 1169 = a(1022,976)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.14112)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00887704)
+	variant   141/ 1169 = a(1022,966)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.09707)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.016289)
+	variant   142/ 1169 = a(1022,965)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.12765)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00953007)
+	variant   143/ 1169 = a(1022,964)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.861024)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00943184)
+	variant   144/ 1169 = a(1022,963)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.94067)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.012275)
+	variant   145/ 1169 = a(1022,961)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.06682)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0165229)
+	variant   146/ 1169 = a(1022,959)     (5 tests, cond 0)
+		n1 false (test_time = 30.7719)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0124919)
+	variant   147/ 1169 = a(1022,929)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.15778)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00860596)
+	variant   148/ 1169 = a(1021,1023)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.997295)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00918984)
+	variant   149/ 1169 = a(1021,1022)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.817774)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00828695)
+	variant   150/ 1169 = a(1021,1021)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.80564)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00943208)
+	variant   151/ 1169 = a(1021,1020)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.745425)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00963211)
+	variant   152/ 1169 = a(1021,1018)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.731765)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0144379)
+	variant   153/ 1169 = a(1021,1017)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.08488)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0138981)
+	variant   154/ 1169 = a(1021,1012)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.06232)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00838208)
+	variant   155/ 1169 = a(1021,1010)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.778084)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.008569)
+	variant   156/ 1169 = a(1021,1002)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.758116)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00876212)
+	variant   157/ 1169 = a(1021,1000)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.765438)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00999117)
+	variant   158/ 1169 = a(1021,977)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.771411)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0118601)
+	variant   159/ 1169 = a(1021,965)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.770175)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010916)
+	variant   160/ 1169 = a(1021,963)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.851595)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0113549)
+	variant   161/ 1169 = a(1021,959)     (5 tests, cond 0)
+		n1 false (test_time = 30.8942)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0118439)
+	variant   162/ 1169 = a(1021,929)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.951301)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00935698)
+	variant   163/ 1169 = a(1020,1026)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.08274)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00936985)
+	variant   164/ 1169 = a(1020,1025)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.99623)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00943303)
+	variant   165/ 1169 = a(1020,1024)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.760849)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00897622)
+	variant   166/ 1169 = a(1020,1023)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.87662)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0102539)
+	variant   167/ 1169 = a(1020,1022)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.934033)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0090661)
+	variant   168/ 1169 = a(1020,1021)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.919972)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0136738)
+	variant   169/ 1169 = a(1020,1020)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.894663)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010195)
+	variant   170/ 1169 = a(1020,1019)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.971598)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00985193)
+	variant   171/ 1169 = a(1020,1018)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.979277)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00846481)
+	variant   172/ 1169 = a(1020,1017)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.07358)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0122459)
+	variant   173/ 1169 = a(1020,1012)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.821442)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0101871)
+	variant   174/ 1169 = a(1020,1011)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.862416)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010663)
+	variant   175/ 1169 = a(1020,1010)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.956072)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.012372)
+	variant   176/ 1169 = a(1020,1006)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.77291)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011883)
+	variant   177/ 1169 = a(1020,1005)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.757139)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00949502)
+	variant   178/ 1169 = a(1020,1004)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.758719)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00911498)
+	variant   179/ 1169 = a(1020,1003)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.775861)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010201)
+	variant   180/ 1169 = a(1020,1002)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.750589)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0113659)
+	variant   181/ 1169 = a(1020,1001)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.784901)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0100238)
+	variant   182/ 1169 = a(1020,1000)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.735148)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00906801)
+	variant   183/ 1169 = a(1020,999)     (5 tests, cond 0)
+		n1Segmentation fault
+id:0
+FAILED:0
+ false (test_time = 0.765348)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0131822)
+	variant   184/ 1169 = a(1020,998)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.925697)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.012712)
+	variant   185/ 1169 = a(1020,997)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.790869)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00823402)
+	variant   186/ 1169 = a(1020,977)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.05434)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00907397)
+	variant   187/ 1169 = a(1020,976)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.786922)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00867081)
+	variant   188/ 1169 = a(1020,966)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.769839)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0093379)
+	variant   189/ 1169 = a(1020,965)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.742909)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00985718)
+	variant   190/ 1169 = a(1020,964)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.744802)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0125411)
+	variant   191/ 1169 = a(1020,963)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.781398)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0163219)
+	variant   192/ 1169 = a(1020,961)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.834795)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0159822)
+	variant   193/ 1169 = a(1020,959)     (5 tests, cond 0)
+		n1 false (test_time = 30.8011)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0098989)
+	variant   194/ 1169 = a(1020,929)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.809813)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00907302)
+	variant   195/ 1169 = a(1019,1026)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.81726)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00942206)
+	variant   196/ 1169 = a(1019,1025)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.783786)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0102761)
+	variant   197/ 1169 = a(1019,1024)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.780818)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0113678)
+	variant   198/ 1169 = a(1019,1023)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.872954)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0219359)
+	variant   199/ 1169 = a(1019,1022)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.12708)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.014631)
+	variant   200/ 1169 = a(1019,1021)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.19183)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0105112)
+	variant   201/ 1169 = a(1019,1020)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.848236)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00857997)
+	variant   202/ 1169 = a(1019,1019)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.980413)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011272)
+	variant   203/ 1169 = a(1019,1018)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.20363)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013726)
+	variant   204/ 1169 = a(1019,1017)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.32249)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0119572)
+	variant   205/ 1169 = a(1019,1012)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.20306)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0132029)
+	variant   206/ 1169 = a(1019,1011)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.0051)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0195441)
+	variant   207/ 1169 = a(1019,1010)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.24654)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0123491)
+	variant   208/ 1169 = a(1019,1006)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.810391)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0104911)
+	variant   209/ 1169 = a(1019,1005)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.910856)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00997901)
+	variant   210/ 1169 = a(1019,1004)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.872076)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00872588)
+	variant   211/ 1169 = a(1019,1003)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.984561)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0116811)
+	variant   212/ 1169 = a(1019,1002)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.868377)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0079689)
+	variant   213/ 1169 = a(1019,1001)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.0513)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0193391)
+	variant   214/ 1169 = a(1019,1000)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.15565)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0109861)
+	variant   215/ 1169 = a(1019,999)     (5 tests, cond 0)
+		n1Segmentation fault
+id:0
+FAILED:0
+ false (test_time = 1.24063)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0207429)
+	variant   216/ 1169 = a(1019,998)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.16326)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00841904)
+	variant   217/ 1169 = a(1019,997)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.905311)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0130129)
+	variant   218/ 1169 = a(1019,977)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.978974)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00882816)
+	variant   219/ 1169 = a(1019,976)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.919861)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0100949)
+	variant   220/ 1169 = a(1019,966)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.03661)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0108302)
+	variant   221/ 1169 = a(1019,965)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.772361)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00763416)
+	variant   222/ 1169 = a(1019,964)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.09669)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00967407)
+	variant   223/ 1169 = a(1019,963)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.05366)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.013829)
+	variant   224/ 1169 = a(1019,961)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.07077)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011075)
+	variant   225/ 1169 = a(1019,959)     (5 tests, cond 0)
+		n1 false (test_time = 31.0408)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.009413)
+	variant   226/ 1169 = a(1019,929)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.11893)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010195)
+	variant   227/ 1169 = a(1018,1023)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.793205)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00724316)
+	variant   228/ 1169 = a(1018,1021)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.93696)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00947213)
+	variant   229/ 1169 = a(1018,1020)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.00079)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.008636)
+	variant   230/ 1169 = a(1018,1018)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.969331)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0100701)
+	variant   231/ 1169 = a(1018,1017)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.01303)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0143569)
+	variant   232/ 1169 = a(1018,1012)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.814939)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00773191)
+	variant   233/ 1169 = a(1018,1010)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.787355)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00784898)
+	variant   234/ 1169 = a(1018,1002)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.835809)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00807095)
+	variant   235/ 1169 = a(1018,977)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.854086)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00918102)
+	variant   236/ 1169 = a(1018,965)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.07141)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010361)
+	variant   237/ 1169 = a(1018,964)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.891431)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0108092)
+	variant   238/ 1169 = a(1018,963)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.01439)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0145891)
+	variant   239/ 1169 = a(1018,959)     (5 tests, cond 0)
+		n1 false (test_time = 30.9906)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0137529)
+	variant   240/ 1169 = a(1018,929)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.73865)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00794005)
+	variant   241/ 1169 = a(1017,1026)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.726048)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00725579)
+	variant   242/ 1169 = a(1017,1025)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.809947)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00815296)
+	variant   243/ 1169 = a(1017,1024)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.924407)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00660586)
+	variant   244/ 1169 = a(1017,1023)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.857581)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00727415)
+	variant   245/ 1169 = a(1017,1022)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.870263)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00703692)
+	variant   246/ 1169 = a(1017,1021)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.894898)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0117471)
+	variant   247/ 1169 = a(1017,1020)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.816684)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00916481)
+	variant   248/ 1169 = a(1017,1019)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.873439)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00675607)
+	variant   249/ 1169 = a(1017,1018)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.890612)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0066812)
+	variant   250/ 1169 = a(1017,1017)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.7406)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00718284)
+	variant   251/ 1169 = a(1017,1012)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.744012)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00546479)
+	variant   252/ 1169 = a(1017,1011)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.765126)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0075922)
+	variant   253/ 1169 = a(1017,1010)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.758356)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0081079)
+	variant   254/ 1169 = a(1017,1006)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.770188)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.007689)
+	variant   255/ 1169 = a(1017,1005)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.756712)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00813484)
+	variant   256/ 1169 = a(1017,1004)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.766291)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00995898)
+	variant   257/ 1169 = a(1017,1003)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.944642)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00664091)
+	variant   258/ 1169 = a(1017,1002)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.948689)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00879288)
+	variant   259/ 1169 = a(1017,1001)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.862076)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00650716)
+	variant   260/ 1169 = a(1017,1000)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.839962)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00870395)
+	variant   261/ 1169 = a(1017,999)     (5 tests, cond 0)
+		n1Segmentation fault
+id:0
+FAILED:0
+ false (test_time = 0.905472)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010005)
+	variant   262/ 1169 = a(1017,998)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.939668)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00746799)
+	variant   263/ 1169 = a(1017,997)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.761377)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0092988)
+	variant   264/ 1169 = a(1017,977)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.742273)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00652504)
+	variant   265/ 1169 = a(1017,976)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.745294)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00716591)
+	variant   266/ 1169 = a(1017,966)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.757168)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00820589)
+	variant   267/ 1169 = a(1017,965)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.780389)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00745988)
+	variant   268/ 1169 = a(1017,964)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.773242)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00657701)
+	variant   269/ 1169 = a(1017,963)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.911444)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00597)
+	variant   270/ 1169 = a(1017,961)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.925953)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00908184)
+	variant   271/ 1169 = a(1017,959)     (5 tests, cond 0)
+		n1 false (test_time = 30.825)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.012795)
+	variant   272/ 1169 = a(1017,929)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.850992)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00993204)
+	variant   273/ 1169 = a(1016,1026)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.998445)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00886202)
+	variant   274/ 1169 = a(1016,1025)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.95818)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0138381)
+	variant   275/ 1169 = a(1016,1024)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.0699)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00928688)
+	variant   276/ 1169 = a(1016,1023)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.815535)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0113351)
+	variant   277/ 1169 = a(1016,1022)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.921819)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00909901)
+	variant   278/ 1169 = a(1016,1021)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.753414)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00765896)
+	variant   279/ 1169 = a(1016,1020)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.760131)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0125)
+	variant   280/ 1169 = a(1016,1019)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.758683)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00819921)
+	variant   281/ 1169 = a(1016,1018)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.739002)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00863385)
+	variant   282/ 1169 = a(1016,1017)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.855407)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0066061)
+	variant   283/ 1169 = a(1016,1012)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.851471)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00895309)
+	variant   284/ 1169 = a(1016,1011)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.84997)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00863504)
+	variant   285/ 1169 = a(1016,1010)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.95228)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0086391)
+	variant   286/ 1169 = a(1016,1006)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.01878)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00730801)
+	variant   287/ 1169 = a(1016,1005)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.877013)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.011729)
+	variant   288/ 1169 = a(1016,1004)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.964867)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00968003)
+	variant   289/ 1169 = a(1016,1003)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.78233)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00648308)
+	variant   290/ 1169 = a(1016,1002)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.75755)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00627184)
+	variant   291/ 1169 = a(1016,1001)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.791272)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0062809)
+	variant   292/ 1169 = a(1016,1000)    (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.762046)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010088)
+	variant   293/ 1169 = a(1016,999)     (5 tests, cond 0)
+		n1Segmentation fault
+id:0
+FAILED:0
+ false (test_time = 0.880724)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0058651)
+	variant   294/ 1169 = a(1016,998)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.74819)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0077858)
+	variant   295/ 1169 = a(1016,997)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.747155)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00629902)
+	variant   296/ 1169 = a(1016,977)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.765201)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0101302)
+	variant   297/ 1169 = a(1016,976)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.814975)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00921798)
+	variant   298/ 1169 = a(1016,966)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.830252)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010427)
+	variant   299/ 1169 = a(1016,965)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.904109)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00669193)
+	variant   300/ 1169 = a(1016,964)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.921231)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.010139)
+	variant   301/ 1169 = a(1016,963)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.977541)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.009027)
+	variant   302/ 1169 = a(1016,961)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.03836)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.00885701)
+	variant   303/ 1169 = a(1016,959)     (5 tests, cond 0)
+		n1 false (test_time = 30.7344)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0128889)
+	variant   304/ 1169 = a(1016,929)     (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 1.25321)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.0116339)
+	variant   305/ 1169 = a(1013,1026)    (5 tests, cond 0)
+		n1id:0
+PASS:0
+ true (test_time = 0.841202)
+		p1id:6
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=dfaexec-multibyte
+PASS:6
+ true (test_time = 0.213375)
+		p2id:9
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=fedora
+PASS:9
+ true (test_time = 0.222213)
+		p3id:13
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=help-version
+PASS:13
+ true (test_time = 0.352153)
+		p4id:15
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=max-count-vs-context
+PASS:15
+ true (test_time = 0.212775)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: a(1013,1026)
+Repair Name: a(1013,1026) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454255418.314831
+
+Variant Test Case Queries: 309
+"Test Suite Evaluations": 61.8
+
+Compile Failures: 0
+Wall-Clock Seconds Elapsed: 617.983
+  Activity Name                     Count Seconds = Percent of Total Time
+  progeq partition                     46   0.724 = 0.118984%
+  find_best_edit                      305   3.273 = 0.53802%
+  append_sources                       46   5.134 = 0.843947%
+  compile                             306 247.786 = 40.7343%
+  test                                314 351.374 = 57.7634%
+  TOTAL                                   608.299 = 98.4316% (avg CPU usage)

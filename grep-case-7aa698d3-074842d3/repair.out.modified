@@ -1,0 +1,1325 @@
+WARNING: the argument --multi-file is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --suffix-extension is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.WARNING: the argument --mutp is deprecated. This is not fatal, as GenProg can handle certain deprecated options as of the March 2012 refactor.
+However, you may want to consult the GenProg documentation to avoid using 
+deprecated options in the future, and verify that your config is doing what you
+think it is doing.--allow-coverage-fail true
+--anti-append-returngoto true
+--anti-delete-cfgblock true
+--anti-delete-empty true
+--anti-delete-exit true
+--anti-delete-setbeforeif true
+--anti-delete-setinsideloop true
+--appp 0.33333
+--asm-code-only false
+--best-edit-rule "1 * fault_loc_weight ; 1 * max_test_fail_prob ; -1 * num_tests"
+--best-test-rule "1 * test_fail_prob ; 1 * test_fail_count ; -1 * test_pass_count"
+--compiler "gcc"
+--compiler-command "perl compile.pl __EXE_NAME__ > /dev/null"
+--compiler-opts ""
+--continue false
+--coverage-info ""
+--coverage-per-test false
+--crossover "subset"
+--crossp 0.5
+--delp 0.33333
+--describe-machine true
+--diversity-selection 0
+--edit-script false
+--elf-risc false
+--exclude-edits ""
+--exp-diff false
+--fault-file ""
+--fault-path "coverage.path.neg"
+--fault-scheme "path"
+--fitness-in-parallel 2
+--fix-file ""
+--fix-oracle ""
+--fix-path "coverage.path.pos"
+--fix-scheme "default"
+--flatten-path ""
+--format "txt"
+--gen-per-exchange 1
+--generations 10
+--gui false
+--hostname "127.0.0.1"
+--ignore-dead-code true
+--ignore-equiv-appends true
+--ignore-standard-headers true
+--ignore-string-equiv-fixes true
+--ignore-untyped-returns false
+--incoming-pop ""
+--keep-source false
+--label-repair true
+--max-evals 0
+--minimization false
+--mt-cov false
+--multiopt-minimize false
+--multiopt-no-inf false
+--neg-tests 1
+--neg-weight 1
+--negative-test-weight 2
+--neutral-walk-max-size 0
+--neutral-walk-weight ""
+--nht-id "global"
+--nht-port 51000
+--nht-server ""
+--no-delete false
+--no-rep-cache true
+--no-test-cache true
+--num-comps 2
+--num-objectives 2
+--oracle-genome ""
+--popsize 40
+--port 60000
+--pos-tests 4
+--pos-weight 0.1
+--prefix "preprocessed"
+--preprocessor ""
+--print-incremental-evals false
+--print-source-name false
+--program "bugged-program.txt"
+--promut 1
+--quiet false
+--regen-paths false
+--rep "cilpatch"
+--rep-cache "default.cache"
+--repp 0
+--samp-strat "variant"
+--sample 1
+--sample-runs 100
+--sanity "no"
+--search "ww"
+--seed 0
+--semantic-check "scope"
+--single-fitness false
+--skip-failed-sanity-tests true
+--skip-tests ""
+--split-search 0
+--sport 65000
+--subatom-constp 0.5
+--subatom-mutp 0
+--super-mutant false
+--super-mutant-size 50
+--swap-bug false
+--swapp 0.33333
+--template-cache ""
+--templates ""
+--test-command "timeout -k 75s 75s __TEST_SCRIPT__ __TEST_NAME__"
+--test-script "./test.sh"
+--tournament-size 2
+--tweet false
+--uniq false
+--valgrind false
+--variants-exchanged 50
+uname -a: Linux genprog-shinhwei2 3.19.0-43-generic #49~14.04.1-Ubuntu SMP Thu Dec 31 15:44:49 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+date: Sun Jan 31 23:32:10 SGT 2016
+id: uid=1000(ubuntu) gid=1000(ubuntu) groups=1000(ubuntu),27(sudo)
+cat: /etc/redhat-release: No such file or directory
+cat /etc/redhat-release: End_of_file
+grep 'model name' /proc/cpuinfo: model name	: Intel(R) Xeon(R) CPU E5-2660 v3 @ 2.60GHz
+grep 'MemTotal' /proc/meminfo: MemTotal:       65861644 kB
+grep 'SwapTotal' /proc/meminfo: SwapTotal:      67006460 kB
+cilRep: preprocessing IO function signatures: /tmp/tmp217398.c /tmp/tmpa519d2.c
+cilRep: done preprocessing IO function signatures
+cilrep: from_source: pre: stmt_count = 1
+cilRep: src/searchutils.c: parsing
+cilRep: src/searchutils.c: parsed (0.143909 MB)
+cilRep: computing liveness
+Bug: BF(Liveness): stmtStartData is not initialized for -1: _L___0: 
+#line 116 "searchutils.c"
+tmp___4 = m;
+#line 116
+m ++;
+#line 116
+*tmp___4 = (unsigned char)0;
+#line 117
+tmp___5 = p;
+#line 117
+p ++;
+#line 117
+tmp___6 = beg;
+#line 117
+beg ++;
+#line 117
+*tmp___5 = (char )*tmp___6;
+#line 118
+outlen ++;
+#line 119
+memset((void *)(& is), 0, sizeof(is));
+#line 120
+memset((void *)(& os), 0, sizeof(os));
+Liveness failed on function:
+ char *mbtolower(char const   *beg , size_t *n , unsigned char **len_map_p ) 
+{ size_t outlen ;
+  size_t mb_cur_max ;
+  mbstate_t is ;
+  mbstate_t os ;
+  char const   *end ;
+  char *p ;
+  unsigned char *m ;
+  void *tmp ;
+  void *tmp___0 ;
+  wchar_t wc ;
+  size_t mbclen ;
+  size_t tmp___1 ;
+  size_t dm ;
+  void *tmp___2 ;
+  void *tmp___3 ;
+  unsigned char *tmp___4 ;
+  char *tmp___5 ;
+  char const   *tmp___6 ;
+  unsigned char *tmp___7 ;
+  wint_t tmp___8 ;
+  size_t __attribute__((__leaf__, __gnu_inline__, __artificial__))  tmp___9 ;
+  size_t __attribute__((__leaf__, __gnu_inline__, __artificial__))  tmp___10 ;
+
+  {
+   1016: /* CIL Label */ 
+#line 78
+  if (*n > outalloc) {
+    goto _L;
+  } else {
+#line 78
+    if (outalloc == 0UL) {
+      _L: 
+#line 80
+      if (1UL > *n) {
+#line 80
+        outalloc = 1UL;
+      } else {
+#line 80
+        outalloc = *n;
+      }
+#line 81
+      tmp = xrealloc((void *)out, outalloc);
+#line 81
+      out = (char *)tmp;
+#line 82
+      tmp___0 = xrealloc((void *)len_map, outalloc);
+#line 82
+      len_map = (unsigned char *)tmp___0;
+    } else {
+
+    }
+  }
+   1017: /* CIL Label */ 
+#line 86
+  if (! out) {
+#line 86
+    __assert_fail("out", "searchutils.c", 86U, "mbtolower");
+  } else {
+
+  }
+   1018: /* CIL Label */ 
+#line 87
+  if (! len_map) {
+#line 87
+    __assert_fail("len_map", "searchutils.c", 87U, "mbtolower");
+  } else {
+
+  }
+   1019: /* CIL Label */ 
+#line 88
+  if (*n == 0UL) {
+#line 89
+    return (out);
+  } else {
+
+  }
+   1020: /* CIL Label */ 
+#line 91
+  memset((void *)(& is), 0, sizeof(is));
+   1021: /* CIL Label */ 
+#line 92
+  memset((void *)(& os), 0, sizeof(os));
+   1022: /* CIL Label */ 
+#line 93
+  end = beg + *n;
+   1023: /* CIL Label */ 
+#line 95
+  mb_cur_max = __ctype_get_mb_cur_max();
+   1024: /* CIL Label */ 
+#line 96
+  p = out;
+   1025: /* CIL Label */ 
+#line 97
+  m = len_map;
+   1026: /* CIL Label */ 
+#line 98
+  outlen = 0UL;
+   1027: /* CIL Label */ 
+#line 99
+  while ((unsigned long )beg < (unsigned long )end) {
+#line 102
+    tmp___1 = mbrtowc((wchar_t */* __restrict  */)(& wc),
+                      (char const   */* __restrict  */)beg,
+                      (unsigned long )(end - beg),
+                      (mbstate_t */* __restrict  */)(& is));
+#line 102
+    mbclen = tmp___1;
+#line 103
+    if (outlen + mb_cur_max >= outalloc) {
+#line 105
+      dm = (unsigned long )(m - len_map);
+#line 106
+      tmp___2 = x2nrealloc((void *)out, & outalloc, 1UL);
+#line 106
+      out = (char *)tmp___2;
+#line 107
+      tmp___3 = xrealloc((void *)len_map, outalloc);
+#line 107
+      len_map = (unsigned char *)tmp___3;
+#line 108
+      p = out + outlen;
+#line 109
+      m = len_map + dm;
+    } else {
+
+    }
+#line 112
+    if (mbclen == 4294967295UL) {
+      goto _L___0;
+    } else {
+#line 112
+      if (mbclen == 4294967294UL) {
+        goto _L___0;
+      } else {
+#line 112
+        if (mbclen == 0UL) {
+          _L___0: 
+#line 116
+          tmp___4 = m;
+#line 116
+          m ++;
+#line 116
+          *tmp___4 = (unsigned char)0;
+#line 117
+          tmp___5 = p;
+#line 117
+          p ++;
+#line 117
+          tmp___6 = beg;
+#line 117
+          beg ++;
+#line 117
+          *tmp___5 = (char )*tmp___6;
+#line 118
+          outlen ++;
+#line 119
+          memset((void *)(& is), 0, sizeof(is));
+#line 120
+          memset((void *)(& os), 0, sizeof(os));
+        } else {
+#line 124
+          tmp___7 = m;
+#line 124
+          m ++;
+#line 124
+          *tmp___7 = (unsigned char )(mbclen - 1UL);
+#line 125
+          beg += mbclen;
+#line 126
+          tmp___8 = towlower((unsigned int )wc);
+#line 126
+          tmp___10 = (size_t __attribute__((__leaf__, __gnu_inline__,
+          __artificial__))  )wcrtomb((char */* __restrict  */)p, (int )tmp___8,
+                                     (mbstate_t */* __restrict  */)(& os));
+#line 126
+          tmp___9 = tmp___10;
+#line 126
+          mbclen = (unsigned long )tmp___9;
+#line 127
+          p += mbclen;
+#line 128
+          outlen += mbclen;
+        }
+      }
+    }
+  }
+   1028: /* CIL Label */ 
+#line 133
+  if ((unsigned long )(p - out) == *n) {
+#line 133
+    *len_map_p = (unsigned char *)((void *)0);
+  } else {
+#line 133
+    *len_map_p = len_map;
+  }
+   1029: /* CIL Label */ 
+#line 134
+  *n = (unsigned long )(p - out);
+   1030: /* CIL Label */ 
+#line 135
+  *p = (char)0;
+   1031: /* CIL Label */ 
+#line 136
+  return (out);
+}
+}
+
+cilRep: liveness failure for mbtolower: Errormsg.Error
+cilRep: computed liveness
+cilrep: from_source: post: stmt_count: 1064
+faultLocRep: compute_localization: fault_scheme: path, fix_scheme: default
+Rep: coverage_sourcename: /home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/coverage/coverage.c
+cilRep: instrumenting for fault localization
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/stdio2.h:94
+	cannot instrument for coverage (would be recursive)
+cilRep: WARNING: definition of fprintf found at /usr/include/x86_64-linux-gnu/bits/string3.h:75
+	cannot instrument for coverage (would be recursive)
+cilRep: done instrumenting for fault localization
+coverage negative:
+	test: 1
+/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+coverage positive:
+	test: 1
+id:6
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=dfaexec-multibyte
+PASS:6
+	test: 2
+id:9
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=fedora
+PASS:9
+	test: 3
+id:13
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=help-version
+PASS:13
+	test: 4
+id:15
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=max-count-vs-context
+PASS:15
+cilRep: default.cache: saved
+cachingRep: default.cache: saved
+faultlocRep: default.cache: saved
+cilrep done serialize
+cilRep: stmt_count = 1064
+cilRep: stmts in weighted_path = 53
+cilRep: total weight = 53
+cilRep: stmts in weighted_path with weight >= 1.0 = 53
+cilRep: src/searchutils.c (code bank/base file; atoms [1,1064])
+cilRep: 1 file(s) total in representation
+search: ww_adaptive_1 begins (time = 1454254334.437779)
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include
+cilRep: coverage ignores: /usr/local/include
+cilRep: coverage ignores: /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed
+cilRep: coverage ignores: /usr/include
+cilRep: atoms in standard headers: 924
+cilRep: fix-space quotient by string: 51 -> 46
+progeq: computing alias analysis information
+progeq: WARNING: cannot resolve call: *__compar
+progeq: WARNING: cannot resolve call: __builtin_object_size
+progeq: WARNING: cannot resolve call: __realpath_chk
+progeq: WARNING: cannot resolve call: __realpath_alias
+progeq: WARNING: cannot resolve call: __ptsname_r_chk
+progeq: WARNING: cannot resolve call: __ptsname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ptsname_r_alias
+progeq: WARNING: cannot resolve call: __wctomb_chk
+progeq: WARNING: cannot resolve call: __wctomb_alias
+progeq: WARNING: cannot resolve call: __mbstowcs_chk
+progeq: WARNING: cannot resolve call: __mbstowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbstowcs_alias
+progeq: WARNING: cannot resolve call: __wcstombs_chk
+progeq: WARNING: cannot resolve call: __wcstombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcstombs_alias
+progeq: WARNING: cannot resolve call: __btowc_alias
+progeq: WARNING: cannot resolve call: __wctob_alias
+progeq: WARNING: cannot resolve call: mbrtowc
+progeq: WARNING: cannot resolve call: __mbrlen
+progeq: WARNING: cannot resolve call: __wmemcpy_chk
+progeq: WARNING: cannot resolve call: __wmemcpy_chk_warn
+progeq: WARNING: cannot resolve call: __wmemcpy_alias
+progeq: WARNING: cannot resolve call: __wmemmove_chk
+progeq: WARNING: cannot resolve call: __wmemmove_chk_warn
+progeq: WARNING: cannot resolve call: __wmemmove_alias
+progeq: WARNING: cannot resolve call: __wmempcpy_chk
+progeq: WARNING: cannot resolve call: __wmempcpy_chk_warn
+progeq: WARNING: cannot resolve call: __wmempcpy_alias
+progeq: WARNING: cannot resolve call: __wmemset_chk
+progeq: WARNING: cannot resolve call: __wmemset_chk_warn
+progeq: WARNING: cannot resolve call: __wmemset_alias
+progeq: WARNING: cannot resolve call: __wcscpy_chk
+progeq: WARNING: cannot resolve call: __wcscpy_alias
+progeq: WARNING: cannot resolve call: __wcpcpy_chk
+progeq: WARNING: cannot resolve call: __wcpcpy_alias
+progeq: WARNING: cannot resolve call: __wcsncpy_chk
+progeq: WARNING: cannot resolve call: __wcsncpy_chk_warn
+progeq: WARNING: cannot resolve call: __wcsncpy_alias
+progeq: WARNING: cannot resolve call: __wcpncpy_chk
+progeq: WARNING: cannot resolve call: __wcpncpy_chk_warn
+progeq: WARNING: cannot resolve call: __wcpncpy_alias
+progeq: WARNING: cannot resolve call: __wcscat_chk
+progeq: WARNING: cannot resolve call: __wcscat_alias
+progeq: WARNING: cannot resolve call: __wcsncat_chk
+progeq: WARNING: cannot resolve call: __wcsncat_alias
+progeq: WARNING: cannot resolve call: __swprintf_chk
+progeq: WARNING: cannot resolve call: __swprintf_alias
+progeq: WARNING: cannot resolve call: __vswprintf_chk
+progeq: WARNING: cannot resolve call: __vswprintf_alias
+progeq: WARNING: cannot resolve call: __wprintf_chk
+progeq: WARNING: cannot resolve call: __fwprintf_chk
+progeq: WARNING: cannot resolve call: __vwprintf_chk
+progeq: WARNING: cannot resolve call: __vfwprintf_chk
+progeq: WARNING: cannot resolve call: __fgetws_chk
+progeq: WARNING: cannot resolve call: __fgetws_chk_warn
+progeq: WARNING: cannot resolve call: __fgetws_alias
+progeq: WARNING: cannot resolve call: __fgetws_unlocked_chk
+progeq: WARNING: cannot resolve call: __fgetws_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fgetws_unlocked_alias
+progeq: WARNING: cannot resolve call: __wcrtomb_chk
+progeq: WARNING: cannot resolve call: __wcrtomb_alias
+progeq: WARNING: cannot resolve call: __mbsrtowcs_chk
+progeq: WARNING: cannot resolve call: __mbsrtowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbsrtowcs_alias
+progeq: WARNING: cannot resolve call: __wcsrtombs_chk
+progeq: WARNING: cannot resolve call: __wcsrtombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcsrtombs_alias
+progeq: WARNING: cannot resolve call: __mbsnrtowcs_chk
+progeq: WARNING: cannot resolve call: __mbsnrtowcs_chk_warn
+progeq: WARNING: cannot resolve call: __mbsnrtowcs_alias
+progeq: WARNING: cannot resolve call: __wcsnrtombs_chk
+progeq: WARNING: cannot resolve call: __wcsnrtombs_chk_warn
+progeq: WARNING: cannot resolve call: __wcsnrtombs_alias
+progeq: WARNING: cannot resolve call: __builtin_expect
+progeq: WARNING: cannot resolve call: __uflow
+progeq: WARNING: cannot resolve call: __overflow
+progeq: WARNING: cannot resolve call: __getdelim
+progeq: WARNING: cannot resolve call: __builtin___sprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___snprintf_chk
+progeq: WARNING: cannot resolve call: __builtin___vsnprintf_chk
+progeq: WARNING: cannot resolve call: __fprintf_chk
+progeq: WARNING: cannot resolve call: __printf_chk
+progeq: WARNING: cannot resolve call: __vfprintf_chk
+progeq: WARNING: cannot resolve call: __dprintf_chk
+progeq: WARNING: cannot resolve call: __vdprintf_chk
+progeq: WARNING: cannot resolve call: __asprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_printf_chk
+progeq: WARNING: cannot resolve call: __vasprintf_chk
+progeq: WARNING: cannot resolve call: __obstack_vprintf_chk
+progeq: WARNING: cannot resolve call: __fgets_chk
+progeq: WARNING: cannot resolve call: __fgets_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_alias
+progeq: WARNING: cannot resolve call: __fread_chk
+progeq: WARNING: cannot resolve call: __fread_chk_warn
+progeq: WARNING: cannot resolve call: __fread_alias
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk
+progeq: WARNING: cannot resolve call: __fgets_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fgets_unlocked_alias
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk
+progeq: WARNING: cannot resolve call: __fread_unlocked_chk_warn
+progeq: WARNING: cannot resolve call: __fread_unlocked_alias
+progeq: WARNING: cannot resolve call: __builtin_va_arg_pack_len
+progeq: WARNING: cannot resolve call: __open_too_many_args
+progeq: WARNING: cannot resolve call: __open_2
+progeq: WARNING: cannot resolve call: __open_alias
+progeq: WARNING: cannot resolve call: __open64_too_many_args
+progeq: WARNING: cannot resolve call: __open64_2
+progeq: WARNING: cannot resolve call: __open64_alias
+progeq: WARNING: cannot resolve call: __openat_too_many_args
+progeq: WARNING: cannot resolve call: __openat_2
+progeq: WARNING: cannot resolve call: __openat_alias
+progeq: WARNING: cannot resolve call: __openat64_too_many_args
+progeq: WARNING: cannot resolve call: __openat64_2
+progeq: WARNING: cannot resolve call: __openat64_alias
+progeq: WARNING: cannot resolve call: __read_chk
+progeq: WARNING: cannot resolve call: __read_chk_warn
+progeq: WARNING: cannot resolve call: __read_alias
+progeq: WARNING: cannot resolve call: __pread_chk
+progeq: WARNING: cannot resolve call: __pread_chk_warn
+progeq: WARNING: cannot resolve call: __pread_alias
+progeq: WARNING: cannot resolve call: __pread64_chk
+progeq: WARNING: cannot resolve call: __pread64_chk_warn
+progeq: WARNING: cannot resolve call: __pread64_alias
+progeq: WARNING: cannot resolve call: __readlink_chk
+progeq: WARNING: cannot resolve call: __readlink_chk_warn
+progeq: WARNING: cannot resolve call: __readlink_alias
+progeq: WARNING: cannot resolve call: __readlinkat_chk
+progeq: WARNING: cannot resolve call: __readlinkat_chk_warn
+progeq: WARNING: cannot resolve call: __readlinkat_alias
+progeq: WARNING: cannot resolve call: __getcwd_chk
+progeq: WARNING: cannot resolve call: __getcwd_chk_warn
+progeq: WARNING: cannot resolve call: __getcwd_alias
+progeq: WARNING: cannot resolve call: __getwd_chk
+progeq: WARNING: cannot resolve call: __getwd_warn
+progeq: WARNING: cannot resolve call: __confstr_chk
+progeq: WARNING: cannot resolve call: __confstr_chk_warn
+progeq: WARNING: cannot resolve call: __confstr_alias
+progeq: WARNING: cannot resolve call: __getgroups_chk
+progeq: WARNING: cannot resolve call: __getgroups_chk_warn
+progeq: WARNING: cannot resolve call: __getgroups_alias
+progeq: WARNING: cannot resolve call: __ttyname_r_chk
+progeq: WARNING: cannot resolve call: __ttyname_r_chk_warn
+progeq: WARNING: cannot resolve call: __ttyname_r_alias
+progeq: WARNING: cannot resolve call: __getlogin_r_chk
+progeq: WARNING: cannot resolve call: __getlogin_r_chk_warn
+progeq: WARNING: cannot resolve call: __getlogin_r_alias
+progeq: WARNING: cannot resolve call: __gethostname_chk
+progeq: WARNING: cannot resolve call: __gethostname_chk_warn
+progeq: WARNING: cannot resolve call: __gethostname_alias
+progeq: WARNING: cannot resolve call: __getdomainname_chk
+progeq: WARNING: cannot resolve call: __getdomainname_chk_warn
+progeq: WARNING: cannot resolve call: __getdomainname_alias
+progeq: WARNING: cannot resolve call: __builtin_strchr
+progeq: WARNING: cannot resolve call: __builtin___memcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memmove_chk
+progeq: WARNING: cannot resolve call: __builtin___mempcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___memset_chk
+progeq: WARNING: cannot resolve call: __builtin___strcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___stpcpy_chk
+progeq: WARNING: cannot resolve call: __builtin___strncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_chk
+progeq: WARNING: cannot resolve call: __stpncpy_alias
+progeq: WARNING: cannot resolve call: __builtin___strcat_chk
+progeq: WARNING: cannot resolve call: __builtin___strncat_chk
+progeq: WARNING: cannot resolve call: __ctype_tolower_loc
+progeq: WARNING: cannot resolve call: __ctype_toupper_loc
+progeq: WARNING: cannot resolve call: xalloc_die
+progeq: WARNING: cannot resolve call: xrealloc
+progeq: WARNING: cannot resolve call: __ctype_get_mb_cur_max
+progeq: WARNING: cannot resolve call: kwsalloc
+progeq: WARNING: cannot resolve call: __assert_fail
+search: fix space reduced (time_taken = 1.00609)
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 46 deletes
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+SET_BEFORE
+SINGLE_CFG
+EXIT_ASSERT
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:46:after26
+REMOVED?false
+SET_BEFORE
+SINGLE_CFG
+CARDINAL?before:4:after1
+REMOVED?false
+SET_BEFORE
+SINGLE_CFG
+CARDINAL?before:4:after1
+REMOVED?false
+SET_BEFORE
+SINGLE_CFG
+CARDINAL?before:4:after1
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+SET_BEFORE
+SINGLE_CFG
+EXIT_ASSERT
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:46:after26
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+SET_BEFORE
+SINGLE_CFG
+EXIT_ASSERT
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:46:after26
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+SET_BEFORE
+SINGLE_CFG
+EXIT_ASSERT
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:46:after26
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+SET_BEFORE
+SINGLE_CFG
+EXIT_ASSERT
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:46:after26
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+SET_BEFORE
+SINGLE_CFG
+EXIT_ASSERT
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:46:after26
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+SET_BEFORE
+SINGLE_CFG
+EXIT_ASSERT
+EXIT_ASSERT
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:46:after26
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+SINGLE_CFG
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+SET_BEFORE
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+EXIT_ASSERT
+CARDINAL?before:38:after25
+REMOVED?false
+excluded 0 deletes (from list of 0 total edits)
+search: ww_adaptive: 1085 appends
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+APPEND_RETURN
+excluded 0 appends (from list of 0 total edits)
+search: ww_adaptive: 1150 appends
+search: ww_adaptive: 2235 possible edits
+search: ready to start (time_taken = 24.243)
+search: ww_adaptive: finding best
+rep: WARNING: test_visiting_atoms: no data available
+	try using --coverage-per-test and/or --regen-paths
+	defaulting to 'all tests'
+search: ww_adaptive: found best (time_taken = 0.015218)
+	variant     1/ 2235 = d(1025)         (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.878457)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.015897)
+	variant     2/ 2235 = d(1024)         (5 tests, cond 0)
+		n1/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/src/grep: memory exhausted
+id:0
+FAILED:0
+ false (test_time = 0.943642)
+search: ww_adaptive: finding best
+search: ww_adaptive: found best (time_taken = 0.018966)
+	variant     3/ 2235 = d(1023)         (5 tests, cond 0)
+		n1id:0
+PASS:0
+ true (test_time = 0.885197)
+		p1id:6
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=dfaexec-multibyte
+PASS:6
+ true (test_time = 0.265526)
+		p2id:9
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=fedora
+PASS:9
+ true (test_time = 0.270517)
+		p3id:13
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=help-version
+PASS:13
+ true (test_time = 0.431316)
+		p4id:15
+in directory:/home/ubuntu/corebench/grep/grep-case-7aa698d3-074842d3/tests
+calling:make check-TESTS TESTS=max-count-vs-context
+PASS:15
+ true (test_time = 0.266932)
+search: ww_adaptive: ends (yes repair)
+
+Repair Found: d(1023)
+Repair Name: d(1023) 
+Test Condition: 0
+Test Cases Skipped: ""
+Current Time: 1454254363.691472
+
+Variant Test Case Queries: 7
+"Test Suite Evaluations": 1.4
+
+Compile Failures: 0
+Wall-Clock Seconds Elapsed: 33.639
+  Activity Name                     Count Seconds = Percent of Total Time
+  find_best_edit                        3   0.050 = 0.15204%
+  progeq partition                     46   0.731 = 2.2209%
+  test                                 12   2.636 = 8.00643%
+  compile                               4   5.268 = 15.9986%
+  append_sources                       46   7.880 = 23.9323%
+  delete_sources                       46  16.361 = 49.6897%
+  TOTAL                                    32.926 = 97.8501% (avg CPU usage)
